@@ -1,39 +1,51 @@
-<div style="text-align: center">
-  <button class="req "type="click">Request</button>
-  <button class="track "type="click">Tracking</button>
+<html>
+<head>
+  <style>
+  h1{text-align: center;}
+  </style>
+</head>
+
+
+ 
+  <h1>SEND REQUEST</h1>
+  <h2>Staff Dashboard</h2>
+  <button class="req " type="click">Request</button>
+  <button class="track " type="click">Tracking</button>
   <button class="feed" type="click">Feedback</button>
 
-  <form>
-    <div>
+
+<form style="text-align: center">
+  <div class="container">
+  <div>
     <label>Staff No</label>
     <input class="staff" type="text" name="staffno">
-    </div>
-    <label>Email</label>
-    <input type="text" name="email">
-    <div>
-      <label>Category</label>
-    <select id="category" name="category" placeholder="Choose Category">
+  </div>
+  <label>Staff Name</label>
+  <input class="name" type="text" name="name">
+  <div>
+  <label>Email</label>
+  <input class="email" type="text" name="email">
+  </div>
+  <div>
+  <label>Venue</label>
+  <input class="venue" type="text" name="venue">
+  </div>
+  <div>
+    <label>Description</label>
+    <input class="des"type="text" name="des">
+  </div>
+  <div>
+    <label>Category</label>
+    <select class="cat" id="category" name="category" placeholder="Choose Category">
       <option value="soft">Software</option>
       <option id="hard">Hardware</option>
-      </select>
-      </div>
-    <div>
-      <label>Description</label>
-    <input type="text" name="email">
-      </div>
-      <div>
-        <label>Importance</label>
-      <select id="category" name="category" placeholder="Choose Category">
-        <option value="soft">Low</option>
-        <option id="hard">Medium</option>
-        <option id="hard">High</option>
-        </select>
-        </div>
-      <label>Venue</label>
-    <input type="text" name="email">
-    <div>
-      <label>Date</label>
-    <input type="text" name="email">
-      </div>
-     <button type="click">Send</button> 
- </form>
+    </select>
+  </div>
+
+  <label>Image</label>
+  <input class="img" type="file" id="file" accept="image/*">
+<div class="center"></div>
+  <button style="text-align: center" type="click">Send</button>
+</div>
+</form>
+</html>
