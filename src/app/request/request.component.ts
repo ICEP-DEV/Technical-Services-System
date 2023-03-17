@@ -22,21 +22,14 @@ export class RequestComponent {
 
 ngOnInit(): void {
 }
-   staffnomessage: String =''
+   staffnomessage: String ='';
   submitForm(){
-    this.staffnomessage= ''
+    this.staffnomessage= '';
     if(this.request.staffno==''){
-      this.staffnomessage='Please enter staf number'
+      this.staffnomessage='Please enter staf number';
     }
-    console.log(this.staffnomessage)
+    console.log(this.staffnomessage);
   }
 
-  namemessage: String =''
-  submitForm(){
-    this.namemessage= ''
-    if(this.request.staffno==''){
-      this.namemessage='Please enter the name'
-    }
-    console.log(this.namemessage)
-  }
+
 }

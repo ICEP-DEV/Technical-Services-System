@@ -1,24 +1,42 @@
+.blue {
+    background-color: 
+    #005596;
 
-.req{
-    position: absolute;
-width: 238px;
-height: 45.9px;
-left: 46px;
-top: 277px;
 }
+
+
 .track{
     position: absolute;
-    width: 237.81px;
-    height: 50.18px;
-    left: 46.19px;
-    top: 334.43px;
+width: 161px;
+height: 30px;
+left: 166px;
+top: 356px;
+
+font-family: 'Sansation';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 36px;
+letter-spacing: 0.035em;
+
+color: #005596;
+
 }
 .feed{
     position: absolute;
-width: 240.1px;
-height: 51.43px;
-left: 46px;
-top: 399.57px;
+width: 161px;
+height: 27px;
+left: 166px;
+top: 395px;
+
+font-family: 'Sansation';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 36px;
+letter-spacing: 0.035em;
+
+color: #005596;
 }
 .button1 {
     background-color: white; 
@@ -30,4 +48,213 @@ top: 399.57px;
     background-color: #4CAF50;
     color: white;
   }
- 
+
+  .h1{
+    position: absolute;
+    width: 271px;
+    height: 34px;
+    left: 483px;
+    top: 217px;
+    
+    font-family: 'Sansation';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 0.15em;
+    
+    color: #000000;
+   
+    
+  }
+  .req{
+    position: absolute;
+width: 142px;
+height: 25px;
+left: 166px;
+top: 311px;
+
+font-family: 'Sansation';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 36px;
+letter-spacing: 0.035em;
+text-decoration-line: underline;
+text-transform: capitalize;
+
+color: #005596;
+
+  }
+.category{
+    position: absolute;
+    width: 175.32px;
+    height: 37px;
+    left: 483px;
+    top: 284px;
+
+font-family: 'Sansation';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 36px;
+letter-spacing: 0.06em;
+
+color: #000000;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+}
+.venue{
+    position: absolute;
+width: 116.58px;
+height: 35px;
+left: 483px;
+top: 378px;
+
+font-family: 'Sansation';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 36px;
+/* identical to box height */
+
+letter-spacing: 0.06em;
+
+color: #000000;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+    box-sizing: border-box;
+
+position: absolute;
+width: 526px;
+height: 38px;
+left: 754px;
+top: 378px;
+
+background: #FDF8F8;
+border: 1px solid #969090;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+.des{
+    position: absolute;
+width: 197px;
+height: 21.24px;
+left: 483px;
+top: 489px;
+
+font-family: 'Sansation';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 36px;
+letter-spacing: 0.06em;
+
+color: #000000;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+box-sizing: border-box;
+
+position: absolute;
+width: 526px;
+height: 127px;
+left: 754px;
+top: 479px;
+
+background: #FDF8F8;
+border: 1px solid #969090;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+.img{
+    position: absolute;
+width: 144.36px;
+height: 24.72px;
+left: 483px;
+top: 681px;
+
+font-family: 'Sansation';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 36px;
+letter-spacing: 0.06em;
+
+color: #000000;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+position: absolute;
+width: 552.16px;
+height: 52.96px;
+left: 754px;
+top: 681px;
+}
+.btn{
+    position: absolute;
+width: 135px;
+height: 63.87px;
+left: 841px;
+top: 792px;
+
+background:#005596;
+border-color: #005596;
+filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));
+}
+.form{
+    position: absolute;
+width: 1004px;
+height: 772px;
+left: 409px;
+top: 149px;
+
+background: #FFFFFF;
+mix-blend-mode: normal;
+border: 1px solid #969090;
+box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+
+.Footer {
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    left: 0px;
+    top: 900px;
+
+    background: #005596;
+}
+.FooterF {
+    position: absolute;
+    width: 2500px;
+    height: 71px;
+    left: 0px;
+    top: 0px;
+    
+    background: #005596;
+}
+.send{
+    position: absolute;
+width: 271px;
+height: 34px;
+left: 483px;
+top: 217px;
+
+font-family: 'Sansation';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 36px;
+letter-spacing: 0.15em;
+
+color: #000000;
+
+position: absolute;
+width: 892px;
+height: 45px;
+left: 465px;
+top: 212px;
+
+background: #ECE7E7;
+}

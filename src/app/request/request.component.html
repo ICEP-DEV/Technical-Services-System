@@ -1,23 +1,25 @@
 <html>
-  <h1>SEND REQUEST</h1>
+  <footer class="FooterF"></footer>
+
+  <h1 class="send">SEND REQUEST</h1>
   <h2>Staff Dashboard</h2>
   <button class="req " type="click">Request</button>
   <button class="track " type="click">Tracking</button>
   <button class="feed" type="click">Feedback</button>
 
-
-  <div class="container">
-  <div>
-    <label>Staff No</label>
-    <input class="staff" type="text" name="staffno" name="request.staffno" [(ngModel)]="request.staffno"
-    pattern="[a-z]{1,15}" title="Enter staff number"> {{staffnomessage}}
-  </div>
-  <label>Staff Name</label>
-  <input class="name" type="text" name="name">
-  <div>
-  <label>Email</label>
-  <input class="email" type="text" name="email">
-  </div>
+<body>
+  <div class="container" >
+    <span class="border">
+    <form >
+      
+   
+    <div>
+      <label>Category</label>
+      <select class="cat" id="category" name="category" placeholder="Choose Category">
+        <option value="soft">Software</option>
+        <option id="hard">Hardware</option>
+      </select>
+    </div>
   <div>
   <label>Venue</label>
   <input class="venue" type="text" name="venue">
@@ -26,17 +28,19 @@
     <label>Description</label>
     <input class="des"type="text" name="des">
   </div>
-  <div>
-    <label>Category</label>
-    <select class="cat" id="category" name="category" placeholder="Choose Category">
-      <option value="soft">Software</option>
-      <option id="hard">Hardware</option>
-    </select>
-  </div>
+  
 
   <label>Image</label>
   <input class="img" type="file" id="file" accept="image/*">
 <div class="center"></div>
-  <button style="text-align: center" type="click" (click)="submitForm()">Send</button>
+  <button class="btn" style="text-align: center" type="click" (click)="submitForm()">Send</button>
+    </form>
+  </span>
 </div>
+</body>
+<footer class="Footer">
+
+
+</footer>
+
 </html>
