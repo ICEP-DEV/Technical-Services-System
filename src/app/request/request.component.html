@@ -1,42 +1,40 @@
 <html>
-  <footer class="FooterF"></footer>
-
-  <h1 class="send">SEND REQUEST</h1>
-  <h2>Staff Dashboard</h2>
-  <button class="req " type="click">Request</button>
-  <button class="track " type="click">Tracking</button>
-  <button class="feed" type="click">Feedback</button>
-
+<footer class="FooterF"></footer>
 <body>
-  <div class="container" >
-    <span class="border">
-    <form >
-      
+  <div class="side-bar">
+    <button class="class-side-bar" type="click">Request</button>
+    <button class="class-side-bar " type="click">Tracking</button>
+    <button class="class-side-bar" type="click">Feedback</button>
+  </div>
+  <div class="container">
    
-    <div>
-      <label>Category</label>
-      <select class="cat" id="category" name="category" placeholder="Choose Category">
-        <option value="soft">Software</option>
-        <option id="hard">Hardware</option>
-      </select>
-    </div>
-  <div>
-  <label>Venue</label>
-  <input class="venue" type="text" name="venue">
-  </div>
-  <div>
-    <label>Description</label>
-    <input class="des"type="text" name="des">
-  </div>
-  
+    <div class="border">
 
-  <label>Image</label>
-  <input class="img" type="file" id="file" accept="image/*">
-<div class="center"></div>
-  <button class="btn" style="text-align: center" type="click" (click)="submitForm()">Send</button>
-    </form>
-  </span>
-</div>
+        <h1 class="send">SEND REQUEST</h1>
+
+        <div class="center">
+          <font size="+2">Category </font>
+          <select class="cat" id="category" name="category" placeholder="Select category">
+            <option value="soft">Software</option>
+            <option id="hard">Hardware</option>
+          </select>
+        </div>
+        <div>
+          <font size="+2">Venue</font>
+          <input class="venue" type="text" name="venue">
+        </div>
+        <div>
+          <font size="+2">Description</font>
+          <textarea class="des"></textarea>
+        </div>
+
+
+        <font size="+2">Image</font>
+        <input class="img" type="file" id="file" accept="image/*">
+        <div class="center"></div>
+        <button class="btn" style="text-align: center" type="click" (click)="submitForm()">Send</button>
+    </div>
+  </div>
 </body>
 <footer class="Footer">
 

@@ -5,11 +5,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RequestComponent } from './request/request.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RequestComponent
+    RequestComponent,
+    SidebarComponent
   ],
   imports: [
     FormsModule, 
