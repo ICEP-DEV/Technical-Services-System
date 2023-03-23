@@ -1,0 +1,175 @@
+/*Background Image*/
+
+body {
+
+    background-image: url(src/assets/images/back.jpg);
+    background-size: cover;
+    height: 820px;
+}
+
+
+form {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 1200px;
+    height: 745px;
+    left: 600px;
+    top: 80px;
+
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    border: 1px solid #969090;
+    box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.form2 {
+
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 1100px;
+    height: 690px;
+    left: 42px;
+    top: 28px;
+
+    background: #FFFFFF;
+    border: 1px solid #969090;
+    box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+p {
+
+    font-family: 'Sansation';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 0.15em;
+
+    color: #000000;
+
+    padding-left: 20px;
+
+}
+
+.backcolor {
+
+    position: absolute;
+    width: 396px;
+    height: 36px;
+    left: 37px;
+    top:25px;
+
+    background: #ECE7E7;
+}
+.nav {
+    margin-top: 10%;
+    padding: 10px;
+    
+}
+.nav.nav-link {
+    padding-left: 100px;
+}
+
+
+
+/*End of background Image*/
+
+/*font weight*/
+.nav-link {
+
+    font-weight:bold;
+}
+/*End of font weight*/
+
+
+    /*Navigation Tabs filter*/
+                /*Doing Tab*/
+        .red {
+            filter: invert(12%) sepia(90%) saturate(5773%) hue-rotate(1deg) brightness(106%) contrast(94%);
+
+            width: 50px;
+            height: 50px;
+        }
+                /*End doing Tab*/
+
+                /*In-progress Tab*/
+        .amber {
+            filter: invert(54%) sepia(74%) saturate(1891%) hue-rotate(359deg) brightness(100%) contrast(102%); 
+            width: 50px;
+            height: 50px;
+        }
+                /*End of in-progress Tab*/
+
+                /*Done Tab*/
+        .green {
+            filter: invert(41%) sepia(26%) saturate(1167%) hue-rotate(117deg) brightness(88%) contrast(80%);
+
+            width: 50px;
+            height: 50px;
+        }
+        /*End of done Tab*/
+
+        /*Text color on Tabs*/
+                .colorRed {
+
+                    color: red;
+                }
+
+                .colorAmber {
+
+                    color: #FF8800;
+                }
+
+                .colorGreen {
+
+                    color: #00642D;
+                }
+
+        /*End of Text color on Tabs*/
+
+    /*End of navigation Tabs filters*/
+
+#myTabContent {
+    padding-top: 10%;
+    padding-left: 30%;
+}
+
+#tabContentPar {
+    position: absolute;
+    left: 00px;
+    top: 290px;
+    overflow-y: scroll;
+    height: 400px;
+    margin: 0 3px;
+}
+
+/*Align Tabs*/
+#doing-tab1 {
+    position: absolute;
+    width: 56px;
+    height: 44px;
+    left: 190px;
+    top: 115px;
+}
+
+#doing-tab2 {
+    position: absolute;
+width: 56px;
+height: 44px;
+left: 450px;
+top: 115px;
+}
+
+#doing-tab3 {
+    position: absolute;
+    width: 56px;
+    height: 44px;
+    left: 760px;
+    top: 115px;
+}
+
+/*End of Align Tabs*/
