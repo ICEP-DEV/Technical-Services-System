@@ -1,10 +1,63 @@
+.container-fluid {
+  
+   
+    background-color: #005596;  
+    height: 183px;
+    position: fixed;
+    
+
+}
+
+h4 {
+    position: absolute;
+    top:115px;
+    left: 45%;
+}
+
+.img {
+    position: absolute;
+    height: 100px;
+    left: 0;
+    top: 45%;
+}
+
+.leftSidePolygon {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    left: 92px;
+    top: 115px;
+
+    
+   
+}
+
+.imgLeftSidePolygon {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 410px;
+    height: 410px;
+    left: 220px;
+    top: 220px;
+}
+
+
+
 /*Background Image*/
 
 body {
 
     background-image: url(src/assets/images/back.jpg);
     background-size: cover;
-    height: 820px;
+    height: 1000px;
+    position: absolute;
+    width: 1920px;
+    left: 0px;
+    top: 100px;
+    z-index: -1;
 }
 
 
@@ -13,8 +66,8 @@ form {
 
     position: absolute;
     width: 1200px;
-    height: 745px;
-    left: 600px;
+    height: 760px;
+    left: 640px;
     top: 80px;
 
     background: #FFFFFF;
@@ -29,8 +82,8 @@ form {
     box-sizing: border-box;
 
     position: absolute;
-    width: 1100px;
-    height: 690px;
+    width: 1115px;
+    height: 700px;
     left: 42px;
     top: 28px;
 
@@ -58,7 +111,7 @@ p {
 .backcolor {
 
     position: absolute;
-    width: 396px;
+    width: 1020px;
     height: 36px;
     left: 37px;
     top:25px;
@@ -173,3 +226,22 @@ top: 115px;
 }
 
 /*End of Align Tabs*/
+
+
+footer {
+    position: absolute;
+    width: 932px;
+    height: 19px;
+    left: 484px;
+    top: 1059px;
+
+    font-family: 'Inter';
+    font-style:normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 19px;
+    letter-spacing: 0.2em;
+
+    color: #000000;
+    text-align: center;
+}
