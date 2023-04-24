@@ -96,16 +96,15 @@ form {
 }
 .breadcrumb-item.active {
    
+    list-style:none ;
     border-bottom: 3px solid #005596;
-    width: 60px;
-    
+    width: 70px;
+    padding-left: 0;
     
 }
 
 .breadcrumbNone {
     list-style:none ;
-    
-   
     padding-left: 0;
 
 }
