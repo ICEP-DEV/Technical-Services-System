@@ -2,7 +2,9 @@
    
     position: absolute;
     top: 100%;
-
+    border: 1px solid yellow;
+    height: 42px;
+    margin: 238px 0;
 }
 .center {
     text-align: center;

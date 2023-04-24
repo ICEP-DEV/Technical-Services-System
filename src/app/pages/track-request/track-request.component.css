@@ -1,0 +1,59 @@
+.sticky {
+    background-color: #005596;
+    height:115px;
+    
+}
+
+a {
+    color: white;
+    font-weight: bold;
+}
+
+
+#left {
+
+    padding-left:75%;
+}
+
+
+img {
+    height: 100px;
+
+    margin-top: 20px;
+}
+body {
+
+    margin-top: 100px;
+    border: 1px solid blue;
+    height: 1055px;
+}
+
+
+ .sideNav {
+
+    
+    float: left;
+    box-shadow: 5px 0 2px #969090;
+    width: 335px;
+    height: 1055px;
+   
+
+}
+
+.contentContainerRight {
+    width:1562px;
+    height: 1055px;
+    margin-left: 17.9%;
+    border: 1px solid green;
+   padding-left: 50px;
+
+
+}
+form {
+    border: 1px solid red;
+    width: 1300px;
+    margin: 5% 5%;
+    height: 900px;
+
+
+}

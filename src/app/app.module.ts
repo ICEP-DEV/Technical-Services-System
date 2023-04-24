@@ -6,9 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './redirectPages/navbar/navbar.component';
 import { FooterComponent } from './redirectPages/footer/footer.component';
-import { HomeComponent } from './pages/home/home.component';
+
 import { ViewrequestComponent } from './pages/viewrequest/viewrequest.component';
 import { ComponentComponent } from './component/component.component';
+import { HomeComponent } from './pages/home/home.component';
+import { TrackRequestComponent } from './pages/track-request/track-request.component';
+
 
 
 
@@ -22,6 +25,8 @@ import { ComponentComponent } from './component/component.component';
     NavbarComponent,
     FooterComponent,
     ComponentComponent,
+    HomeComponent,
+    TrackRequestComponent,
     
 
     
