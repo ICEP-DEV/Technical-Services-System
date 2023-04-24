@@ -4,6 +4,14 @@
     
 }
 
+.center 
+{
+    margin-right: 35%;
+    font-weight: bold;
+    font-size: 50px;
+    color: aliceblue;
+}
+
 a {
     color: white;
     font-weight: bold;
@@ -50,10 +58,45 @@ body {
 
 }
 form {
-    border: 1px solid red;
+    
     width: 1300px;
     margin: 5% 5%;
     height: 900px;
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    border: 1px solid #969090;
+    box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 
 
+}
+.toptitle {
+   
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 0.15em;
+    background: #ECE7E7;
+    width: 1110px;
+    margin:5% 6%;
+    padding-left: 50px;
+}
+
+
+.breadcrumblink {
+
+    margin: 10% 50px;
+    padding: 10px;
+    
+   
+   
+    
+    
+}
+ol {
+    border-bottom: 3px solid #005596;
+    width: 50px;
+    
+    
 }
