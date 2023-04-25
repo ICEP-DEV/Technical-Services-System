@@ -47,43 +47,6 @@ body {
    
 
 }
-
-.contentContainerRight {
-    width:1562px;
-    height: 1055px;
-    margin-left: 17.9%;
-    border: 1px solid green;
-   padding-left: 50px;
-
-
-}
-form {
-    
-    width: 1300px;
-    margin: 5% 5%;
-    height: 900px;
-    background: #FFFFFF;
-    mix-blend-mode: normal;
-    border: 1px solid #969090;
-    box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-
-
-}
-.toptitle {
-   
-    font-style: normal;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 36px;
-    letter-spacing: 0.15em;
-    background: #ECE7E7;
-    width: 1110px;
-    margin:5% 6%;
-    padding-left: 50px;
-}
-
-
 .breadcrumbNav {
 
     
@@ -102,11 +65,10 @@ form {
 }
 
  a {
-    padding-top: 20px;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 25px;
     /* identical to box height */
 
     letter-spacing: 0.035em;
@@ -125,8 +87,91 @@ form {
     
     border-bottom: 3px solid #005596;
     width: 70px;
+    padding-left: 0;
     
+}
+
+
+.contentContainerRight {
     
+    width:1562px;
+    height: 1055px;
+    margin-left: 17.9%;
+    border: 1px solid green;
+   padding-left: 50px;
+
+
+}
+form {
     
+    width: 1300px;
+    margin: 5% 5%;
+    height: 830px;
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    border: 1px solid #969090;
+    box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+
+}
+
+.contentForm {
+        
+        margin-top: 7%;
+}
+.toptitle {
+   
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 0.15em;
+    background: #ECE7E7;
+    width: 1110px;
+    height: 40px;
+    margin:5% 6%;
+    padding-left: 50px;
+}
+
+.myTable {
+
     
+    padding: 5% 20%;
+    
+}
+table {
+    margin-top: 2%;
+    border: 1px solid black;
+    width: 790px;
+    height: 300px;
+}
+
+.rowPadding {
+    padding: 13% 10px;
+}
+
+.requestimgSize {
+
+    width: 50px;
+    height:50px ;
+}
+.rowPaddingImage {
+    padding: 8% 10px;
+}
+.rowPaddingDropDown {
+    padding: 13% 50px;
+}
+select {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.045em;
+
+    border: 3px solid #000000;
+    border-radius: 10px;
+
+    width: 150px;
+    height: 42px;
 }

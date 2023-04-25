@@ -11,6 +11,8 @@ import { ViewrequestComponent } from './pages/viewrequest/viewrequest.component'
 import { ComponentComponent } from './component/component.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TrackRequestComponent } from './pages/track-request/track-request.component';
+import { StafffeedbackComponent } from './pages/stafffeedback/stafffeedback.component';
+import { TechnicianViewTaskComponent } from './pages/technician-view-task/technician-view-task.component';
 
 
 
@@ -27,6 +29,9 @@ import { TrackRequestComponent } from './pages/track-request/track-request.compo
     ComponentComponent,
     HomeComponent,
     TrackRequestComponent,
+    StafffeedbackComponent,
+    TechnicianViewTaskComponent
+   
     
 
     
