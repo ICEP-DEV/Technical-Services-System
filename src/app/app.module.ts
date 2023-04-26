@@ -14,6 +14,9 @@ import { TrackRequestComponent } from './pages/track-request/track-request.compo
 import { StafffeedbackComponent } from './pages/stafffeedback/stafffeedback.component';
 import { TechnicianViewTaskComponent } from './pages/technician-view-task/technician-view-task.component';
 import { AdminviewrequestComponent } from './pages/adminviewrequest/adminviewrequest.component';
+import { AvailabletechnicianComponent } from './pages/availabletechnician/availabletechnician.component';
+import { AdminviewsinglerequestComponent } from './pages/adminviewsinglerequest/adminviewsinglerequest.component';
+import { AdminassigntaskComponent } from './pages/adminassigntask/adminassigntask.component';
 
 
 
@@ -32,7 +35,10 @@ import { AdminviewrequestComponent } from './pages/adminviewrequest/adminviewreq
     TrackRequestComponent,
     StafffeedbackComponent,
     TechnicianViewTaskComponent,
-    AdminviewrequestComponent
+    AdminviewrequestComponent,
+    AvailabletechnicianComponent,
+    AdminviewsinglerequestComponent,
+    AdminassigntaskComponent
    
     
 

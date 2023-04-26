@@ -7,6 +7,8 @@ import { TrackRequestComponent } from './pages/track-request/track-request.compo
 import { StafffeedbackComponent } from './pages/stafffeedback/stafffeedback.component';
 import { TechnicianViewTaskComponent } from './pages/technician-view-task/technician-view-task.component';
 import { AdminviewrequestComponent } from './pages/adminviewrequest/adminviewrequest.component';
+import { AvailabletechnicianComponent } from './pages/availabletechnician/availabletechnician.component';
+import { AdminviewsinglerequestComponent } from './pages/adminviewsinglerequest/adminviewsinglerequest.component';
 
 
 const routes: Routes = [
@@ -17,7 +19,10 @@ const routes: Routes = [
     {path:'trackrequest',component:TrackRequestComponent},
     {path:'stafffeedback', component:StafffeedbackComponent},
     {path:'technician', component:TechnicianViewTaskComponent},
-    {path:'adminview', component:AdminviewrequestComponent}
+    {path:'adminview', component:AdminviewrequestComponent},
+    {path:'availabletechs', component:AvailabletechnicianComponent},
+    {path:'adminsinglerequest', component:AdminviewsinglerequestComponent},
+    {path:'assigntask'}
 ];
 
 @NgModule({
