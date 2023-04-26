@@ -6,6 +6,7 @@ import { ComponentComponent } from './component/component.component';
 import { TrackRequestComponent } from './pages/track-request/track-request.component';
 import { StafffeedbackComponent } from './pages/stafffeedback/stafffeedback.component';
 import { TechnicianViewTaskComponent } from './pages/technician-view-task/technician-view-task.component';
+import { AdminviewrequestComponent } from './pages/adminviewrequest/adminviewrequest.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
     {path:'component', component:ViewrequestComponent},
     {path:'trackrequest',component:TrackRequestComponent},
     {path:'stafffeedback', component:StafffeedbackComponent},
-    {path:'technician', component:TechnicianViewTaskComponent}
+    {path:'technician', component:TechnicianViewTaskComponent},
+    {path:'adminview', component:AdminviewrequestComponent}
 ];
 
 @NgModule({

@@ -13,6 +13,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { TrackRequestComponent } from './pages/track-request/track-request.component';
 import { StafffeedbackComponent } from './pages/stafffeedback/stafffeedback.component';
 import { TechnicianViewTaskComponent } from './pages/technician-view-task/technician-view-task.component';
+import { AdminviewrequestComponent } from './pages/adminviewrequest/adminviewrequest.component';
 
 
 
@@ -30,7 +31,8 @@ import { TechnicianViewTaskComponent } from './pages/technician-view-task/techni
     HomeComponent,
     TrackRequestComponent,
     StafffeedbackComponent,
-    TechnicianViewTaskComponent
+    TechnicianViewTaskComponent,
+    AdminviewrequestComponent
    
     
 
