@@ -22,7 +22,7 @@ const routes: Routes = [
     {path:'adminview', component:AdminviewrequestComponent},
     {path:'availabletechs', component:AvailabletechnicianComponent},
     {path:'adminsinglerequest', component:AdminviewsinglerequestComponent},
-    {path:'assigntask'}
+   
 ];
 
 @NgModule({
