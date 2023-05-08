@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import {HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -38,7 +39,8 @@ import { AdminassigntaskComponent } from './pages/adminassigntask/adminassigntas
     AdminviewrequestComponent,
     AvailabletechnicianComponent,
     AdminviewsinglerequestComponent,
-    AdminassigntaskComponent
+    AdminassigntaskComponent,
+    
    
     
 
@@ -48,7 +50,8 @@ import { AdminassigntaskComponent } from './pages/adminassigntask/adminassigntas
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
