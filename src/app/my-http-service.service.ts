@@ -51,16 +51,34 @@ export class MyHttpServiceService {
         
       }
       
+      /*
       getSpecificData ():Observable<any> {
 
         return this.httpClient.get<any>(this.apiUrlTech+"/path to got to as it appears on the Api router")
       }
+      
         
 
       getData1(): Observable<any>  {
 
         return this.httpClient.get(this.apiUrlTech + "path")
   
+      }
+      */
+
+      private apiUrlSendRequest = "http://192.168.27.24:3000/admin/viewAllrequest";
+      getSentRequesData(): Observable<any> {
+        return this.httpClient.get(this.apiUrlSendRequest);
+        
+      }
+
+      //Api post connection
+      
+      postStaffFeedback(data: string): Observable<any> {
+
+        const stafffeedbackUrl = "http://192.168.27.24:3000/staff/sendFeedbck";
+        return this.httpClient.post(stafffeedbackUrl,data);
+
       }
     
 }
