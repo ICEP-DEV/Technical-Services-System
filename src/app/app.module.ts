@@ -19,6 +19,8 @@ import { AvailabletechnicianComponent } from './pages/availabletechnician/availa
 import { AdminviewsinglerequestComponent } from './pages/adminviewsinglerequest/adminviewsinglerequest.component';
 import { AdminassigntaskComponent } from './pages/adminassigntask/adminassigntask.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

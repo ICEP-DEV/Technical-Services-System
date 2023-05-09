@@ -43,7 +43,9 @@ export class MyHttpServiceService {
       //}
 
 
+      /*
       
+      */
       //Api connection to get the available technician
 
       getTechData(): Observable<any> {
@@ -66,7 +68,10 @@ export class MyHttpServiceService {
       }
       */
 
-      private apiUrlSendRequest = "http://192.168.27.24:3000/admin/viewAllrequest";
+      
+      //Api to get the sent request from the connection  
+
+      private apiUrlSendRequest = "http://192.168.27.20:3000/admin/viewAllrequest";
       getSentRequesData(): Observable<any> {
         return this.httpClient.get(this.apiUrlSendRequest);
         
@@ -76,9 +81,11 @@ export class MyHttpServiceService {
       
       postStaffFeedback(data: string): Observable<any> {
 
-        const stafffeedbackUrl = "http://192.168.27.24:3000/staff/sendFeedbck";
+        const stafffeedbackUrl = "http://192.168.27.20:3000/staff/sendFeedbck";
         return this.httpClient.post(stafffeedbackUrl,data);
 
       }
+      
+      
     
 }

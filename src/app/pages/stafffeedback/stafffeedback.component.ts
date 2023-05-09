@@ -11,7 +11,9 @@ export class StafffeedbackComponent {
   option = "";
   description = "";
    data = "";
-  id = "";
+  storeApiFromData  = [];
+  storeApiFromData1 = [];
+  array = [];
 
 
   constructor (private staffServ:MyHttpServiceService) {  
@@ -23,6 +25,7 @@ export class StafffeedbackComponent {
     console.log('You have clicked the submit button');
     console.log(feedback.value.inlineRadioOptions);
     console.log(feedback.value.description);
+    console.log();
 
     if (feedback.value.inlineRadioOptions == "" && feedback.value.description == "") {
 
@@ -56,15 +59,15 @@ export class StafffeedbackComponent {
      
     this.staffServ.getSentRequesData().subscribe((v) => {
         
-        this.id = v;
-      
-    })
+        console.log( this.storeApiFromData1 = v);
 
-    this.id.split(",", this.id.length);
+         this.array = Object.values(this.storeApiFromData1);
 
+          console.log(this.array);
+        
+    }) 
     
-      
+    
+   
   }
-
-
 }
