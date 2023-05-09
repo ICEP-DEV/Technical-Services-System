@@ -2,13 +2,19 @@
   <div class="log d-flex justify-content-end">
     <NAv>
       <div id="logo-text">
-        <a href="#">
-          <img src="../../../assets/images/tut.png" alt="SMART FARM" style="float: left;height: 72px;width: 225px;">
+        <a >
+          <img src="../../../assets/images/tut.png" alt="SMART FARM" style="float: left;height: 72px;width: 225px;" routerLink="read">
         </a>
       </div>
       <div id="menu-icon">
           <i class="fas fa-bars"></i>
       </div>
+      <ul>
+        <li>
+          
+            <a href = "#"class="nav-link active" id="ModalExample" ><button type="button" class="btn btn-success">LOGOUT</button></a>
+          </li>
+        </ul>
 
   </NAv>
    </div>
@@ -52,12 +58,12 @@
        
         <div>
           
-          <form
+          <form 
           method="POST"
           class="w-100 rounded-1 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3"
           action="#"
           enctype="multipart/form-data"
-          >
+          FormGroup="userForm" (ngSubmit)="staffRequest()" >
           <div class="reqhead1">SEND REQUEST</div>
           
           <label class="Cater" for="Cater">
@@ -66,7 +72,7 @@
           Catergory
         <br>
       <br></label>
-          <select id="Cater">
+          <select id="Cater" formControlName="catergory">
             <option value="select">Select Catergory</option>
             <option value="Hardware">Hardware</option>
             <option value="Hardware">Software</option>
@@ -76,7 +82,7 @@
           <label class="d-block mb-4">
             <span class="form-label d-block">Venue</span>
             <input
-           
+            formControlName="venue"
               type="text"
               class="form-control"
               placeholder="joe.bloggs@example.com"
@@ -86,16 +92,30 @@
           <label class="d-block mb-4">
             <span class="form-label d-block">Description</span>
             <textarea
-           
+            formControlName="description"
               class="form-control"
               rows="3"
               placeholder="Please describe your problem"
             ></textarea>
           </label>
 
-           <label for="formFileDisabled" class="form-label">Image</label>
-          <input class="form-control" type="file" id="formFileDisabled" disabled />
+           <label for="formFileDisabled" class="form-label input-group">Image</label>
+          <input formControlName="image" class="form-control" type="file" id="formFileDisabled"  />
   
+
+
+          <!-- <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+            </div>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile01"
+                aria-describedby="inputGroupFileAddon01">
+              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            </div>
+          </div> -->
+
+
           <div class="mb-3">
             <button type="submit" class="btn btn-primary px-3 rounded-3" >
               Submit

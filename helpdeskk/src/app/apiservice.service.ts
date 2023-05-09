@@ -24,6 +24,16 @@ export class ApiserviceService {
     return this._http.post(this.apiUrl+"/admin/login", data);
   }
 
+  // staffRequests(data:any){
+  //   return this._http.post(this.apiUrl+"/staff/createRequest", data);
+  // }
+
+  staffRequests(data:any):Observable<any>
+  {
+    console.log(data,'createapi=>');
+    
+    return this._http.post(`${this.apiUrl+"/staff/createRequest"}`,data);
+  }
 
   getAllData():Observable<any>
   {

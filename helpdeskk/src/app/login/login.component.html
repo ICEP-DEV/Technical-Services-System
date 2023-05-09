@@ -6,7 +6,7 @@
           method="POST"
           class="w-543px h-383px rounded-1 p-4 border bg-white"
           enctype="multipart/form-data">
-          <button type="button" class="btn-close float-right" (click)="close()" aria-label="Close"></button>
+          <button type="button" class="btn-close .float-right" (click)="close()" aria-label="Close"></button>
           <label class="d-block mb-4">
             <span class="form-label d-block" class="row mx-0 justify-content-center">Admin Number</span>
             <br>
@@ -33,7 +33,7 @@
         
   
           <div class="mb-3 row mx-0 justify-content-center">
-            <button type="submit" class="btn btn-primary px-3 rounded-3" (click)="admin_login()" >
+            <button type="submit" class="btn btn-primary px-3 rounded-3" (click)="admin_login()" routerLink="adminpage" >
               Submit
             </button>
           </div>
