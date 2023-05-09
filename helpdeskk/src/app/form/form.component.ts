@@ -37,23 +37,29 @@ export class FormComponent implements OnInit {
 
   ngOnInit() { }
 
-  staff_login() {
-    console.log(this.staffLogin)
-    if (this.staffLogin.staff_number == '') alert("Email is required")
+  staff_object:any
 
+  staff_login() {
+    if(this.staffLogin.staff_number== '') alert("Staff number is required")
 
     this.service.staffLogin(this.staffLogin)
-      .subscribe((response) => {
-        //this.close()
-        this._router.navigate(['/adminpage'])
-      },
-        (err) => {
-          console.log(err)
-          alert(err.message)
-        }
-      )
+    .subscribe((response)=>{
+      this.staff_object = response
+      console.log(this.staff_object)
+      if(this.staff_object.success == true){
+        this.close()
+        this._router.navigate(['/read'])
+      }else{
+        alert(this.staff_object.message)
+      }
 
-   
+      //
+    },
+    (err)=>{
+      console.log(err)
+      //alert(err.message)
+    }
+    )
   }
   close() {
     this.dialogRef.close();

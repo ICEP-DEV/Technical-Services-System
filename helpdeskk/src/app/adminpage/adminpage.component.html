@@ -3,7 +3,7 @@
 <div class="log d-flex justify-content-end">
     <NAv>
         <div id="logo-text">
-            <a href="#">
+            <a href="../adminpage/adminpage.component.html">
                 <img src="../../../assets/images/tut.png" alt="SMART FARM"
                     style="float: left;height: 72px;width: 225px;">
             </a>
@@ -11,7 +11,11 @@
         <div id="menu-icon">
             <i class="fas fa-bars"></i>
         </div>
-
+        <ul>
+        <li>
+            <a href = "#"class="nav-link active" id="ModalExample" >LOGOUT</a>
+          </li>
+        </ul>
     </NAv>
 </div>
 
@@ -107,7 +111,7 @@
                                 </div>
                             </div>
                             <div class="action justify-content-end mt-2">
-                                <button class="btn bg-secondary" style="height: 3rem; width: 5.5rem;" [routerLink]="['/viewrequest']">View</button>
+                                <button class="btn bg-secondary" style="height: 3rem; width: 5.5rem;" routerLink="viewrequest">View</button>
                             </div>
                         </div>
                     </div>
