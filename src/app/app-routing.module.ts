@@ -10,7 +10,6 @@ import { AdminviewrequestComponent } from './pages/adminviewrequest/adminviewreq
 import { AvailabletechnicianComponent } from './pages/availabletechnician/availabletechnician.component';
 import { AdminviewsinglerequestComponent } from './pages/adminviewsinglerequest/adminviewsinglerequest.component';
 
-
 const routes: Routes = [
 
     {path:'', component:HomeComponent},
