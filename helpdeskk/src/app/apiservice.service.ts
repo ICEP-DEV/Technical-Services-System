@@ -24,6 +24,7 @@ export class ApiserviceService {
     return this._http.post(this.apiUrl+"/admin/login", data);
   }
 
+
   getAllData():Observable<any>
   {
     return this._http.get(`${this.apiUrl+"/admin/viewAllrequest"}`);
