@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
-import { MyHttpServiceService } from 'src/app/my-http-service.service';
+CSS 
 
-@Component({
-  selector: 'app-stafffeedback',
-  templateUrl: './stafffeedback.component.html',
-  styleUrls: ['./stafffeedback.component.css']
-})
-export class StafffeedbackComponent {
 
-  option = "";
+HTML
+
+
+
+
+
+.TS FILE
+
+option = "";
   description = "";
    data = "";
   id = "";
@@ -57,14 +58,10 @@ export class StafffeedbackComponent {
     this.staffServ.getSentRequesData().subscribe((v) => {
         
         this.id = v;
-      
+       
+       
     })
-
-    this.id.split(",", this.id.length);
 
     
       
   }
-
-
-}

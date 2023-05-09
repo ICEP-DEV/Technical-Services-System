@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule , Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ViewrequestComponent } from './pages/viewrequest/viewrequest.component';
 import { ComponentComponent } from './component/component.component';
