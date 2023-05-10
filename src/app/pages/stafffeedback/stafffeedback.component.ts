@@ -21,6 +21,9 @@ export class StafffeedbackComponent {
 
   
   errorMsg = ["Both fields are empty","Description is required","3"];
+
+  tempJobcard:any
+  
   submitResults(feedback: any) {
     console.log('You have clicked the submit button');
     console.log(feedback.value.inlineRadioOptions);
@@ -61,13 +64,15 @@ export class StafffeedbackComponent {
         
         console.log( this.storeApiFromData1 = v);
 
-         this.array = Object.values(this.storeApiFromData1);
+          //this.array = Object.values(this.storeApiFromData1);
 
-          console.log(this.array);
+                        //console.log(this.array);
         
     }) 
     
     
+   
+   
    
   }
 }

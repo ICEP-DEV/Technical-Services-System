@@ -4,3 +4,16 @@
     padding: 0;
     margin: 0;
 }
+/*desktop*/
+@media screen and (max-width <= 992px){
+    
+}
+/*tablets*/
+@media screen and (max-width <= 768px) {
+
+ 
+}
+/*phones*/
+@media screen and (max-width <= 576px) {
+    
+}

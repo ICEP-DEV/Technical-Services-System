@@ -38,7 +38,7 @@
                 <div class = "myTable">
                     <table class="table table-bordered">
                         <thead>
-                          <tr>
+                          <tr *ngFor = "let data of fetchedTechTaskData ">
                             <th scope="col">Name</th>
                             <th scope="col">Category</th>
                             <th scope="col">Description</th>

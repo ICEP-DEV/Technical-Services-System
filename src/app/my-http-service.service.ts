@@ -18,7 +18,10 @@ export class MyHttpServiceService {
 
 
       //Api url  for available technicians
-      private apiUrlTech = "http://192.168.27.24:3000/admin/availableTechnician";
+      private apiUrlTech = "http://192.168.27.20:3000/admin/availableTechnician";
+
+      private techTaskUrl = "http://192.168.27.20:3000";
+      private adminViewRequest = "http://192.168.27.20:3000";
 
       //data.json file url  
        apiUrlJson = "/assets/demoData.json" ;
@@ -52,6 +55,12 @@ export class MyHttpServiceService {
         return this.httpClient.get(this.apiUrlTech);
         
       }
+
+       //Connection to get tech task data from server
+
+      getTechTaskData(): Observable<any>{
+        return this.httpClient.get(this.techTaskUrl);
+       }
       
       /*
       getSpecificData ():Observable<any> {
@@ -85,6 +94,13 @@ export class MyHttpServiceService {
         return this.httpClient.post(stafffeedbackUrl,data);
 
       }
+
+
+      getAllRequests():Observable<any>{
+        return this.httpClient.get(this.adminViewRequest);
+      }
+
+     
       
       
     
