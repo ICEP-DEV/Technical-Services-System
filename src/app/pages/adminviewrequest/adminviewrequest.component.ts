@@ -7,7 +7,7 @@ import { MyHttpServiceService } from 'src/app/my-http-service.service';
   styleUrls: ['./adminviewrequest.component.css']
 })
 export class AdminviewrequestComponent implements OnInit {
-
+  requests = [];
   constructor(private adminServ:MyHttpServiceService){
 
   }
@@ -17,8 +17,11 @@ export class AdminviewrequestComponent implements OnInit {
   }
 
   getAdminAllrequests(){
-    this.adminServ.getAllRequests().subscribe((v) => 
+    this.adminServ.getAllRequests().subscribe((v) => {
       console.log(v)
+      this.requests = v;
+    }
+
     );
   }
 

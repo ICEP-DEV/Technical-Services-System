@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MyHttpServiceService } from 'src/app/my-http-service.service'; 
 
 @Component({
@@ -6,13 +6,17 @@ import { MyHttpServiceService } from 'src/app/my-http-service.service';
   templateUrl: './technician-view-task.component.html',
   styleUrls: ['./technician-view-task.component.css']
 })
-export class TechnicianViewTaskComponent {
+export class TechnicianViewTaskComponent implements OnInit{
   fetchedTechTaskData = [];
   constructor(private techViewServ:MyHttpServiceService) {
       
   }
+  ngOnInit() {
+    this.getTechTask();
+  }
 
-  submit() {
+
+  getTechTask(){
     this.techViewServ.getTechTaskData().subscribe((v) => {
       console.log(v);
       this.fetchedTechTaskData = v;

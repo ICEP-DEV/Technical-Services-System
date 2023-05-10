@@ -18,13 +18,13 @@ export class MyHttpServiceService {
 
 
       //Api url  for available technicians
-      private apiUrlTech = "http://192.168.27.20:3000/admin/availableTechnician";
-
-      private techTaskUrl = "http://192.168.27.20:3000";
-      private adminViewRequest = "http://192.168.27.20:3000";
+      private apiUrlTech = "http://192.168.27.20:3000/admin/";
+      private stafffeedbackUrl = "http://192.168.27.20:3000/staff/"
+      //private techTaskUrl = "http://192.168.27.20:3000";
+     // private adminViewRequest = "http://192.168.27.20:3000";
 
       //data.json file url  
-       apiUrlJson = "/assets/demoData.json" ;
+      // apiUrlJson = "/assets/demoData.json" ;
  
 
 
@@ -59,7 +59,7 @@ export class MyHttpServiceService {
        //Connection to get tech task data from server
 
       getTechTaskData(): Observable<any>{
-        return this.httpClient.get(this.techTaskUrl);
+        return this.httpClient.get(this.apiUrlTech);
        }
       
       /*
@@ -80,24 +80,20 @@ export class MyHttpServiceService {
       
       //Api to get the sent request from the connection  
 
-      private apiUrlSendRequest = "http://192.168.27.20:3000/admin/viewAllrequest";
       getSentRequesData(): Observable<any> {
-        return this.httpClient.get(this.apiUrlSendRequest);
-        
+        return this.httpClient.get(this.apiUrlTech+"viewAllrequest");
       }
 
       //Api post connection
       
-      postStaffFeedback(data: string): Observable<any> {
-
-        const stafffeedbackUrl = "http://192.168.27.20:3000/staff/sendFeedbck";
-        return this.httpClient.post(stafffeedbackUrl,data);
+      postStaffFeedback(data: any): Observable<any> {
+        return this.httpClient.post(this.stafffeedbackUrl+"sendFeedback",data);
 
       }
 
 
       getAllRequests():Observable<any>{
-        return this.httpClient.get(this.adminViewRequest);
+        return this.httpClient.get(this.apiUrlTech);
       }
 
      
