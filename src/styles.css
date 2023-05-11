@@ -6,10 +6,16 @@
 }
 /*desktop*/
 @media screen and (max-width <= 992px){
-    
+    body {display: flex;
+            flex-direction: column;
+    }
+       
+   
 }
 /*tablets*/
-@media screen and (max-width <= 768px) {
+@media screen and (max-width <= 1195px) {
+
+    
 
  
 }

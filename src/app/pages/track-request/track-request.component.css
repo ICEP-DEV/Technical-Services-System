@@ -62,11 +62,9 @@ form {
     width: 1300px;
     margin: 5% 5%;
     height: 900px;
-    background: #FFFFFF;
-    mix-blend-mode: normal;
-    border: 1px solid #969090;
-    box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
+
+    /*Note that the background form is not visible behind, nut it is there*/
+    
 
 
 }
@@ -129,4 +127,47 @@ form {
     
     
     
+}
+
+.container {
+    margin: 20px auto;
+    width: 850px;
+    text-align: center;
+   
+}
+
+.container .progress {
+    margin: 0 auto;
+    width: 800px;
+}
+.progress {
+    padding: 4px;
+    background:white;
+    border:1px solid gray;
+}
+
+label {
+    display: inline-block;
+    margin: 0 60px 10px;
+    padding: 5px 15px;
+   
+
+}
+#red{
+    color: red;
+}
+
+#amber{
+    color: orange;
+}
+#gray{
+    color: gray;
+}
+#green{
+    color: green;
+}
+
+.progressBar {
+    width: 50%;
+    background-color: #005596;
 }

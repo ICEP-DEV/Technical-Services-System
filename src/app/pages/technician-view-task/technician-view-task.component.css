@@ -107,11 +107,7 @@ form {
     width: 1300px;
     margin: 5% 5%;
     height: 830px;
-    background: #FFFFFF;
-    mix-blend-mode: normal;
-    border: 1px solid #969090;
-    box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
+   
 
 
 }
