@@ -39,12 +39,13 @@ export class LoginComponent implements OnInit {
     this.service.adminLogin(this.adminLogin)
     .subscribe((response)=>{
       this.admin_object = response
-      console.log(this.admin_object)
+      console.log(this.admin_object.body)
       if(this.admin_object.success == true){
+        localStorage.setItem('logindata',JSON.stringify(this.admin_object.body))
         this.close()
         this._router.navigate(['/adminpage'])
       }else{
-        alert(this.admin_object.message)
+        alert("user not found with these credentials")
       }
 
       //

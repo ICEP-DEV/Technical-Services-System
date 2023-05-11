@@ -11,6 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { TechloginComponent } from './techlogin/techlogin.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { ViewrequestComponent } from './viewrequest/viewrequest.component';
+import { AuthGuard } from './auth.guard';
 
 
 
@@ -22,7 +23,7 @@ const routes: Routes = [
   {path: 'dashboard',component: DashboardComponent},
   {path: 'read',component: ReadComponent},
   {path: 'techlogin',component: TechloginComponent},
-  {path: 'adminpage',component: AdminpageComponent},
+  {path: 'adminpage',component: AdminpageComponent,canActivate:[AuthGuard]},
   {path: 'viewrequest',component: ViewrequestComponent}
  
 

@@ -22,6 +22,9 @@ export class AdminpageComponent implements OnInit {
     })
   }
 
+  logout(){
+    localStorage.removeItem('logindata')
+  }
   
 
 }
