@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
       //
     },
     (err)=>{
-      console.log(err)
+      alert("Something went wrong, please try after some time")
       //alert(err.message)
     }
     )
