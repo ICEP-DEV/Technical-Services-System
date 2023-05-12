@@ -15,7 +15,7 @@ export class FormComponent implements OnInit {
 
   errormsg: any;
   staffLogin = {
-    staff_number: '',
+    staff_id: '',
   }
 
   // userForm = new FormGroup({
@@ -33,30 +33,31 @@ export class FormComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private service: ApiserviceService,
     private _router: Router
-  ) { }
+  ) {}
 
   ngOnInit() { }
 
   staff_object:any
 
   staff_login() {
-    if(this.staffLogin.staff_number== '') alert("Staff number is required")
+    if(this.staffLogin.staff_id== '') alert("Staff number is required")
 
     this.service.staffLogin(this.staffLogin)
     .subscribe((response)=>{
       this.staff_object = response
-      console.log(this.staff_object)
+      console.log(this.staff_object.body)
       if(this.staff_object.success == true){
+        localStorage.setItem('stafflogin',JSON.stringify(this.staff_object.body))
         this.close()
         this._router.navigate(['/read'])
       }else{
-        alert(this.staff_object.message)
+        alert("Staff not found")
       }
 
       //
     },
     (err)=>{
-      console.log(err)
+      alert("Something went wrong, please try after some time")
       //alert(err.message)
     }
     )

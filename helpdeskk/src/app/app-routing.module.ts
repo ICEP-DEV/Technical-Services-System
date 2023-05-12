@@ -21,10 +21,10 @@ const routes: Routes = [
   {path: 'form', component: FormComponent},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard',component: DashboardComponent},
-  {path: 'read',component: ReadComponent},
+  {path: 'read',component: ReadComponent,canActivate:[AuthGuard]},
   {path: 'techlogin',component: TechloginComponent},
   {path: 'adminpage',component: AdminpageComponent,canActivate:[AuthGuard]},
-  {path: 'viewrequest',component: ViewrequestComponent}
+  {path: 'viewrequest',component: ViewrequestComponent,canActivate:[AuthGuard]}
  
 
 ];

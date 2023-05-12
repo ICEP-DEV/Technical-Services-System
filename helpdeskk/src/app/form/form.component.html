@@ -8,12 +8,13 @@
           action="#"
           enctype="multipart/form-data"
           >
-          <button type="button" class="btn-close float-right" (click)="close()" aria-label="Close"></button>
+          <button  id="b12" type="button" class="btn-close float-right" (click)="close()" aria-label="Close"></button>
+          <br>
           <label class="d-block mb-4">
             <span class="form-label d-block" class="row mx-0 justify-content-center">Staff Number</span>
             <br>
             <input
-            [(ngModel)]="staffLogin.staff_number" name="staffLogin.staff_number"
+            [(ngModel)]="staffLogin.staff_id" name="staffLogin.staff_id"
            
               type="text"
               class="form-control"

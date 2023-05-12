@@ -50,6 +50,9 @@ export class ReadComponent implements OnInit{
   //   });
   // }
 
+  logout(){
+    localStorage.removeItem('stafflogin')
+  }
   
 }
 
