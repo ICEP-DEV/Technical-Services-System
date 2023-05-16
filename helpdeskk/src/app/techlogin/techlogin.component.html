@@ -6,14 +6,15 @@
           class="w-543px h-383px rounded-1 p-4 border bg-white"
           action="#"
           enctype="multipart/form-data"
-          [formGroup]="userForm" (ngSubmit)="userSubmit()">
+          >
           <button id="b12" type="button" class="btn-close float-right" (click)="close()" aria-label="Close"></button>
           <br>
           <label class="d-block mb-4">
             <span class="form-label d-block" class="row mx-0 justify-content-center">Technician Number</span>
             <br>
             <input
-            formControlName="name"
+            [(ngModel)]="techLogin.tech_id" name="techLogin.email"
+           
               type="text"
               class="form-control"
               placeholder="214412845"
@@ -24,7 +25,8 @@
             <span class="form-label d-block" class="row mx-0 justify-content-center">Password</span>
             <br>
             <input
-            formControlName="name"
+            [(ngModel)]="techLogin.password" name="techLogin.password"
+            
               type="text"
               class="form-control"
               placeholder="214412845"
@@ -35,7 +37,7 @@
         
   
           <div class="mb-3 row mx-0 justify-content-center">
-            <button type="submit" class="btn btn-primary px-3 rounded-3" (click)="close()">
+            <button type="submit" class="btn btn-primary px-3 rounded-3" (click)="tech_login()">
               Submit
             </button>
           </div>

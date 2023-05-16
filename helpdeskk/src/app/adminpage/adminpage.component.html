@@ -26,6 +26,7 @@
 <br>
 
 
+
 <div class="container2 d-flex justify-content-between ">
     <ul class="nav nav-tabs flex-column justify-content-center" id="myTab" role="tablist">
 
@@ -85,11 +86,13 @@
             <!-- class="ps-5 w-90 rounded-1 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-8 px-lg-2 col-xl-11 px-xl-0 px-xxl-3" -->
 
             <div class="content card mt-4 p-4">
+
+                
                 <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Admin View Request</h1>
-                <div *ngFor = "let us of [1,2] " class="request card mt-2">
+                <div *ngFor = "let us of readData" class="request card mt-2">
                     <div class="card-body">
                         <div class="top d-flex justify-content-between">
-                            <p><b>Ref:</b>  6789hhn</p>
+                            <p><b>Ref:</b> {{us.id}}</p>
                             <p>23/10/2023</p>
                         </div>
                         <div class=" d-flex justify-content-between">
@@ -106,8 +109,8 @@
                                     </g>
                                 </svg>
                                 <div class="personal ps-2 mt-2" style="font-size: 1.5rem;">
-                                    <p class="">Steve Stefla</p>
-                                    <p class="">steve@tut.ac.za</p>
+                                    <p class="">{{us.staff_name}} {{us.staff_surname}}</p>
+                                    <p class="">{{us.email}}</p>
                                 </div>
                             </div>
                             <div class="action justify-content-end mt-2">

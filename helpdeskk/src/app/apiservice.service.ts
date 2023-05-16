@@ -24,6 +24,14 @@ export class ApiserviceService {
     return this._http.post(this.apiUrl+"/admin/login", data);
   }
 
+  techLogin(data:any){
+    return this._http.post(this.apiUrl+"/technician/login", data);
+  }
+
+  request(data:any){
+    return this._http.post(this.apiUrl+"/staff/createRequest", data);
+  }
+
   // staffRequests(data:any){
   //   return this._http.post(this.apiUrl+"/staff/createRequest", data);
   // }
@@ -37,7 +45,7 @@ export class ApiserviceService {
 
   getAllData():Observable<any>
   {
-    return this._http.get(`${this.apiUrl+"/admin/viewAllrequest"}`);
+    return this._http.get(`${this.apiUrl+"/admin/viewRequester"}`);
   }
 
   createData(data:any):Observable<any>

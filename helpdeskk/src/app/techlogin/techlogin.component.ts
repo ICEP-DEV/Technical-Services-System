@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ApiserviceService } from '../apiservice.service';
 import { Component, OnInit, Inject } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-techlogin',
@@ -13,32 +14,56 @@ export class TechloginComponent implements OnInit {
 
   errormsg: any;
 
-  userForm = new FormGroup({
-    'email': new FormControl('', [Validators.required, Validators.email]),
-    'password': new FormControl('', Validators.required),
+
+
+  // userForm = new FormGroup({
+  //   'email': new FormControl('', [Validators.required, Validators.email]),
+  //   'password': new FormControl('', Validators.required),
     
     
-  });
+  // });
+  techLogin= {
+    tech_id:'',
+    password:''
+  }
+
+
 
   constructor(
     public dialogRef: MatDialogRef<TechloginComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private service: ApiserviceService
+    private service: ApiserviceService,
+    private _router: Router
   ) {}
 
   ngOnInit() {}
 
-  userSubmit() {
-    if (this.userForm.valid) {
-      console.log(this.userForm.value);
-      this.service.createData(this.userForm.value).subscribe(res => {
-        console.log(res, 'res==>');
-        this.userForm.reset();
-      });
-    } else {
-      this.errormsg = 'All fields are required';
+  tech_object:any
+  tech_login() {
+    if(this.techLogin.tech_id== '') alert("Email is required")
+    if(this.techLogin.password == '') alert("Password is required")
+
+    this.service.techLogin(this.techLogin)
+    .subscribe((response)=>{
+      this.tech_object = response
+      console.log(this.tech_object.body)
+      if(this.tech_object.success == true){
+        localStorage.setItem('techlogin',JSON.stringify(this.tech_object.body))
+        this.close()
+        this._router.navigate(['/dashboard'])
+      }else{
+        alert("user not found with these credentials")
+      }
+
+      //
+    },
+    (err)=>{
+      alert("Something went wrong, please try after some time")
+      //alert(err.message)
     }
-  }
+    )
+  } 
+
 
   close(): void {
     this.dialogRef.close();

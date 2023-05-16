@@ -14,11 +14,12 @@ export class AdminpageComponent implements OnInit {
   constructor(private service:ApiserviceService) { }
 
   readData:any;
+  temData:any
 
   ngOnInit(): void{
     this.service.getAllData().subscribe((res)=>{
-      console.log(res,"res==>");
-      this.readData = res.data;
+      console.log(res.result,"res==>");
+      this.readData = res.result
     })
   }
 

@@ -40,8 +40,9 @@ export class FormComponent implements OnInit {
   staff_object:any
 
   staff_login() {
-    if(this.staffLogin.staff_id== '') alert("Staff number is required")
-
+    if(this.staffLogin.staff_id=='') {
+      alert("Staff number is required")
+    }
     this.service.staffLogin(this.staffLogin)
     .subscribe((response)=>{
       this.staff_object = response
@@ -50,7 +51,8 @@ export class FormComponent implements OnInit {
         localStorage.setItem('stafflogin',JSON.stringify(this.staff_object.body))
         this.close()
         this._router.navigate(['/read'])
-      }else{
+      }
+      else{
         alert("Staff not found")
       }
 
