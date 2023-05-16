@@ -5,7 +5,8 @@
       <div class="container-fluid sticky fixed-top " >
   
             <!--Start of logo -->
-            <h1 class="navbar-brand" routerLink=""><img src="/assets/images/tutLogo.png"> </h1> <P class = "center">TRACK REQUEST PAGE</P>
+            <h1 class="navbar-brand" routerLink=""><img class ="logo" src="/assets/images/tutLogo.png"> </h1> 
+            <img class="toggleMenu" src="/assets/images/icons8-menu.svg">
     
             <!--End of logo-->
       </div>
@@ -31,24 +32,18 @@
     <div class = "contentContainerRight">
             <form class="backFrom">
                 <h3 class = "toptitle">Staff Track Request</h3>
+               
+                <div class = "container">
+                        <label for="zero" id="red" (click)="recieveAllRequest()">Todo</label>
+                        <label for="fifty" id="amber" (click)="getInprogress()">InProgress</label>
+                        <label for="zero" id="gray" (click)="getOnHoldTasks()">OnHold</label>
+                        <label for="hundred" id="green" (click)="getCompleteTasks()">Done</label>
+                </div>
                 <table>
-                    <tr *ngFor = "let request of dataFetched">
-
+                    <tr class="middle" *ngFor = "let request of allRequest">
+                        <td>{{request.progress}}</td>
                     </tr>
                 </table>
-                <div class = "container">
-                        <label for="zero" id="red">Todo</label>
-                        <label for="fifty" id="amber">InProgress</label>
-                        <label for="zero" id="gray">OnHold</label>
-                        <label for="hundred" id="green">Done</label>
-                        <div class="progress">
-                                <div class="progressBar">
-
-                                </div>
-                        </div>
-                    
-
-                </div>
             </form>
     </div>
 

@@ -19,7 +19,7 @@ export class AvailabletechnicianComponent implements OnInit{
   }
 
   getData(){
-    this.techService.getTechData().subscribe(v => {console.log(v)});
+    this.techService.getTechAvailable().subscribe(v => {console.log(v)});
   }
 
 }

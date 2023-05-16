@@ -38,19 +38,18 @@
                 <div class = "myTable">
                     <table class="table table-bordered">
                         <thead>
-                          <tr *ngFor = "let data of fetchedTechTaskData ">
-                            <th scope="col">Name</th>
+                          <tr >
                             <th scope="col">Category</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Priority</th>
                             <th scope="col">Venue</th>
-                            <th scope="col">Image</th>
                             <th scope="col">Progress Status</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td class="rowPadding">King Malatji</td>
-                            <td class="rowPadding">HardWare</td>
+                          <!--Displaying the technician task using the directive, if they are more than 2 it will use a loop-->
+                          <tr class="overflow-y"*ngFor = "let data of tempRequest ">
+                            <td class="rowPadding">HardWare{{data.category}}</td>
                             <td class="rowPadding">Monitor is broken</td>
                             <td class="rowPadding">10-G42</td>
                             <td class="rowPaddingImage"><img class="requestimgSize" src = "/assets/images/backArrow.png"></td>

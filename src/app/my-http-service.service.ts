@@ -18,9 +18,9 @@ export class MyHttpServiceService {
 
 
       //Api url  for available technicians
-      private apiUrlTech = "http://192.168.27.20:3000/admin/";
-      private stafffeedbackUrl = "http://192.168.27.20:3000/staff/"
-      //private techTaskUrl = "http://192.168.27.20:3000";
+      private apiUrlAdmin = "http://192.168.27.20:3000/admin/";
+      private apiUrlStaff = "http://192.168.27.20:3000/staff/"
+      private apiUrlTech = "http://192.168.27.20:3000/technician/";
      // private adminViewRequest = "http://192.168.27.20:3000";
 
       //data.json file url  
@@ -51,17 +51,29 @@ export class MyHttpServiceService {
       */
       //Api connection to get the available technician
 
-      getTechData(): Observable<any> {
-        return this.httpClient.get(this.apiUrlTech);
+      getTechAvailable(): Observable<any> {
+        return this.httpClient.get(this.apiUrlTech+"");
         
       }
 
-       //Connection to get tech task data from server
+       //Connection to get task assigned to technician from server, who logged based on the ID 
 
-      getTechTaskData(): Observable<any>{
-        return this.httpClient.get(this.apiUrlTech);
+      getTechTaskById(id:Number): Observable<any>{
+        return this.httpClient.get(this.apiUrlTech+"task/"+id);
        }
-      
+        //Posting the technician progress status to the server
+        postTechStatus(data:any): Observable<any> {
+          return this.httpClient.post(this.apiUrlTech+"",data);
+     }
+
+      //get the technican task, with the progress status feedback
+     getTechProgressStatus(): Observable<any> {
+          return this.httpClient.get(this.apiUrlTech+"");
+
+     }
+
+
+
       /*
       getSpecificData ():Observable<any> {
 
@@ -78,23 +90,33 @@ export class MyHttpServiceService {
       */
 
       
-      //Api to get the sent request from the connection  
+      //Api to get the sent request from the connection  ADMIN
 
       getSentRequesData(): Observable<any> {
-        return this.httpClient.get(this.apiUrlTech+"viewAllrequest");
+        return this.httpClient.get(this.apiUrlAdmin+"viewAllrequest");
       }
 
-      //Api post connection
+      //Api post feedback connection STAFF
       
       postStaffFeedback(data: any): Observable<any> {
-        return this.httpClient.post(this.stafffeedbackUrl+"sendFeedback",data);
+        return this.httpClient.post(this.apiUrlStaff+"sendFeedback",data);
 
+      }
+      
+      /*Get the staff request that are logged based on the staff id */
+      getRequestsBystaffId(id : Number){
+        return this.httpClient.get(this.apiUrlStaff+"loggedRequests/"+id)
       }
 
 
-      getAllRequests():Observable<any>{
-        return this.httpClient.get(this.apiUrlTech);
+      /*Get all the request*/
+      /*
+        getAllRequests():Observable<any>{
+        return this.httpClient.get(this.apiUrlAdmin);
       }
+      
+      */
+      
 
      
       

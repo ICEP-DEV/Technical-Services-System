@@ -17,7 +17,7 @@ export class AdminviewrequestComponent implements OnInit {
   }
 
   getAdminAllrequests(){
-    this.adminServ.getAllRequests().subscribe((v) => {
+    this.adminServ.getSentRequesData().subscribe((v) => {
       console.log(v)
       this.requests = v;
     }
