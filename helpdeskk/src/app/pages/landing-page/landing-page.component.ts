@@ -12,9 +12,10 @@ import { TechloginComponent } from 'src/app/techlogin/techlogin.component';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.css']
 })
+
 export class LandingPageComponent {
 
-  
+
   
   constructor(private dialog: MatDialog) {}
  

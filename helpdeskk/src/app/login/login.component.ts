@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit {
 
   admin_object:any
   admin_login() {
-    if(this.adminLogin.admin_email== '') alert("Email is required")
-    if(this.adminLogin.password == '') alert("Password is required")
+    // if(this.adminLogin.admin_email== '') alert("Email is required")
+    // if(this.adminLogin.password == '') alert("Password is required")
 
     this.service.adminLogin(this.adminLogin)
     .subscribe((response)=>{
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
       //
     },
     (err)=>{
-      alert("Something went wrong, please try after some time")
+      alert("Enter details")
       //alert(err.message)
     }
     )

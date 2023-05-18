@@ -39,18 +39,19 @@ export class FormComponent implements OnInit {
 
   staff_object:any
 
-  staff_login() {
-    if(this.staffLogin.staff_id=='') {
-      alert("Staff number is required")
+  staff_login(): void {
+    if (this.staffLogin.staff_id === "") {
+        alert("Staff number is required");
     }
+
     this.service.staffLogin(this.staffLogin)
     .subscribe((response)=>{
       this.staff_object = response
       console.log(this.staff_object.body)
-      if(this.staff_object.success == true){
-        localStorage.setItem('stafflogin',JSON.stringify(this.staff_object.body))
-        this.close()
-        this._router.navigate(['/read'])
+      if (this.staff_object.success == true) {
+        localStorage.setItem('stafflogin', JSON.stringify(this.staff_object.body));
+        this.close();
+        this._router.navigate(['/read']);
       }
       else{
         alert("Staff not found")

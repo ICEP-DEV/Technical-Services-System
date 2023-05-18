@@ -6,14 +6,14 @@ import { Router } from '@angular/router';
   selector: 'app-read',
   templateUrl: './read.component.html',
   styleUrls: ['./read.component.css']
-})
+}) 
+
 export class ReadComponent implements OnInit {
 
   requestform = {
     staff_id: '',
     venue: '',
     description: '',
-    Image
   }
 
   constructor(private service: ApiserviceService,private _router: Router) {}
