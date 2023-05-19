@@ -21,8 +21,8 @@
         <nav class="breadcrumbNav">
             <ul >
    
-                <li class = "breadcrumb-item active" id = "breadcrumbpadding"><a href="#">Tracking</a></li>
-                <li class = "" id = "breadcrumbpadding"><a href="#">Feedback</a></li>
+                <li class = "breadcrumb-item active" id = "breadcrumbpadding"><a  class ="paddingtext" id="hover" href="#">Tracking</a></li>
+                <li class = "" id = "breadcrumbpadding"><a id="hover" href="#">Feedback</a></li>
                 
                 
             </ul>
@@ -32,18 +32,33 @@
     <div class = "contentContainerRight">
             <form class="backFrom">
                 <h3 class = "toptitle">Staff Track Request</h3>
+                <H4>Click on the tabs to view progress of your request(s)</H4>
                
                 <div class = "container">
-                        <label for="zero" id="red" (click)="recieveAllRequest()">Todo</label>
-                        <label for="fifty" id="amber" (click)="getInprogress()">InProgress</label>
-                        <label for="zero" id="gray" (click)="getOnHoldTasks()">OnHold</label>
-                        <label for="hundred" id="green" (click)="getCompleteTasks()">Done</label>
+                        <label for="zero" id="red" class="todo" >Todo</label>
+                        <label for="zero" id="blue" class="Assigned">Assigned</label>
+                        <label for="fifty" id="orange" class="InProgress">InProgress</label>
+                        <label for="zero" id="gray" class="OnHold">OnHold</label>
+                        <label for="hundred" id="green" class="Done">Done</label>
                 </div>
-                <table>
-                    <tr class="middle" *ngFor = "let request of allRequest">
-                        <td>{{request.progress}}</td>
-                    </tr>
-                </table>
+               
+                <div class ="middleTableDiv">
+                    <div class="middleTableDivTextMargin" *ngFor = "let request of allRequest">
+                        {{request.progress}} 
+                    </div>
+
+                </div>
+
+
+
+                <div>
+                    <div class="inprogress">
+
+                    </div>
+                    <div  class="inprogress">
+                        
+                    </div>
+                </div>
             </form>
     </div>
 

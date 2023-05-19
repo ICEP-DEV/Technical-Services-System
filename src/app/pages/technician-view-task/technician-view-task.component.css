@@ -174,5 +174,128 @@ select {
 
 
 @media only screen and (max-width: 1200px) {
+    .sticky {
+        width: 100%;
+    }
+    body {
+        background-color: yellow;
+    }
+    .sideNav {
+        width: 300px;
+
+    }
+    .contentContainerRight {
+        margin-top: 0%;
+        
     
+    
+    }
+    form { 
+
+        width: 900px;
+    }
+    .toptitle {
+        width: 750px;
+        margin:5% 5%;
+        
+    }
+
+@media only screen and (max-width: 992px) {
+        body {
+            background-color:lightgray;
+            width: 100%;
+        }
+        .logo {
+            height: 90px;
+            margin-top: 4px;
+        }
+        .sticky {
+            width: 100%;
+        }
+        .sideNav {
+            width: 200px;
+    
+        }
+        .contentContainerRight {
+            margin-top: 0%;
+            margin-left: 10.9%;
+        
+        
+        }
+        form { 
+    
+            width: 600px;
+        }
+        .toptitle {
+            width: 660px;
+            margin:5% 8%;
+            font-size: 20px;
+            
+            padding-left: 40px;
+            
+        }
+
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    body{
+        background-color: rgb(235, 143, 89);
+        width: 100%;
+    }
+    .sticky{
+        border: 1px solid red;
+    }
+    .logo {
+       height: 80px;
+    }
+    .sideNav {
+        display: none;
+
+    }
+    .toggleMenu {
+
+        display:block;
+        width: 10%;
+        
+        
+        
+        
+    }
+    .contentContainerRight {
+        margin-top: 0%;
+        margin-left: -15%;
+    
+    
+    }
+
+}
+
+@media only screen and (max-width: 576px) {
+
+    body{
+        background-color: rgb(131, 247, 116);
+        width: 100%;
+    }
+    .sideNav {
+        display: none;
+
+    }
+    .contentContainerRight {
+        margin-top: 0%;
+        margin-left: -35%;
+    
+    
+    }
+    .toptitle {
+        width: 560px;
+        margin:5% 13%;
+        font-size: 18px;
+        
+        padding-left: 40px;
+        
+    }
+
 }

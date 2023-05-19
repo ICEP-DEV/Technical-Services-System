@@ -5,7 +5,7 @@
       <div class="container-fluid sticky fixed-top " >
   
             <!--Start of logo -->
-            <h1 class="navbar-brand" routerLink=""><img src="/assets/images/tutLogo.png"> </h1> <P class = "center">ADMIN VIEW REQUESTS</P>
+            <h1 class="navbar-brand" routerLink=""><img src="/assets/images/tutLogo.png"> </h1>
     
             <!--End of logo-->
       </div>
@@ -21,8 +21,8 @@
         <nav class="breadcrumbNav">
             <ul >
                 
-                <li class = "breadcrumb-item active" id = "breadcrumbpadding"><a href="#">View Request</a></li>
-                <li class = "" id = "breadcrumbpadding"><a href="#">View Progress</a></li>
+                <li class = "breadcrumb-item active" id = "breadcrumbpadding"><a id="hover" href="#">View Request</a></li>
+                <li class = "" id = "breadcrumbpadding"><a id="hover" href="#">View Progress</a></li>
 
 
                 
@@ -41,9 +41,9 @@
 
                         <div id = "card">
                             <div class="card ">
-                                <div class="card-body">
-                                    <div class="card-titles">
-                                        <h6 class="card-title">Ref:f14m56tg</h6>
+                                <div class="card-body" *ngForm="let all of tempData">
+                                    <div class="card-titles" >
+                                        <h6 class="card-title">Ref:</h6>
                                         <h6 class="card-title" id = "date">RequestDate</h6>
                                     </div>
                                   

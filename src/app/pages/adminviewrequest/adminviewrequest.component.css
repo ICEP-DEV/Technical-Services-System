@@ -86,11 +86,16 @@ body {
    
     
     border-bottom: 3px solid #005596;
-    width: 95px;
+    width: 115px;
     padding-left: 0;
     
 }
 
+#hover:hover {
+    font-weight: bold;
+   
+   
+}
 
 .contentContainerRight {
     

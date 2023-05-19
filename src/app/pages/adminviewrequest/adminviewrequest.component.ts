@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { MyHttpServiceService } from 'src/app/my-http-service.service'; 
 
 @Component({
@@ -7,7 +8,10 @@ import { MyHttpServiceService } from 'src/app/my-http-service.service';
   styleUrls: ['./adminviewrequest.component.css']
 })
 export class AdminviewrequestComponent implements OnInit {
-  requests = [];
+  tempData =[];
+  
+  alldata: any;
+  sentRequest =[];
   constructor(private adminServ:MyHttpServiceService){
 
   }
@@ -18,8 +22,32 @@ export class AdminviewrequestComponent implements OnInit {
 
   getAdminAllrequests(){
     this.adminServ.getSentRequesData().subscribe((v) => {
-      console.log(v)
-      this.requests = v;
+      
+      this.tempData = v.result;
+      
+      console.log(this.tempData)
+
+     
+     
+
+     
+      /*
+          for(let i=0; i<this.tempData.length; i++) {
+
+        this.sentRequest.push(this.tempData[i])
+
+          console.log(this.sentRequest);
+
+      }
+      
+      
+      */
+      
+
+      
+     
+      
+     
     }
 
     );

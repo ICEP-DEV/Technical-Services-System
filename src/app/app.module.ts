@@ -38,11 +38,6 @@ import { AdminassigntaskComponent } from './pages/adminassigntask/adminassigntas
     AdminviewsinglerequestComponent,
     AdminassigntaskComponent,
     
-   
-    
-
-    
-  
   ],
   imports: [
     BrowserModule,

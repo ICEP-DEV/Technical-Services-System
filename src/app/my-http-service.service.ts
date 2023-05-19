@@ -90,7 +90,7 @@ export class MyHttpServiceService {
       */
 
       
-      //Api to get the sent request from the connection  ADMIN
+      //Api to get the sent request and view all the request from the connection  ADMIN
 
       getSentRequesData(): Observable<any> {
         return this.httpClient.get(this.apiUrlAdmin+"viewAllrequest");
@@ -103,7 +103,7 @@ export class MyHttpServiceService {
 
       }
       
-      /*Get the staff request that are logged based on the staff id */
+      /*Get the staff request that are logged based on the staff id STAFF */ 
       getRequestsBystaffId(id : Number){
         return this.httpClient.get(this.apiUrlStaff+"loggedRequests/"+id)
       }

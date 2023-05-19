@@ -1,10 +1,9 @@
 .footer {
+   width: 100%;
    
-    position: absolute;
-    top: 97.5%;
     background: #005596;
     height: 42px;
-    margin: 33.13% 0;
+    margin:auto 0;
     padding-top: 8px;
 }
 .center {
@@ -23,12 +22,24 @@
 @media only screen and (max-width: 576px) {
 
     .footer {
-   
-    position: absolute;
-    top: 97.5%;
+        width: 100%;
+    }
+
+    .center{
+
+        margin:1px;
+        font-weight: 700;
+    font-size: 10px;
+    }
+}
+@media only screen and (max-width: 576px) {
+
+    .footer {
+        width: 100%;
+    
     background: #005596;
     height: 42px;
-    margin: 33.13% 0;
+    margin: 0 0;
     padding: 0px;
     }
 
