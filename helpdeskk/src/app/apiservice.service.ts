@@ -48,6 +48,13 @@ export class ApiserviceService {
     return this._http.get(`${this.apiUrl+"/admin/viewRequester"}`);
   }
 
+  totalRequests():Observable<any>
+  {
+    return this._http.get(`${this.apiUrl+"/admin/totalRequests"}`);
+  }
+
+  
+
   createData(data:any):Observable<any>
 {
   console.log(data,'createapi=>');

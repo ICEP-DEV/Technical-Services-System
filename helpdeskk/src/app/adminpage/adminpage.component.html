@@ -68,10 +68,10 @@
                     </div>
                 </div>
     
-                <div class="ticket card" style="width: 15rem;">
-                    <div class="card-body">
+                <div class="ticket card" style="width: 15rem;" >
+                    <div *ngFor = "let re of temData" class="card-body" >
                         <h4 class="card-title"><b>TOTAL REQUESTS</b></h4>
-                        <p class="card-text">Text</p>
+                        <p class="card-text">{{re.total_requests}}</p>
                     </div>
                 </div>
     

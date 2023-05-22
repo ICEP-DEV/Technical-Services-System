@@ -23,6 +23,16 @@ export class AdminpageComponent implements OnInit {
     })
   }
 
+  total():void{
+    this.service.totalRequests().subscribe((res)=>{
+      console.log(res.result,"ram==>");
+      this.temData = res.result
+  })
+}
+
+
+
+
   logout(){
     localStorage.removeItem('logindata')
   }

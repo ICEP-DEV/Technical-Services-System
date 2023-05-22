@@ -4,41 +4,65 @@ import { ApiserviceService } from '../apiservice.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-staffpage',
+  templateUrl: './staffpage.component.html',
+  styleUrls: ['./staffpage.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class StaffpageComponent implements OnInit {
+  bld_no = [1,2,3,4,5,6,7,8,9,10,11,12]
+  // venue
+
 
   requestform = {
-    staff_id: '',
-    venue: '',
     description: '',
-  }
+    category: '',
+    venue: '',
+    Image: Blob,
+    staff_id: ''
+  };
 
   constructor(private service: ApiserviceService,private _router: Router) {}
   errormsg: any;
   ngOnInit(): void {
   }
 
+  buldingNoSelect(event:any){
+    console.log(event.target.value)
+  }
+
   request_object: any
   request() {
-    if (this.requestform.staff_id == '') alert("Email is required")
-    if (this.requestform.venue == '') alert("Password is required")
-    if (this.requestform.description == '') alert("Password is required")
-
-
+    if (this.requestform.staff_id === '') {
+      alert("Staff id is required");
+      return;
+    }
+    if (this.requestform.venue === '') {
+      alert("Venue is required");
+      return;
+    }
+    if (this.requestform.description === '') {
+      alert("Description is required");
+      return;
+    }
 
     this.service.request(this.requestform)
       .subscribe((response) => {
-        this.request_object = response
-        console.log(this.request_object.body)
-        this._router.navigate(['/read'])
-        //
-      },
+        this.request_object = response;
+        console.log(response);
+        if (this.request_object.success == true){
 
-      )
+          this._router.navigate(['staffpage']);
+
+        }else{
+          console.log("User ID doesnt match credentials")
+        }
+        
+      },
+      (error) => {
+        this.errormsg = error;
+      });
   }
+  
 
 
   // staffRequest()
@@ -69,6 +93,16 @@ export class DashboardComponent implements OnInit {
   //     console.log('The dialog was closed');
   //   });
   // }
+
+  resetForm() {
+    this.requestform = {
+      description: '',
+      category: 'default',
+      venue: '',
+      Image: Blob,
+      staff_id: ''
+    };
+  }
 
   logout() {
     localStorage.removeItem('techlogin')

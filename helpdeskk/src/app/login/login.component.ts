@@ -33,8 +33,14 @@ export class LoginComponent implements OnInit {
 
   admin_object:any
   admin_login() {
-    // if(this.adminLogin.admin_email== '') alert("Email is required")
-    // if(this.adminLogin.password == '') alert("Password is required")
+     if(this.adminLogin.admin_email== ''){
+      alert("Email is required");
+      return;
+     } 
+     if(this.adminLogin.password == ''){
+      alert("Password is required");
+      return;
+     } 
 
     this.service.adminLogin(this.adminLogin)
     .subscribe((response)=>{

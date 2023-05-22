@@ -29,6 +29,7 @@ import { ApiserviceService } from './apiservice.service';
 import { TechloginComponent } from './techlogin/techlogin.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { ViewrequestComponent } from './viewrequest/viewrequest.component';
+import { StaffpageComponent } from './staffpage/staffpage.component';
 
 
 @NgModule({
@@ -45,7 +46,9 @@ import { ViewrequestComponent } from './viewrequest/viewrequest.component';
     TrackformComponent,
     TechloginComponent,
      AdminpageComponent,
-     ViewrequestComponent
+     ViewrequestComponent,
+     StaffpageComponent
+     
   ],
   imports: [
     BrowserModule,

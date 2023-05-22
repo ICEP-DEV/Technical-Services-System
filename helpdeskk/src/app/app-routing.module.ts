@@ -12,6 +12,7 @@ import { TechloginComponent } from './techlogin/techlogin.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { ViewrequestComponent } from './viewrequest/viewrequest.component';
 import { AuthGuard } from './auth.guard';
+import { StaffpageComponent } from './staffpage/staffpage.component';
 
 
 
@@ -21,10 +22,11 @@ const routes: Routes = [
   {path: 'form', component: FormComponent},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard',component: DashboardComponent},
-  {path: 'read',component: ReadComponent,canActivate:[AuthGuard]},
+  {path: 'read',component: ReadComponent},
   {path: 'techlogin',component: TechloginComponent},
   {path: 'adminpage',component: AdminpageComponent,canActivate:[AuthGuard]},
-  {path: 'viewrequest',component: ViewrequestComponent,canActivate:[AuthGuard]}
+  {path: 'viewrequest',component: ViewrequestComponent,canActivate:[AuthGuard]},
+  {path: 'staffpage',component: StaffpageComponent}
  
 
 ];
