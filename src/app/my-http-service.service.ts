@@ -49,6 +49,9 @@ export class MyHttpServiceService {
       /*
       
       */
+
+        /*Technician Apis*/
+
       //Api connection to get the available technician
 
       getTechAvailable(): Observable<any> {
@@ -90,12 +93,15 @@ export class MyHttpServiceService {
       */
 
       
+      /*Admin Apis*/
       //Api to get the sent request and view all the request from the connection  ADMIN
-
       getSentRequesData(): Observable<any> {
         return this.httpClient.get(this.apiUrlAdmin+"viewAllrequest");
       }
 
+
+
+      /*Staff Apis*/
       //Api post feedback connection STAFF
       
       postStaffFeedback(data: any): Observable<any> {

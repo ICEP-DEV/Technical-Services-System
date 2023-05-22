@@ -5,8 +5,8 @@
           <div class="container-fluid sticky fixed-top " >
       
                 <!--Start of logo -->
-                <h1 class="navbar-brand" routerLink=""><img src="/assets/images/tutLogo.png"> </h1> <P class = "center">STAFF FEEDBACK PAGE</P>
-        
+                <h1 class="navbar-brand" routerLink=""><img class ="logo" src="/assets/images/tutLogo.png"> </h1>
+                <img class="toggleMenu" src="/assets/images/icons8-menu.svg" width="80">
                 <!--End of logo-->
           </div>
       
@@ -20,9 +20,9 @@
             
             <nav class="breadcrumbNav">
                 <ul >
-                    <li class = "" id = "breadcrumbpadding"><a href = "#">Request</a></li>
-                    <li class = "" id = "breadcrumbpadding"><a href="#">Tracking</a></li>
-                    <li class = "breadcrumb-item active" id = "breadcrumbpadding"><a href="#">Feedback</a></li>
+                    <li class = "" id = "breadcrumbpadding"><a class="anchorBorder" href = "#" id="hover">Request</a></li>
+                    <li class = "" id = "breadcrumbpadding"><a class="anchorBorder" href="#" id="hover">Tracking</a></li>
+                    <li class = "breadcrumb-item active" id = "breadcrumbpadding"><a class="anchorBorderActive" href="#" id="hover">Feedback</a></li>
     
                     
                 </ul>
@@ -34,7 +34,7 @@
                 <form class="backFrom">
                     <div class = "contentForm">
     
-                        <h3 class = "toptitle">Staff Track Request</h3>
+                        <h3 class = "toptitle">Staff Feedback</h3>
     
                         <div class = "feedbackTopPara">
                             <p class="">Thank you for taking your your time and give us feedback on the job we did for you.
@@ -64,10 +64,10 @@
                                     <textarea  id = "description" rows="8" ngModel name = "description" placeholder="Enter the description of the feedback">
                                         
                                     </textarea>
-                                    
+                                    <button type="submit" value = "submit">Send</button>
                                 </div>
         
-                                <button type="submit" value = "submit">Send</button>
+                                
                 
                                 
                             </form>

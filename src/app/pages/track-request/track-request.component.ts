@@ -73,6 +73,9 @@ export class TrackRequestComponent implements OnInit {
 
       //Storing the data in the all request variable/array
       this.allRequest = array
+      
+
+
       console.log(this.allRequest)
     })
   }

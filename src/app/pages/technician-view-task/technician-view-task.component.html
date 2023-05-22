@@ -5,7 +5,8 @@
       <div class="container-fluid sticky fixed-top " >
   
             <!--Start of logo -->
-            <h1 class="navbar-brand" routerLink=""><img src="/assets/images/tutLogo.png"> </h1> <P class = "center">TECHNICIAN VIEW PAGE</P>
+            <h1 class="navbar-brand" routerLink=""><img class ="logo" src="/assets/images/tutLogo.png"> </h1> 
+            <img class="toggleMenu" src="/assets/images/icons8-menu.svg" width="80">
     
             <!--End of logo-->
       </div>
@@ -21,7 +22,7 @@
         <nav class="breadcrumbNav">
             <ul >
                 
-                <li class = "breadcrumb-item active" id = "breadcrumbpadding"><a href="#">ViewTask</a></li>
+                <li class = "breadcrumb-item active" id = "breadcrumbpadding"><a href="#" id="hover">ViewTask</a></li>
 
                 
             </ul>
@@ -35,35 +36,34 @@
 
                     <h3 class = "toptitle">Technician View Task</h3>
 
-                <div class = "myTable">
-                    <table class="table table-bordered">
-                        <thead>
-                          <tr >
-                            <th scope="col">Category</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Priority</th>
-                            <th scope="col">Venue</th>
-                            <th scope="col">Progress Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <!--Displaying the technician task using the directive, if they are more than 2 it will use a loop-->
-                          <tr class="overflow-y"*ngFor = "let data of tempRequest ">
-                            <td class="rowPadding">HardWare{{data.category}}</td>
-                            <td class="rowPadding">Monitor is broken</td>
-                            <td class="rowPadding">10-G42</td>
-                            <td class="rowPaddingImage"><img class="requestimgSize" src = "/assets/images/backArrow.png"></td>
-                            <td class="rowPaddingDropDown">
-                                <select name="progressStatus" id="progressStatus">
-                                  <option value="todo">Todo</option>
-                                  <option value="inProgress">inProgress</option>
-                                  <option value="done">Done</option>
-                                </select></td>
-                          </tr>
-                        </tbody>
-                      </table>
-
-                </div>
+                      <div class = "myTable">
+                          <table class="table table-bordered">
+                              <thead>
+                                <tr >
+                                  <th scope="col">Category</th>
+                                  <th scope="col">Description</th>
+                                  <th scope="col">Priority</th>
+                                  <th scope="col">Venue</th>
+                                  <th scope="col">Progress Status</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <!--Displaying the technician task using the directive, if they are more than 2 it will use a loop-->
+                                <tr class="overflow-y" *ngFor = "let data of tempRequest ">
+                                  <td class="rowPadding">HardWare{{data.category}}</td>
+                                  <td class="rowPadding">Monitor is broken</td>
+                                  <td class="rowPadding">10-G42</td>
+                                  <td class="rowPaddingImage"><img class="requestimgSize" src = "/assets/images/backArrow.png"></td>
+                                  <td class="rowPaddingDropDown">
+                                      <select name="progressStatus" id="progressStatus">
+                                        <option value="todo">Todo</option>
+                                        <option value="inProgress">inProgress</option>
+                                        <option value="done">Done</option>
+                                      </select></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                      </div>
                     
 
                 </div>

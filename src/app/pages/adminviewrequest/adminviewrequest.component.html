@@ -39,17 +39,19 @@
 
                     <div class = "Cards">
 
-                        <div id = "card">
-                            <div class="card ">
-                                <div class="card-body" *ngForm="let all of tempData">
+                        <div id = "card" *ngFor="let all of alldata">
+                            <div class="card " >
+                                <div class="card-body" >
                                     <div class="card-titles" >
-                                        <h6 class="card-title">Ref:</h6>
-                                        <h6 class="card-title" id = "date">RequestDate</h6>
+                                        <h6 class="card-title">Ref:{{all.id}}</h6>
+                                        <h6 class="card-title" id = "date">RequestDate:{{all.req_date
+                                        }}</h6>
                                     </div>
                                   
                                     <div class="imgStaffInfo">
                                         <img src="/assets/images/icon _profile.png" >
-                                        <p class="card-text">Palesa Mahlangue<br>Mahlanguup@gmail.com</p>
+                                        <p class="card-text">{{all.staff_name
+                                        }}<br>{{all.staff_name}}@gmail.com</p>
                                         <button class = "btn1">View</button>
                                     </div>
                                     
@@ -74,23 +76,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id = "card3">
-                            <div class="card ">
-                                <div class="card-body">
-                                    <div class="card-titles">
-                                        <h6 class="card-title">Ref:f14m56tg</h6>
-                                        <h6 class="card-title" id = "date">RequestDate</h6>
-                                    </div>
-                                  
-                                    <div class="imgStaffInfo">
-                                        <img src="/assets/images/icon _profile.png" >
-                                        <p class="card-text">Kabelo Malatji<br>KabeloK@gmail.com</p>
-                                        <button class = "btn1">View</button>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
+                       
                         
                     </div>
                 </div>

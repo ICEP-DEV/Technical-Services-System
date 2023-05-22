@@ -1,9 +1,14 @@
 .sticky {
     background-color: #005596;
     height:115px;
+    width: 100%;
+    margin: 0;
     
 }
-
+.toggleMenu {
+    cursor: pointer;
+    display:none;
+}
 .center 
 {
     margin-right: 35%;
@@ -64,6 +69,12 @@ body {
     padding: 10px 0;
 }
 
+#hover:hover {
+    font-weight: bold;
+   
+   
+}
+
  a {
     font-style: normal;
     font-weight: 400;
@@ -94,7 +105,7 @@ body {
 
 .contentContainerRight {
     
-    width:1562px;
+    width:1262px;
     height: 1055px;
     margin-left: 17.9%;
     border: 1px solid green;
@@ -113,8 +124,16 @@ form {
 }
 
 .contentForm {
-        
+    /*background-color: #000000;*/
+     
+       
         margin-top: 7%;
+}
+.backFrom{
+    width: 1200px;
+    
+    background-color: green;
+
 }
 .toptitle {
    
@@ -185,6 +204,7 @@ select {
 
     }
     .contentContainerRight {
+        width: 900px;
         margin-top: 0%;
         
     
@@ -194,11 +214,19 @@ select {
 
         width: 900px;
     }
+    .backFrom{
+        width: 870px;
+        
+    
+    }
     .toptitle {
         width: 750px;
         margin:5% 5%;
         
     }
+    .myTable {
+		padding: 5% 6%;
+	}
 
 @media only screen and (max-width: 992px) {
         body {
@@ -207,7 +235,7 @@ select {
         }
         .logo {
             height: 90px;
-            margin-top: 4px;
+           margin-top: -2%;
         }
         .sticky {
             width: 100%;
@@ -217,6 +245,7 @@ select {
     
         }
         .contentContainerRight {
+            width: 800px;
             margin-top: 0%;
             margin-left: 10.9%;
         
@@ -225,6 +254,20 @@ select {
         form { 
     
             width: 600px;
+        }
+        .backFrom{
+            width: 750px;
+            
+        
+        }
+        .myTable {
+            padding: 5% 6%;
+        }
+        table {
+        margin-top: 2%;
+        border: 1px solid black;
+        width: 700px;
+        height: 300px;
         }
         .toptitle {
             width: 660px;
@@ -284,18 +327,34 @@ select {
 
     }
     .contentContainerRight {
+        width: 740px;
         margin-top: 0%;
         margin-left: -35%;
     
     
     }
+    .backFrom{
+        width: 650px;
+        
+    
+    }
+    
     .toptitle {
-        width: 560px;
-        margin:5% 13%;
+        width: 530px;
+        margin:5% 17%;
         font-size: 18px;
         
         padding-left: 40px;
         
+    }
+    table {
+        margin-top: 2%;
+        border: 1px solid black;
+        width: 500px;
+        height: 300px;
+        }
+    .myTable {
+        padding: 5% 17%;
     }
 
 }

@@ -48,7 +48,7 @@ body {
 }
 
 
- .sideNav {
+.sideNav {
 
     
     float: left;
@@ -58,6 +58,57 @@ body {
    
 
 }
+
+.breadcrumbNav {
+
+    
+    margin: 12% 10px;
+    padding: 20px 30px;
+    
+   
+   
+    
+    
+}
+#breadcrumbpadding {
+
+    width: 115px;  
+    padding: 6px 0;
+}
+
+ a {
+    padding-top: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+    letter-spacing: 0.035em;
+    text-transform: capitalize;
+
+    color: #005596;
+    text-decoration: none;
+ }
+
+ nav,ul {
+
+    list-style:none ;
+ }
+.breadcrumb-item.active {
+   
+    
+    border-bottom: 3px solid #005596;
+    width: 115px;  
+    
+}
+.anchorBorder{
+
+    
+    margin:0 20%;
+}
+
+
 #hover:hover {
     font-weight: bold;
    
@@ -99,51 +150,6 @@ form {
 h4 {
     text-align: center;
     font-weight: 400;
-    
-}
-
-
-.breadcrumbNav {
-
-    
-    margin: 12% 10px;
-    padding: 20px 30px;
-    
-   
-   
-    
-    
-}
-#breadcrumbpadding {
-
-    
-    padding: 6px 0;
-}
-
- a {
-    padding-top: 20px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    /* identical to box height */
-
-    letter-spacing: 0.035em;
-    text-transform: capitalize;
-
-    color: #005596;
-    text-decoration: none;
- }
-
- nav,ul {
-
-    list-style:none ;
- }
-.breadcrumb-item.active {
-   
-    
-    border-bottom: 3px solid #005596;
-    width: 70px;  
     
 }
 
@@ -282,6 +288,13 @@ label {
        
     
     }
+
+    .middleTableDiv {
+
+        width:720px;
+        
+
+    }
    
 
 }
@@ -304,7 +317,7 @@ label {
     .contentContainerRight {
         
         margin-top: 0%;
-        margin-left: 10.9%;
+        margin-left: 12%;
     
     
     }
@@ -320,6 +333,12 @@ label {
         padding-left: 40px;
         
     }
+    h4 {
+        padding-left: 60px;
+        font-weight: 400;
+        
+    }
+    
     .container {
         margin: 20px auto;
         width: 700px;
@@ -328,10 +347,16 @@ label {
     }
     label {
         display: inline-block;
-        margin: 0 30px ;
+        margin: 0 25px ;
         padding: 1px 10px;
        
     
+    }
+    .middleTableDiv {
+
+        width:600px;
+        margin: auto 9%;
+
     }
 
     @media only screen and (max-width: 768px) {
@@ -363,9 +388,14 @@ label {
         .contentContainerRight {
           
             margin-top: 0%;
-            margin-left: -15%;
+            margin-left: -12%;
         
         
+        }
+        h4 {
+            padding-left: 80px;
+            font-weight: 400;
+            
         }
         .container {
 
@@ -376,10 +406,17 @@ label {
         }
         label {
             display: inline-block;
-            margin: 0 30px ;
-            padding: 1px 0px;
+            margin: 0 10px ;
+            padding: 1px 10px;
+            font-weight:500;
            
         
+        }
+        .middleTableDiv {
+
+            width:500px;
+            margin: auto 18%;
+    
         }
     }
 
@@ -413,6 +450,12 @@ label {
             width: 500px;
             text-align: center;
            
+        }
+        .middleTableDiv {
+
+            width:500px;
+            margin: auto 15%;
+    
         }
 
 

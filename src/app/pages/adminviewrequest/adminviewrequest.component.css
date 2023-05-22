@@ -138,13 +138,17 @@ form {
     margin:2.5% 6%;
     padding-left: 50px;
 }
-#card1 {
-    border: 1px solid green;
-    
-   
+
+.Cards {
+
+
+    overflow-y:scroll;
+    height:600px;
+    width: 1180px;
 }
+
 .card {
-    margin:1% 18% ;
+    margin:1% 25% ;
     
     width: 60%;
     height: 180px;
@@ -165,7 +169,7 @@ form {
 }
 #date {
 
-    padding-left: 74.5%;
+    padding-left: 50.5%;
 }
 .imgStaffInfo {
 
