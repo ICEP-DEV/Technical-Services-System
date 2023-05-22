@@ -53,6 +53,10 @@ export class ApiserviceService {
     return this._http.get(`${this.apiUrl+"/admin/totalRequests"}`);
   }
 
+  allRequests():Observable<any>
+  {
+    return this._http.get(`${this.apiUrl+"/admin/viewAllrequest"}`);
+  }
   
 
   createData(data:any):Observable<any>

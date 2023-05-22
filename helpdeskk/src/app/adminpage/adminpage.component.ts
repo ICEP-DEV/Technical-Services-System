@@ -21,12 +21,14 @@ export class AdminpageComponent implements OnInit {
       console.log(res.result,"res==>");
       this.readData = res.result
     })
+    this.total()
   }
 
   total():void{
     this.service.totalRequests().subscribe((res)=>{
-      console.log(res.result,"ram==>");
-      this.temData = res.result
+      // console.log(res.result,"ram==>");
+      this.temData = res
+      console.log(this.temData)
   })
 }
 

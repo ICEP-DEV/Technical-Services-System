@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: 'dashboard',component: DashboardComponent},
   {path: 'read',component: ReadComponent},
   {path: 'techlogin',component: TechloginComponent},
-  {path: 'adminpage',component: AdminpageComponent,canActivate:[AuthGuard]},
+  {path: 'adminpage',component: AdminpageComponent},
   {path: 'viewrequest',component: ViewrequestComponent,canActivate:[AuthGuard]},
   {path: 'staffpage',component: StaffpageComponent}
  
