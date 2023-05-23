@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
 import { Router } from '@angular/router';
 
+
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -40,17 +41,13 @@ export class FormComponent implements OnInit {
   staff_object:any
 
   staff_login(): void {
-    if (this.staffLogin.staff_id === "") {
-        alert("Staff number is required");
-        return;
-    }
 
     this.service.staffLogin(this.staffLogin)
     .subscribe((response)=>{
       this.staff_object = response
       console.log(this.staff_object.body)
       if (this.staff_object.success == true) {
-        localStorage.setItem('stafflogin', JSON.stringify(this.staff_object.body));
+        localStorage.setItem('stafflogin', JSON.stringify(this.staffLogin.staff_id));
         this.close();
         this._router.navigate(['staffpage']);
       }

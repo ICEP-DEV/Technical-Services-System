@@ -30,6 +30,7 @@ import { TechloginComponent } from './techlogin/techlogin.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { ViewrequestComponent } from './viewrequest/viewrequest.component';
 import { StaffpageComponent } from './staffpage/staffpage.component';
+import { RefConfirmFormComponent } from './ref-confirm-form/ref-confirm-form.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { StaffpageComponent } from './staffpage/staffpage.component';
     TechloginComponent,
      AdminpageComponent,
      ViewrequestComponent,
-     StaffpageComponent
+     StaffpageComponent,
+     RefConfirmFormComponent
      
   ],
   imports: [

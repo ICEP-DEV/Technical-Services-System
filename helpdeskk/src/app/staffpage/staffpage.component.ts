@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { RefConfirmFormComponent } from '../ref-confirm-form/ref-confirm-form.component';
 
 @Component({
   selector: 'app-staffpage',
@@ -26,14 +28,35 @@ export class StaffpageComponent implements OnInit {
   requestform = {
     description: '',
     category: '',
-    venue: '',
+    venue: this.buildingNo,
     Image: Blob,
-    staff_id: ''
+    staff_id: "",
   };
+  
 
-  constructor(private service: ApiserviceService, private _router: Router) { }
+  constructor(private service: ApiserviceService, private _router: Router, private dialog: MatDialog) {}
+
+  openForm(): void {
+    const dialogRef = this.dialog.open(RefConfirmFormComponent, {
+      width: '700px',
+      disableClose: true
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  
+   
+  }
+
+
+
   errormsg: any;
+  staffId:any
   ngOnInit(): void {
+    var myid =localStorage.getItem('stafflogin')?.toString()
+    this.staffId = myid?.substring(1,myid.length-1)
+    this.requestform.staff_id = this.staffId
   }
 
   buldingNoSelect(event: any) {
@@ -56,13 +79,8 @@ export class StaffpageComponent implements OnInit {
   request_object: any
   request() {
     console.log(this.requestform)
-    if (this.requestform.staff_id === '') {
-      alert("Staff id is required");
-      return;
-    }
-    if (this.requestform.venue === '') {
-      alert("Venue is required");
-      return;
+    if (this.requestform.staff_id) {
+      const staff_id = JSON.parse(this.requestform.staff_id);
     }
     if (this.requestform.description === '') {
       alert("Description is required");
@@ -70,12 +88,12 @@ export class StaffpageComponent implements OnInit {
     }
 
     this.service.request(this.requestform)
+
       .subscribe((response) => {
         this.request_object = response;
         console.log(response);
         if (this.request_object.success == true) {
-
-          this._router.navigate(['staffpage']);
+          alert(`Work request submitted, your reference number :`)
 
         } else {
           console.log("User ID doesnt match credentials")
@@ -120,18 +138,10 @@ export class StaffpageComponent implements OnInit {
   //   });
   // }
 
-  resetForm() {
-    this.requestform = {
-      description: '',
-      category: 'default',
-      venue: '',
-      Image: Blob,
-      staff_id: ''
-    };
-  }
+ 
 
   logout() {
-    localStorage.removeItem('techlogin')
+    localStorage.removeItem('stafflogin')
   }
 
 }
