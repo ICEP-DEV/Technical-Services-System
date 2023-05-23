@@ -99,7 +99,7 @@ body {
 
 .contentContainerRight {
     
-    width:1562px;
+    width:1200px;
     height: 1055px;
     margin-left: 17.9%;
     border: 1px solid green;
@@ -112,7 +112,7 @@ form {
     width: 1300px;
     margin: 5% 5%;
     height: 830px;
-    background: #FFFFFF;
+    background: #ffffff;
     mix-blend-mode: normal;
     border: 1px solid #969090;
     box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -123,6 +123,7 @@ form {
 
 .contentForm {
         
+    
         margin-top: 7%;
 }
 .toptitle {
@@ -145,6 +146,7 @@ form {
     overflow-y:scroll;
     height:600px;
     width: 1180px;
+   
 }
 
 .card {
@@ -187,11 +189,11 @@ form {
 
 }
 .btn1 {
-    margin: 0% 60%;
+    margin: 0% 50%;
     position: absolute;
     bottom: 10%;
 
-    width: 80px;
+    width: 140px;
     height: 40px;
 
     text-align: center;
@@ -203,4 +205,197 @@ form {
 button {
     width: 20%;
     padding: 0 15px;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .sticky {
+        width: 100%;
+    }
+    body {
+        background-color: yellow;
+    }
+    .sideNav {
+        width: 300px;
+
+    }
+    .contentContainerRight {
+        width: 900px;
+        margin-top: 0%;
+        
+    
+    
+    }
+    form { 
+
+        width: 900px;
+    }
+    .backFrom{
+        width: 870px;
+        
+    
+    }
+    .toptitle {
+        width: 750px;
+        margin:5% 5%;
+        
+    }
+
+    /*
+        #date {
+
+        padding-left: 60.5%;
+    }
+    
+    */
+    
+    .Cards {
+        border:1px solid red;
+        width: 850px;
+        
+    }
+    .card {
+        margin:1% 10% ;
+        width: 700px;
+
+    }
+
+}
+
+
+@media only screen and (max-width: 992px) {
+    body {
+        background-color:lightgray;
+        width: 100%;
+    }
+    .logo {
+        height: 90px;
+       margin-top: -2%;
+    }
+    .sticky {
+        width: 100%;
+    }
+    .sideNav {
+        width: 200px;
+
+    }
+    .contentContainerRight {
+        width: 800px;
+        margin-top: 0%;
+        margin-left: 10.9%;
+    
+    
+    }
+    form { 
+
+        width: 600px;
+    }
+    .backFrom{
+        width: 750px;
+        
+    
+    }
+    .toptitle {
+        width: 660px;
+        margin:5% 8%;
+        font-size: 20px;
+        
+        padding-left: 40px;
+        
+    }
+    .Cards {
+        border:1px solid red;
+        background-color: #cf5252;
+        width: 800px;
+        
+        
+    }
+    .card {
+        margin:0% 5% ;
+        width: 700px;
+
+    }
+
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    body{
+        background-color: rgb(235, 143, 89);
+        width: 100%;
+    }
+    .sticky{
+        border: 1px solid red;
+    }
+    .logo {
+       height: 80px;
+    }
+    .sideNav {
+        display: none;
+
+    }
+    .toggleMenu {
+
+        display:block;
+        width: 10%;
+        
+        
+        
+        
+    }
+    .contentContainerRight {
+        width: 500px;
+        margin-top: 0%;
+        margin-left: -15%;
+    
+    
+    }
+
+}
+
+
+@media only screen and (max-width: 576px) {
+
+    body{
+        background-color: rgb(131, 247, 116);
+        width: 100%;
+    }
+    .sideNav {
+        display: none;
+
+    }
+    .contentContainerRight {
+        width: 600px;
+        margin-top: 0%;
+        margin-left: -20%;
+    
+    
+    }
+    .backFrom{
+        width: 570px;
+        
+    
+    }
+    
+    .toptitle {
+        width: 500px;
+        margin:5% 10%;
+        font-size: 18px;
+        
+        padding-left: 40px;
+        
+    }
+    .Cards {
+        border:1px solid red;
+        background-color: #cf5252;
+        width: 250px;
+        
+        
+    }
+    .card {
+        margin:0% 5% ;
+        width: 550px;
+
+    }
 }

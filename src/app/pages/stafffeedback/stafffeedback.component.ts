@@ -1,4 +1,6 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { TitleStrategy } from '@angular/router';
 import { MyHttpServiceService } from 'src/app/my-http-service.service';
 
 @Component({
@@ -14,50 +16,78 @@ export class StafffeedbackComponent {
   storeApiFromData = [];
   storeApiFromData1 = [];
   array = [];
+  message = "";
 
 
   constructor(private staffServ: MyHttpServiceService) {
   }
 
+  ngOnInit() {
+
+  }
 
   errorMsg = ["Both fields are empty", "Description is required", "3"];
 
   tempJobcard: any
+  submitResults() {
 
-  submitResults(feedback: any) {
-    console.log('You have clicked the submit button');
-    console.log(feedback.value.inlineRadioOptions);
-    console.log(feedback.value.description);
-    console.log(feedback.value);
+    this.message = "";
+    console.log(this.option, this.description)
+    if (this.option == "") {
+      return this.message  = "Option is required please select"
 
-    if (feedback.value.inlineRadioOptions == "" && feedback.value.description == "") {
-
-      return alert(this.errorMsg[0]);
     }
-    else
-      if (feedback.value.inlineRadioOptions == "") {
-        return alert(this.errorMsg[1]);
-      }
-      else
-        if (feedback.value.description == "") {
-          return alert(this.errorMsg[1]);
-        }
+    if (this.description == "") {
+      return this.message  = "Description is required"
+    }
 
-        else {
-          this.option = feedback.value.inlineRadioOptions;
-          this.description = feedback.value.description;
-          this.data = feedback.value
-        }
+    if (this.description != "" && this.option != "") {
+      return this.message = "Feedback has been sent succefully"
+      console.log(this.message)
+      this.option = ""
+      this.description = ""
+    }
+
+
+
+
+    // console.log('You have clicked the submit button');
+    // console.log(feedback.value.inlineRadioOptions);
+    // console.log(feedback.value.description);
+    // console.log(feedback.value);
+
+    // if (feedback.value.inlineRadioOptions == "" && feedback.value.description == "") {
+    //   this.Errors = this.errorMsg[0];
+    //   return this.Errors
+    // }
+    // else
+    //   if (feedback.value.inlineRadioOptions == "") {
+    //     this.Errors = this.errorMsg[1];
+    //     return this.Errors
+    //   }
+    //   else{}
+    // if (feedback.value.description == "") {
+    //   return alert(this.errorMsg[1]);
+    // }
+
+    // else {
+    // this.option = feedback.value.inlineRadioOptions;
+    // this.description = feedback.value.description;
+    // this.data = feedback.value
+    // }
 
     var data = { staff_feedback: "job well done", rating: "5", id: 1678884550556 }
 
-    this.staffServ.postStaffFeedback(data).subscribe((v) => {
-      console.log(v)
-      console.log("submited")
+    /*
+        this.staffServ.postStaffFeedback(data).subscribe((v) => {
+          console.log(v)
+          this.option="";
+          this.description = "";
+          console.log("submited")
+          
+        });*/
 
-    });
-
-
+    /*
     this.staffServ.getSentRequesData().subscribe((v) => {
 
       console.log(this.storeApiFromData1 = v);
@@ -66,11 +96,21 @@ export class StafffeedbackComponent {
 
       //console.log(this.array);
 
-    })
-
-
+    })*/
 
 
 
   }
+
+
+  remove() {
+
+  }
+
+
+
+
+
 }
+
+

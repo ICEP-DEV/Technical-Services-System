@@ -3,7 +3,10 @@
     height:115px;
     
 }
-
+.toggleMenu {
+    cursor: pointer;
+    display:none;
+}
 .center 
 {
     margin-right: 35%;
@@ -34,6 +37,7 @@ body {
     margin-top: 100px;
     border: 1px solid blue;
     height: 1055px;
+    background-color: #ffffff;
 }
 
 
@@ -89,6 +93,11 @@ body {
     width: 115px;
     padding-left: 0;
     
+}
+.anchorBorder{
+
+    
+    margin:0 20%;
 }
 
 #hover:hover {
@@ -196,4 +205,305 @@ form {
 button {
     width: 20%;
     padding: 0 15px;
+}
+
+
+
+
+@media only screen and (max-width: 1200px) {
+
+
+    /*
+
+    
+    */
+    .sticky {
+        width: 100%;
+    }
+    body {
+        
+        background-color: yellow;
+        width: 100%;
+    }
+    .sideNav {
+        width: 280px;
+
+    }
+    .contentContainerRight {
+       
+        width: 900px;
+        margin-top:0%;
+        margin-left: 14%;
+        
+    
+    
+    }
+    form { 
+
+        width: 1200px;
+        background: #da3737;
+        
+    }
+    .toptitle {
+        /*border:1px solid BLUE;*/
+        
+        width: 800px;
+        margin:5% 8%;
+        
+        
+    }
+ 
+    .backFrom {
+        
+        background: black;
+        width: 900px;
+       
+      
+    
+    
+    }
+
+    .Cards {
+        border:1px solid red;
+        width: 850px;
+        
+    }
+    .card {
+        margin:1% 10% ;
+        width: 750px;
+
+    }
+    
+    button{
+        margin: 2% 41%;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 992px) {
+    body {
+       
+       background-color:lightgray;
+       
+        width: 100%;
+    }
+    .logo {
+        height: 90px;
+       
+        margin-top: -2%;
+    }
+    .sticky {
+        width: 100%;
+    }
+    .sideNav {
+        width: 200px;
+
+    }
+    .breadcrumbNav {
+
+    
+        margin: 12% 1%;
+       
+        
+       
+       
+        
+        
+    }
+    .contentContainerRight {
+        width: 800px;
+        
+        margin-top: 0%;
+        margin-left: 12%;
+    
+    
+    }
+    .backFrom {
+        
+        background: black;
+        width: 760px;
+       
+      
+    
+    
+    }
+   
+    .toptitle {
+
+        /*
+                 font-weight: 700;
+        font-size: 28px;
+        border:1px solid BLUE;
+        */
+       
+        width: 700px;
+        margin:5% 5%;
+        
+        
+    }
+ 
+    .Cards {
+        border:1px solid red;
+        width: 760px;
+        
+    }
+    .card {
+        margin:1% 5% ;
+        width: 700px;
+
+    }
+    button{
+        margin: 2% 40%;
+    }
+
+}
+
+
+@media only screen and (max-width: 768px) {
+    body {
+       
+         background-color: rgb(235, 143, 89);
+        width: 100%;
+    }
+    
+    .sticky{
+        width: 100%;
+        /* border: 1px solid red;*/
+       
+    }
+    .logo {
+       height: 80px;
+       margin: -2%;
+    }
+    .sideNav {
+        display: none;
+
+    }
+    .toggleMenu {
+
+        display:block;
+        width: 100px;
+          
+        
+    }
+    .contentContainerRight {
+      
+        margin-top: 0%;
+        margin-left: -11%;
+    
+    
+    }
+  
+    form { 
+
+        width: 600px;
+    }
+    .backFrom {
+        
+        background: black;
+        width: 720px;
+       
+      
+    
+    
+    }
+    .Cards {
+        border:1px solid red;
+        width: 720px;
+        
+    }
+    .card {
+        margin:1% 5% ;
+        width: 680px;
+
+    }
+   
+    .toptitle {
+
+        /*
+             font-weight: 700;
+        font-size: 28px;
+        border:1px solid BLUE;
+        
+        */
+       
+        width: 680px;
+        margin:5% 5%;
+        
+        
+    }
+    
+    
+    button{
+        margin: 2% 40%;
+    }
+
+}
+
+
+@media only screen and (max-width: 576px) {
+
+    body{
+        background-color: rgb(131, 247, 116);
+        
+        width: 100%;
+    }
+    .sideNav {
+        display: none;
+
+    }
+    .contentContainerRight {
+        width: 670px;
+       
+        margin-top: 0%;
+        margin-left: -22%;
+    
+    
+    }
+    .backFrom {
+    
+        width: 580px;
+       
+      
+    
+    
+    }
+    form { 
+
+        width: 580px;
+    }
+   
+    .toptitle {
+        width: 510px;
+        margin:5% 11%;
+        font-size: 18px;
+        
+        padding-left: 40px;
+        
+    }
+    #date {
+
+        padding-left: 42%;
+    }
+    .Cards {
+        border:1px solid red;
+        width: 580px;
+        
+    }
+    .card {
+        margin:1% 7% ;
+        width: 540px;
+
+    }
+    .imgStaffInfo {
+
+        
+        padding: 0 15%;
+        
+        
+    }
+
+
 }

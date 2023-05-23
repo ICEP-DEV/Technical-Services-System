@@ -35,12 +35,18 @@
                     <div class = "contentForm">
     
                         <h3 class = "toptitle">Staff Feedback</h3>
-    
+
+
+                        <div *ngIf="message !=''"   class="alert alert-success alert-dismissible fade show" role="alert">
+                             <strong>{{message}}</strong>
+                            <a href="" type="button"  data-bs-dismiss="alert" aria-label="Close">X</a>
+                        </div>
+
                         <div class = "feedbackTopPara">
                             <p class="">Thank you for taking your your time and give us feedback on the job we did for you.
                                 We promise to read your comments carefully. Hopefully we managed to solve your issues.</p>
                         </div>
-                            <form #feedback = "ngForm" (ngSubmit)="submitResults(feedback)" >
+                            <form #feedback = "ngForm" (ngSubmit)="submitResults()" >
                                 <div class="radionBtn">
                                 
                                     <div>
@@ -48,11 +54,11 @@
                                     </div>
                                     <div class="form-check form-check-inline">
                                         
-                                        <input class="form-check-input" #name = "ngModel" type="radio" name="inlineRadioOptions" id="inlineRadio1"  value="No" ngModel >
+                                        <input class="form-check-input" #name = "ngModel" type="radio" name="option" id="inlineRadio1"  value="No" [(ngModel)]="option" >
                                         <label class="form-check-label" for="inlineRadio1">No</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"  value="Yes" ngModel >
+                                        <input class="form-check-input" type="radio" name="option" id="inlineRadio2"  value="Yes" [(ngModel)]="option" >
                                         <label class="form-check-label" for="inlineRadio2">Yes</label>
                                     </div>
         
@@ -61,10 +67,10 @@
                                 <div class="descriptionTextarea">
                                     
                                     <h3 class="descriptionTitle" >Give your description below</h3>
-                                    <textarea  id = "description" rows="8" ngModel name = "description" placeholder="Enter the description of the feedback">
+                                    <textarea  id = "description" rows="8" [(ngModel)]="description" name = "description" placeholder="Enter the description of the feedback">
                                         
                                     </textarea>
-                                    <button type="submit" value = "submit">Send</button>
+                                    <button type="submit" value = "submit" >Send</button>
                                 </div>
         
                                 
