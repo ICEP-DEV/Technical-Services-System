@@ -42,7 +42,7 @@ export class FormComponent implements OnInit {
 
   staff_login(): void {
 
-    if(this.staffLogin.staff_id = ''){
+    if(this.staffLogin.staff_id == ''){
       alert("Staff number is required");
       return;
     }

@@ -30,28 +30,12 @@ export class StaffpageComponent implements OnInit {
     category: '',
     venue: this.buildingNo,
     Image: Blob,
-    staff_id: '',
-     data:''
+    staff_id: "",
+     
   };
   
 
   constructor(private service: ApiserviceService, private _router: Router, private dialog: MatDialog) {}
-
-  openForm(): void {
-    const dialogRef = this.dialog.open(RefConfirmFormComponent, {
-      width: '700px',
-      disableClose: true
-    });
-  
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  
-   
-  }
-
-
-
   errormsg: any;
   successmsg:any;
   showSuccessMsg: any;
@@ -111,10 +95,9 @@ export class StaffpageComponent implements OnInit {
         this.requestform = {
           description: '',
           category: '',
-          venue: '',
+          venue: this.buildingNo,
           Image: Blob,
           staff_id: '',
-          data:''
         };
 
         

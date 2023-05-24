@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
       this.admin_object = response
       console.log(this.admin_object.body)
       if(this.admin_object.success == true){
-        localStorage.setItem('logindata',JSON.stringify(this.admin_object.body))
+        localStorage.setItem('stafflogin',JSON.stringify(this.admin_object.body))
         this.close()
         this._router.navigate(['/adminpage'])
       }else{
@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
       //
     },
     (err)=>{
-      alert("Enter details")
+      alert("something is wrong")
       //alert(err.message)
     }
     )
