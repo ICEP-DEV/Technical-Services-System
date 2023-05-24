@@ -5,7 +5,8 @@
       <div class="container-fluid sticky fixed-top " >
   
             <!--Start of logo -->
-            <h1 class="navbar-brand" routerLink=""><img src="/assets/images/tutLogo.png"> </h1> <P class = "center">ADMIN VIEW REQUEST</P>
+            <h1 class="navbar-brand" routerLink=""><img class ="logo" src="/assets/images/tutLogo.png"> </h1> 
+            <img class="toggleMenu" src="/assets/images/icons8-menu.svg" width="80">
     
             <!--End of logo-->
       </div>
@@ -22,6 +23,7 @@
             <ul >
                 
                 <li class = "breadcrumb-item active" id = "breadcrumbpadding"><a href="#" id="hover">View Request</a></li>
+                <li class = "" id = "breadcrumbpadding"><a id="hover" href="#">View Progress</a></li>
 
                 
             </ul>
@@ -35,29 +37,42 @@
 
                     <h3 class = "toptitle">Admin View Request</h3>
 
-                    <div class = "myTable">
-                        <table class="table table-bordered">
-                            <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Category</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Venue</th>
-                                <th scope="col">Image</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="rowPadding">King Malatji</td>
-                                <td class="rowPadding">HardWare</td>
-                                <td class="rowPadding">Monitor is broken</td>
-                                <td class="rowPadding">10-G42</td>
-                                <td class="rowPaddingImage"><img class="requestimgSize" src = "/assets/images/backArrow.png"></td>
-                            </tr>
-                            </tbody>
-                        </table>
+                    <div id = "card">
+                        <div class="card ">
+                            <div class="card-body">
+                                <div class="card-titles">
+                                    <h6 class="card-title">Ref:f14m56tg</h6>
+                                    <h6 class="card-title" id = "date">RequestDate: 21/03/22</h6>
+                                </div>
+                              
+                                <div class="imgStaffInfo">
+                                    
+                                    <p class="card-text">Palesa Mahlangu<br>description: leaking Taps<br>10-G42</p>
+                                    <button class = "btn1" routerLink="">ViewTechnician</button>
+                                </div>
+                                
+                            </div>
+                        </div>
                     </div>
-                    <button>Technician</button>
+
+                    <div id = "card2">
+                        <div class="card ">
+                            <div class="card-body">
+                                <div class="card-titles">
+                                    <h6 class="card-title">Ref:f14m56tg</h6>
+                                    <h6 class="card-title" id = "date">RequestDate: 20/03/22</h6>
+                                </div>
+                              
+                                <div class="imgStaffInfo">
+                                    
+                                    <p class="card-text">thabelo livhimbi<br>Description: Flickering lights<br>10-G28</p>
+                                    <button class = "btn1" routerLink="">ViewTechnician</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
                     
 
                 </div>

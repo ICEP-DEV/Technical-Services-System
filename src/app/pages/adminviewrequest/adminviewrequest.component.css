@@ -3,7 +3,10 @@
     height:115px;
     
 }
-
+.toggleMenu {
+    cursor: pointer;
+    display:none;
+}
 .center 
 {
     margin-right: 35%;
@@ -23,7 +26,11 @@ a {
     padding-left:75%;
 }
 
+.logo {
+    height: 100px;
 
+    margin-top: 10px;
+}
 img {
     height: 100px;
 
@@ -278,6 +285,17 @@ button {
     .sideNav {
         width: 200px;
 
+    }
+    .breadcrumbNav {
+
+    
+        margin: 12% -5%;
+        padding: 20px 30px;
+        
+       
+       
+        
+        
     }
     .contentContainerRight {
         width: 800px;

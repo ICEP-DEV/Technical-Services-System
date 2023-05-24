@@ -126,11 +126,14 @@ form {
     box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 
+    
+
 
 }
 
 .contentForm {
-        
+    overflow-y: scroll;
+    height: 700px;
         margin-top: 7%;
 }
 .toptitle {
@@ -202,6 +205,15 @@ form {
   
 }
 
+.assignTechText{
+    background: white;
+    border: 1px solid red;
+    width: 150px;
+    margin: 60% 50%;
+    font-size: 14px;
+    font-weight: 600;
+
+}
 button {
     width: 20%;
     padding: 0 15px;
@@ -273,7 +285,12 @@ button {
         width: 750px;
 
     }
+    .assignTechText{
+        
+        margin: 60% 40%;
+       
     
+    }
     button{
         margin: 2% 41%;
     }
@@ -343,7 +360,10 @@ button {
         
         
     }
- 
+    #date {
+
+        padding-left: 60.5%;
+    }
     .Cards {
         border:1px solid red;
         width: 760px;
@@ -353,6 +373,12 @@ button {
         margin:1% 5% ;
         width: 700px;
 
+    }
+    .assignTechText{
+        
+        margin: 60% 20%;
+       
+    
     }
     button{
         margin: 2% 40%;
@@ -435,7 +461,12 @@ button {
         
     }
     
+    .assignTechText{
+        
+        margin: 60% 15%;
+       
     
+    }
     button{
         margin: 2% 40%;
     }
@@ -500,10 +531,17 @@ button {
     .imgStaffInfo {
 
         
-        padding: 0 15%;
+        padding: 0 12%;
         
         
     }
-
+    .assignTechText{
+        width: 120px;
+        font-weight:600 ;
+        font-size: 12px;
+        margin: 75% 10%;
+       padding-left: 0;
+    
+    }
 
 }

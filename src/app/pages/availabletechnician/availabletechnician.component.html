@@ -1,102 +1,125 @@
 
-<nav class="navbar navbar-expand-lg ">
-    <!--Start of navigation section-->
 
-      <div class="container-fluid sticky fixed-top " >
-  
-            <!--Start of logo -->
-            <h1 class="navbar-brand" routerLink=""><img class ="logo" src="/assets/images/tutLogo.png"> </h1> 
-            <img class="toggleMenu" src="/assets/images/icons8-menu.svg" width="60">
+    <nav class="navbar navbar-expand-lg ">
+        <!--Start of navigation section-->
     
-            <!--End of logo-->
-      </div>
-  
-      <!--End of navigation section-->
-</nav>
-
-
-
-<body>
-    <div class = "sideNav"> 
+          <div class="container-fluid sticky fixed-top " >
+      
+                <!--Start of logo -->
+                <h1 class="navbar-brand" routerLink=""><img class ="logo" src="/assets/images/tutLogo.png"> </h1> 
+                <img class="toggleMenu" src="/assets/images/icons8-menu.svg" width="60">
         
-        <nav class="breadcrumbNav">
-            <ul >
-                
-                <li class = "breadcrumb-item active" id = "breadcrumbpadding"><a class ="anchorBorder" href="#" id="hover">View Request</a></li>
-                <li class = "" id = "breadcrumbpadding"><a class ="anchorBorder" href="#" id="hover">View Progress</a></li>
+                <!--End of logo-->
+          </div>
+      
+          <!--End of navigation section-->
+    </nav>
 
 
-                
-            </ul>
+    <body>
+        <div class = "sideNav"> 
             
-        </nav>
-        
-    </div>
-    <div class = "contentContainerRight">
-            <form class="backFrom">
-                <div class = "contentForm">
-
-                    <h3 class = "toptitle">Admin Available technicians</h3>
-
-                    <div class = "Cards">
-
-                        <div id = "card">
-                            <div class="card ">
-                                <div class="card-body">
-                                    <div class="card-titles">
-                                        <h6 class="card-title">Ref:f14m56tg</h6>
-                                        <h6 class="card-title" id = "date">RequestDate</h6>
-                                    </div>
-                                  
-                                    <div class="imgStaffInfo">
-                                        <img src="/assets/images/icon _profile.png" >
-                                        <p class="card-text">Palesa Mahlangue<br>Mahlanguup@gmail.com</p>
-                                        <a  href="#"><img class = "image" src="/assets/images/icon _send.png" ></a>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id = "card2">
-                            <div class="card ">
-                                <div class="card-body">
-                                    <div class="card-titles">
-                                        <h6 class="card-title">Ref:f14m56tg</h6>
-                                        <h6 class="card-title" id = "date">RequestDate</h6>
-                                    </div>
-                                  
-                                    <div class="imgStaffInfo">
-                                        <img src="/assets/images/icon _profile.png" >
-                                        <p class="card-text">thabelo livhimbi<br>LivhimbiT@gmail.com</p>
-                                        <a href="#"><img class = "image" src="/assets/images/icon _send.png"  ></a>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div id = "card3">
-                            <div class="card ">
-                                <div class="card-body">
-                                    <div class="card-titles">
-                                        <h6 class="card-title">Ref:f14m56tg</h6>
-                                        <h6 class="card-title" id = "date">RequestDate</h6>
-                                    </div>
-                                  
-                                    <div class="imgStaffInfo">
-                                        <img src="/assets/images/icon _profile.png" >
-                                        <p class="card-text">Kabelo Malatji<br>KabeloK@gmail.com</p>
-                                        <a href="#"><img class = "image" src="/assets/images/icon _send.png" ></a>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </form>
+            <nav class="breadcrumbNav">
+                <ul >
+                    
+                    <li class = "breadcrumb-item active" id = "breadcrumbpadding"><a class ="" href="#" id="hover">View Request</a></li>
+                    <li class = "" id = "breadcrumbpadding"><a class ="" href="#" id="hover">View Progress</a></li>
+    
+    
+                    
+                </ul>
+                
+            </nav>
+            
         </div>
-</body>
+        <div class = "contentContainerRight">
+                <form class="backFrom">
+                    <div *ngIf="message !=''"   class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                      
+                   </div>
+                    <div class = "contentForm">
+                       
+                        <h3 class = "toptitle">Admin Available technicians</h3>
+    
+                        <div class = "Cards">
+    
+                            <div id = "card">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <div class="card-titles">
+                                            <h6 class="card-title">Ref:f14m56tg</h6>
+                                            <h6 class="card-title" id = "date">RequestDate</h6>
+                                        </div>
+                                      
+                                        <div class="imgStaffInfo">
+                                            <img src="/assets/images/icon _profile.png" >
+                                            <p class="card-text">Palesa Mahlangue<br>Mahlanguup@gmail.com</p>
+                                            <a  href="#"><img class = "image" src="/assets/images/icon _send.png" ></a>
+                                            <div class="assignTextDiv">
+                                                <button class="assignTechText" (click)="assignArtisan()">Assign Technician</button>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div id = "card2">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <div class="card-titles">
+                                            <h6 class="card-title">Ref:f14m56tg</h6>
+                                            <h6 class="card-title" id = "date">RequestDate</h6>
+                                        </div>
+                                      
+                                        <div class="imgStaffInfo">
+                                            <img src="/assets/images/icon _profile.png" >
+                                            <p class="card-text">thabelo livhimbi<br>LivhimbiT@gmail.com</p>
+                                            <a href="#"><img class = "image" src="/assets/images/icon _send.png"  ></a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div id = "card3">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <div class="card-titles">
+                                            <h6 class="card-title">Ref:f14m56tg</h6>
+                                            <h6 class="card-title" id = "date">RequestDate</h6>
+                                        </div>
+                                      
+                                        <div class="imgStaffInfo">
+                                            <img src="/assets/images/icon _profile.png" >
+                                            <p class="card-text">Kabelo Malatji<br>KabeloK@gmail.com</p>
+                                            <a href="#"><img class = "image" src="/assets/images/icon _send.png" ></a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                       
+                    </div>
+                </form>
+            </div>
+    
+    
+        
+    </body>
+
+    
+
+
+
+
+
+
+
+
 
 

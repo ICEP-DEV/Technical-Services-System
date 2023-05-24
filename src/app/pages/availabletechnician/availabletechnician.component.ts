@@ -17,6 +17,8 @@ export class AvailabletechnicianComponent implements OnInit{
     //Variable used to push all the data in
    sentRequest =[];
 
+   //Store all the empty messages
+   message = "";
   
   constructor(private techService:MyHttpServiceService){}
 
@@ -24,8 +26,15 @@ export class AvailabletechnicianComponent implements OnInit{
 
     //this.getData();
     
+    
   }
 
+  assignArtisan() {
+    this.message = "";
+      this.message = "Successfully assigned an artisan, the request";
+      return alert(this.message)
+   
+  }
   getData(){
         this.techService.getTechAvailable().subscribe(v => {
 
