@@ -64,6 +64,12 @@
                     class="w-100 rounded-1 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3"
                     enctype="multipart/form-data">
                     <div class="reqhead1">SEND REQUEST</div>
+                    <div *ngIf="showSuccessMsg" class="alert alert-success" role="alert">
+                        <strong>{{successmsg}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
 
                     <label class="d-block mb-4">
                         <br>
@@ -111,23 +117,8 @@
                             [(ngModel)]="requestform.staff_id" name="requestform.staff_id" name="requestform.venue" />
                     </label>
 
-
-
-
-                    <!-- <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                  </div>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile01"
-                      aria-describedby="inputGroupFileAddon01">
-                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                  </div>
-                </div> -->
-
-
                     <div class="mb-3">
-                        <button type="submit" (click)="request()" class="btn btn-primary px-3 rounded-3">
+                        <button  type="submit" (click)="clear()" (click)="request()" class="btn btn-primary px-3 rounded-3">
                             Submit
                         </button>
                     </div>
@@ -138,6 +129,8 @@
 
 
                 </form>
+
+                
             </div>
 
 

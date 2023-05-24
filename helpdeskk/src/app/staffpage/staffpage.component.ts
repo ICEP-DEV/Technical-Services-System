@@ -30,7 +30,8 @@ export class StaffpageComponent implements OnInit {
     category: '',
     venue: this.buildingNo,
     Image: Blob,
-    staff_id: "",
+    staff_id: '',
+     data:''
   };
   
 
@@ -52,6 +53,8 @@ export class StaffpageComponent implements OnInit {
 
 
   errormsg: any;
+  successmsg:any;
+  showSuccessMsg: any;
   staffId:any
   ngOnInit(): void {
     var myid =localStorage.getItem('stafflogin')?.toString()
@@ -93,7 +96,8 @@ export class StaffpageComponent implements OnInit {
         this.request_object = response;
         console.log(response);
         if (this.request_object.success == true) {
-          alert(`Work request submitted, your reference number :`)
+          this.successmsg = 'Request submitted successfully.';
+          this.showSuccessMsg = true;
 
         } else {
           console.log("User ID doesnt match credentials")
@@ -104,7 +108,16 @@ export class StaffpageComponent implements OnInit {
           this.errormsg = error;
         });
 
+        this.requestform = {
+          description: '',
+          category: '',
+          venue: '',
+          Image: Blob,
+          staff_id: '',
+          data:''
+        };
 
+        
   }
 
 
@@ -142,6 +155,11 @@ export class StaffpageComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('stafflogin')
+  }
+
+  clear(){
+    
+    
   }
 
 }

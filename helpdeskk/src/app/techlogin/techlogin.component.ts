@@ -40,8 +40,16 @@ export class TechloginComponent implements OnInit {
 
   tech_object:any
   tech_login() {
-    if(this.techLogin.tech_id== '' || this.techLogin.password == ''){
+    if(this.techLogin.tech_id== '' && this.techLogin.password == ''){
       alert("Email and password required");
+      return;
+    }
+     if(this.techLogin.tech_id== ''){
+      alert("Email required");
+      return;
+    }
+    if(this.techLogin.password== ''){
+      alert("Password required");
       return;
     }
   
