@@ -50,16 +50,18 @@
                               <tbody>
                                 <!--Displaying the technician task using the directive, if they are more than 2 it will use a loop-->
                                 <tr class="overflow-y" *ngFor = "let data of tempRequest ">
-                                  <td class="rowPadding">HardWare{{data.category}}</td>
-                                  <td class="rowPadding">Monitor is broken</td>
-                                  <td class="rowPadding">10-G42</td>
-                                  <td class="rowPaddingImage"><img class="requestimgSize" src = "/assets/images/backArrow.png"></td>
+                                  <td class="rowPadding">{{data.category}}</td>
+                                  <td class="rowPadding">{{data.description}}</td>
+                                  <td class="rowPadding">High{{data.priority}}</td>
+                                  <td class="rowPadding">10-G42{{data.Venue}}</td>
                                   <td class="rowPaddingDropDown">
-                                      <select name="progressStatus" id="progressStatus">
+                                      <select name="progressStatus" id="progressStatus" >
                                         <option value="todo">Todo</option>
                                         <option value="inProgress">inProgress</option>
                                         <option value="done">Done</option>
                                       </select></td>
+                                      <td><button>Save</button></td>
+                                      
                                 </tr>
                               </tbody>
                             </table>

@@ -29,8 +29,9 @@ export class TechnicianViewTaskComponent implements OnInit{
           tempRequest: any;
 
           getallRequests(){
-              this.techViewServ.getTechTaskById(222424345).subscribe(respond=>{
-                this.tempRequest = respond;
+              this.techViewServ.getTechTaskById(25897486).subscribe(respond=>{
+                this.tempRequest = respond.result;
+                console.log(this.tempRequest)
               })
 
           }

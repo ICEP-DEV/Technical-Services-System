@@ -15,8 +15,6 @@ export class TrackRequestComponent implements OnInit {
   public progressStatus = [];
 
   constructor(private service: MyHttpServiceService) {
-
-
   }
 
 
@@ -24,8 +22,6 @@ export class TrackRequestComponent implements OnInit {
 
     // Get the technician progress status method
     //this.getTechProgressStatus();
-
-
     this.recieveAllRequest();
     //this.getrequestData(); 
   }
@@ -51,31 +47,23 @@ export class TrackRequestComponent implements OnInit {
 
       //storing the data fetched from the server in a temporary variable
       this.tempRequest = respond
-
-      // this.allRequest = respond.result;
-      // console.log(this.allRequest)
-      // var Inprog = this.allRequest.filter((toFilter: any)=>{toFilter.progress=="complete"});
-      // console.log(Inprog)
-      
-
-
-      //This is the default state, it will look for the todo Request.
-
+      let requestcount = this.tempRequest.result.length
+      console.log(this.tempRequest)
       //array 
       var array = []
-      for (let i = 0; i < this.tempRequest.length; i++) {
+      for (let i = 0; i < requestcount; i++) {
+       
+
         //Validating the data in the tempRequest variable
-        if (this.tempRequest[i].progress == "todo") {
+        if (this.tempRequest.result[i].progress == "to-do") {
           //If it matches, push the MATCHED DATA to the array variable.
-          array.push(this.tempRequest[i]);
+          array.push(this.tempRequest.result[i]);
         }
       }
 
       //Storing the data in the all request variable/array
       this.allRequest = array
       
-
-
       console.log(this.allRequest)
     })
   }
@@ -83,10 +71,13 @@ export class TrackRequestComponent implements OnInit {
 
   //get the Inprogress tasks
   getInprogress(){
+    var status = "in-progress"
+    let requestcount = this.tempRequest.result.length
     var array = []
-    for (let i = 0; i < this.tempRequest.length; i++) {
-      if (this.tempRequest[i].progress == "in-progress") {
-        array.push(this.tempRequest[i]);
+    for (let i = 0; i < requestcount; i++) {
+      if (this.tempRequest.result[i].progress == status) {
+        array.push(this.tempRequest.result[i]);
+       
       }
     }
     this.allRequest = array
@@ -94,32 +85,33 @@ export class TrackRequestComponent implements OnInit {
   }
    //get the onHold tasks
    getOnHoldTasks(){
+    let requestcount = this.tempRequest.result.length
+
     var array = []
-    for (let i = 0; i < this.tempRequest.length; i++) {
-      if (this.tempRequest[i].progress == "complete") {
-        array.push(this.tempRequest[i]);
+    for (let i = 0; i < requestcount; i++) {
+      if (this.tempRequest.result[i].progress == "pending") {
+        array.push(this.tempRequest.result[i]);
       }
     }
     this.allRequest = array
     console.log(this.allRequest)
   }
-
 
   //get the Completetd tasks
   getCompleteTasks(){
+    var status = "complete"
+    let requestcount = this.tempRequest.result.length
+
     var array = []
-    for (let i = 0; i < this.tempRequest.length; i++) {
-      if (this.tempRequest[i].progress == "complete") {
-        array.push(this.tempRequest[i]);
+    for (let i = 0; i < requestcount; i++) {
+      console.log(i)
+      if (this.tempRequest.result[i].progress == status) {
+        array.push(this.tempRequest.result[i]);
       }
     }
     this.allRequest = array
     console.log(this.allRequest)
   }
-
- 
-
-
   /*
       // Get the technician progress status method
   getTechProgressStatus() {
@@ -131,9 +123,5 @@ export class TrackRequestComponent implements OnInit {
     }
 
   */
-
-
-
-
   
 }

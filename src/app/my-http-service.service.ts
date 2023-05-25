@@ -62,7 +62,7 @@ export class MyHttpServiceService {
        //Connection to get task assigned to technician from server, who logged based on the ID 
 
       getTechTaskById(id:Number): Observable<any>{
-        return this.httpClient.get(this.apiUrlTech+"task/"+id);
+        return this.httpClient.get(this.apiUrlTech+"tasks/"+id);
        }
         //Posting the technician progress status to the server
         postTechStatus(data:any): Observable<any> {

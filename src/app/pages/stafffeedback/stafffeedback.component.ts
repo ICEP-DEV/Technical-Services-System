@@ -29,13 +29,14 @@ export class StafffeedbackComponent {
 
 remove(){
   
+  
 }
 
   errorMsg = ["Both fields are empty", "Description is required", "3"];
-
+  
   tempJobcard: any
   //submitResults(feedback:any) {
-
+    
   submitResults() {
     this.message = "";
 
@@ -63,9 +64,11 @@ remove(){
     
   }
 
+
+
   /*
       console.log('You have clicked the submit button');
-// console.log(feedback.value.inlineRadioOptions);
+console.log(feedback.value.inlineRadioOptions);
 // console.log(feedback.value.description);
 console.log(feedback);
  

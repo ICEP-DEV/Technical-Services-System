@@ -31,7 +31,7 @@
             
         </div>
         <div class = "contentContainerRight">
-                <form class="backFrom">
+                <div class="backFrom"   >
                     <div class = "contentForm">
     
                         <h3 class = "toptitle">Staff Feedback</h3>
@@ -47,14 +47,17 @@
                                 We promise to read your comments carefully. Hopefully we managed to solve your issues.</p>
                         </div>
                             
+                               
+                            <form #feedback="ngForm" >
+                                {{feedback.value}}
                                 <div class="radionBtn">
-                                
+                                    <form></form>
                                     <div>
                                         <h5>Completed:</h5>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         
-                                        <input class="form-check-input" type="radio" name="option" id="inlineRadio1"  value="No" [(ngModel)]="option" >
+                                        <input class="form-check-input" type="radio" name="option" id="inlineRadio1"  value="No" ngModel >
                                         <label class="form-check-label" for="inlineRadio1">No</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -73,14 +76,11 @@
                                     <button type="submit" value = "submit" (click)="submitResults()">Send</button>
                                 </div>
         
-                            <div *ngFor = "let data of array ">
-                                <p>{{data}}</p>
-    
-                            </div>
+                            </form>
                             
                         
                     </div>
-                </form>
+                </div>
         </div>
         
     </body>
