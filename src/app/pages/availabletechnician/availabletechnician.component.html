@@ -23,7 +23,7 @@
                 <ul >
                     
                     <li class = "breadcrumb-item active" id = "breadcrumbpadding"><a class ="" href="#" id="hover">View Request</a></li>
-                    <li class = "" id = "breadcrumbpadding"><a class ="" href="#" id="hover">View Progress</a></li>
+                    <li class = "" id = "breadcrumbpadding"><a class ="" href="#" id="hover" routerLink="/adminviewprogress">View Progress</a></li>
     
     
                     
@@ -40,10 +40,57 @@
                    </div>
                     <div class = "contentForm">
                        
-                        <h3 class = "toptitle">Admin Available technicians</h3>
-    
+                        <h3 class = "toptitle">Admin Available Artisan</h3>
+                        <div class="departmenCategoryText">
+                            <h4>Campus: Soshanguve</h4>
+                            <h5>Department:Electrical</h5>
+                            <h6>Category:</h6>
+                        </div>
+                        
                         <div class = "Cards">
-    
+                            <div id = "card2">
+                                <div class="card " *ngFor="let data of alldata">
+                                    <table class="table table-hover" >
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Artisan Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Tel Number</th>
+                                            <th scope="col">Assign Artisan</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">Kamo Hlasa</th>
+                                            <td>hlasaK@mail.ac.za</td>
+                                            <td>0810539853</td>
+                                            <td><button class="assignButton" (click)="assignArtisan()">Assign</button></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">dipono minose</th>
+                                            <td>hlasaK@mail.ac.za</td>
+                                            <td>0810539853</td>
+                                            <td><button class="assignButton" (click)="assignArtisan()">Assign</button></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">dipono minos</th>
+                                            <td >hlasaK@mail.ac.za</td>
+                                            <td>0810539853</td>
+                                            <td><button class="assignButton" (click)="assignArtisan()">Assign</button></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">{{data.name}}&nbsp;{{ data.surname}}</th>
+                                            <td >{{data.tech_id}}</td>
+                                            <td>0810539853</td>
+                                            <td><button class="assignButton" (click)="assignArtisan()">Assign</button></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
+                            </div>
+                           
+
+
                             <div id = "card">
                                 <div class="card ">
                                     <div class="card-body">
@@ -60,41 +107,6 @@
                                                 <button class="assignTechText" (click)="assignArtisan()">Assign Technician</button>
                                             </div>
                                             
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <div id = "card2">
-                                <div class="card ">
-                                    <div class="card-body">
-                                        <div class="card-titles">
-                                            <h6 class="card-title">Ref:f14m56tg</h6>
-                                            <h6 class="card-title" id = "date">RequestDate</h6>
-                                        </div>
-                                      
-                                        <div class="imgStaffInfo">
-                                            <img src="/assets/images/icon _profile.png" >
-                                            <p class="card-text">thabelo livhimbi<br>LivhimbiT@gmail.com</p>
-                                            <a href="#"><img class = "image" src="/assets/images/icon _send.png"  ></a>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div id = "card3">
-                                <div class="card ">
-                                    <div class="card-body">
-                                        <div class="card-titles">
-                                            <h6 class="card-title">Ref:f14m56tg</h6>
-                                            <h6 class="card-title" id = "date">RequestDate</h6>
-                                        </div>
-                                      
-                                        <div class="imgStaffInfo">
-                                            <img src="/assets/images/icon _profile.png" >
-                                            <p class="card-text">Kabelo Malatji<br>KabeloK@gmail.com</p>
-                                            <a href="#"><img class = "image" src="/assets/images/icon _send.png" ></a>
                                         </div>
                                         
                                     </div>

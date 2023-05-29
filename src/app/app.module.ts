@@ -17,7 +17,7 @@ import { TechnicianViewTaskComponent } from './pages/technician-view-task/techni
 import { AdminviewrequestComponent } from './pages/adminviewrequest/adminviewrequest.component';
 import { AvailabletechnicianComponent } from './pages/availabletechnician/availabletechnician.component';
 import { AdminviewsinglerequestComponent } from './pages/adminviewsinglerequest/adminviewsinglerequest.component';
-import { AdminassigntaskComponent } from './pages/adminassigntask/adminassigntask.component';
+import { AdminassigntaskComponent } from './pages/adminviewprogress/adminassigntask.component';
 
 
 

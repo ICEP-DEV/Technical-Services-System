@@ -1,5 +1,5 @@
 .sticky {
-    background-color: #005596;
+    background-color: black;
     height:115px;
     
 }
@@ -149,6 +149,10 @@ form {
     margin:2.5% 6%;
     padding-left: 50px;
 }
+.departmenCategoryText{
+    border: 1px solid red;
+    padding-left: 15%;
+}
 #card1 {
     border: 1px solid green;
     
@@ -158,7 +162,7 @@ form {
     margin:1% 18% ;
     
     width: 60%;
-    height: 180px;
+    height: auto;
     border: 4px solid #969090; ;
 }
 
@@ -214,12 +218,15 @@ form {
     font-weight: 600;
 
 }
-button {
-    width: 20%;
-    padding: 0 15px;
+
+
+.assignButton {
+
+    font-size: small;
+    border-radius: 10px;
+    padding: 3px;
+    
 }
-
-
 
 
 @media only screen and (max-width: 1200px) {

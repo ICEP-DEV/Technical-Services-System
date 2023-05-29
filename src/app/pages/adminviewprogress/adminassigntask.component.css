@@ -1,5 +1,5 @@
 .sticky {
-    background-color: #005596;
+    background-color: black;
     height:115px;
     
 }
@@ -146,7 +146,27 @@ form {
     margin:2.5% 6%;
     padding-left: 50px;
 }
+.navtab {
 
+   
+    width: 300px;
+    margin: auto auto;
+    
+}
+#nav-done-tab {
+
+margin:auto ;
+}
+
+
+.printReportBtn {
+
+    border-radius: 10px;
+    width: 100px;
+    margin:0 15%;
+    background: #005596;
+    color:white;
+}
 .Cards {
 
 
@@ -155,12 +175,25 @@ form {
     width: 1180px;
    
 }
+/*Text color on Tabs*/
+.colorRed {
 
+    color: red;
+    font-weight: bold;
+}
+
+.colorAmber {
+
+    color: #FF8800;
+    font-weight: bold;
+}
+
+/*End Text color on Tabs*/
 .card {
     margin:1% 25% ;
     
     width: 60%;
-    height: 180px;
+    height: auto;
     border: 4px solid #969090; ;
 }
 
@@ -209,12 +242,42 @@ form {
     border-radius: 10px;
 }
 
-button {
-    width: 20%;
-    padding: 0 15px;
+
+.assignButton {
+
+    font-size: small;
+    border-radius: 10px;
+    padding: 3px;
+    
 }
 
+@media print {
+    body{
+        visibility: hidden;
+    }
 
+    .navtab{
+
+        visibility: visible;
+        position: absolute; 
+        top: 10%;
+        left: 20%;
+    }
+    .contentToPrint {
+
+        visibility: visible;
+        position: absolute;
+        top: 14%;
+        left: -10%;
+        
+    }
+    .printReportBtn{
+        visibility: hidden;
+    }
+    .card {
+        width: 60%;
+    }
+}
 @media only screen and (max-width: 1200px) {
     .sticky {
         width: 100%;

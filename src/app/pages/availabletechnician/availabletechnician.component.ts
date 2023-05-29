@@ -24,35 +24,48 @@ export class AvailabletechnicianComponent implements OnInit{
 
   ngOnInit(): void {
 
-    //this.getData();
+    this.getData();
+    
     
     
   }
 
   assignArtisan() {
-    this.message = "";
-      this.message = "Successfully assigned an artisan, the request";
-      return alert(this.message)
+
+    setTimeout(function(){
+      window.location.reload();
+    }, 3000);
    
+    this.message = "";
+      this.message = "Successfully assigned the request to a artisan, ";
+      return alert(this.message)
+      
   }
+
+  //Get the available technician of the requester/Staff that is logged in
   getData(){
-        this.techService.getTechAvailable().subscribe(v => {
-
+        this.techService.getTechAvailable(1685352844675).subscribe(v => {
+          
             //Variable to store temporary data
-            this.tempData = v.result;
+            this.tempData = v;
+           
 
-            //Looping through the object
+
+           
+            /**/
+
+            // //Looping through the object
             for(let i=0; i<this.tempData.length; i++) {
 
-              // pushing all the data in the sentrequest variable
+            //   // pushing all the data in the sentrequest variable
               this.sentRequest.push(this.tempData[i])
-            }
+             }
 
 
-            this.alldata = this.sentRequest;
+             this.alldata = this.sentRequest;
 
-            //Optionally displaying data on the console
-            console.log(this.alldata);
+            // //Optionally displaying data on the console
+             console.log(this.alldata);
 
         });
 

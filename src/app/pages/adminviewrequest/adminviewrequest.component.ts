@@ -23,7 +23,7 @@ export class AdminviewrequestComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAdminAllrequests();
+   //this.getAdminAllrequests();
   }
 
   getAdminAllrequests(){

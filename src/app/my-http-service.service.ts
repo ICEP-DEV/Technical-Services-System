@@ -54,8 +54,8 @@ export class MyHttpServiceService {
 
       //Api connection to get the available technician
 
-      getTechAvailable(): Observable<any> {
-        return this.httpClient.get(this.apiUrlTech+"");
+      getTechAvailable(id:Number): Observable<any> {
+        return this.httpClient.get(this.apiUrlAdmin+"availableTechnician/"+id);
         
       }
 
