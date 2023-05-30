@@ -1,6 +1,6 @@
 <!-- <body class="container"> -->
 <div class="log d-flex justify-content-end">
-    <NAv>
+    <nav class="header">
         <div id="logo-text">
             <a>
                 <img src="../../../assets/images/tut.png" alt="SMART FARM"
@@ -18,7 +18,7 @@
             </li>
         </ul>
 
-    </NAv>
+    </nav>
 </div>
 
 
@@ -29,13 +29,19 @@
 <br>
 
 
-
-
-
-
-
 <div class="d-flex justify-content-between">
-    <ul class="nav nav-tabs flex-column justify-content-center" id="myTab" role="tablist">
+    <div class="sideNav">
+        <nav class="breadcrumbNav">
+            <ul>
+
+                <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
+                        disabled="true">Send Request</a></li>
+                <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
+                        routerLink="/trackrequest">Tracking</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- <ul class="nav nav-tabs flex-column justify-content-center" id="myTab" role="tablist">
 
         <li>
             <img src=".../../../../assets/images/download.png" alt="">
@@ -54,7 +60,7 @@
             <button class="nav-link colorGreen" id="done-tab" data-bs-toggle="tab" data-bs-target="#done" type="button"
                 role="tab" aria-controls="done" aria-selected="false"><br><a>Feedback</a></button>
         </li>
-    </ul>
+    </ul> -->
     <div class="tab-content ps-5" id="myTabContent">
         <div class="tab-pane fade show active" id="doing" role="tabpanel" aria-labelledby="doing-tab">
 
@@ -66,22 +72,25 @@
                     <div class="reqhead1">SEND REQUEST</div>
                     <div *ngIf="showSuccessMsg" class="alert alert-success" role="alert">
                         <strong>{{successmsg}}</strong>
-                        <button id="b12" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>
+                        <button id="b12" type="button" class="btn-close" data-bs-dismiss="alert"
+                            aria-label="Close"></button>
+                    </div>
 
                     <label class="d-block mb-4">
                         <br>
-                        <span class="form-label d-block"><h4>Description</h4></span>
+                        <span class="form-label d-block">
+                            <h4>Description</h4>
+                        </span>
                         <textarea class="form-control" rows="3" [(ngModel)]="requestform.description"
                             name="requestform.description" placeholder="Please describe your problem"></textarea>
                     </label>
 
                     <label class="Cater" for="Cater">
 
-                      <h4>Catergory</h4>  
-                         
+                        <h4>Catergory</h4>
+
                         <select id="Cater" [(ngModel)]="requestform.category" name="requestform.category">
-                            <option value="">Select Catergory</option>
+                            <option value="#">Select Catergory</option>
                             <option value="Hardware">Hardware</option>
                             <option value="Hardware">Software</option>
                             <option value="Hardware">Electrical</option>
@@ -96,27 +105,33 @@
                         </select>
                         <br>
                         <select (change)="getVunueSelected($event)" class="form-control mb-2 mr-sm-2">
-                            <option value="">---Select Vanue---</option>
+                            <option value="#">---Select Vanue---</option>
                             <option *ngFor="let vanue of selectedBuilding" value="{{vanue.v}}">{{vanue.v}}</option>
                         </select>
                     </div>
 
-                   
 
-                    <label for="formFileDisabled" class="form-label input-group"><span><h4>Image</h4></span>
+
+                    <label for="formFileDisabled" class="form-label input-group"><span>
+                            <h4>Image</h4>
+                        </span>
 
                         <input class="form-control" [(ngModel)]="requestform.Image" name="requestform.Image" type="file"
                             id="formFileDisabled" />
                     </label>
 
                     <label class="d-block mb-4">
-                        <span class="form-label d-block"><h4>Staff Number</h4></span>
+                        <span class="form-label d-block">
+                            <h4>Staff Number</h4>
+                        </span>
                         <input type="text" class="form-control" placeholder="235578933"
-                            [(ngModel)]="requestform.staff_id" name="requestform.staff_id" name="requestform.venue" readonly/>
+                            [(ngModel)]="requestform.staff_id" name="requestform.staff_id" name="requestform.venue"
+                            readonly />
                     </label>
 
                     <div class="mb-3">
-                        <button  type="submit" (click)="clear()" (click)="request()" class="btn btn-primary px-3 rounded-3">
+                        <button type="submit" (click)="clear()" (click)="request()"
+                            class="btn btn-primary px-3 rounded-3">
                             Submit
                         </button>
                     </div>
@@ -128,12 +143,13 @@
 
                 </form>
 
-                
+
             </div>
 
 
 
         </div>
+        <!--         
         <div class="tab-pane fade" id="in-progress" role="tabpanel" aria-labelledby="in-progress-tab">
 
 
@@ -227,7 +243,7 @@
 
             </div>
 
-        </div>
+        </div> -->
 
 
 

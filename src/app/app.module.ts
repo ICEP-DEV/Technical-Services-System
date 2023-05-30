@@ -31,6 +31,10 @@ import { AdminpageComponent } from './adminpage/adminpage.component';
 import { ViewrequestComponent } from './viewrequest/viewrequest.component';
 import { StaffpageComponent } from './staffpage/staffpage.component';
 import { RefConfirmFormComponent } from './ref-confirm-form/ref-confirm-form.component';
+import { TrackRequestComponent } from './track-request/track-request.component';
+import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
+import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component';
+import { AdminviewprogressComponent } from './adminviewprogress/adminviewprogress.component';
 
 
 @NgModule({
@@ -49,7 +53,11 @@ import { RefConfirmFormComponent } from './ref-confirm-form/ref-confirm-form.com
      AdminpageComponent,
      ViewrequestComponent,
      StaffpageComponent,
-     RefConfirmFormComponent
+     RefConfirmFormComponent,
+     TrackRequestComponent,
+     SidenavbarComponent,
+     StafffeedbackComponent,
+     AdminviewprogressComponent
      
   ],
   imports: [

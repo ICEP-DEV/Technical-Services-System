@@ -19,12 +19,6 @@
   font-size: 22px;
   line-height: 25px;
   letter-spacing: 0.035em;
-  
-  
-  
-  
-  
-  
   width: 335px;
   
   left: -2px;
@@ -117,7 +111,7 @@
   
   /*Navigation*/
   
-  nav {
+  .header {
     height: 72px;
     background: #0c0c0c;
     width: 100%;
@@ -132,18 +126,18 @@
     z-index: 100;
   }
   
-  nav a {
+  .header a {
     padding: 0 32px;
     color: #eee;
     transition: 0.4s;
   }
   
-  nav a:hover {
+  .header a:hover {
     text-decoration: none;
     color: red;
   }
   
-  nav ul {
+  .header ul {
     display: flex;
     list-style: none;
     justify-content: space-around;
@@ -286,6 +280,63 @@
   
   
   
+.sideNav {
+  float: left;
+  box-shadow: 5px 0 2px #969292;
+  width: 335px;
+  height: 1055px;
+  
+}
+
+.breadcrumbNav {
+  margin: 12% 10px;
+  padding: 20px 30px;      
+}
+#breadcrumbpadding {
+
+  width: 115px;  
+  padding: 6px 0;
+}
+
+a {
+  padding-top: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  letter-spacing: 0.035em;
+  text-transform: capitalize;
+
+  color: #005596;
+  text-decoration: none;
+}
+
+.breadcrumbNav ul {
+
+  list-style:none ;
+  flex-direction: column;
+}
+.breadcrumb-item.active {
+ 
+  
+  border-bottom: 3px solid #005596;
+  width: 115px;  
+  
+}
+
+.anchorBorder{
+
+    
+  margin:0 20%;
+}
+
+#hover:hover {
+  font-weight: bold;
+ 
+ 
+}
   
   
   

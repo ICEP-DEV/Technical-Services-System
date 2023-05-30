@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReadComponent } from './read.component';
+import { TrackRequestComponent } from './track-request.component';
 
-describe('ReadComponent', () => {
-  let component: ReadComponent;
-  let fixture: ComponentFixture<ReadComponent>;
+describe('TrackRequestComponent', () => {
+  let component: TrackRequestComponent;
+  let fixture: ComponentFixture<TrackRequestComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReadComponent ]
+      declarations: [ TrackRequestComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ReadComponent);
+    fixture = TestBed.createComponent(TrackRequestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
