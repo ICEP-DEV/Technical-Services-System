@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./component.component.css']
 })
 export class ComponentComponent {
-
+  logout() {
+    localStorage.removeItem('stafflogin')
+  }
 }

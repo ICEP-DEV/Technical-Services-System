@@ -10,7 +10,9 @@ export class AdminassigntaskComponent {
 
 
 
-
+  logout() {
+    localStorage.removeItem('stafflogin')
+  }
 
   printer(){
     window.print();

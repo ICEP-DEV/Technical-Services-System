@@ -1,19 +1,26 @@
 
 
-    <nav class="navbar navbar-expand-lg ">
-        <!--Start of navigation section-->
-    
-          <div class="container-fluid sticky fixed-top " >
-      
-                <!--Start of logo -->
-                <h1 class="navbar-brand" routerLink=""><img class ="logo" src="/assets/images/tutLogo.png"> </h1> 
-                <img class="toggleMenu" src="/assets/images/icons8-menu.svg" width="60">
-        
-                <!--End of logo-->
-          </div>
-      
-          <!--End of navigation section-->
+<div class="log d-flex justify-content-end">
+    <nav class="navbarSteve">
+        <div id="logo-text">
+            <a href="#">
+                <img src="assets/images/tutLogo.png" alt="SMART FARM"
+                    style="float: left;height: 72px;width: 225px;" routerLink="read" class="imageLogo">
+            </a>
+        </div>
+        <div id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li>
+
+                <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
+                        class="btn btn-success">LOGOUT</button></a>
+            </li>
+        </ul>
+
     </nav>
+</div>
 
 
     <body>
@@ -48,8 +55,8 @@
                         </div>
                         
                         <div class = "Cards">
-                            <div id = "card2">
-                                <div class="card " *ngFor="let data of alldata">
+                            <div id = "card2" >
+                                <div class="card " >
                                     <table class="table table-hover" >
                                         <thead>
                                           <tr>
@@ -59,7 +66,7 @@
                                             <th scope="col">Assign Artisan</th>
                                           </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody *ngFor="let data of alldata">
                                           <tr>
                                             <th scope="row">Kamo Hlasa</th>
                                             <td>hlasaK@mail.ac.za</td>
@@ -78,12 +85,16 @@
                                             <td>0810539853</td>
                                             <td><button class="assignButton" (click)="assignArtisan()">Assign</button></td>
                                           </tr>
-                                          <tr>
+                                          <!--
+                                                <tr>
                                             <th scope="row">{{data.name}}&nbsp;{{ data.surname}}</th>
                                             <td >{{data.tech_id}}</td>
                                             <td>0810539853</td>
                                             <td><button class="assignButton" (click)="assignArtisan()">Assign</button></td>
                                           </tr>
+
+                                          -->
+                                          
                                         </tbody>
                                       </table>
                                 </div>

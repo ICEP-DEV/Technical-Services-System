@@ -29,7 +29,9 @@ export class AvailabletechnicianComponent implements OnInit{
     
     
   }
-
+  logout() {
+    localStorage.removeItem('stafflogin')
+  }
   assignArtisan() {
 
     setTimeout(function(){
