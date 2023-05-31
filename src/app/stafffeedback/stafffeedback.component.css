@@ -340,28 +340,20 @@ textarea {
         width: 900px;
         margin-top:0%;
         margin-left: 13%;
-        
-    
-    
     }
     form { 
-
         width: 900px;
         /*background: #da3737;*/
-        
     }
     .toptitle {
         /*border:1px solid BLUE;*/
-        
         width: 700px;
         margin:5% 17%;
-        
-        
     }
     .feedbackTopPara{
         
         /*
-                 font-weight: 490;
+        font-weight: 490;
         font-size: 20px;
         letter-spacing: 0.06em;
         border: 1px solid red;
@@ -376,14 +368,10 @@ textarea {
     .backFrom {
     
         width: 700px;
-       
-      
-    
     
     }
     .descriptionTitle {
-
-        
+  
         margin: 2% 30%;
     }
     button{

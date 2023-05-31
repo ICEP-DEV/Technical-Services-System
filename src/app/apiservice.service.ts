@@ -50,9 +50,6 @@ export class ApiserviceService {
     return this._http.get(`${this.apiUrl + "/admin/totalRequests"}`);
   }
 
-  allRequests(): Observable<any> {
-    return this._http.get(`${this.apiUrl + "/admin/viewAllrequest"}`);
-  }
 
 /*
   createData(data: any): Observable<any> {
@@ -78,12 +75,21 @@ export class ApiserviceService {
         return this._http.post(this.apiUrl+"/staff/sendFeedback",data);
 
       }
+
+      allRequests():Observable<any>
+      {
+        return this._http.get(`${this.apiUrl+"/admin/viewAll"}`);
+      }
+      
       
       /*Get the staff request that are logged based on the staff id STAFF */ 
       getRequestsBystaffId(id : Number){
         return this._http.get(this.apiUrl+"/staff/loggedRequests/"+id)
       }
 
+      updatePriority(id : Number,data: any) {
+        return this._http.put(this.apiUrl + "/admin/setPriority/"+id, data);
+      }
 
   /*Technician Apis*/
 
@@ -109,6 +115,11 @@ export class ApiserviceService {
     return this._http.get(`${this.apiUrl}/technician/` + "");
 
   }
+
+  report():Observable<any>
+      {
+        return this._http.get(`${this.apiUrl+"/admin/export"}`);
+      }
 
 }
 

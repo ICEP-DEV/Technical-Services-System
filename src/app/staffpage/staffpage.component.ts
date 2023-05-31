@@ -80,9 +80,8 @@ export class StaffpageComponent implements OnInit {
         this.request_object = response;
         console.log(response);
         if (this.request_object.success == true) {
-          this.successmsg = 'Request submitted successfully.';
+          this.successmsg = this.request_object.message;
           this.showSuccessMsg = true;
-
         } else {
           console.log("User ID doesnt match credentials")
         }

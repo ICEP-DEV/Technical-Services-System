@@ -1,4 +1,5 @@
-<div class="container-fluid">
+<body>
+    <div class="container-fluid">
     <!-- <body class="container"> -->
         <div class="log d-flex justify-content-end">
             <nav class="header">
@@ -135,19 +136,50 @@
                 </div>
 
                 <!-- class="ps-5 w-90 rounded-1 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-8 px-lg-2 col-xl-11 px-xl-0 px-xxl-3" -->
-
+                <!-- <button type="button" class="btn btn-primary justify-content-center printReportBtn" (click)="export()" target="_blank">Export Report</button> -->
                 <div class="content card mt-4 p-4">
 
-
-                    <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Admin View
-                        Request</h1>
-                    <div *ngFor="let us of readData" class="request card mt-2">
+                
+                    <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Admin View Request</h1>
+                    <table class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">Ref.</th>
+                            <th scope="col">Staff Number</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">venue</th>
+                            <th scope="col">Priority</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Assign</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor = "let me of readData">
+                            <th scope="row">{{me.id}}</th>
+                            <th scope="row">{{me.staff_id}}</th>
+                            <td>{{me.description}}</td>
+                            <td>{{me.venue}}</td>
+                            <td><select id="Cater" (change)="priority($event, me.id)" [(ngModel)]="me.priority"  >
+                                <option value="">Select Priority</option>
+                                <option value="High">High</option>
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                            </select>
+                        </td>
+                            <td>{{me.req_date}}</td>
+                            <td><button type="button" class="btn btn-primary"><h2>Assign Technician     <svg fill="#000000" width="34px" height="34px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>send-envelope</title> <path d="M0 25.984v-12q0-2.464 1.76-4.224t4.256-1.76h0.352l0.096 0.288q0.544 1.344 1.344 2.176t2.208 1.184v0.352h-4q-0.672 0-1.28 0.48l11.264 7.52 11.264-7.52q-0.576-0.48-1.248-0.48h-4v-0.352q1.376-0.384 2.176-1.184t1.344-2.176l0.096-0.288h0.384q2.464 0 4.224 1.76t1.76 4.224v12q0 2.496-1.76 4.256t-4.224 1.76h-20q-2.496 0-4.256-1.76t-1.76-4.256zM4 23.968l6.016-1.984-5.408 5.408q0.544 0.608 1.408 0.608h20q0.8 0 1.408-0.608l-5.408-5.408 5.984 2.016v-8.032l-12 8-12-8v8zM10.048 5.632q0.096-0.608 0.544-1.056l4-4q0.576-0.576 1.408-0.576t1.408 0.576l4 4q0.448 0.448 0.544 1.056t-0.096 1.152q-0.224 0.544-0.736 0.896t-1.12 0.32h-1.984v6.016q0 0.832-0.608 1.408t-1.408 0.576-1.408-0.576-0.576-1.408v-6.016h-2.016q-0.608 0-1.12-0.32t-0.736-0.896-0.096-1.152z"></path> </g></svg></h2></button></td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    <!-- <div *ngFor = "let us of readData" class="request card mt-2">
                         <div class="card-body">
                             <div class="top d-flex justify-content-between">
                                 <p><b>Campus:</b> {{us.campus}}</p>
-                                <p><b>Department:</b> {{us.department}}</p>
+                                <p><b>Department:</b> {{us.department}}</p>                         
                                 <p><b>Faculty:</b> {{us.faculty}}</p>
-
+                                
                             </div>
                             <div class=" d-flex justify-content-between">
                                 <div class="icon d-flex justify-content-end">
@@ -156,10 +188,10 @@
                                         viewBox="0 0 45.532 45.532" xml:space="preserve">
                                         <g>
                                             <path d="M22.766,0.001C10.194,0.001,0,10.193,0,22.766s10.193,22.765,22.766,22.765c12.574,0,22.766-10.192,22.766-22.765
-		S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53
-		c-4.158,0-7.529-3.371-7.529-7.53C15.237,10.18,18.608,6.808,22.766,6.808z M22.761,39.579c-4.149,0-7.949-1.511-10.88-4.012
-		c-0.714-0.609-1.126-1.502-1.126-2.439c0-4.217,3.413-7.592,7.631-7.592h8.762c4.219,0,7.619,3.375,7.619,7.592
-		c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z" />
+            S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53
+            c-4.158,0-7.529-3.371-7.529-7.53C15.237,10.18,18.608,6.808,22.766,6.808z M22.761,39.579c-4.149,0-7.949-1.511-10.88-4.012
+            c-0.714-0.609-1.126-1.502-1.126-2.439c0-4.217,3.413-7.592,7.631-7.592h8.762c4.219,0,7.619,3.375,7.619,7.592
+            c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z" />
                                         </g>
                                     </svg>
                                     <div class="personal ps-2 mt-2" style="font-size: 1.5rem;">
@@ -168,13 +200,14 @@
                                     </div>
                                 </div>
                                 <div class="action justify-content-end mt-2">
-                                    <button class="btn bg-secondary" style="height: 3rem; width: 5.5rem;"
-                                        [routerLink]="['/viewrequest']">View</button>
+                                    <button class="btn bg-secondary" style="height: 3rem; width: 5.5rem;" [routerLink]="['/viewrequest']">View</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
+
+                
 
             </div>
             <div class="tab-pane fade" id="done" role="tabpanel" aria-labelledby="done-tab">
@@ -404,9 +437,10 @@
         </div>
 
     </div>
-
+<footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
+</footer>
 </div>
 
 
-<footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
-</footer>
+
+</body>

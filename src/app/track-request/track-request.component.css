@@ -109,6 +109,15 @@ body {
     height: 1055px;
 }*/
 
+footer{
+    background: black;
+      padding: 8px;
+      color: #eee;
+      display: center;
+     
+      bottom: 0;
+      width: 100%;
+  }
 
   
   

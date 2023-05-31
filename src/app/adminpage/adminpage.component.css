@@ -1,3 +1,12 @@
+
+.container-fluid{
+  flex:1;
+}
+
+.container2{
+  flex:1;
+}
+
 .tab-content {
     float: right;
     width: 80%;
@@ -107,9 +116,9 @@
     padding: 8px;
     color: #eee;
     display: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    /* position: absolute; */
+    /* bottom: 0;
+    width: 100%; */
   }
   
   

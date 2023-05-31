@@ -20,6 +20,10 @@
     </nav>
 </div>
 
+<br>
+<br>
+<br>
+<br>
 
 
 <body>
@@ -30,7 +34,7 @@
         <nav class="breadcrumbNav">
             <ul>
                 <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
-                        routerLink="/staffpage">Send Request</a></li>
+                        routerLink="/staffpage">Request</a></li>
                 <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
                         disabled="true">Tracking</a></li>
             </ul>
@@ -44,7 +48,7 @@
 
             <div class="container">
                 <label for="zero" id="red" class="todo" (click)="recieveAllRequest()">Todo</label>
-                <label for="zero" id="blue" class="Assigned">Assigned</label>
+                <label for="zero" id="blue" class="Assigned" (click)="assignTask()">Assigned</label>
                 <label for="fifty" id="orange" class="InProgress" (click)="getInprogress()">InProgress</label>
                 <label for="zero" id="gray" class="OnHold" (click)="getOnHoldTasks()">OnHold</label>
                 <label for="hundred" id="green" class="Done" (click)="getCompleteTasks()">Done</label>
@@ -56,7 +60,7 @@
                     <p>Description:{{request.description}}</p>
                     <p>Request Date:{{request.req_date}}</p>
                     <p>Venue:{{request.venue}}</p>
-                    <button *ngIf="numberDone > 0" (click)="feedback(request.id)">Feedback</button>
+                    <button type="button" class="btn btn-secondary" *ngIf="numberDone > 0" (click)="feedback(request.id)">Feedback</button>
                     <hr>
                 </div>
 
@@ -66,4 +70,8 @@
         </form>
     </div>
 
+    <footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
+    </footer>
+
 </body>
+

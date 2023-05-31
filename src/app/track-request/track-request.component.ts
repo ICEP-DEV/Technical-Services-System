@@ -76,7 +76,21 @@ export class TrackRequestComponent {
 
     var array = []
     for (let i = 0; i < requestcount; i++) {
-      if (this.tempRequest.result[i].progress == "pending") {
+      if (this.tempRequest.result[i].progress == "pending" && this.tempRequest.result[i].tech_id != null) {
+        array.push(this.tempRequest.result[i]);
+      }
+    }
+    this.allRequest = array
+    console.log(this.allRequest)
+  }
+
+  assignTask(){
+    this.numberDone=0
+    let requestcount = this.tempRequest.result.length
+
+    var array = []
+    for (let i = 0; i < requestcount; i++) {
+      if (this.tempRequest.result[i].progress == "pending" && this.tempRequest.result[i].tech_id != null) {
         array.push(this.tempRequest.result[i]);
       }
     }

@@ -14,12 +14,20 @@ export class AdminpageComponent implements OnInit {
   constructor(private service:ApiserviceService) { }
 
   readData:any;
-  temData:any
+  temData:any;
+  set_object: any;
+  set_print:any;
+  expo:any;
+
+  setPriority = {
+    priority: ''
+  }
 
   ngOnInit(): void{
-    this.service.getAllData().subscribe((res)=>{
+    this.service.allRequests().subscribe((res)=>{
       console.log(res.result,"res==>");
-      this.readData = res.result
+      this.readData = res.result;
+      localStorage.setItem('details', JSON.stringify(this.readData));
     })
     this.total()
   }
@@ -32,12 +40,34 @@ export class AdminpageComponent implements OnInit {
   })
 }
 
-
-
-
   logout(){
     localStorage.removeItem('logindata')
   }
-  
 
+  priority(event:any,jobCardId:Number){
+    var data={
+      priority:event.target.value,
+    }
+    
+    console.log(jobCardId)
+
+    this.service.updatePriority(jobCardId,data)
+
+      .subscribe((response) => {
+        this.set_object = response;
+        console.log(response);
+        if (this.set_object.success == true) {
+          localStorage.setItem('Priority', JSON.stringify(this.setPriority.priority));
+        }
+  })
+}
+printer(){
+  window.print();
+}
+
+export(){
+
+  this.service.report()
+
+}
 }
