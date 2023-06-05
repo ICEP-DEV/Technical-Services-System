@@ -96,7 +96,7 @@ export class ApiserviceService {
   //Api connection to get the available technician
 
   getTechAvailable(id: Number): Observable<any> {
-    return this._http.get(`${this.apiUrl}/technician/` + "availableTechnician/" + id);
+    return this._http.get(`${this.apiUrl}/admin/` + "availableTechnician/" + id);
 
   }
 

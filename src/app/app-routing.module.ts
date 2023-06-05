@@ -16,6 +16,7 @@ import { StaffpageComponent } from './staffpage/staffpage.component';
 import { TrackRequestComponent } from './track-request/track-request.component';
 import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component';
 import { AdminviewprogressComponent } from './adminviewprogress/adminviewprogress.component';
+import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
 
 
 
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path:'trackrequest',component:TrackRequestComponent},
   {path:'stafffeedback',component:StafffeedbackComponent},
   {path:'adminviewprogress',component:AdminviewprogressComponent},
+  {path:'availableTechnician', component:AdminassigntaskComponent}
 
   
  
