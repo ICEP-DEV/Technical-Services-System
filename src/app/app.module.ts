@@ -35,6 +35,7 @@ import { TrackRequestComponent } from './track-request/track-request.component';
 import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
 import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component';
 import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
+import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 
 
 @NgModule({
@@ -57,8 +58,9 @@ import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.comp
      TrackRequestComponent,
      SidenavbarComponent,
      StafffeedbackComponent,
-  
-     AdminassigntaskComponent
+     AdminviewprogressComponent,
+     AdminassigntaskComponent,
+     AdminprogressComponent
      
   ],
   imports: [
