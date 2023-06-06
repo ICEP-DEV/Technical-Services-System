@@ -4,6 +4,7 @@ import { FormComponent } from '../../form/form.component';
 import { TrackformComponent } from '../../trackform/trackform.component';
 import { LoginComponent } from 'src/app/login/login.component';
 import { TechloginComponent } from 'src/app/techlogin/techlogin.component';
+import { HODloginPageComponent } from 'src/app/hodlogin-page/hodlogin-page.component';
 
 
 
@@ -66,6 +67,16 @@ openTrackForm(): void {
       });
       }
 
+      openHOD(): void {
+        const dialogRef = this.dialog.open(HODloginPageComponent, {
+          width: '700px',
+          disableClose: true
+        });
+        
+        dialogRef.afterClosed().subscribe(result => {
+          console.log('The dialog was closed');
+        });
+        }
 
 }
 

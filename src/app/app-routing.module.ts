@@ -16,7 +16,9 @@ import { StaffpageComponent } from './staffpage/staffpage.component';
 import { TrackRequestComponent } from './track-request/track-request.component';
 import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component';
 import { AdminviewprogressComponent } from './adminviewprogress/adminviewprogress.component';
-
+import { HODpageComponent } from './hodpage/hodpage.component';
+import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
+import { TechpageComponent } from './techpage/techpage.component';
 
 
 
@@ -32,6 +34,10 @@ const routes: Routes = [
   {path:'trackrequest',component:TrackRequestComponent},
   {path:'stafffeedback',component:StafffeedbackComponent},
   {path:'adminviewprogress',component:AdminviewprogressComponent},
+  {path: 'hodpage',component:HODpageComponent},
+  {path: 'hodloginpage',component:HODloginPageComponent},
+  {path: 'techpage',component:TechpageComponent}
+
 
   
  

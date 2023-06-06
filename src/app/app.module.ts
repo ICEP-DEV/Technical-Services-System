@@ -9,7 +9,6 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { HeaderComponent } from './header/header.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -35,6 +34,9 @@ import { TrackRequestComponent } from './track-request/track-request.component';
 import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
 import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component';
 import { AdminviewprogressComponent } from './adminviewprogress/adminviewprogress.component';
+import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
+import { TechpageComponent } from './techpage/techpage.component';
+import { HODpageComponent } from './hodpage/hodpage.component';
 
 
 @NgModule({
@@ -45,7 +47,6 @@ import { AdminviewprogressComponent } from './adminviewprogress/adminviewprogres
     LoginComponent,
     AdminComponent,
     HeaderComponent,
-    SidenavComponent,
     HomeComponent,
     DashboardComponent,
     TrackformComponent,
@@ -57,7 +58,10 @@ import { AdminviewprogressComponent } from './adminviewprogress/adminviewprogres
      TrackRequestComponent,
      SidenavbarComponent,
      StafffeedbackComponent,
-     AdminviewprogressComponent
+     AdminviewprogressComponent,
+     HODloginPageComponent,
+     TechpageComponent,
+     HODpageComponent
      
   ],
   imports: [

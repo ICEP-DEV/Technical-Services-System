@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
 import { Router } from '@angular/router';
+import { OnInit, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-stafffeedback',
   templateUrl: './stafffeedback.component.html',
   styleUrls: ['./stafffeedback.component.css']
 })
-export class StafffeedbackComponent {
+export class StafffeedbackComponent implements OnInit {
 
   option = "";
   description = "";
@@ -16,48 +17,67 @@ export class StafffeedbackComponent {
   storeApiFromData1 = [];
   array = [];
   message = "";
+  set_object:any;
+  readData:any;
 
   constructor(private service: ApiserviceService,private _router: Router) {}
  
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.Allrequests()
+
+  }
+
+  Allrequests(){
+    var tempId = localStorage.getItem('stafflogin')
+    var staffId = Number(tempId?.substring(1, tempId.length -1))
+    console.log(staffId);
+
+  }
+  
+
 
 
   remove(){
   
   
   }
-  
-    errorMsg = ["Both fields are empty", "Description is required", "3"];
+
+  // priority(event:any,jobCardId:Number){
+  //   var data={
+  //     priority:event.target.value,
+  //   }
     
-    tempJobcard: any
-    //submitResults(feedback:any) {
-      
-    submitResults() {
-      this.message = "";
+  //   console.log(jobCardId)
+
+  //   this.service.updatePriority(jobCardId,data)
+
+  //     .subscribe((response) => {
+        // this.set_object = response;
+        // console.log(response);
+        // if (this.set_object.success == true) {
+        //   localStorage.setItem('Priority', JSON.stringify(this.setPriority.priority));
+        // }
+  // })
+
+
+  feedback(event:any,jobCardId:any){
+
+    var data={
+      feedback:event.target.value
+     }
+     
+
+     console.log(jobCardId)
+
+     this.service.postStaffFeedback(event,data)
+     .subscribe((response) => {
+      this.set_object = response;
+      console.log(response);         
+    })
+
+  }
   
-      if (this.option == "") {
-        this.message = "Option is required please select"
-        return alert(this.message)
-      }
-  
-      else 
-      if (this.description == "") {
-        this.message = "Description is required"
-        return alert(this.message)
-  
-      }
-      else  
-      if(this.description != "" && this.option != "") {
-        this.message = "Feedback has been sent succefully"
-        console.log(this.message)
-        this.option = ""
-        this.description = ""
-        return alert(this.message)
-  
-      }
-      
-      
-    }
+    
   
   
   

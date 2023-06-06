@@ -108,6 +108,7 @@ export class TrackRequestComponent {
       console.log(i)
       if (this.tempRequest.result[i].progress == status) {
         this.numberDone++
+        
         array.push(this.tempRequest.result[i]);
       }
     }

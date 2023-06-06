@@ -24,6 +24,11 @@ export class ApiserviceService {
     return this._http.post(this.apiUrl + "/admin/login", data);
   }
 
+  HODLogin(data: any) {
+    return this._http.post(this.apiUrl + "/hod/login", data);
+  }
+
+  
   techLogin(data: any) {
     return this._http.post(this.apiUrl + "/technician/login", data);
   }
@@ -71,8 +76,8 @@ export class ApiserviceService {
   /*Staff Apis*/
       //Api post feedback connection STAFF
       
-      postStaffFeedback(data: any): Observable<any> {
-        return this._http.post(this.apiUrl+"/staff/sendFeedback",data);
+      postStaffFeedback(id : Number,data: any ): Observable<any> {
+        return this._http.put(this.apiUrl+"/staff/sendFeedback"+id,data);
 
       }
 
@@ -121,6 +126,14 @@ export class ApiserviceService {
         return this._http.get(`${this.apiUrl+"/admin/export"}`);
       }
 
+      Techdata(id : any) {
+        return this._http.get(this.apiUrl + "/technician/tasks/"+id);
+      }
+
+
+      progressTech(id : Number,data: any) {
+        return this._http.put(this.apiUrl + "/technician/updateTask/"+id, data);
+      }
 }
 
 

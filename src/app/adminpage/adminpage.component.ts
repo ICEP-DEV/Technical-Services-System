@@ -27,7 +27,7 @@ export class AdminpageComponent implements OnInit {
     this.service.allRequests().subscribe((res)=>{
       console.log(res.result,"res==>");
       this.readData = res.result;
-      localStorage.setItem('details', JSON.stringify(this.readData));
+      // localStorage.setItem('details', JSON.stringify(this.readData));
     })
     this.total()
   }
