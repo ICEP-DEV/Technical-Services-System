@@ -69,13 +69,9 @@ export class AdminassigntaskComponent implements OnInit{
      
     })
 
-    this.message = "";
-      
-
-    this.message = "Successfully assigned the request to a artisan, ";
-
     let requestReferenceData = localStorage.getItem('reference')
 
+    //Convert to a number
     let refenceId = Number(requestReferenceData);
 
     console.log(refenceId,"reference");
@@ -85,7 +81,7 @@ export class AdminassigntaskComponent implements OnInit{
     //Slicing the string, in order to get the Arisan id
      let artisan = techdata?.slice(12,20);
      
-
+    //Convert to a number
      this.adminTechDetails.tech_id = Number(artisan);
    
      //Artisan staff number
@@ -104,22 +100,33 @@ export class AdminassigntaskComponent implements OnInit{
 
 
     console.log(this.adminTechDetails.admin_id,"Admin id");
+
+    //Displaying both staff number(of the Artisan&admin)
+    console.log(this.adminTechDetails)
+
+
+    this.service.assignavailArtisan(refenceId,)
+    //Display 
     //Have to post the assigned Artisan status
 
   //  this.service.assignavailArtisan(refenceId,this.status).subscribe((response)=>{
 
-  //   this.object_ = response;
+        //   this.object_ = response;
   
 
 
   //   //   if(this.pdata.success=='true'){
   //   //     console.log("Data submitted")
-  //   //   }
+       //   }
       
       
       
       
-  //   })
+    // })
+
+
+
+
 
 
   }
@@ -176,20 +183,12 @@ export class AdminassigntaskComponent implements OnInit{
    this.service.assignavailArtisan(refenceId,this.status).subscribe((response)=>{
 
     this.object_ = response;
-  
-
-
     //   if(this.pdata.success=='true'){
     //     console.log("Data submitted")
     //   }
-      
-      
-      
-      
+   
     })
-      return 
-      
-    
+      return  
   }
 
  
