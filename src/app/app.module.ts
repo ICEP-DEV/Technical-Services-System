@@ -58,7 +58,7 @@ import { AdminprogressComponent } from './adminprogress/adminprogress.component'
      TrackRequestComponent,
      SidenavbarComponent,
      StafffeedbackComponent,
-     AdminviewprogressComponent,
+     
      AdminassigntaskComponent,
      AdminprogressComponent
      
