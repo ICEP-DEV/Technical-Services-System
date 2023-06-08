@@ -37,6 +37,7 @@ import { AdminviewprogressComponent } from './adminviewprogress/adminviewprogres
 import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
 import { TechpageComponent } from './techpage/techpage.component';
 import { HODpageComponent } from './hodpage/hodpage.component';
+import { CloselogComponent } from './closelog/closelog.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { HODpageComponent } from './hodpage/hodpage.component';
      AdminviewprogressComponent,
      HODloginPageComponent,
      TechpageComponent,
-     HODpageComponent
+     HODpageComponent,
+     CloselogComponent
      
   ],
   imports: [
