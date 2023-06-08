@@ -6,7 +6,7 @@
     margin-top: 1%;
   }
   .departmenCategoryText {
-    padding: 18px;
+    padding: 60.1px;
   }
   
   body {
@@ -23,6 +23,7 @@
   #logoDiv{
   
     margin-left: 1%;
+    margin-top: 7.2px;
   }
   .container2{
     
@@ -159,7 +160,7 @@
     } */
     .table {
        
-      width: 90%;
+      width: 92%;
       margin: auto auto;
     }
     #menu-icon {
@@ -267,6 +268,7 @@
     }
     
   .content{
+    
     border: 1px solid #ccc;
     overflow-y: scroll;
     height: auto; 
@@ -274,6 +276,7 @@
     padding: 20px;
     width: 85%;
     margin: auto auto;
+    
   }
   
   .ticket{
@@ -392,7 +395,7 @@
   
     
     .header {
-      height: 72px;
+      height: 82px;
       background: #0c0c0c;
       width: 100%;
       margin: 0;

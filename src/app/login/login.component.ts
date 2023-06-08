@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   errormsg: any;
   adminLogin= {
-    admin_email:'',
+    admin_id:'',
     password:''
   }
 
@@ -33,11 +33,11 @@ export class LoginComponent implements OnInit {
 
   admin_object:any
   admin_login() {
-     if(this.adminLogin.admin_email== '' && this.adminLogin.password == ''){
+     if(this.adminLogin.admin_id== '' && this.adminLogin.password == ''){
       alert("Email and Password is required");
       return;
      } 
-     if(this.adminLogin.admin_email== ''){
+     if(this.adminLogin.admin_id== ''){
       alert("Email is required");
       return;
      } 
@@ -48,10 +48,12 @@ export class LoginComponent implements OnInit {
 
     this.service.adminLogin(this.adminLogin)
     .subscribe((response)=>{
+      
       this.admin_object = response
-      console.log(this.admin_object.body)
+      console.log(this.admin_object.admin_id)
       if(this.admin_object.success == true){
-        localStorage.setItem('stafflogin',JSON.stringify(this.admin_object.body))
+        // localStorage.setItem("adminLogin",this.admin_object.body?.toString())
+        localStorage.setItem('stafflogin',JSON.stringify(this.admin_object.admin_id))
         this.close()
         this._router.navigate(['/adminpage'])
       }else{

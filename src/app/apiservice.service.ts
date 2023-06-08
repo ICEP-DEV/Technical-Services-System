@@ -67,6 +67,18 @@ export class ApiserviceService {
   /*Admin Apis*/
 
 
+  /*Get in-progress tasks*/
+
+  getInprogressTasks():Observable<any>{
+    return this._http.get(`${this.apiUrl + "/admin/viewInProgressTasks"}`)
+
+  }
+
+  /*Get completed tasks*/
+
+  getCompletedTasks():Observable<any>{
+    return this._http.get(`${this.apiUrl + "/admin/viewCompletedTasks"}`);
+  }
 
   /*Staff Apis*/
       //Api post feedback connection STAFF
@@ -101,7 +113,7 @@ export class ApiserviceService {
   }
 
   // +artisan_id+admin_id
-  assignavailArtisan(id:Number, data:any):Observable<any>{
+  assignavailArtisan(id:Number,data:any):Observable<any>{
     return this._http.post(`${this.apiUrl}/admin/`+ "assignTechnician/"+ id,data);
 
   }
