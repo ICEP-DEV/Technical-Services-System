@@ -48,6 +48,16 @@
                 <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
                             routerLink="/closelog">Close Log</a></li>
                 </ul>
+                <ul>
+                    <div class="dropdown">
+                        <button class="dropbtn">Report</button>
+                        <div class="dropdown-content" >
+                          <a class="nav-link active" id="ModalExample" (click)="downloadFile()">All Tasks</a>
+                          <a class="nav-link active" id="ModalExample">Active Tasks</a>
+                          <a class="nav-link active" id="ModalExample">Closed Tasks</a>
+                        </div>
+                      </div>
+                </ul>
             </nav>
         </div>
         <div class="tab-content ps-3 mt-4" id="myTabContent">
@@ -89,7 +99,7 @@
                     </div>
 
                     <div class="ticket card" style="width: 15rem;">
-                        <div class="card-body">
+                        <div class="card-body" *ngFor="let re of complete">
                             <h4 class="card-title"><b>COMPLETED REQUESTS</b></h4>
                             <svg width="40px" height="64px" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +111,7 @@
                                         fill="#222222"></path>
                                 </g>
                             </svg>
-                            <i class="card-text">Text</i>
+                            <i class="card-text">{{re.Total_Closed}}</i>
                         </div>
                     </div>
 
@@ -123,7 +133,7 @@
                     </div>
 
                     <div class="ticket card" style="width: 15rem;">
-                        <div class="card-body">
+                        <div class="card-body" *ngFor="let re of tech">
                             <h4 class="card-title"><b>No. OF TECHNICIANS</b></h4>
                             <svg fill="#000000" width="40px" height="64px" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -136,7 +146,7 @@
                                 </g>
                             </svg>
 
-                            <i class="card-text">Text</i>
+                            <i class="card-text">{{re.total_tech}}</i>
                         </div>
                     </div>
                 </div>
@@ -166,8 +176,7 @@
                             <th scope="row">{{me.staff_id}}</th>
                             <td>{{me.description}}</td>
                             <td>{{me.venue}}</td>
-                            <td><select id="Cater" (change)="priority($event, me.id)" [(ngModel)]="me.priority"  >
-                                <option value="">Select Priority</option>
+                            <td><select id="Cater" (change)="priority($event, me.id)" [(ngModel)]="me.priority" >
                                 <option value="High">High</option>
                                 <option value="Low">Low</option>
                                 <option value="Medium">Medium</option>

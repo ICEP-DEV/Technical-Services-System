@@ -18,6 +18,10 @@ export class AdminpageComponent implements OnInit {
   set_object: any;
   set_print:any;
   expo:any;
+  set_object2: any;
+  repo:any;
+  complete:any;
+  tech:any
 
   setPriority = {
     priority: ''
@@ -30,14 +34,34 @@ export class AdminpageComponent implements OnInit {
       // localStorage.setItem('details', JSON.stringify(this.readData));
     })
     this.total()
+    this.totalcomplete()
+    this.totalTech()
+    
+    
   }
 
-  total():void{
-    this.service.totalRequests().subscribe((res)=>{
+  totalcomplete():void{
+    this.service.totalcomplete().subscribe((res)=>{
       // console.log(res.result,"ram==>");
-      this.temData = res
-      console.log(this.temData)
+      this.complete = res
+      console.log(this.complete)
   })
+}
+
+total():void{
+  this.service.totalRequests().subscribe((res)=>{
+    // console.log(res.result,"ram==>");
+    this.temData = res
+    console.log(this.temData)
+})
+}
+
+totalTech():void{
+  this.service.totalTech().subscribe((res)=>{
+    // console.log(res.result,"ram==>");
+    this.tech = res
+    console.log(this.tech)
+})
 }
 
   logout(){
@@ -65,9 +89,66 @@ printer(){
   window.print();
 }
 
-export(){
+// export(){
 
-  this.service.report()
+//   this.service.report()
+//   .subscribe((response) => {
+//     this.set_object2 = response;
+    
+//   })
+
+// }
+
+
+
+
+
+
+downloadFile() {
+  const apiUrl = "http://192.168.27.20:3000"; // Replace with your API URL
+
+  // Create a link element
+  const link = document.createElement('a');
+  link.style.display = 'none';
+
+  // Set the URL of the file to download
+  link.href = `${apiUrl}/admin/export`;
+
+  // Set the download attribute with the desired filename
+  link.download = 'requests.csv';
+
+  // Append the link to the document body
+  document.body.appendChild(link);
+
+  // Click the link to trigger the file download
+  link.click();
+
+  // Clean up by removing the link from the document body
+  document.body.removeChild(link);
+}
 
 }
-}
+
+
+
+
+
+// import axios from 'axios';
+
+// function exportData() {
+//   axios.get('/admin/export')
+//     .then(response => {
+//       const csvData = response.data;
+//       // Process the CSV data as needed
+//       console.log(csvData);
+//     })
+//     .catch(error => {
+//       console.error('Export failed:', error);
+//     });
+// }
+
+// // Call the exportData function to trigger the export
+// exportData();
+
+
+

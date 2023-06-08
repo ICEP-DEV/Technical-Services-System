@@ -80,6 +80,8 @@ export class TechloginComponent implements OnInit {
     )
   } 
 
+ 
+
 
   close(): void {
     this.dialogRef.close();

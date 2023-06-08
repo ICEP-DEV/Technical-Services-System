@@ -102,7 +102,7 @@
                                 <td>{{data.staff_feedback}}</td>
                                 <td>{{data.status}}</td>
                                 <td>
-                                <button type="button" class="btn btn-light">Close Log</button>
+                                <button type="button" class="btn btn-light" (click)="log($event,data.id)" [(ngModel)]="data.status">Close Log</button>
                                 </td>
                               </tr>
                             </tbody>

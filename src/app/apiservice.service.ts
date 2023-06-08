@@ -134,6 +134,23 @@ export class ApiserviceService {
       progressTech(id : Number,data: any) {
         return this._http.put(this.apiUrl + "/technician/updateTask/"+id, data);
       }
+
+  
+      closeLog(id : Number,data: any) {
+        return this._http.put(this.apiUrl + "/admin/log-close/"+id, data);
+      }
+
+
+      totalcomplete(): Observable<any> {
+        return this._http.get(`${this.apiUrl + "/admin/getTotalClossedLogs"}`);
+      }
+
+      totalTech(): Observable<any> {
+        return this._http.get(`${this.apiUrl + "/admin/viewNumTechnicians"}`);
+      }
+    
+
+      
 }
 
 

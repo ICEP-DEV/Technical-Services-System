@@ -63,5 +63,9 @@ progressTask(event:any,jobCardId:Number){
 
 }
 
+logout(){
+  localStorage.removeItem('techlogin')
+}
+
 
 }
