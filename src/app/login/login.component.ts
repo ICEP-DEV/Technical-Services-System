@@ -48,8 +48,9 @@ export class LoginComponent implements OnInit {
 
     this.service.adminLogin(this.adminLogin)
     .subscribe((response)=>{
+      
       this.admin_object = response
-      console.log(this.admin_object.body)
+      console.log(this.admin_object.admin_id)
       if(this.admin_object.success == true){
         localStorage.setItem('admin',JSON.stringify(this.admin_object))
         this.close()

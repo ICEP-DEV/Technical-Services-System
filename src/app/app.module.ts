@@ -33,7 +33,8 @@ import { RefConfirmFormComponent } from './ref-confirm-form/ref-confirm-form.com
 import { TrackRequestComponent } from './track-request/track-request.component';
 import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
 import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component';
-import { AdminviewprogressComponent } from './adminviewprogress/adminviewprogress.component';
+import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
+import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
 import { TechpageComponent } from './techpage/techpage.component';
 import { HODpageComponent } from './hodpage/hodpage.component';
@@ -59,7 +60,9 @@ import { CloselogComponent } from './closelog/closelog.component';
      TrackRequestComponent,
      SidenavbarComponent,
      StafffeedbackComponent,
-     AdminviewprogressComponent,
+     
+     AdminassigntaskComponent,
+     AdminprogressComponent,
      HODloginPageComponent,
      TechpageComponent,
      HODpageComponent,

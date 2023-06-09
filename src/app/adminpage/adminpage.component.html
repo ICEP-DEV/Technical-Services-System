@@ -1,12 +1,12 @@
-<body>
-    <div class="container-fluid">
+
+<div class="container-fluid">
     <!-- <body class="container"> -->
         <div class="log d-flex justify-content-end">
             <nav class="header">
-                <div id="logo-text">
+                <div id="logoDiv">
                     <a>
-                        <img src="../../../assets/images/tut.png" alt="SMART FARM"
-                            style="float: left;height: 72px;width: 225px;" routerLink="read">
+                        <img class="logo" src="../../../assets/images/tut.png" alt="SMART FARM"
+                            style="float: left;height: 70px;width: 225px;" routerLink="read">
                     </a>
                 </div>
                 <div id="menu-icon">
@@ -22,27 +22,16 @@
         
             </nav>
         </div>
-        
-        
-
-
-    <br>
-    <br>
-    <br>
-    <br>
-
-
+</div>
+<body>
 
     <div class="container2 d-flex justify-content-between ">
         <div class="sideNav">
             <nav class="breadcrumbNav">
                 <ul>
-                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
-                        routerLink="/adminpage">Requests</a></li>
-                    </ul>
-                    <ul>
-                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
-                            routerLink="/adminviewprogress">View Progress</a></li>
+                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="" 
+                      disabled>View Requests</a></li>
+                        <li class = "" id = "breadcrumbpadding"><a class ="" id="hover" href="#"   routerLink="/adminprogress">View Progress</a></li>
                 </ul>
                 <ul>
                 <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
@@ -157,305 +146,51 @@
 
                 
                     <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Admin View Request</h1>
-                    <table class="table">
-                        <thead class="thead-dark">
-                          <tr>
-                            <th scope="col">Ref.</th>
-                            <th scope="col">Staff Number</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">venue</th>
-                            <th scope="col">Priority</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Assign</th>
-                            
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr *ngFor = "let me of readData">
-                            <th scope="row">{{me.id}}</th>
-                            <th scope="row">{{me.staff_id}}</th>
-                            <td>{{me.description}}</td>
-                            <td>{{me.venue}}</td>
-                            <td><select id="Cater" (change)="priority($event, me.id)" [(ngModel)]="me.priority" >
-                                <option value="High">High</option>
-                                <option value="Low">Low</option>
-                                <option value="Medium">Medium</option>
-                            </select>
-                        </td>
-                            <td>{{me.req_date}}</td>
-                            <td><button type="button" class="btn btn-primary" ><h2>Assign Technician     <svg fill="#000000" width="34px" height="34px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>send-envelope</title> <path d="M0 25.984v-12q0-2.464 1.76-4.224t4.256-1.76h0.352l0.096 0.288q0.544 1.344 1.344 2.176t2.208 1.184v0.352h-4q-0.672 0-1.28 0.48l11.264 7.52 11.264-7.52q-0.576-0.48-1.248-0.48h-4v-0.352q1.376-0.384 2.176-1.184t1.344-2.176l0.096-0.288h0.384q2.464 0 4.224 1.76t1.76 4.224v12q0 2.496-1.76 4.256t-4.224 1.76h-20q-2.496 0-4.256-1.76t-1.76-4.256zM4 23.968l6.016-1.984-5.408 5.408q0.544 0.608 1.408 0.608h20q0.8 0 1.408-0.608l-5.408-5.408 5.984 2.016v-8.032l-12 8-12-8v8zM10.048 5.632q0.096-0.608 0.544-1.056l4-4q0.576-0.576 1.408-0.576t1.408 0.576l4 4q0.448 0.448 0.544 1.056t-0.096 1.152q-0.224 0.544-0.736 0.896t-1.12 0.32h-1.984v6.016q0 0.832-0.608 1.408t-1.408 0.576-1.408-0.576-0.576-1.408v-6.016h-2.016q-0.608 0-1.12-0.32t-0.736-0.896-0.096-1.152z"></path> </g></svg></h2></button></td>
-                          </tr>
-                          
-                        </tbody>
-                      </table>
-                    <!-- <div *ngFor = "let us of readData" class="request card mt-2">
-                        <div class="card-body">
-                            <div class="top d-flex justify-content-between">
-                                <p><b>Campus:</b> {{us.campus}}</p>
-                                <p><b>Department:</b> {{us.department}}</p>                         
-                                <p><b>Faculty:</b> {{us.faculty}}</p>
+                            <table class="table">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Ref.</th>
+                                    <th scope="col">Staff Number</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">venue</th>
+                                    <th scope="col">Priority</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">View Available</th>
+                                    
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor = "let me of readData">
+                                    <th scope="row">{{me.id}}</th>
+                                    <th scope="row">{{me.staff_id}}</th>
+                                    <td>{{me.description}}</td>
+                                    <td>{{me.venue}}</td>
+                                    <td><select id="Cater" (change)="priority($event, me.id)" [(ngModel)]="me.priority"  >
+                                        <option value="">Select Priority</option>
+                                        <option value="High">High</option>
+                                        <option value="Low">Low</option>
+                                        <option value="Medium">Medium</option>
+                                    </select>
+                                </td>
+                                    <td>{{me.req_date}}</td>
+                                    <td><button type="button" class="btnAvailableTech" (click)=viewAvailableTech(me.id)><p>Artisan</p></button></td>
+                                </tr>
                                 
-                            </div>
-                            <div class=" d-flex justify-content-between">
-                                <div class="icon d-flex justify-content-end">
-                                    <svg fill="#2a6096" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="70  px"
-                                        viewBox="0 0 45.532 45.532" xml:space="preserve">
-                                        <g>
-                                            <path d="M22.766,0.001C10.194,0.001,0,10.193,0,22.766s10.193,22.765,22.766,22.765c12.574,0,22.766-10.192,22.766-22.765
-            S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53
-            c-4.158,0-7.529-3.371-7.529-7.53C15.237,10.18,18.608,6.808,22.766,6.808z M22.761,39.579c-4.149,0-7.949-1.511-10.88-4.012
-            c-0.714-0.609-1.126-1.502-1.126-2.439c0-4.217,3.413-7.592,7.631-7.592h8.762c4.219,0,7.619,3.375,7.619,7.592
-            c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z" />
-                                        </g>
-                                    </svg>
-                                    <div class="personal ps-2 mt-2" style="font-size: 1.5rem;">
-                                        <p class="">{{us.staff_name}} {{us.staff_surname}}</p>
-                                        <p class="">{{us.email}}</p>
-                                    </div>
-                                </div>
-                                <div class="action justify-content-end mt-2">
-                                    <button class="btn bg-secondary" style="height: 3rem; width: 5.5rem;" [routerLink]="['/viewrequest']">View</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                                </tbody>
+                            </table>
+                    
                 </div>
 
                 
 
             </div>
-            <div class="tab-pane fade" id="done" role="tabpanel" aria-labelledby="done-tab">
-                <br>
-                <div class="row" id="tabContentPar">
-                    <div id="done" role="tabpanel" aria-labelledby="done-tab">
-
-
-                        <div>
-
-                            <div class="d-flex justify-content-between">
-                                <ul class="nav nav-tabs flex-column justify-content-center" id="myTab" role="tablist">
-
-                                    <li>
-                                        <p><svg width="164px" height="164px" viewBox="0 0 50.00 50.00"
-                                                data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                                                fill="#000000" stroke="#000000" stroke-width="0.75">
-                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                    stroke-linejoin="round"></g>
-                                                <g id="SVGRepo_iconCarrier">
-                                                    <defs>
-                                                        <style>
-                                                            .cls-1 {
-                                                                fill: #231f20;
-                                                            }
-
-                                                            .cls-2 {
-                                                                fill: #5cabff;
-                                                            }
-
-                                                            .cls-3 {
-                                                                fill: #ffba50;
-                                                            }
-
-                                                            .cls-4 {
-                                                                fill: #ffffff;
-                                                            }
-                                                        </style>
-                                                    </defs>
-                                                    <title></title>
-                                                    <path class="cls-1"
-                                                        d="M40.911,9.207H29.234V5a.5.5,0,0,0-.5-.5H5a.5.5,0,0,0-.5.5c0,.006,0,.011,0,.017L4.5,36.2a4.59,4.59,0,0,0,4.524,4.582.149.149,0,0,0,.018,0H9.06c.01,0,.019,0,.029,0s.019,0,.029,0h11.65V45a.5.5,0,0,0,.5.5H45a.5.5,0,0,0,.5-.5l0-31.2A4.6,4.6,0,0,0,40.911,9.207Z">
-                                                    </path>
-                                                    <path class="cls-2"
-                                                        d="M5.5,36.2l0-30.7H28.234V9.207H17.583a.462.462,0,0,0-.1.01c-.1-.007-.2-.01-.3-.01a4.6,4.6,0,0,0-4.59,4.591s.086,22.266.086,22.406a3.591,3.591,0,0,1-3.56,3.586H9.06A3.592,3.592,0,0,1,5.5,36.2Z">
-                                                    </path>
-                                                    <path class="cls-3"
-                                                        d="M11.918,39.79a4.567,4.567,0,0,0,1.76-3.586c0-.1-.086-22.41-.086-22.408a3.59,3.59,0,0,1,7.179,0l0,25.994Z">
-                                                    </path>
-                                                    <path class="cls-4"
-                                                        d="M44.5,44.5H21.768l0-30.7a4.585,4.585,0,0,0-1.733-3.589H40.911A3.593,3.593,0,0,1,44.5,13.8Z">
-                                                    </path>
-                                                    <path class="cls-1"
-                                                        d="M41.13,37.239H25.136a.5.5,0,0,0,0,1H41.13a.5.5,0,0,0,0-1Z">
-                                                    </path>
-                                                    <path class="cls-1"
-                                                        d="M41.13,31.692H25.136a.5.5,0,0,0,0,1H41.13a.5.5,0,0,0,0-1Z">
-                                                    </path>
-                                                    <path class="cls-1"
-                                                        d="M41.13,26.156H25.136a.5.5,0,0,0,0,1H41.13a.5.5,0,0,0,0-1Z">
-                                                    </path>
-                                                    <path class="cls-1"
-                                                        d="M41.13,20.653H25.136a.5.5,0,0,0,0,1H41.13a.5.5,0,0,0,0-1Z">
-                                                    </path>
-                                                    <path class="cls-1"
-                                                        d="M41.13,15.106H25.136a.5.5,0,0,0,0,1H41.13a.5.5,0,0,0,0-1Z">
-                                                    </path>
-                                                </g>
-                                            </svg>
-                                    </li>
-                                    <li class="nav-item" role="presentation" id="doing-tab1">
-                                        <button class="nav-link active colorRed" id="doing-tab" data-bs-toggle="tab"
-                                            data-bs-target="#doing" type="button" role="tab" aria-controls="doing"
-                                            aria-selected="true">
-                                            <br><a>Full Report</a></button>
-                                    </li>
-                                    <li class="nav-item" role="presentation" id="doing-tab2">
-                                        <button class="nav-link colorAmber" id="in-progress-tab" data-bs-toggle="tab"
-                                            data-bs-target="#in-progress" type="button" role="tab"
-                                            aria-controls="in-progress"
-                                            aria-selected="false"><br><a>In-progress</a></button>
-
-                                    </li>
-                                    <li class="nav-item" role="presentation" id="doing-tab3">
-                                        <button class="nav-link colorGreen" id="done-tab" data-bs-toggle="tab"
-                                            data-bs-target="#done" type="button" role="tab" aria-controls="done"
-                                            aria-selected="false"><br><a>Complete</a></button>
-                                    </li>
-                                </ul>
-                                <div class="tab-content ps-5" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="doing" role="tabpanel"
-                                        aria-labelledby="doing-tab">
-
-                                        <div>
-
-                                            <!-- Add info here -->
-                                        </div>
-
-
-
-                                    </div>
-                                    <div class="tab-pane fade" id="in-progress" role="tabpanel"
-                                        aria-labelledby="in-progress-tab">
-
-
-                                        <div class="row" id="tabContentPar">
-                                            <div class="column">
-                                                <img src="../../assets/images/todolist.png" alt="Snow"
-                                                    style="width:30%">
-                                            </div>
-                                            <div class="column">
-                                                <img src="../../assets/images/inProgress.png" alt="Forest"
-                                                    style="width:30%">
-                                            </div>
-                                            <div class="column">
-                                                <img src="../../assets/images/LikeHand.png" alt="Mountains"
-                                                    style="width:30%">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="done" role="tabpanel" aria-labelledby="done-tab">
-                                        <br>
-                                        <div class="row" id="tabContentPar">
-                                            <div id="done" role="tabpanel" aria-labelledby="done-tab">
-
-
-                                                <div>
-
-                                                    <form method="POST"
-                                                        class="w-100 rounded-1 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-8 px-lg-2 col-xl-8 px-xl-0 px-xxl-3"
-                                                        action="#" enctype="multipart/form-data">
-                                                        <div class="reqhead2">
-                                                            <h1>Staff Feedback</h1>
-                                                        </div>
-
-                                                        <br>
-                                                        <br>
-                                                        <br>
-                                                        <label class="d-block mb-4">
-                                                            <span class="form-label d-block">
-                                                                <h2>
-                                                                    <p>Thank you for taking your your time and give us
-                                                                        feedback on the job we did
-                                                                        for you.</p> We
-                                                                    promise to read your comments carefully. Hopefully
-                                                                    we managed to solve your
-                                                                    issues.
-                                                                </h2>
-                                                            </span>
-
-                                                        </label>
-
-                                                        <label class="d-block mb-2">
-                                                            <span class="form-label d-block">
-                                                                <h1>Finished?</h1>
-                                                            </span>
-                                                            <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    id="inlineCheckbox1" value="option1">
-                                                                <label class="form-check-label"
-                                                                    for="inlineCheckbox1">Yes</label>
-                                                            </div>
-                                                            <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    id="inlineCheckbox2" value="option2">
-                                                                <label class="form-check-label"
-                                                                    for="inlineCheckbox2">No</label>
-                                                            </div>
-                                                        </label>
-
-                                                        <label class="d-block mb-0">
-                                                            <span class="form-label d-block">
-                                                                <h1>Description</h1>
-                                                            </span>
-                                                            <textarea class="form-control" rows="3"
-                                                                placeholder="Please describe your problem"></textarea>
-                                                        </label>
-
-
-                                                        <div class="mb-3">
-                                                            <br>
-                                                            <br>
-                                                            <button type="submit"
-                                                                class="btn btn-primary px-3 rounded-3">
-                                                                Submit
-                                                            </button>
-                                                        </div>
-
-                                                        <div class="d-block text-end">
-
-                                                        </div>
-
-
-                                                    </form>
-                                                </div>
-
-
-
-                                            </div>
-
-
-                                        </div>
-
-                                    </div>
-
-
-
-                                </div>
-
-
-
-                            </div>
-                        </div>
-
-
-
-                    </div>
-
-
-                </div>
-
-            </div>
+           
 
 
 
         </div>
 
     </div>
-<footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
-</footer>
-</div>
-
-
-
+    <footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
+    </footer> 
 </body>

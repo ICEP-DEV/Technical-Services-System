@@ -15,7 +15,9 @@ import { AuthGuard } from './auth.guard';
 import { StaffpageComponent } from './staffpage/staffpage.component';
 import { TrackRequestComponent } from './track-request/track-request.component';
 import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component';
-import { AdminviewprogressComponent } from './adminviewprogress/adminviewprogress.component';
+
+import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
+import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 import { HODpageComponent } from './hodpage/hodpage.component';
 import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
 import { TechpageComponent } from './techpage/techpage.component';
@@ -34,7 +36,8 @@ const routes: Routes = [
   {path: 'staffpage',component: StaffpageComponent},
   {path:'trackrequest',component:TrackRequestComponent},
   {path:'stafffeedback',component:StafffeedbackComponent},
-  {path:'adminviewprogress',component:AdminviewprogressComponent},
+  {path:'availableTechnician', component:AdminassigntaskComponent},
+  {path:'adminprogress',component:AdminprogressComponent}
   {path: 'hodpage',component:HODpageComponent},
   {path: 'hodloginpage',component:HODloginPageComponent},
   {path: 'techpage',component:TechpageComponent},
