@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
 import { Route, Router } from '@angular/router';
+import { ThisReceiver } from '@angular/compiler';
 
 
 
@@ -77,9 +78,12 @@ this.id = Number(data)
     let admin_temp_Id = admin?.slice(1,10);
     console.log(admin_temp_Id)
 
+    this.adminTechDetails.admin_id = Number(admin_temp_Id);
+    console.log(this.adminTechDetails.admin_id)
+
 
     //Displaying both staff number(of the Artisan&admin)
-    console.log(this.adminTechDetails,"Display both of them")
+    console.log(this.adminTechDetails,"Display both of them CHECK THE ADMIN")
 
 
 
@@ -112,7 +116,7 @@ this.id = Number(data)
     this.message = "";
       
 
-    this.message = "Successfully assigned the request to the artisan"+tech_id;
+    this.message = "Successfully assigned the request to the artisan "+ tech_id;
 
 
 
@@ -121,11 +125,16 @@ this.id = Number(data)
   
      this.adminTechDetails.tech_id = Number(tech_id);
 
-
+     let admin = localStorage.getItem('stafflogin');
+   
+     let admin_temp_Id = admin?.slice(1,10);
+     console.log(admin_temp_Id)
+ 
+     this.adminTechDetails.admin_id = Number(admin_temp_Id);
    
      //Artisan staff number
     //console.log("25897486")
-
+    console.log(this.adminTechDetails.admin_id, "Just added")
      console.log(this.adminTechDetails.tech_id,'ARTISAN NUMBER');
     // console.log(typeof(staff_id))
 
@@ -146,10 +155,11 @@ this.id = Number(data)
 
         this.AdminArtisan_object = res;
 
-      console.log(this.AdminArtisan_object )
-      // setTimeout(function(){
-      //   window.location.reload();
-      //  }, 2000);
+     console.log(this.AdminArtisan_object )
+
+        setTimeout(function(){
+         window.location.reload();
+       }, 2000);
       
         
     })
