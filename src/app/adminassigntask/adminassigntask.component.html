@@ -38,17 +38,17 @@
 
         <div class="tab-content ps-3 mt-4" id="myTabContent">
 
-          
-                <div *ngIf="message !=''"   class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>{{message}}</strong>
-                  
-               </div>
+                 <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="message !=''">
+                <strong>{{message}}</strong> 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div> 
+                
                 <div class = "contentForm" >
                    
                     <div class="departmenCategoryText">
                         <h2>Campus: Soshanguve</h2>
-                        <h4>Department:Electrical</h4>
-                        <h5>Category:</h5>
+                        <h4></h4>
+                        <h5></h5>
                     </div>
                     
                     <div class="content card mt-4 p-4">
@@ -72,7 +72,7 @@
                                         <td scope="row">{{availabletech.name}} {{availabletech.surname}} </td>
                                         <td scope="row">{{availabletech.email}}</td>
                                         <td>{{availabletech.phone}} </td>
-                                        <td><button class="btnAvailableTech" (click)="assignArtisan()">Assign</button></td>
+                                        <td ><button class="btnAvailableTech" (click)="assignArtisan(availabletech.tech_id)">Assign</button></td>
                                         <td>
                                   
                                     </tbody>
