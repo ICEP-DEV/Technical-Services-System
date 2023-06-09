@@ -37,7 +37,7 @@ const routes: Routes = [
   {path:'trackrequest',component:TrackRequestComponent},
   {path:'stafffeedback',component:StafffeedbackComponent},
   {path:'availableTechnician', component:AdminassigntaskComponent},
-  {path:'adminprogress',component:AdminprogressComponent}
+  {path:'adminprogress',component:AdminprogressComponent},
   {path: 'hodpage',component:HODpageComponent},
   {path: 'hodloginpage',component:HODloginPageComponent},
   {path: 'techpage',component:TechpageComponent},

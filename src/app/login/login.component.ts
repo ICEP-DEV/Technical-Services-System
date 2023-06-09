@@ -1,4 +1,3 @@
-;
 import { MatDialog } from '@angular/material/dialog';
 import { FormComponent } from '../form/form.component';
 import { TrackformComponent } from '../trackform/trackform.component';
@@ -52,7 +51,8 @@ export class LoginComponent implements OnInit {
       this.admin_object = response
       console.log(this.admin_object.admin_id)
       if(this.admin_object.success == true){
-        localStorage.setItem('admin',JSON.stringify(this.admin_object))
+        // localStorage.setItem("adminLogin",this.admin_object.body?.toString())
+        localStorage.setItem('stafflogin',JSON.stringify(this.admin_object.admin_id))
         this.close()
         this._router.navigate(['/adminpage'])
       }else{
