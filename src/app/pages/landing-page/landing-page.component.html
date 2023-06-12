@@ -1,36 +1,46 @@
-<!-- <body class="container"> -->
-   <div class="log d-flex justify-content-end">
-    <NAv>
-      <div id="logo-text">
-        <a href="#">
-          <img src="../../../assets/images/tut.png" alt="TUT" style="float: left;height: 74px;width: 225px;">
-        </a>
-      </div>
+<div class="container-fluid">
+  <!-- <body class="container"> -->
+      <div class="log d-flex justify-content-end">
+          <nav class="header">
+              <div id="logoDiv">
+                  <a>
+                      <img class="logo" src="../../../assets/images/tut.png" alt="SMART FARM"
+                          style="float: left;height: 70px;width: 225px;" routerLink="read">
+                  </a>
+              </div>
+              <div id="menu-icon">
+                  <i class="fas fa-bars"></i>
+              </div>
+              <ul>
+                <div class="dropdown">
+                  <button class="dropbtn">REQUEST</button>
+                  <div class="dropdown-content">
+                    <a class="nav-link active" id="ModalExample" (click)="openForm()">Log Complaint</a>
+                  </div>
+                </div>
+                  <li>
+                      <a class="nav-link active" id="ModalExample" (click)="openLogin()">ADMIN</a>
+                  </li>
+                  <li>
+                    <a class="nav-link active" id="ModalExample" (click)="openTech()">TECHNICIAN</a>
+                  </li>
+                  
+              </ul>
       
-      <div id="menu-icon">
-          <i class="fas fa-bars"></i>
+          </nav>
       </div>
+</div>
 
-      <ul>
-        <div class="dropdown">
-          <button class="dropbtn">REQUEST</button>
-          <div class="dropdown-content">
-            <a class="nav-link active" id="ModalExample" (click)="openForm()">Log Complaint</a>
-          </div>
-        </div>
-          <li>
-              <a class="nav-link active" id="ModalExample" (click)="openLogin()">ADMIN</a>
-          </li>
-          <li>
-            <a class="nav-link active" id="ModalExample" (click)="openTech()">TECHNICIAN</a>
-          </li>
-          
-      </ul>
-  </NAv>
-   </div>
+
+
+
+
+<!-- <body class="container"> -->
+   
+
 
    
-   <div id="banner">
+<div id="banner">
     <h1>Technical Services</h1>
     <h3>We Can Help You Fix All Of Your Technical Problems</h3>
 </div> 

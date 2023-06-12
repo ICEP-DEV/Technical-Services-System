@@ -98,7 +98,35 @@ localStorage.setItem('reference',reference.toString())
 
 }
 
-export(){
-  this.service.report()
+
+
+
+downloadFile() {
+  const apiUrl = "http://192.168.27.20:3000"; // Replace with your API URL
+
+  // Create a link element
+  const link = document.createElement('a');
+  link.style.display = 'none';
+
+  // Set the URL of the file to download
+  link.href = `${apiUrl}/admin/export`;
+
+  // Set the download attribute with the desired filename
+  link.download = 'requests.csv';
+
+  // Append the link to the document body
+  document.body.appendChild(link);
+
+  // Click the link to trigger the file download
+  link.click();
+
+  // Clean up by removing the link from the document body
+  document.body.removeChild(link);
 }
+
+
+
+
 }
+
+

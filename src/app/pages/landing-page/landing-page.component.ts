@@ -66,7 +66,9 @@ openTrackForm(): void {
       });
       }
 
-
+      logout(){
+        localStorage.removeItem('logindata')
+      }
 }
 
 

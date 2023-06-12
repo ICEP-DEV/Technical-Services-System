@@ -29,9 +29,19 @@
         <div class="sideNav">
             <nav class="breadcrumbNav">
                 <ul>
-                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="" 
-                      disabled>View Requests</a></li>
-                        <li class = "" id = "breadcrumbpadding"><a class ="" id="hover" href="#"   routerLink="/adminprogress">View Progress</a></li>
+                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="" disabled>View Requests</a></li>
+                    <li class = "" id = "breadcrumbpadding"><a class ="" id="hover" href="#"   routerLink="/adminprogress">View Progress</a></li>
+                    <li class = "" id = "breadcrumbpadding"><a class ="" id="hover" href="#"   routerLink="">Close Log</a></li>
+
+                    <div class="reportsDiv">
+                        <h3 class="reportText">Reports</h3>
+                        <div class="typesofreports" >
+                            <button class="alltasks " id="reports" (click)="downloadFile()" > All Tasks</button>
+                            <button class="activetasks " id="reports">Active Tasks</button>
+                            <button class="closedtasks " id="reports">Closed Tasks</button>
+                         
+                        </div>
+                    </div>
                 </ul>
             </nav>
         </div>
@@ -152,7 +162,6 @@
                                     <td>{{me.description}}</td>
                                     <td>{{me.venue}}</td>
                                     <td><select id="Cater" (change)="priority($event, me.id)" [(ngModel)]="me.priority"  >
-                                        <option value="">Select Priority</option>
                                         <option value="High">High</option>
                                         <option value="Low">Low</option>
                                         <option value="Medium">Medium</option>
