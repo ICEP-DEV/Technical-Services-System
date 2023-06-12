@@ -150,8 +150,8 @@ export class ApiserviceService {
       }
     
 
+      allreq(): Observable<any> {
+        return this._http.get(`${this.apiUrl + "/admin/requests"}`);
+      }
       
 }
-
-
-

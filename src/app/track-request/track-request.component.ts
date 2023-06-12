@@ -127,7 +127,9 @@ export class TrackRequestComponent {
   */
 
     feedback(reference:Number){
-      this._router.navigate(['/stafffeedback', {state:{reference}}])
+      localStorage.setItem("reference",JSON.stringify(reference))
+      this._router.navigate(['/stafffeedback'])
+      // this._router.navigate(['/stafffeedback', {state:{reference}}])
     }
 
     logout() {
