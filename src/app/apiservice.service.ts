@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiserviceService {
+  closeLog(jobCardId: Number, data: { status: any; }): Observable<any> {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private _http: HttpClient) { }
 

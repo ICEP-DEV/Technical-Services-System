@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
 import { Route, Router } from '@angular/router';
-import { ThisReceiver } from '@angular/compiler';
+
 
 
 
@@ -160,11 +160,15 @@ this.id = Number(data)
         setTimeout(function(){
          window.location.reload();
        }, 2000);
-      
+
+       
+     
         
     })
+    
       return  this.status =true
 
+      
      
   }
 

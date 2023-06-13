@@ -36,6 +36,7 @@ import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
 import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component';
 import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
 import { AdminprogressComponent } from './adminprogress/adminprogress.component';
+import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { AdminprogressComponent } from './adminprogress/adminprogress.component'
      StafffeedbackComponent,
      
      AdminassigntaskComponent,
-     AdminprogressComponent
+     AdminprogressComponent,
+     AdmincloselogComponent
      
   ],
   imports: [

@@ -90,6 +90,51 @@ a {
   border-bottom: 3px solid #005596;
   width: 115px;  
 }
+
+
+.dropdown {
+  margin: 100% auto;
+  display: inline-block;
+  cursor:pointer;
+
+}
+.dropbtn{
+  width: 100px;
+  padding: 5px;
+  border-radius: 8px;
+  color:white;
+  border: 1px solid white;
+  background-color: #005596;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  margin: 2px; 
+  border-radius: 8px;
+  color:white;
+  border: 1px solid white;
+  background-color: #005596;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid white;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: white;color:#005596 ;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {border:2px solid black;font-weight: 500;}
+
 /* Start of reports secttion */
 .reportsDiv{
   margin:100% auto;
