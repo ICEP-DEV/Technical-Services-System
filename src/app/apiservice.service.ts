@@ -76,10 +76,11 @@ export class ApiserviceService {
   /*Staff Apis*/
       //Api post feedback connection STAFF
       
-      postStaffFeedback(id : Number,data: any ): Observable<any> {
-        return this._http.put(this.apiUrl+"/staff/sendFeedback"+id,data);
-
+      postStaffFeedback(id: number, data: any): Observable<any> {
+        
+        return this._http.put(`${this.apiUrl}/staff/sendFeedback/${id}`, data);
       }
+      
 
       allRequests():Observable<any>
       {
@@ -130,6 +131,12 @@ export class ApiserviceService {
         return this._http.get(this.apiUrl + "/technician/tasks/"+id);
       }
 
+      HODrequest(id : any) {
+        return this._http.get(this.apiUrl + "/hod/getDept-Requests/"+id);
+      }
+
+      
+
 
       progressTech(id : Number,data: any) {
         return this._http.put(this.apiUrl + "/technician/updateTask/"+id, data);
@@ -153,5 +160,11 @@ export class ApiserviceService {
       allreq(): Observable<any> {
         return this._http.get(`${this.apiUrl + "/admin/requests"}`);
       }
+
+       // +artisan_id+admin_id
+  assignavailArtisan(id:Number,data:any):Observable<any>{
+    return this._http.post(`${this.apiUrl}/admin/`+ "assignTechnician/"+ id,data);
+
+  }
       
 }
