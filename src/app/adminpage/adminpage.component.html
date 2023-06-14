@@ -41,16 +41,14 @@
                               <a class="nav-link active" id="ModalExample">Closed Tasks</a>
                             </div>
                         </div>
-                        <div >
-                            <P></P>
-                        </div>
-                        <div class="logstats"  >
-                            <h3 class="averageTitle" >Tasks Average</h3>
-                            <p></p>
-                            <label class="pendingTasks">Pending Tasks</label>
-                            <label class="In-progressTasks">In-progress</label>
-                            <label class="In-completedTasks">In-completed</label>
-                            <label class="ClosedTasks">Closed</label>
+                        <div class="logstats"  *ngIf= "statsData">
+                            <h3 class="averageTitle"  >Tasks Average</h3>
+                            <label class="unassigned">Unassigned Tasks&nbsp;&nbsp;<span class="numberStats">{{statsData.totalUnassigned}}</span></label>
+                            <label class="pendingTasks">Pending Tasks &nbsp;&nbsp;<span class="numberStats">{{statsData.averagePending}}%</span></label>
+                            <label class="In-progressTasks">In-progress &nbsp;&nbsp;<span class="numberStats">{{statsData.averageInProgress}}%</span></label>
+
+                            <label class="completedTasks">Completed &nbsp;&nbsp;<span class="numberStats">{{statsData.averageInProgress}}%</span></label>
+                            <label class="ClosedTasks">Closed &nbsp;&nbsp;<span class="numberStats">{{statsData.averageInProgress}}%</span></label>
                         </div>
                 </ul>
             </nav>

@@ -33,7 +33,14 @@
                         <li class = "" id = "breadcrumbpadding"><a class ="" id="hover"  routerLink="/adminpage" >View Requests</a></li>
                         <li class="breadcrumb-item active" id="breadcrumbpadding"><a class=""  disabled>View Progress</a></li>
                         <li class = "" id = "breadcrumbpadding"><a class ="" id="hover"  routerLink="" >Close Logs</a></li>
-                        
+                        <!-- *ngIf= "statsData" statsData.totalUnassigned-->
+                        <div class="progressTotalsDiv"  >
+                          <div class="contentMargin">
+                            <h3 class="totaltasksTitle"  >Total Tasks</h3>
+                            <label class="In-progressTasks"  *ngIf= "totalInprogress">In-progress &nbsp;&nbsp;<span class="numbertotal">{{totalInprogress.length}}</span></label><br>
+                            <label class="completedTasks" *ngIf= "totalCompleted">completed &nbsp;&nbsp;<span class="numbertotal">{{totalInprogress.length}}</span></label>
+                          </div>
+                      </div>
                 </ul>
             </nav>
         </div>
@@ -77,6 +84,8 @@
                                                   <th scope="col">Log Reference</th>
                                                   <th scope="col">Staff Name</th>
                                                   <th scope="col">Description</th>
+                                                 
+                                                  
                                                   
                                                 </tr>
                                               </thead>

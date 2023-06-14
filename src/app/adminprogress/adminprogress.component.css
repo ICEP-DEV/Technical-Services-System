@@ -46,6 +46,8 @@
     margin-left: 1%;
     margin-top: 7.2px;
   }
+
+  /*Start of Side navigation */
 .sideNav {
     float: left;
    
@@ -99,6 +101,51 @@ a:disabled, a[disabled] {
 #hover:hover {
     font-weight: bold;
   }
+.totaltasksTitle {
+ 
+    margin-right: 25%;
+    font-weight: 500;
+    color: #005596;
+  }
+.progressTotalsDiv {
+  margin: 80% auto;
+  
+}
+.contentMargin,label{
+  margin: 3.5px 0;
+  text-align: center;
+}
+.numbertotal{
+  background-color: white;
+  border-radius: 8px;
+  padding: 6px;
+  color: black;
+  
+}
+.In-progressTasks{
+  background-color: orange;
+  color: white;
+  border-radius:8px;
+  width: 140px;
+  padding: 4px;
+}
+.In-progressTasks:hover{
+  font-weight: 500;
+}
+
+
+.completedTasks{
+  background-color: green;
+  color: white;
+  border-radius:8px;
+  width: 140px;
+  padding: 4px;
+}
+.completedTasks:hover{
+  font-weight: 500;
+}
+
+/*End of Side navigation */
  /*logout button*/
 .btn-success{
   color: white;

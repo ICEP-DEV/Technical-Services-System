@@ -13,6 +13,7 @@ export class AdminpageComponent implements OnInit {
 
 
   constructor(private service:ApiserviceService,private navrouter:Router) { }
+ 
    data: any;
   readData:any;
   temData:any;
@@ -20,6 +21,7 @@ export class AdminpageComponent implements OnInit {
   set_print:any;
   expo:any;
   statsData:any;
+ 
 
   setPriority = {
     priority: ''
@@ -130,7 +132,10 @@ downloadFile() {
   getStats(){
     this.service.getLogServiceStatistics().subscribe((response)=>{
         this.statsData = response;
-        console.log( this.statsData, "THIS DATA");
+        // console.log(typeof(this.statsData), "Object Type");
+
+        // this.statsData.push(this.datadata)
+        console.log(this.statsData, "Statistics data");
     })
   }
 
