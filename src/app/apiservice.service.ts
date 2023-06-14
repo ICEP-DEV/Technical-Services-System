@@ -178,10 +178,5 @@ export class ApiserviceService {
         return this._http.get(`${this.apiUrl + "/admin/requests"}`);
       }
 
-       // +artisan_id+admin_id
-  assignavailArtisan(id:Number,data:any):Observable<any>{
-    return this._http.post(`${this.apiUrl}/admin/`+ "assignTechnician/"+ id,data);
-
-  }
       
 }

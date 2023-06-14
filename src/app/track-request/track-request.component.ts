@@ -20,6 +20,9 @@ export class TrackRequestComponent {
   numberDone =0;
 
   todo =0;
+  completed=0
+  progress=0
+  onHold =0
     
   //get the todo tasks
   recieveAllRequest() {
@@ -42,21 +45,32 @@ export class TrackRequestComponent {
 
         //Validating the data in the tempRequest variable
         if (this.tempRequest.result[i].progress == "pending") {
-          
           //If it matches, push the MATCHED DATA to the array variable.
           array.push(this.tempRequest.result[i]);
-          
-          
+          this.todo;
+          // load number of grogress
         }
-        this.todo=i;
+
+        if (this.tempRequest.result[i].progress == "complete") {
+          // load number of grogress
+          this.completed++
+        }
+
+        if (this.tempRequest.result[i].progress == "onHold") {
+          // load number of grogress
+          this.completed++
+        }
+
+        if (this.tempRequest.result[i].progress == "in-progress") {
+          // load number of grogress
+          this.progress++
+        }
+        
         
       }
 
       //Storing the data in the all request variable/array
       this.allRequest = array
-      console.log('todo',this.todo)
-      
-      console.log(this.allRequest)
     })
   }
 

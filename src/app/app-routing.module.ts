@@ -22,7 +22,7 @@ import { HODpageComponent } from './hodpage/hodpage.component';
 import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
 import { TechpageComponent } from './techpage/techpage.component';
 import { CloselogComponent } from './closelog/closelog.component';
-import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
+
 
 
 const routes: Routes = [
