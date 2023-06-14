@@ -68,8 +68,11 @@ export class ApiserviceService {
 
   
   /*Admin Apis*/
+ /*Get the statistics of the services/logs*/
+  getLogServiceStatistics():Observable<any>{
+    return this._http.get(`${this.apiUrl + "/admin/ServiceStatistics"}`)
 
-
+  }
   /*Get in-progress tasks*/
 
   getInprogressTasks():Observable<any>{

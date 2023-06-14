@@ -93,7 +93,7 @@ a {
 
 
 .dropdown {
-  margin: 100% auto;
+  margin: 50% auto;
   display: inline-block;
   cursor:pointer;
 
@@ -136,28 +136,62 @@ a {
 .dropdown:hover .dropbtn {border:2px solid black;font-weight: 500;}
 
 /* Start of reports secttion */
-.reportsDiv{
-  margin:100% auto;
-  padding:0 20%;
+
+.logstats{
+  display: flex;
+  flex-direction: column;
+
 }
-.reportText{
+.logstats,label{
+  margin: 3.5px 0;
   text-align: center;
-  font-weight:500;
+}
+.averageTitle {
+  font-weight: 500;
   color: #005596;
 }
-.typesofreports{
-  margin: -12px 0;
+.pendingTasks{
+  background-color: rgb(250, 26, 26);
+  color: white;
+  border-radius:8px;
+  width: 120px;
+  padding: 4px;
 }
-#reports{
-  margin: 2px; 
-  border-radius: 8px;
-  color:white;
-  border: 1px solid white;
-  background-color: #005596;
+.pendingTasks:hover{
+  font-weight: 500;
 }
-#reports:hover{
-  border: 1px solid black;
+.In-progressTasks{
+  background-color: orange;
+  color: white;
+  border-radius:8px;
+  width: 120px;
+  padding: 4px;
 }
+.In-progressTasks:hover{
+  font-weight: 500;
+}
+.In-completedTasks{
+  background-color: green;
+  color: white;
+  border-radius:8px;
+  width: 120px;
+  padding: 4px;
+}
+.In-completedTasks:hover{
+  font-weight: 500;
+}
+
+.ClosedTasks{
+  background-color: black;
+  color: white;
+  border-radius:8px;
+  width: 120px;
+  padding: 4px;
+}
+.ClosedTasks:hover{
+  font-weight: 500;
+}
+
 /* End of reports secttion */
 /* End of Everything on the side nav*/
 

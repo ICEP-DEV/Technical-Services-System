@@ -19,6 +19,7 @@ export class AdminpageComponent implements OnInit {
   set_object: any;
   set_print:any;
   expo:any;
+  statsData:any;
 
   setPriority = {
     priority: ''
@@ -32,6 +33,7 @@ export class AdminpageComponent implements OnInit {
      
     })
     this.total()
+    this.getStats();
   }
 
   total():void{
@@ -125,6 +127,12 @@ downloadFile() {
 }
 
 
+  getStats(){
+    this.service.getLogServiceStatistics().subscribe((response)=>{
+        this.statsData = response;
+        console.log( this.statsData, "THIS DATA");
+    })
+  }
 
 
 }

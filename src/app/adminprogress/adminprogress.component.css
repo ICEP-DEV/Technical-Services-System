@@ -113,6 +113,7 @@ a:disabled, a[disabled] {
 .container2{
     
     margin-top: 3.8%;
+   
   }
   
 .tab-content {
@@ -191,25 +192,30 @@ footer{
 }
   
     @media print {
+      .container-fluid{
+        visibility: hidden;
+      }
         body{
             visibility: hidden;
         }
     
         .navtab{
     
-            visibility: visible;
-            position: absolute; 
+            visibility: hidden;
+            /* position: absolute; 
             top: 10%;
-            left: 20%;
+            left: 20%; */
         }
         .contentToPrint {
     
             visibility: visible;
             position: absolute;
             top: 14%;
-            left: -10%;
+            left: 15%;
+           
             
         }
+        
         .printReportBtn{
             visibility: hidden;
         }

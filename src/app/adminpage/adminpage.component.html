@@ -41,6 +41,17 @@
                               <a class="nav-link active" id="ModalExample">Closed Tasks</a>
                             </div>
                         </div>
+                        <div >
+                            <P></P>
+                        </div>
+                        <div class="logstats"  >
+                            <h3 class="averageTitle" >Tasks Average</h3>
+                            <p></p>
+                            <label class="pendingTasks">Pending Tasks</label>
+                            <label class="In-progressTasks">In-progress</label>
+                            <label class="In-completedTasks">In-completed</label>
+                            <label class="ClosedTasks">Closed</label>
+                        </div>
                 </ul>
             </nav>
         </div>
@@ -149,6 +160,7 @@
                                     <th scope="col">Description</th>
                                     <th scope="col">venue</th>
                                     <th scope="col">Priority</th>
+                                    <th scope="col">Status</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">View Available</th>
                                     
@@ -166,6 +178,7 @@
                                         <option value="Medium">Medium</option>
                                     </select>
                                 </td>
+                                    <td>{{me.progress}}</td>
                                     <td>{{me.req_date}}</td>
                                     <td><button type="button" class="btnAvailableTech" (click)=viewAvailableTech(me.id)><p>Artisan</p></button></td>
                                 </tr>
