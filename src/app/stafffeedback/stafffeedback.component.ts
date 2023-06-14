@@ -13,26 +13,23 @@ export class StafffeedbackComponent implements OnInit {
   option = "";
   description = "";
   data = "";
+  staff_feedback=""
   storeApiFromData = [];
   storeApiFromData1 = [];
   array = [];
   message = "";
   set_object:any;
   readData:any;
+  set_feedback:any
 
   constructor(private service: ApiserviceService,private _router: Router) {}
+
+  successmsg:any;
+  showSuccessMsg: any;
  
   ngOnInit(): void {
-    this.Allrequests()
-
   }
 
-  Allrequests(){
-    var tempId = localStorage.getItem('stafflogin')
-    var staffId = Number(tempId?.substring(1, tempId.length -1))
-    console.log(staffId);
-
-  }
   
 
 
@@ -60,19 +57,32 @@ export class StafffeedbackComponent implements OnInit {
   // })
 
 
-  feedback(event:any,jobCardId:any){
+  sendFeedBack(){
 
+    var tempId = localStorage.getItem('reference')
+    var staffId = Number(tempId?.replace('"',""))
     var data={
-      feedback:event.target.value
-     }
-     
+      staff_feedback :this.staff_feedback
+    }
 
-     console.log(jobCardId)
-
-     this.service.postStaffFeedback(event,data)
-     .subscribe((response) => {
-      this.set_object = response;
-      console.log(response);         
+    if(data.staff_feedback == ""){
+      alert("Option not selected");
+      return;
+    }
+    console.log(staffId,data)
+    
+   this.service.postStaffFeedback(staffId,data).subscribe((response)=>{
+    this.set_feedback = response;
+    console.log(this.set_feedback)
+    if(this.set_feedback.success == true){
+      
+      this.successmsg = "Feedback Submitted";
+      this.showSuccessMsg = true;
+      //this._router.navigate(['/trackrequest']);
+    }
+      console.log(response)
+    },(err)=>{
+      console.log(err)
     })
 
   }

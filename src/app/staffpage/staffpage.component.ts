@@ -69,26 +69,25 @@ export class StaffpageComponent implements OnInit {
     if (this.requestform.staff_id) {
       const staff_id = JSON.parse(this.requestform.staff_id);
     }
-    if (this.requestform.description === '' && this.requestform.category === '' && this.requestform.venue === '') {
-      this.successmsg = "Fill in the Form";
-      this.showSuccessMsg=true
+    if (this.requestform.description == '' && this.requestform.category == '' && this.requestform.venue == '') {
+    alert("Fill in the Form")
       return;
     }
 
-    if (this.requestform.category === '') {
-      this.successmsg = "Category Empty";
-      this.showSuccessMsg=true
+    if (this.requestform.category == '') {
+      
+      alert("Choose Catergory")
       return;
     }
 
     if (this.requestform.description === '') {
-      this.successmsg = "Description box empty";
-      this.showSuccessMsg=true
+      alert("Describe the issue")
+     
       return;
     }
     if (this.requestform.venue === '') {
-      this.successmsg = "Select Building and Venue";
-      this.showSuccessMsg=true
+      alert("Choose Building")
+      
       return;
     }
 
@@ -98,8 +97,8 @@ export class StaffpageComponent implements OnInit {
         this.request_object = response;
         console.log(response);
         if (this.request_object.success == true) {
-          // this.successmsg = this.request_object.message;
-          // this.showSuccessMsg = true;
+          this.successmsg = this.request_object.message;
+          this.showSuccessMsg = true;
         } else {
           console.log("User ID doesnt match credentials")
         }

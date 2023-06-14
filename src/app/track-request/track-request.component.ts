@@ -17,7 +17,9 @@ export class TrackRequestComponent {
 
   allRequest: any;
   tempRequest: any;
-  numberDone =0
+  numberDone =0;
+
+  todo =0;
     
   //get the todo tasks
   recieveAllRequest() {
@@ -40,13 +42,19 @@ export class TrackRequestComponent {
 
         //Validating the data in the tempRequest variable
         if (this.tempRequest.result[i].progress == "pending") {
+          
           //If it matches, push the MATCHED DATA to the array variable.
           array.push(this.tempRequest.result[i]);
+          
+          
         }
+        this.todo=i;
+        
       }
 
       //Storing the data in the all request variable/array
       this.allRequest = array
+      console.log('todo',this.todo)
       
       console.log(this.allRequest)
     })
@@ -127,7 +135,9 @@ export class TrackRequestComponent {
   */
 
     feedback(reference:Number){
-      this._router.navigate(['/stafffeedback', {state:{reference}}])
+      localStorage.setItem("reference",JSON.stringify(reference))
+      this._router.navigate(['/stafffeedback'])
+      // this._router.navigate(['/stafffeedback', {state:{reference}}])
     }
 
     logout() {

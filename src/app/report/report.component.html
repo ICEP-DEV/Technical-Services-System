@@ -1,4 +1,4 @@
-<!-- <body class="container"> -->
+<!-- <body class="container"> 
     <div class="log d-flex justify-content-end">
         <nav class="header">
             <div id="logo-text">
@@ -54,7 +54,7 @@
                   
                 
             </nav>
-        </div>
+        </div> -->
         <!-- <ul class="nav nav-tabs flex-column justify-content-center" id="myTab" role="tablist">
     
             <li>
@@ -75,43 +75,45 @@
                     role="tab" aria-controls="done" aria-selected="false"><br><a>Feedback</a></button>
             </li>
         </ul> -->
-        <div class="tab-content ps-5" id="myTabContent">
+        <!-- <div class="tab-content ps-5" id="myTabContent">
             <div class="tab-pane fade show active" id="doing" role="tabpanel" aria-labelledby="doing-tab">
     
                 <br>
                     <div class="content card mt-4 p-4">
 
                 
-                        <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Admin Close Log</h1>
+                        <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">ALL REQUESTS</h1>
 
-                        
+                        <nav>
+                            <input class="form-control" type="text" name="id" [(ngModel)]="id" (ngModelChange)="Search()" placeholder="Enter Reference to search">
+                        </nav>
                         <table class="table">
                             <thead class="thead-dark">
                               <tr>
                                 <th scope="col">REF.</th>
+                                <th scope="col">Catergory</th>
+                                <th scope="col">Progress</th>
+                                <th scope="col">Status</th>
+                                
                                 <th scope="col">Description</th>
-                                <th scope="col">Staff-Feedback</th>
-                                <th scope="col">Tech-Feedback</th>
-                                <th scope="col">Task Status</th>
-                                <th scope="col">Log</th>
+                                <th scope="col">Assigned Date</th>
+                                
                               </tr>
                             </thead>
                             <tbody>
                               <tr *ngFor="let data of readData">
                                 <td>{{data.id}}</td>
-                                <td>{{data.description}}</td>
-                                <td>{{data.staff_feedback}}</td>
+                                <td>{{data.category}}</td>
                                 <td>{{data.progress}}</td>
                                 <td>{{data.status}}</td>
-                                <td>
-                                <button type="button" class="btn btn-light" (click)="log($event,data.id)" name="data.status" [(ngModel)]="data.status" >Close Log</button>
-                                </td>
+                                <td>{{data.description}}</td>
+                                <td>{{data.assigned_date}}</td>
                               </tr>
                             </tbody>
                           </table>
                           
                        
-                    </div>
+                    </div> -->
     
                     <!-- <form method="POST"
                         class="w-100 rounded-1 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3"
@@ -191,7 +193,7 @@
                     </form> -->
     
     
-                </div>
+                <!-- </div>
     
     
     
@@ -209,7 +211,7 @@
     <footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
     </footer>
     
-    
+     -->
     
     
     
@@ -361,4 +363,3 @@
     <!-- Button trigger modal -->
     
     
-    <!-- Modal -->

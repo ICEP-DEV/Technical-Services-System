@@ -39,6 +39,12 @@ import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
 import { TechpageComponent } from './techpage/techpage.component';
 import { HODpageComponent } from './hodpage/hodpage.component';
 import { CloselogComponent } from './closelog/closelog.component';
+import { ReportComponent } from './report/report.component';
+import { Ng2SearchPipe } from 'ng2-search-filter';
+import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
+// import { Ng2OrderModule } from 'ng2-order-pipe';
+// import { NgxPaginationModule } from 'ngx-pagination';
+// import { Ng2SearchPipeModule } from 'ng2-search-filter/src/ng2-filter.module';
 
 
 @NgModule({
@@ -66,7 +72,9 @@ import { CloselogComponent } from './closelog/closelog.component';
      HODloginPageComponent,
      TechpageComponent,
      HODpageComponent,
-     CloselogComponent
+     CloselogComponent,
+     ReportComponent,
+     AdminassigntaskComponent
      
   ],
   imports: [
@@ -83,7 +91,13 @@ import { CloselogComponent } from './closelog/closelog.component';
     ReactiveFormsModule,
     MatDialogModule,
     HttpClientModule,
-    FormsModule // <-- add FormsModule here
+    FormsModule,
+    
+    // Ng2OrderModule,
+    // Ng2SearchPipeModule,
+    // NgxPaginationModule
+
+
   ],
   providers: [ApiserviceService],
   bootstrap: [AppComponent]
