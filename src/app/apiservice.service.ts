@@ -166,5 +166,19 @@ export class ApiserviceService {
     return this._http.post(`${this.apiUrl}/admin/`+ "assignTechnician/"+ id,data);
 
   }
+  
+  getInprogressTasks():Observable<any>{
+    return this._http.get(`${this.apiUrl + "/admin/viewInProgressTasks"}`)
+
+  }
+
+  getCompletedTasks():Observable<any>{
+    return this._http.get(`${this.apiUrl + "/admin/viewCompletedTasks"}`);
+  }
+
+  getLogServiceStatistics():Observable<any>{
+    return this._http.get(`${this.apiUrl + "/admin/ServiceStatistics"}`)
+
+  }
       
 }

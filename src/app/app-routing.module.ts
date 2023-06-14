@@ -21,6 +21,7 @@ import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
 import { TechpageComponent } from './techpage/techpage.component';
 import { CloselogComponent } from './closelog/closelog.component';
 import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
+import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 
 
 const routes: Routes = [
@@ -39,7 +40,8 @@ const routes: Routes = [
   {path: 'hodloginpage',component:HODloginPageComponent},
   {path: 'techpage',component:TechpageComponent},
   {path: 'closelog',component:CloselogComponent},
-  {path:'availableTechnician', component:AdminassigntaskComponent}
+  {path:'availableTechnician', component:AdminassigntaskComponent},
+  {path:'adminprogress',component:AdminprogressComponent}
 
 
   

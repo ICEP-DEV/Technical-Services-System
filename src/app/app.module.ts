@@ -41,6 +41,8 @@ import { CloselogComponent } from './closelog/closelog.component';
 import { ReportComponent } from './report/report.component';
 import { Ng2SearchPipe } from 'ng2-search-filter';
 import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
+import { AvailableTechComponent } from './available-tech/available-tech.component';
+import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 // import { Ng2OrderModule } from 'ng2-order-pipe';
 // import { NgxPaginationModule } from 'ngx-pagination';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter/src/ng2-filter.module';
@@ -71,7 +73,9 @@ import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.comp
      HODpageComponent,
      CloselogComponent,
      ReportComponent,
-     AdminassigntaskComponent
+     AdminassigntaskComponent,
+     AvailableTechComponent,
+     AdminprogressComponent
      
   ],
   imports: [
