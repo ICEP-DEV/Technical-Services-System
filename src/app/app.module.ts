@@ -43,6 +43,7 @@ import { ReportComponent } from './report/report.component';
 // import { Ng2OrderModule } from 'ng2-order-pipe';
 // import { NgxPaginationModule } from 'ngx-pagination';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter/src/ng2-filter.module';
+import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { ReportComponent } from './report/report.component';
      HODpageComponent,
      CloselogComponent,
      ReportComponent,
-     AdminassigntaskComponent
+     AdminassigntaskComponent,
+     AdmincloselogComponent
      
   ],
   imports: [

@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ApiserviceService } from '../apiservice.service';
-import { Route, Router,NavigationExtras } from '@angular/router';
+import { Route, Router } from '@angular/router';
 
 
 @Component({
@@ -13,16 +13,15 @@ export class AdminpageComponent implements OnInit {
 
 
   constructor(private service:ApiserviceService,private navrouter:Router) { }
+ 
    data: any;
   readData:any;
   temData:any;
   set_object: any;
   set_print:any;
   expo:any;
-  set_object2: any;
-  repo:any;
-  complete:any;
-  tech:any
+  statsData:any;
+ 
 
   setPriority = {
     priority: ''
@@ -32,37 +31,19 @@ export class AdminpageComponent implements OnInit {
     this.service.allRequests().subscribe((res)=>{
       console.log(res.result,"res==>");
       this.readData = res.result;
-      // localStorage.setItem('details', JSON.stringify(this.readData));
+      localStorage.setItem('details', JSON.stringify(this.readData));
+     
     })
     this.total()
-    this.totalcomplete()
-    this.totalTech()
-    
-    
+    this.getStats();
   }
 
-  totalcomplete():void{
-    this.service.totalcomplete().subscribe((res)=>{
+  total():void{
+    this.service.totalRequests().subscribe((res)=>{
       // console.log(res.result,"ram==>");
-      this.complete = res
-      console.log(this.complete)
+      this.temData = res
+      console.log(this.temData)
   })
-}
-
-total():void{
-  this.service.totalRequests().subscribe((res)=>{
-    // console.log(res.result,"ram==>");
-    this.temData = res
-    console.log(this.temData)
-})
-}
-
-totalTech():void{
-  this.service.totalTech().subscribe((res)=>{
-    // console.log(res.result,"ram==>");
-    this.tech = res
-    console.log(this.tech)
-})
 }
 
   logout(){
@@ -121,18 +102,6 @@ localStorage.setItem('reference',reference.toString())
 
 }
 
-// export(){
-
-//   this.service.report()
-//   .subscribe((response) => {
-//     this.set_object2 = response;
-    
-//   })
-
-// }
-
-
-
 
 
 
@@ -159,28 +128,17 @@ downloadFile() {
   document.body.removeChild(link);
 }
 
+
+  getStats(){
+    this.service.getLogServiceStatistics().subscribe((response)=>{
+        this.statsData = response;
+        // console.log(typeof(this.statsData), "Object Type");
+
+        // this.statsData.push(this.datadata)
+        console.log(this.statsData, "Statistics data");
+    })
+  }
+
+
 }
-
-
-
-
-
-// import axios from 'axios';
-
-// function exportData() {
-//   axios.get('/admin/export')
-//     .then(response => {
-//       const csvData = response.data;
-//       // Process the CSV data as needed
-//       console.log(csvData);
-//     })
-//     .catch(error => {
-//       console.error('Export failed:', error);
-//     });
-// }
-
-// // Call the exportData function to trigger the export
-// exportData();
-
-
 

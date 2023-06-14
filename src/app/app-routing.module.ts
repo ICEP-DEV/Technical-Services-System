@@ -18,6 +18,8 @@ import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component'
 
 import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
 import { AdminprogressComponent } from './adminprogress/adminprogress.component';
+import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
+
 import { HODpageComponent } from './hodpage/hodpage.component';
 import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
 import { TechpageComponent } from './techpage/techpage.component';
@@ -38,6 +40,7 @@ const routes: Routes = [
   {path:'stafffeedback',component:StafffeedbackComponent},
   {path:'availableTechnician', component:AdminassigntaskComponent},
   {path:'adminprogress',component:AdminprogressComponent},
+  {path:'admincloselog', component:AdmincloselogComponent},
   {path: 'hodpage',component:HODpageComponent},
   {path: 'hodloginpage',component:HODloginPageComponent},
   {path: 'techpage',component:TechpageComponent},
