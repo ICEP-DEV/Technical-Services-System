@@ -19,6 +19,7 @@ import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component'
 import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
 import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 
 
 
@@ -37,7 +38,8 @@ const routes: Routes = [
   {path:'stafffeedback',component:StafffeedbackComponent},
   {path:'availableTechnician', component:AdminassigntaskComponent},
   {path:'adminprogress',component:AdminprogressComponent},
-  {path:'admincloselog', component:AdmincloselogComponent}
+  {path:'admincloselog', component:AdmincloselogComponent},
+  {path:'admindash', component:AdmindashboardComponent}
 
   
  

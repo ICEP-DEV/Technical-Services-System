@@ -29,9 +29,10 @@ export class AdminpageComponent implements OnInit {
 
   ngOnInit(): void{
     this.service.allRequests().subscribe((res)=>{
-      console.log(res.result,"res==>");
+      console.log(res.result,"All the logs");
       this.readData = res.result;
       localStorage.setItem('details', JSON.stringify(this.readData));
+      
      
     })
     this.total()
@@ -43,8 +44,8 @@ export class AdminpageComponent implements OnInit {
       // console.log(res.result,"ram==>");
       this.temData = res
       console.log(this.temData)
-  })
-}
+    })
+  }
 
   logout(){
     localStorage.removeItem('logindata')

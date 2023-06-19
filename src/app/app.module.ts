@@ -37,6 +37,7 @@ import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component'
 import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
 import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { AdmincloselogComponent } from './admincloselog/admincloselog.component'
      
      AdminassigntaskComponent,
      AdminprogressComponent,
-     AdmincloselogComponent
+     AdmincloselogComponent,
+     AdmindashboardComponent
      
   ],
   imports: [
