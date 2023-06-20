@@ -20,11 +20,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { TrackformComponent } from './trackform/trackform.component';
 import { MatDialogModule } from '@angular/material/dialog';
-
-
-import{HttpClientModule} from '@angular/common/http'
+import { MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { HttpClientModule } from '@angular/common/http';
 import { ApiserviceService } from './apiservice.service';
-
 import { TechloginComponent } from './techlogin/techlogin.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { ViewrequestComponent } from './viewrequest/viewrequest.component';
@@ -43,10 +43,10 @@ import { Ng2SearchPipe } from 'ng2-search-filter';
 import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
 import { AvailableTechComponent } from './available-tech/available-tech.component';
 import { AdminprogressComponent } from './adminprogress/adminprogress.component';
-// import { Ng2OrderModule } from 'ng2-order-pipe';
-// import { NgxPaginationModule } from 'ngx-pagination';
-// import { Ng2SearchPipeModule } from 'ng2-search-filter/src/ng2-filter.module';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableExporterModule, MatTableExporterDirective } from 'mat-table-exporter';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -60,23 +60,21 @@ import { AdminprogressComponent } from './adminprogress/adminprogress.component'
     DashboardComponent,
     TrackformComponent,
     TechloginComponent,
-     AdminpageComponent,
-     ViewrequestComponent,
-     StaffpageComponent,
-     RefConfirmFormComponent,
-     TrackRequestComponent,
-     SidenavbarComponent,
-     StafffeedbackComponent,
-     AdminviewprogressComponent,
-     HODloginPageComponent,
-     TechpageComponent,
-     HODpageComponent,
-     CloselogComponent,
-     ReportComponent,
-     AdminassigntaskComponent,
-     AvailableTechComponent,
-     AdminprogressComponent
-     
+    AdminpageComponent,
+    ViewrequestComponent,
+    StaffpageComponent,
+    RefConfirmFormComponent,
+    TrackRequestComponent,
+    SidenavbarComponent,
+    StafffeedbackComponent,
+    AdminviewprogressComponent,
+    HODloginPageComponent,
+    TechpageComponent,
+    HODpageComponent,
+    CloselogComponent,
+    ReportComponent,
+    AdminassigntaskComponent,
+    AvailableTechComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,12 +91,13 @@ import { AdminprogressComponent } from './adminprogress/adminprogress.component'
     MatDialogModule,
     HttpClientModule,
     FormsModule,
-    
-    // Ng2OrderModule,
-    // Ng2SearchPipeModule,
-    // NgxPaginationModule
-
-
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableExporterModule,
+    MatButtonModule,
   ],
   providers: [ApiserviceService],
   bootstrap: [AppComponent]

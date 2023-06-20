@@ -272,9 +272,9 @@ transform: translateY(-50%);
   
 .sideNav {
   float: left;
-  box-shadow: 5px 0 2px #575656;
-  width: 335px;
-  height: 1055px;
+  box-shadow: 5px 0 2px #ffffff;
+  width: 50px;
+  height: 1px;
   
   
 }

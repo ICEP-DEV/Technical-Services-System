@@ -20,6 +20,10 @@ export class TrackRequestComponent {
   numberDone =0;
 
   todo =0;
+  assigned=0;
+  inprogress=0;
+  hold=0;
+  done=0;
     
   //get the todo tasks
   recieveAllRequest() {
