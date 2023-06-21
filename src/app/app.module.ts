@@ -20,11 +20,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { TrackformComponent } from './trackform/trackform.component';
 import { MatDialogModule } from '@angular/material/dialog';
-
-
-import{HttpClientModule} from '@angular/common/http'
+import { MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { HttpClientModule } from '@angular/common/http';
 import { ApiserviceService } from './apiservice.service';
-
 import { TechloginComponent } from './techlogin/techlogin.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { ViewrequestComponent } from './viewrequest/viewrequest.component';
@@ -67,15 +67,12 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
      SidenavbarComponent,
      StafffeedbackComponent,
      
-     AdminassigntaskComponent,
-     AdminprogressComponent,
      HODloginPageComponent,
      TechpageComponent,
      HODpageComponent,
      CloselogComponent,
-     AdminassigntaskComponent,
-     AdmincloselogComponent,
-     AdmindashboardComponent
+   
+     AdminassigntaskComponent
      
   ],
   imports: [
@@ -93,12 +90,13 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
     MatDialogModule,
     HttpClientModule,
     FormsModule,
-    
-    // Ng2OrderModule,
-    // Ng2SearchPipeModule,
-    // NgxPaginationModule
-
-
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableExporterModule,
+    MatButtonModule,
   ],
   providers: [ApiserviceService],
   bootstrap: [AppComponent]

@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
+
 import { MatDialogModule } from '@angular/material/dialog';
 import { TechloginComponent } from './techlogin/techlogin.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';

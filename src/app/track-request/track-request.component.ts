@@ -19,11 +19,12 @@ export class TrackRequestComponent {
   tempRequest: any;
   numberDone = 0;
 
-  todo = 0;
-  completed = 0
-  progress = 0
-  onHold = 0
-
+  todo =0;
+  assigned=0;
+  inprogress=0;
+  hold=0;
+  done=0;
+    
   //get the todo tasks
   recieveAllRequest() {
     this.numberDone = 0
