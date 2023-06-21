@@ -341,12 +341,21 @@ body {
 
 
 
-    .stats{
-      border: 1px solid orange;
+   
+    .compeltedAndClosedDiv {
+      margin: 2%;
+      padding: 0 20%;
     }
-    .activeTasksDiv{
-      border: 1px solid green;
-     
+    #closedlogPAdding{
+     margin-left: 25%;
+ 
+    }
+    .card{
+      border-radius: 35px;
+    }
+    
+    .activeTasksDiv,label{
+      padding-left: 20%;
     }
     .artisanCardsDiv {
       padding: 3%;
