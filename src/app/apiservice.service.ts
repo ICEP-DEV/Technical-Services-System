@@ -89,6 +89,14 @@ export class ApiserviceService {
     return this._http.get(`${this.apiUrl + "/admin/viewCompletedTasks"}`);
   }
 
+
+  gettotalClosedLogs():Observable<any>{
+    return this._http.get(`${this.apiUrl + "/admin/getTotalClossedLogs"}`);
+  }
+
+  getartisans():Observable<any>{
+    return this._http.get(`${this.apiUrl + "/admin/viewAllTechnicians"}`);
+  }
   /*Staff Apis*/
       //Api post feedback connection STAFF
       

@@ -39,11 +39,12 @@ import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
 import { TechpageComponent } from './techpage/techpage.component';
 import { HODpageComponent } from './hodpage/hodpage.component';
 import { CloselogComponent } from './closelog/closelog.component';
-import { ReportComponent } from './report/report.component';
+
 // import { Ng2OrderModule } from 'ng2-order-pipe';
 // import { NgxPaginationModule } from 'ngx-pagination';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter/src/ng2-filter.module';
 import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 
 
 @NgModule({
@@ -72,9 +73,9 @@ import { AdmincloselogComponent } from './admincloselog/admincloselog.component'
      TechpageComponent,
      HODpageComponent,
      CloselogComponent,
-     ReportComponent,
      AdminassigntaskComponent,
-     AdmincloselogComponent
+     AdmincloselogComponent,
+     AdmindashboardComponent
      
   ],
   imports: [
