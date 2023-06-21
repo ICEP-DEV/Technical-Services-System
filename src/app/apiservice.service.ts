@@ -6,9 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiserviceService {
-  closeLog(jobCardId: Number, data: { status: any; }): Observable<any> {
-    throw new Error('Method not implemented.');
-  }
+ 
 
   constructor(private _http: HttpClient) { }
 
@@ -27,6 +25,11 @@ export class ApiserviceService {
     return this._http.post(this.apiUrl + "/admin/login", data);
   }
 
+  HODLogin(data: any) {
+    return this._http.post(this.apiUrl + "/hod/login", data);
+  }
+
+  
   techLogin(data: any) {
     return this._http.post(this.apiUrl + "/technician/login", data);
   }
@@ -89,10 +92,11 @@ export class ApiserviceService {
   /*Staff Apis*/
       //Api post feedback connection STAFF
       
-      postStaffFeedback(data: any): Observable<any> {
-        return this._http.post(this.apiUrl+"/staff/sendFeedback",data);
-
+      postStaffFeedback(id: number, data: any): Observable<any> {
+        
+        return this._http.put(`${this.apiUrl}/staff/sendFeedback/${id}`, data);
       }
+      
 
       allRequests():Observable<any>
       {
@@ -144,7 +148,39 @@ export class ApiserviceService {
         return this._http.get(`${this.apiUrl+"/admin/export"}`);
       }
 
+      Techdata(id : any) {
+        return this._http.get(this.apiUrl + "/technician/tasks/"+id);
+      }
+
+      HODrequest(id : any) {
+        return this._http.get(this.apiUrl + "/hod/getDept-Requests/"+id);
+      }
+
+      
+
+
+      progressTech(id : Number,data: any) {
+        return this._http.put(this.apiUrl + "/technician/updateTask/"+id, data);
+      }
+
+  
+      closeLog(id : Number,data: any) {
+        return this._http.put(this.apiUrl + "/admin/log-close/"+id, data);
+      }
+
+
+      totalcomplete(): Observable<any> {
+        return this._http.get(`${this.apiUrl + "/admin/getTotalClossedLogs"}`);
+      }
+
+      totalTech(): Observable<any> {
+        return this._http.get(`${this.apiUrl + "/admin/viewNumTechnicians"}`);
+      }
+    
+
+      allreq(): Observable<any> {
+        return this._http.get(`${this.apiUrl + "/admin/requests"}`);
+      }
+
+      
 }
-
-
-

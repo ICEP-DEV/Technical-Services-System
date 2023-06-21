@@ -9,7 +9,6 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { HeaderComponent } from './header/header.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,6 +35,14 @@ import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
 import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component';
 import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
 import { AdminprogressComponent } from './adminprogress/adminprogress.component';
+import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
+import { TechpageComponent } from './techpage/techpage.component';
+import { HODpageComponent } from './hodpage/hodpage.component';
+import { CloselogComponent } from './closelog/closelog.component';
+import { ReportComponent } from './report/report.component';
+// import { Ng2OrderModule } from 'ng2-order-pipe';
+// import { NgxPaginationModule } from 'ngx-pagination';
+// import { Ng2SearchPipeModule } from 'ng2-search-filter/src/ng2-filter.module';
 import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
 
 
@@ -47,7 +54,6 @@ import { AdmincloselogComponent } from './admincloselog/admincloselog.component'
     LoginComponent,
     AdminComponent,
     HeaderComponent,
-    SidenavComponent,
     HomeComponent,
     DashboardComponent,
     TrackformComponent,
@@ -62,6 +68,12 @@ import { AdmincloselogComponent } from './admincloselog/admincloselog.component'
      
      AdminassigntaskComponent,
      AdminprogressComponent,
+     HODloginPageComponent,
+     TechpageComponent,
+     HODpageComponent,
+     CloselogComponent,
+     ReportComponent,
+     AdminassigntaskComponent,
      AdmincloselogComponent
      
   ],
@@ -79,7 +91,13 @@ import { AdmincloselogComponent } from './admincloselog/admincloselog.component'
     ReactiveFormsModule,
     MatDialogModule,
     HttpClientModule,
-    FormsModule // <-- add FormsModule here
+    FormsModule,
+    
+    // Ng2OrderModule,
+    // Ng2SearchPipeModule,
+    // NgxPaginationModule
+
+
   ],
   providers: [ApiserviceService],
   bootstrap: [AppComponent]

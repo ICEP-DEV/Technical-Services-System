@@ -69,8 +69,25 @@ export class StaffpageComponent implements OnInit {
     if (this.requestform.staff_id) {
       const staff_id = JSON.parse(this.requestform.staff_id);
     }
+    if (this.requestform.description == '' && this.requestform.category == '' && this.requestform.venue == '') {
+    alert("Fill in the Form")
+      return;
+    }
+
+    if (this.requestform.category == '') {
+      
+      alert("Choose Catergory")
+      return;
+    }
+
     if (this.requestform.description === '') {
-      alert("Description is required");
+      alert("Describe the issue")
+     
+      return;
+    }
+    if (this.requestform.venue === '') {
+      alert("Choose Building")
+      
       return;
     }
 
