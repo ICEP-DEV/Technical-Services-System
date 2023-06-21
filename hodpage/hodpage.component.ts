@@ -1,40 +1,43 @@
-import { Component,OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
-
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-hodpage',
   templateUrl: './hodpage.component.html',
   styleUrls: ['./hodpage.component.css']
 })
-export class HODpageComponent implements OnInit {
+export class HODpageComponent implements OnInit{
 
-  constructor(private service:ApiserviceService) { }
+  constructor(private service: ApiserviceService, private _router: Router, private dialog: MatDialog) {}
 
- 
- public displayColumn : string[]=['Staff name','description','venue','category','request date','priority'];
- public dataSource =[] ;
-  readData:any
-  temData:any 
-  realData : any
-  ngOnInit(): void{
-    this.service.getData().subscribe((res)=>{
-     console.log(res.result,"res==>");
-      this.temData = res.result
-      
-    })
-  //  this.GetAllData()
-}
-//GetAllData(): void{
-  //this.service.getData().subscribe((res)=>{
-   // console.log(res.result,"res==>");
-   // this.readData = res
-    //console.log(this.readData)
+  hod:any;
+  readData: any;
+
+
+
+  ngOnInit(): void {
     
- // })
 
+
+
+    var myid =localStorage.getItem('HODlogin')?.toString()
+    this.hod = myid?.substring(1,myid.length-1);
+
+    console.log(this.hod)
+
+
+    
+    this.service.HODrequest(Number(this.hod)).subscribe((res) => {
+      console.log(res, "ram==>");
+    
+      // Extract the array from the response object
+      this.readData = res;
+
+    });
 }
 
-//}  
-        
+
+  }
