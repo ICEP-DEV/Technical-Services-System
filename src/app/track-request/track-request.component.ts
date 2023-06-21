@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./track-request.component.css']
 })
 export class TrackRequestComponent {
+  
 
   constructor(private service: ApiserviceService, private _router: Router) { }
 
@@ -21,9 +22,9 @@ export class TrackRequestComponent {
 
   todo =0;
   assigned=0;
-  inprogress=0;
-  hold=0;
-  done=0;
+  progress=0;
+  onHold=0;
+  completed=0;
     
   //get the todo tasks
   recieveAllRequest() {

@@ -43,8 +43,7 @@ import { CloselogComponent } from './closelog/closelog.component';
 // import { Ng2OrderModule } from 'ng2-order-pipe';
 // import { NgxPaginationModule } from 'ngx-pagination';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter/src/ng2-filter.module';
-import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
-import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+
 
 
 @NgModule({
@@ -93,10 +92,7 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatTableExporterModule,
-    MatButtonModule,
+   
   ],
   providers: [ApiserviceService],
   bootstrap: [AppComponent]
