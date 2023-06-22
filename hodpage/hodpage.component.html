@@ -1,9 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
+
+    <!-- <body class="container"> 
+    
+            <nav class="header">
+                <div id="logoDiv">
+                    <a>
+                        <img class="logo" src="../../../assets/images/tut.png" alt="SMART FARM"
+                            style="float: left;height: 70px;width: 225px;" routerLink="read">
+                    </a>
+                </div>
+                
+            </nav>
+            
+
+    <form class="backFrom">
+        <div class = "contentForm">
+            <h3 class = "toptitle">Admin View Progress</h3>
+        </div>
+    </form>
+
+            <div class="d-flex justify-content-between">
+                <div class="sideNav">
+                   <nav class="breadcrumbNav">
+                       <ul>
+                           <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
+                                   routerLink="/staffpage">View Request</a></li>
+                           <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
+                            routerLink="/trackrequest">View Progress</a></li>
+                       </ul>
+            
+                   </nav>
+               </div>  
+            </div>
+
+            <div>
+            <table class="table table-hover" id="">
+                <thead>
+                  <tr>
+                    <th scope="col">Log Reference</th>
+                    <th scope="col">Staff Name</th>
+                    <th scope="col">Description</th>
+                    
+                  </tr>
+                </thead>
+               
+              </table>
+            </div>
+
+            <footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
+            </footer>-->
+            
+            
+            
+            
+            <!DOCTYPE html>
+ <html lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <title>HOD VIEW </title>
+    <title>HOD View Progress</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -49,24 +103,38 @@
 
         </li>
     </ul>
+</div>
 <br>
 <br>
 <br>
 <br>
-    <h2 class =" H"> HOD View Request</h2>
+    <h2 class =" H"> HOD View Progress</h2>
    <br>
    <br>
+
+
 
 <html>
 <head>
 <!-- Include Bootstrap CSS -->
 <link rel="stylesheet" href="https:/bootstrap/dist/css/bootstrap.min.css">
 </head>
+
 <body>
+
+
+    <div class="pic-head">
+        <img src="../assets/images/LikeHand.png" class="img-right">
+        <img src="../assets/images/inProgress.png" class = "img-left">
+    
+</div>
+
 <div class="container">
+
+
 <table class="table">
   <thead>
-    <tr>  
+    <tr>
       <th scope="col">Staff name</th>
       <th scope="col">Description</th>
       <th scope="col">Venue</th>
@@ -76,9 +144,23 @@
     </tr>
   </thead>
   <tbody>
+    <tr *ngFor="let data of readData">
+      <td>{{ data.staff_name }}</td>
+      <td>{{ data.description }}</td>
+      <td>{{ data.venue }}</td>
+      <td>{{ data.Category }}</td>
+      <td>{{ data.request_date }}</td>
+      <td>{{ data.priority }}</td>
+      
+      
+    </tr>
+  </tbody>
+
+  <!-- <tbody>
+
     <tr *ngFor ="let me of readData" >
-      <th scope=*ngFor ="let me of readData">{{me.staff_name}} {{me.staff_surname}}</th>
-      <td>Description :{{me.description}}</td>
+      <th scope="row">{{me.staff_name}} {{me.staff_surname}}</th>
+      <td>Description{{me.description}}</td>
       <td>{{me.venue}}</td>
       <td>{{me.category}}</td>
       <td>{{me.req_date}}</td>
@@ -86,21 +168,18 @@
       
     </tr>
     <tr>
-      <th >Lee Mahlangu</th>
+      <th ></th>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
-  </tbody>
+  </tbody>-->
 </table>
 </div>
+    
 
-    <div class="tab-content ps-3 mt-4" id="myTabContent"></div>
-     
-
-            <footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
-            </footer>
-
-
+ <footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
+ </footer>
+    

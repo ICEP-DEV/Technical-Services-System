@@ -1,40 +1,34 @@
-import { Component,OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { HttpClient, HttpClientModule} from '@angular/common/http';
 import { ApiserviceService } from '../apiservice.service';
-
 
 @Component({
   selector: 'app-hodpage',
   templateUrl: './hodpage.component.html',
   styleUrls: ['./hodpage.component.css']
 })
-export class HODpageComponent implements OnInit {
+export class HODpageComponent {
 
-  constructor(private service:ApiserviceService) { }
+constructor(private progress: ApiserviceService){}
 
- 
- public displayColumn : string[]=['Staff name','description','venue','category','request date','priority'];
- public dataSource =[] ;
-  readData:any
-  temData:any 
-  realData : any
+hod : any;
+readData : any;
+
+
   ngOnInit(): void{
-    this.service.getData().subscribe((res)=>{
-     console.log(res.result,"res==>");
-      this.temData = res.result
-      
+
+    var myid = localStorage.getItem('HODlogin')?.toString()
+    this.hod = myid?.substring(1,myid.length-1)
+
+    console.log(this.hod)
+
+    this.progress.HODprogress(Number(this.hod)).subscribe((res) => {
+      console.log(res, "ram==>");
+
+
+      this.readData = res;
     })
-  //  this.GetAllData()
-}
-//GetAllData(): void{
-  //this.service.getData().subscribe((res)=>{
-   // console.log(res.result,"res==>");
-   // this.readData = res
-    //console.log(this.readData)
-    
- // })
 
-}
 
-//}  
-        
+  }
+}
