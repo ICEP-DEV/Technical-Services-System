@@ -21,8 +21,6 @@ export class HODpageComponent implements OnInit{
   ngOnInit(): void {
     
 
-
-
     var myid =localStorage.getItem('HODlogin')?.toString()
     this.hod = myid?.substring(1,myid.length-1);
 

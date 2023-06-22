@@ -44,6 +44,7 @@ import { ReportComponent } from './report/report.component';
 // import { NgxPaginationModule } from 'ngx-pagination';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter/src/ng2-filter.module';
 import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
+import { HodSageComponent } from './hod-sage/hod-sage.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { AdmincloselogComponent } from './admincloselog/admincloselog.component'
      CloselogComponent,
      ReportComponent,
      AdminassigntaskComponent,
-     AdmincloselogComponent
+     AdmincloselogComponent,
+     HodSageComponent
      
   ],
   imports: [
