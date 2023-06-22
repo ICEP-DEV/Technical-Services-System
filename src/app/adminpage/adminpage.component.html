@@ -29,27 +29,12 @@
         <div class="sideNav">
             <nav class="breadcrumbNav">
                 <ul>
-                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="" disabled>View Requests</a></li>
+                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="" disabled>View Logs</a></li>
                     <li class = "" id = "breadcrumbpadding"><a class ="" id="hover" href="#"   routerLink="/adminprogress">View Progress</a></li>
                     <li class = "" id = "breadcrumbpadding"><a class ="" id="hover" href="#"   routerLink="/admincloselog">Close Logs</a></li>
                     
-                        <div class="dropdown">
-                            <button class="dropbtn">Report</button>
-                            <div class="dropdown-content" >
-                              <a class="nav-link active" id="ModalExample" (click)="downloadFile()">All Tasks</a>
-                              <a class="nav-link active" id="ModalExample">Active Tasks</a>
-                              <a class="nav-link active" id="ModalExample">Closed Tasks</a>
-                            </div>
-                        </div>
-                        <div class="logstats"  *ngIf= "statsData">
-                            <h3 class="averageTitle"  >Tasks Average</h3>
-                            <label class="unassigned">Unassigned Tasks&nbsp;&nbsp;<span class="numberStats">{{statsData.totalUnassigned}}</span></label>
-                            <label class="pendingTasks">Pending Tasks &nbsp;&nbsp;<span class="numberStats">{{statsData.averagePending}}%</span></label>
-                            <label class="In-progressTasks">In-progress &nbsp;&nbsp;<span class="numberStats">{{statsData.averageInProgress}}%</span></label>
-
-                            <label class="completedTasks">Completed &nbsp;&nbsp;<span class="numberStats">{{statsData.averageInProgress}}%</span></label>
-                            <label class="ClosedTasks">Closed &nbsp;&nbsp;<span class="numberStats">{{statsData.averageInProgress}}%</span></label>
-                        </div>
+                        
+                        
                 </ul>
             </nav>
         </div>
