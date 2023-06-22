@@ -12,8 +12,8 @@ export class ApiserviceService {
 
   //connect frontend to backend
 
-  //apiUrl  = 'http://localhost:3000';
-  apiUrl = "http://192.168.27.20:3000"
+  apiUrl  = 'http://localhost:3000';
+  //apiUrl = "http://192.168.27.20:3000"
   //get all data
 
   staffLogin(data: any) {
