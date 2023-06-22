@@ -46,6 +46,7 @@ import { ReportComponent } from './report/report.component';
 import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
 import { HodSageComponent } from './hod-sage/hod-sage.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -89,6 +90,7 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
     MatSidenavModule,
     MatToolbarModule,
     MatMenuModule,
+    MatFormFieldModule,
     MatIconModule,
     MatDividerModule,
     MatListModule,

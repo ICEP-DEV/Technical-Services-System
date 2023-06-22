@@ -39,7 +39,12 @@ body {
     margin-top: 7.2px;
   
   }
-  
+  .admindashText{
+    color: white;
+    font-weight: 500;
+    margin-top: 1.6%;
+    margin-right: 25%;
+  }
   /*logout button*/
   .btn-success{
     color: white;
@@ -229,6 +234,20 @@ body {
    
   }
   /*Cards that show progress on top on the right content*/
+
+  .svg{
+    width: 50px;
+
+  }
+  .pendinglogo{
+    height: 38px;
+    width: 40px;
+    margin: 8% 5px;
+  }
+  .progress{
+    width: 50px;
+    height: 50px;
+  }
   .ticket{
     border: 1px solid #ccc;
     box-shadow: 2px 2px 2px rgba(94, 93, 93, 0.993);
@@ -239,7 +258,7 @@ body {
   }
   .ticket:hover{
     text-decoration: none;
-    border-left: 8px solid rgb(14, 60, 90);
+    border-left: 8px solid rgb(0, 0, 0);
   }
   /*SideNav content on the left*/
   .container2{
@@ -249,7 +268,7 @@ body {
   .tab-content {
       float: right;
       width: 80%;
-      padding:5% 0 ;
+      padding:2% 0 ;
     }
     /*Footer*/
   footer{
@@ -338,10 +357,32 @@ body {
   
     }
   
+    .pendingred{
+      background: rgb(255, 49, 49);
+    }
+    .CompletedGreen{
+      background:green
+    }
+    .progressOragnge{
+      background: orange;
+    }
+    .card-title{
+      color:white
+    }
+
+    .closed{
+      background: #5eb0f3;
+    }
 
 
 
+
+
+   #firstRow{
+    justify-content: space-between;
+    margin: 0 10%;
    
+   }
     .compeltedAndClosedDiv {
       margin: 2%;
       padding: 0 20%;
@@ -354,20 +395,24 @@ body {
       border-radius: 35px;
     }
     
-    .activeTasksDiv,label{
-      padding-left: 20%;
-    }
-    .artisanCardsDiv {
-      padding: 3%;
-      border: 1px solid black;
-    }
     .belowContent{
-      margin: 1% 10%;
+    
+      margin: 0% auto;
       width: 800px;
-      border: 1px solid red;
+     
     }
     .tasksaverageDiv{
-
-      margin-left: 25%;
-      border: 1px solid blue;
+      margin-top: 2%;
+      margin-left: 35%;
+   
     }
+
+    .totalheaderText{
+      text-align: center;
+    }
+
+   .numberofArisan{
+    background: #969292;
+    padding: 10px;
+    border-radius: 8px;
+   }

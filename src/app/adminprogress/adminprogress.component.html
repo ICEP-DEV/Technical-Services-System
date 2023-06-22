@@ -30,15 +30,15 @@
             <nav class="breadcrumbNav">
                 <ul>
                     
-                        <li class = "" id = "breadcrumbpadding"><a class ="" id="hover"  routerLink="/adminpage" >View Requests</a></li>
+                        <li class = "" id = "breadcrumbpadding"><a class ="" id="hover"  routerLink="/adminpage" >View Logs</a></li>
                         <li class="breadcrumb-item active" id="breadcrumbpadding"><a class=""  disabled>View Progress</a></li>
-                        <li class = "" id = "breadcrumbpadding"><a class ="" id="hover"  routerLink="" >Close Logs</a></li>
+                        <li class = "" id = "breadcrumbpadding"><a class ="" id="hover"  routerLink="/admincloselog" >Close Logs</a></li>
                         <!-- *ngIf= "statsData" statsData.totalUnassigned-->
                         <div class="progressTotalsDiv"  >
                           <div class="contentMargin">
                             <h3 class="totaltasksTitle"  >Total Tasks</h3>
-                            <label class="In-progressTasks"  *ngIf= "totalInprogress">In-progress &nbsp;&nbsp;<span class="numbertotal">{{totalInprogress.length}}</span></label><br>
-                            <label class="completedTasks" *ngIf= "totalCompleted">completed &nbsp;&nbsp;<span class="numbertotal">{{totalInprogress.length}}</span></label>
+                            <label class="In-progressTasks"  *ngIf= "inprogressTasks">In-progress &nbsp;&nbsp;<span class="numbertotal">{{inprogressTasks.length}}</span></label><br>
+                            <label class="completedTasks" *ngIf= "completedTasks">completed &nbsp;&nbsp;<span class="numbertotal">{{completedTasks.length}}</span></label>
                           </div>
                       </div>
                 </ul>
@@ -96,12 +96,7 @@
                                                   <td>{{inprogress.description}}</td>
                                                   
                                                 </tr>
-                                                <tr>
-                                                  <th scope="row">Dummy Ref</th>
-                                                  <td>Dummy Staff Name</td>
-                                                  <td>Dummy DecripWater is leaking</td>
-                                                 
-                                                </tr>
+                                          
                                                
                                                
                                               </tbody>
@@ -137,12 +132,7 @@
                                                   <td>{{completed.description}}</td>
                                                   <td>{{completed.Duration}}</td>
                                                 </tr>
-                                                <tr scope="row">
-                                                  <th>Dummy Ref</th>
-                                                  <td>Dummy Staff Name</td>
-                                                  <td>Dummy Decrip Water is leaking</td>
-                                              
-                                                </tr>
+                                            
                                                
                                                
                                               </tbody>

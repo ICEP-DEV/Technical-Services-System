@@ -1,8 +1,10 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ApiserviceService } from '../apiservice.service';
 import { Route, Router } from '@angular/router';
-
+import { MatTableDataSource } from '@angular/material/table';
+import {MatPaginatorModule, MatPaginator} from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-adminpage',
@@ -11,7 +13,12 @@ import { Route, Router } from '@angular/router';
 })
 export class AdminpageComponent implements OnInit {
 
+  id:any;
+  displayedColumns=['staff_id','category', 'priority', 'progress', 'assigned_date','completed_date','description','venue','staff_feedback','tech_feedback','status'];
+  dataSource! :MatTableDataSource<any>;
 
+  @ViewChild('paginator') paginator!: MatPaginator;
+  @ViewChild(MatSort) matSort!: MatSort;
   constructor(private service:ApiserviceService,private navrouter:Router) { }
  
    data: any;
@@ -33,12 +40,15 @@ export class AdminpageComponent implements OnInit {
       this.readData = res.result;
       localStorage.setItem('details', JSON.stringify(this.readData));
       
-     
     })
     this.total()
     this.getStats();
+
+    
   }
 
+
+  
   total():void{
     this.service.totalRequests().subscribe((res)=>{
       // console.log(res.result,"ram==>");
