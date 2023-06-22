@@ -1,6 +1,9 @@
 body {
   width: 100%;
 }
+.stats{
+  margin: 10.8%;
+}
 /* Start of the navigation bar*/
 .header {
   height: 82px;

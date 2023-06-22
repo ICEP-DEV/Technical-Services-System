@@ -38,6 +38,7 @@ import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.comp
 import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
     MatSidenavModule,
     MatToolbarModule,
     MatMenuModule,
+    MatFormFieldModule,
     MatIconModule,
     MatDividerModule,
     MatListModule,

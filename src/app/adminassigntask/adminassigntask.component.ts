@@ -160,7 +160,9 @@ this.id = Number(data)
         setTimeout(function(){
          window.location.reload();
        }, 2000);
+       this.navrouter.navigate(['/adminpage'])
 
+       
        
      
         

@@ -19,7 +19,7 @@ export class AdmindashboardComponent implements OnInit {
   constructor(private service:ApiserviceService){}
   ngOnInit(): void{
     this.service.allRequests().subscribe((res)=>{
-      console.log(res.result,"Default tasks");
+      console.log(res.result,"Active tasks/pending before setting priority");
       this.readData = res.result;
       
       
