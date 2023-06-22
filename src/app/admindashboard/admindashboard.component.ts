@@ -110,7 +110,8 @@ export class AdmindashboardComponent implements OnInit {
 
 
   downloadFile() {
-    const apiUrl = "http://192.168.27.20:3000"; // Replace with your API URL
+    const apiUrl = "http://localhost:3000"; // Replace with your API URL
+    //const apiUrl = "http://192.168.27.20:3000"; // Replace with your API URL
   
     // Create a link element
     const link = document.createElement('a');
