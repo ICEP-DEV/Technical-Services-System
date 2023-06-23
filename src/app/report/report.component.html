@@ -39,7 +39,7 @@
 
  
   <mat-paginator #paginator
-  [pageSize]="5"
+  [pageSize]="10"
   [pageSizeOptions]="[2,5, 10, 25, 100]"
   >
 </mat-paginator>
@@ -49,6 +49,11 @@
         <ng-container matColumnDef="staff_id">
             <th mat-header-cell mat-sort-header *matHeaderCellDef> Staff ID </th>
             <td mat-cell *matCellDef="let element"> {{element.staff_id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Task Ref. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
         </ng-container>
 
         <ng-container matColumnDef="category">
@@ -64,6 +69,11 @@
         <ng-container matColumnDef="progress">
             <th mat-header-cell mat-sort-header *matHeaderCellDef> progress </th>
             <td mat-cell *matCellDef="let element"> {{element.progress}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="req_date">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Request Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.req_date}} </td>
         </ng-container>
 
 
