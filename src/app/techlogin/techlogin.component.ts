@@ -61,7 +61,7 @@ export class TechloginComponent implements OnInit {
       if(this.tech_object.success == true){
         localStorage.setItem('techlogin',JSON.stringify(this.tech_object.body))
         this.close()
-        this._router.navigate(['/dashboard'])
+        this._router.navigate(['/techpage'])
       }else{
         alert("user not found with these credentials")
       }

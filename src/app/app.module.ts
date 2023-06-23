@@ -39,6 +39,7 @@ import { AdminprogressComponent } from './adminprogress/adminprogress.component'
 import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { TechpageComponent } from './techpage/techpage.component';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
      AdminassigntaskComponent,
      AdminprogressComponent,
      AdmincloselogComponent,
-     AdmindashboardComponent
+     AdmindashboardComponent,
+     TechpageComponent
      
   ],
   imports: [

@@ -152,6 +152,14 @@ export class ApiserviceService {
         return this._http.get(`${this.apiUrl+"/admin/export"}`);
       }
 
+      Techdata(id : any) {
+        return this._http.get(this.apiUrl + "/technician/tasks/"+id);
+      }
+      progressTech(id : Number,data: any) {
+        return this._http.put(this.apiUrl + "/technician/updateTask/"+id, data);
+      }
+      
+
 }
 
 
