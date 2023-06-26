@@ -73,7 +73,7 @@ this.id = Number(data)
 
       
      //Getting the admin id in the local storage,the data is a string
-    let admin = localStorage.getItem('stafflogin');
+    let admin = localStorage.getItem('adminlogin');
    
     let admin_temp_Id = admin?.slice(1,10);
     console.log(admin_temp_Id)
@@ -125,7 +125,7 @@ this.id = Number(data)
   
      this.adminTechDetails.tech_id = Number(tech_id);
 
-     let admin = localStorage.getItem('stafflogin');
+     let admin = localStorage.getItem('adminlogin');
    
      let admin_temp_Id = admin?.slice(1,10);
      console.log(admin_temp_Id)
