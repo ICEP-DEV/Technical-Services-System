@@ -57,13 +57,13 @@ export class FormComponent implements OnInit {
         this._router.navigate(['staffpage']);
       }
       else{
-        alert("Staff not found")
+        //alert("Staff not found")
       }
 
       //
     },
     (err)=>{
-      alert("Something went wrong, please try after some time")
+      //alert("Something went wrong, please try after some time")
       //alert(err.message)
     }
     )

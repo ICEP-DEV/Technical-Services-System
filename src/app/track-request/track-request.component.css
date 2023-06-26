@@ -1,183 +1,187 @@
-
-body{
-
-    background-color: white;
+/* .tab-content {
+  float: right;
+  width: 80%;
+  margin-right: 0%;
+} */
+/* .nav-tabs {
+background: rgba(155, 154, 154, 0.8);
+border-right: 5px solid #0e0f52;
 }
 
 
-.nav-item{
-    padding: 8px 24px;
-    
-    transition: 0.4s;
-    font-family: 'georgia';
-    margin-bottom: 24px;
-    margin-left: 24px;
-    font-weight: bold;
-    cursor: pointer;
-    background: white;
-  }
-  
-  .nav-item:hover {
-    
-    text-decoration: none;
-    padding: 8px 0;
-    border-left: 8px solid rgb(14, 60, 90);
-    box-shadow: 4px 4px 4px rgba(70, 69, 69, 0.993);
-  }
-  
-  
-  .nav-link.active {
-    border: none;
-  }
+ */
 
+/* .reqhead1{
   
-  .header {
-    height: 72px;
-    background: #0c0c0c;
-    width: 100%;
-    margin: 0;
-    position: fixed;
-    font-family: 'Roboto Condensed',sans-serif;
-    font-size: 20px;
-    display: flex;
-    justify-content: space-between;
-    padding:0 16px 0 0;
-    box-sizing: border-box;
-    z-index: 100;
-  }
+    border: 2px solid rgb(255, 255, 255);
+    background-color: #ECE7E7; 
+    font-weight: bold;
+
+
+
+
+font-family: 'Sansation';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 36px;
+letter-spacing: 0.15em;
+
+color: #000000;
+} */
+
+/* .reqhead2{
   
-  .header a {
-    padding: 0 32px;
+  border: 2px solid rgb(255, 255, 255);
+  background-color: #ECE7E7; 
+  font-weight: bold;
+
+
+
+
+font-family: 'Sansation';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 36px;
+letter-spacing: 0.15em;
+
+color: #000000;
+} */
+
+
+
+/*Footer*/
+
+footer{
+  background: black;
+    padding: 8px;
     color: #eee;
-    transition: 0.4s;
-  }
-  
-  .header a:hover {
-    text-decoration: none;
-    color: red;
-  }
-  
-  .header ul {
-    display: flex;
-    list-style: none;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-    margin: 0;
-  }
-
-.sticky {
+   text-align: center;
+    bottom: 0;
     width: 100%;
-    background-color: #005596;
-    height:115px;
-    
-}
-.toggleMenu {
-    cursor: pointer;
-    display:none;
 }
 
-.center 
-{
-    margin-right: 35%;
-    font-weight: bold;
-    font-size: 50px;
-    color: aliceblue;
+
+
+/*Navigation*/
+
+.header {
+  height: 81px;
+  background: #0c0c0c;
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  font-family: 'Roboto Condensed',sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding:0 16px 0 0;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+/* .header a {
+  padding: 0 32px;
+  color: #eee;
+  transition: 0.4s;
+} */
+
+
+
+/* select#Cater,
+input.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-bottom: 1rem;
+} */
+
+
+
+#b12{
+  float: right;
+}
+
+
+
+
+.sideNav {
+float: left;
+box-shadow: 5px 0 2px #575656;
+width: 300px;
+height: 1132px;
+
+
+}
+
+.breadcrumbNav {
+margin: 12% 10px;
+padding: 20px 30px; 
+top:0%;  
+transform: translateY(-1%);     
+}
+#breadcrumbpadding {
+
+width: 115px;  
+padding: 6px 0;
 }
 
 a {
-    color: white;
-    font-weight: bold;
+font-size: 16px;
+line-height: 20px;
+color: #2e2e2e;
+text-decoration: none;
+}
+
+.breadcrumbNav ul {
+
+list-style:none ;
+flex-direction: column;
+}
+.breadcrumb-item.active {
+
+
+border-bottom: 3px solid #4b4c4d;
+width: 115px;  
+
+}
+
+.anchorBorder{
+
+  
+margin:0 0%;
+}
+
+#hover:hover {
+font-weight: 700px;
+color: rgb(6, 85, 42);
+font-size: large;
+
+
+
+margin-bottom: 24px;
+margin-left: 10px;
+
+cursor: pointer;
+
+
+
+
 }
 
 
-#left {
-
-    padding-left:75%;
-}
 
 
-.logo {
-    height: 100px;
 
-    margin-top: 10px;
-}/*
-body {
-
-    margin-top: 100px;
-   
-    height: 1055px;
-}*/
-
-footer{
-    background: black;
-      padding: 8px;
-      color: #eee;
-      display: center;
-     
-      bottom: 0;
-      width: 100%;
-  }
-
-  
-  
-.sideNav {
-    float: left;
-    box-shadow: 5px 0 2px #969292;
-    width: 335px;
-    height: 1055px;
-    
-  }
-  
-  .breadcrumbNav {
-    margin: 12% 10px;
-    padding: 20px 30px;      
-  }
-  #breadcrumbpadding {
-  
-    width: 115px;  
-    padding: 6px 0;
-  }
-  
-  a {
-    padding-top: 20px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    /* identical to box height */
-  
-    letter-spacing: 0.035em;
-    text-transform: capitalize;
-  
-    color: #005596;
-    text-decoration: none;
-  }
-  
-  .breadcrumbNav ul {
-  
-    list-style:none ;
-    flex-direction: column;
-  }
-  .breadcrumb-item.active {
-   
-    
-    border-bottom: 3px solid #005596;
-    width: 115px;  
-    
-  }
-  
-  .anchorBorder{
-  
-      
-    margin:0 20%;
-  }
-  
-  #hover:hover {
-    font-weight: bold;
-   
-   
-  }
     
 .contentContainerRight {
    
@@ -191,15 +195,14 @@ footer{
 }
 form {
     
-    width: 1300px;
-    margin: 5% 5%;
-    height: 900px;
+    width: 600px;
+    
+    height: 600px;
 
     /*Note that the background form is not visible behind, nut it is there*/
-    
-
-
 }
+
+
 .toptitle {
    
     font-style: normal;
@@ -324,10 +327,7 @@ label {
     body {
         background-color: yellow;
     }
-    .sideNav {
-        width: 300px;
-
-    }
+    
     .contentContainerRight {
        
         margin-top:0%;
@@ -376,10 +376,7 @@ label {
     .sticky {
         width: 100%;
     }
-    .sideNav {
-        width: 200px;
-
-    }
+    
     .contentContainerRight {
         
         margin-top: 0%;
@@ -438,10 +435,7 @@ label {
         .logo {
            height: 80px;
         }
-        .sideNav {
-            display: none;
-    
-        }
+        
         .toggleMenu {
 
             display:block;
@@ -492,10 +486,7 @@ label {
             background-color: rgb(131, 247, 116);
             width: 100%;
         }
-        .sideNav {
-            display: none;
-    
-        }
+        
         .contentContainerRight {
            
             margin-top: 0%;

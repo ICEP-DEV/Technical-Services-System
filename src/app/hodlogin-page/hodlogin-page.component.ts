@@ -8,18 +8,17 @@ import { ApiserviceService } from '../apiservice.service';
 import { Router} from '@angular/router'
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-hodlogin-page',
+  templateUrl: './hodlogin-page.component.html',
+  styleUrls: ['./hodlogin-page.component.css']
 })
-export class LoginComponent implements OnInit {
+export class HODloginPageComponent implements OnInit {
 
-  errormsg: any;
-  adminLogin= {
-    admin_id:'',
+  
+  HODlogin= {
+    hod_id:'',
     password:''
   }
-
 
   constructor(
     public dialogRef: MatDialogRef<FormComponent>,
@@ -30,31 +29,29 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
-  admin_object:any
-  admin_login() {
-     if(this.adminLogin.admin_id== '' && this.adminLogin.password == ''){
+  HOD_object:any
+  HOD_login() {
+     if(this.HODlogin.hod_id== '' && this.HODlogin.password == ''){
       alert("Email and Password is required");
       return;
      } 
-     if(this.adminLogin.admin_id== ''){
+     if(this.HODlogin.hod_id== ''){
       alert("Email is required");
       return;
      } 
-     if(this.adminLogin.password== ''){
+     if(this.HODlogin.password== ''){
       alert("Password is required");
       return;
      } 
 
-    this.service.adminLogin(this.adminLogin)
+    this.service.HODLogin(this.HODlogin)
     .subscribe((response)=>{
-      
-      this.admin_object = response
-      console.log(this.admin_object.admin_id)
-      if(this.admin_object.success == true){
-        // localStorage.setItem("adminLogin",this.admin_object.body?.toString())
-        localStorage.setItem('stafflogin',JSON.stringify(this.admin_object.admin_id))
+      this.HOD_object = response
+      console.log(this.HOD_object.body)
+      if(this.HOD_object.success == true){
+        localStorage.setItem('HODlogin',JSON.stringify(this.HODlogin.hod_id))
         this.close()
-        this._router.navigate(['/admindash'])
+        this._router.navigate(['/hodpage'])
       }else{
         alert("user not found with these credentials")
       }
@@ -81,4 +78,5 @@ export class LoginComponent implements OnInit {
   close(): void {
     this.dialogRef.close();
   }
+
 }

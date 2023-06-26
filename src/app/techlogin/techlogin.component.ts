@@ -27,6 +27,7 @@ export class TechloginComponent implements OnInit {
     password:''
   }
 
+  techlog:any;
 
 
   constructor(
@@ -59,7 +60,11 @@ export class TechloginComponent implements OnInit {
       this.tech_object = response
       console.log(this.tech_object.body)
       if(this.tech_object.success == true){
-        localStorage.setItem('techlogin',JSON.stringify(this.tech_object.body))
+        var id= this.techLogin.tech_id;
+        this.techlog = id;
+        console.log(this.techlog)
+
+        localStorage.setItem('techlogin',JSON.stringify(this.techlog))
         this.close()
         this._router.navigate(['/techpage'])
       }else{
@@ -74,6 +79,8 @@ export class TechloginComponent implements OnInit {
     }
     )
   } 
+
+ 
 
 
   close(): void {
