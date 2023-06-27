@@ -36,10 +36,10 @@ import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component'
 import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
 import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
-import { TechpageComponent } from './techpage/techpage.component';
 import { HODpageComponent } from './hodpage/hodpage.component';
 import { CloselogComponent } from './closelog/closelog.component';
 import { ReportComponent } from './report/report.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 // import { Ng2OrderModule } from 'ng2-order-pipe';
 // import { NgxPaginationModule } from 'ngx-pagination';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter/src/ng2-filter.module';
@@ -48,6 +48,13 @@ import { HodSageComponent } from './hod-sage/hod-sage.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TechpageComponent } from './techpage/techpage.component';
+import { HodprogressComponent } from './hodprogress/hodprogress.component';
+import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
+import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
+
+
+
+
 
 
 @NgModule({
@@ -81,7 +88,11 @@ import { TechpageComponent } from './techpage/techpage.component';
      AdmincloselogComponent,
      HodSageComponent,
      AdmindashboardComponent,
-     TechpageComponent
+     TechpageComponent,
+     HodprogressComponent,
+     HodcloselogsComponent,
+     StaffsendrequestComponent,
+    
      
   ],
   imports: [
@@ -100,6 +111,8 @@ import { TechpageComponent } from './techpage/techpage.component';
     MatDialogModule,
     HttpClientModule,
     FormsModule,
+    Ng2SearchPipeModule,
+    
     
     // Ng2OrderModule,
     // Ng2SearchPipeModule,

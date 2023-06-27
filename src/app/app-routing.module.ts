@@ -25,6 +25,9 @@ import { HODpageComponent } from './hodpage/hodpage.component';
 import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
 import { TechpageComponent } from './techpage/techpage.component';
 import { CloselogComponent } from './closelog/closelog.component';
+import { HodprogressComponent } from './hodprogress/hodprogress.component';
+import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
+import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
 
 
 
@@ -37,18 +40,22 @@ const routes: Routes = [
   {path: 'adminpage',component: AdminpageComponent},
   {path: 'viewrequest',component: ViewrequestComponent,canActivate:[AuthGuard]},
   {path: 'staffpage',component: StaffpageComponent},
+  {path: 'sendrequest',component: StaffsendrequestComponent},
   {path:'trackrequest',component:TrackRequestComponent},
   {path:'stafffeedback',component:StafffeedbackComponent},
   {path:'availableTechnician', component:AdminassigntaskComponent},
   {path:'adminprogress',component:AdminprogressComponent},
   {path:'admincloselog', component:AdmincloselogComponent},
   {path: 'hodpage',component:HODpageComponent},
+  {path: 'hodprogress',component:HodprogressComponent},
+  {path: 'hodcloselogs',component:HodcloselogsComponent},
   {path: 'hodloginpage',component:HODloginPageComponent},
   {path: 'techpage',component:TechpageComponent},
   {path: 'closelog',component:CloselogComponent},
-  {path:'availableTechnician', component:AdminassigntaskComponent}
-,
-  {path:'admindash', component:AdmindashboardComponent}
+  {path:'availableTechnician', component:AdminassigntaskComponent},
+
+  {path:'admindash', component:AdmindashboardComponent},
+  {path:'dash2', component:DashboardComponent}
 
   
  

@@ -47,7 +47,9 @@ export class AdminpageComponent implements OnInit {
     
   }
 
-
+  filterData($event : any){
+    this.dataSource.filter = $event.target.value;
+  }
   
   total():void{
     this.service.totalRequests().subscribe((res)=>{

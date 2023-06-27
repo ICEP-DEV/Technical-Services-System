@@ -1,17 +1,11 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { RouterTestingHarness } from '@angular/router/testing';
-import { SearchPipe } from '../search.pipe';
 import { ApiserviceService } from '../apiservice.service';
-
-
 @Component({
-  selector: 'app-adminprogress',
-  templateUrl: './adminprogress.component.html',
-  styleUrls: ['./adminprogress.component.css']
+  selector: 'app-hodprogress',
+  templateUrl: './hodprogress.component.html',
+  styleUrls: ['./hodprogress.component.css']
 })
-export class AdminprogressComponent {
-
+export class HodprogressComponent {
   availableTechData:any;
   total:any;
   search = ""
@@ -20,9 +14,6 @@ export class AdminprogressComponent {
   totalCompleted:any;
   totalInprogress:any;
   message = "";
-
-  searchButton = "";
-
 
   constructor(private service:ApiserviceService){}
 
@@ -88,10 +79,6 @@ export class AdminprogressComponent {
         this.inprogressTasks = res;
         console.log(this.inprogressTasks)
     });
-
-
-
-
   }
 
 // Get all the completed tasks 
@@ -103,16 +90,4 @@ export class AdminprogressComponent {
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
 }
-

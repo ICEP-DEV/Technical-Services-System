@@ -30,13 +30,12 @@
             <nav class="breadcrumbNav">
                 <ul>
                     
-                        <li class = "" id = "breadcrumbpadding"><a class ="" id="hover"  routerLink="/adminpage" >View Logs</a></li>
+                        <li class = "" id = "breadcrumbpadding"><a class ="" id="hover"  routerLink="/hodpage" >View Logs</a></li>
                         <li class="breadcrumb-item active" id="breadcrumbpadding"><a class=""  disabled>View Progress</a></li>
-                        <li class = "" id = "breadcrumbpadding"><a class ="" id="hover"  routerLink="/admincloselog" >Close Logs</a></li>
+                        <li class = "" id = "breadcrumbpadding"><a class ="" id="hover"  routerLink="/hodcloselogs" >Close Logs</a></li>
                         <!-- *ngIf= "statsData" statsData.totalUnassigned-->
                         <div class="progressTotalsDiv"  >
                           <div class="contentMargin">
-                            <h3 class="totaltasksTitle"  >Total Tasks</h3>
                             <label class="In-progressTasks"  *ngIf= "inprogressTasks">In-progress &nbsp;&nbsp;<span class="numbertotal">{{inprogressTasks.length}}</span></label><br>
                             <label class="completedTasks" *ngIf= "completedTasks">completed &nbsp;&nbsp;<span class="numbertotal">{{completedTasks.length}}</span></label>
                           </div>
@@ -58,7 +57,8 @@
                     <div class="content  mt-4 p-4">
   
                 
-                        <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Admin View Progress</h1>
+                        <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Hod View Logs Progress</h1>
+  
                         <div class = "contentForm">
   
                                 <nav class="navtab">
@@ -74,8 +74,7 @@
                                   <div class="tab-pane fade show active" id="nav-in-progress" role="tabpanel" aria-labelledby="nav-in-progress-tab">
                                     <div class="left">
                                       
-                                      <!-- <button class="printReportBtn" (click)="printer()" target="_blank">Print Report</button><br> -->
-                                      <input class="search" type="text" name="searchButton" [(ngModel)]="searchButton" placeholder="search for tasks" style="margin-bottom: 1%; border-radius: 5px;">
+                                      <button class="printReportBtn" (click)="printer()" target="_blank">Print Report</button>
                                       <div class="card  contentToPrint">
                                           
                                           <table class="table table-hover" id="">
@@ -90,7 +89,7 @@
                                                 </tr>
                                               </thead>
                                               <tbody >
-                                                <tr *ngFor ="let inprogress of inprogressTasks | filter:searchButton">
+                                                <tr *ngFor ="let inprogress of inprogressTasks ">
                                                   <th scope="row">{{inprogress.id}}</th>
                                                   <td>{{inprogress.staff_name}}</td>
                                                   <td>{{inprogress.description}}</td>
@@ -111,8 +110,7 @@
                                   <div class="tab-pane fade" id="nav-done" role="tabpanel" aria-labelledby="nav-done-tab">
                                     <div class="left">
   
-                                      <!-- <button class="printReportBtn" (click)="printer()" target="_blank">Print Report</button><br> -->
-                                      <input class="search" type="text" name="searchButton" [(ngModel)]="searchButton" placeholder="search for tasks" style="margin-bottom: 1%; border-radius: 5px;">
+                                      <button class="printReportBtn" (click)="printer()" target="_blank">Print Report</button>
                                       <div class="card  contentToPrint">
                                           
                                           <table class="table table-hover" >
@@ -127,7 +125,7 @@
                                                 </tr>
                                               </thead>
                                               <tbody >
-                                                <tr scope="row" *ngFor ="let completed of completedTasks | filter:searchButton ">
+                                                <tr scope="row" *ngFor ="let completed of completedTasks">
                                                   <th >{{completed.id}}</th>
                                                   <td>{{completed.staff_name}}</td>
                                                   <td>{{completed.description}}</td>
@@ -169,3 +167,4 @@
   </body>
   
   
+

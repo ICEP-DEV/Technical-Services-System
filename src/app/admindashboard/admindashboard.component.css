@@ -249,12 +249,20 @@ body {
     height: 50px;
   }
   .ticket{
+   
     border: 1px solid #ccc;
     box-shadow: 2px 2px 2px rgba(94, 93, 93, 0.993);
     font-family: "Times New Roman";
     font-style: normal;
     
   
+  }
+  .card-body {
+    display: flex;
+    flex-direction: row;
+  }
+  .paddingBottom {
+    padding-top: 22px;
   }
   .ticket:hover{
     text-decoration: none;
@@ -267,8 +275,13 @@ body {
   /*Div for the content on the right*/
   .tab-content {
       float: right;
-      width: 80%;
+      width: 79.5%;
+      margin-top: 1.1%;
       padding:2% 0 ;
+      background: #f5f3f3;
+      
+
+      /* #fdfdfd */
     }
     /*Footer*/
   footer{
@@ -357,21 +370,22 @@ body {
   
     }
   
+  
     .pendingred{
-      background: rgb(255, 49, 49);
+      background: #dcebf7;
     }
     .CompletedGreen{
-      background:green
+      background:#dcebf7
     }
     .progressOragnge{
-      background: orange;
+      background: #dcebf7;
     }
     .card-title{
-      color:white
+      color:black
     }
 
     .closed{
-      background: #5eb0f3;
+      background: #dcebf7;
     }
 
 
@@ -412,7 +426,6 @@ body {
     }
 
    .numberofArisan{
-    background: #969292;
-    padding: 10px;
+    padding: 22px;
     border-radius: 8px;
    }
