@@ -83,6 +83,8 @@
                               <tr>
                                 <th scope="col">Category</th>
                                 <th scope="col">Description</th>
+                                <th scope="col">Assigned Task</th>
+                                <th scope="col">Expected</th>
                                 <th scope="col">Priority</th>
                                 <th scope="col">Venue</th>
                                 <th scope="col">Progress Status</th>
@@ -92,12 +94,13 @@
                               <tr *ngFor="let data of readData">
                                 <td>{{ data.category }}</td>
                                 <td>{{ data.description }}</td>
+                                <td>{{ data.assigned_date }}</td>
+                                <td>{{ data.expected_date }}</td>
                                 <td>{{ data.priority }}</td>
                                 <td>{{ data.venue }}</td>
                                 <td>
                                   <select id="Cater" (change)="progressTask($event, data.id)" [(ngModel)]="data.progress">
                                     <option value="">Select Task Status</option>
-                                    <option value="to-do">To-do</option>
                                     <option value="on-hold">On-Hold</option>
                                     <option value="in-progress">in-progress</option>
                                     <option value="complete">complete</option>

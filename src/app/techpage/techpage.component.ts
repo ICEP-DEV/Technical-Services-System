@@ -29,7 +29,6 @@ export class TechpageComponent implements OnInit{
 
     
     this.service.Techdata(Number(this.tech_id)).subscribe((res: any) => {
-      console.log(res, "ram==>");
       console.log(res)
     
       // Extract the array from the response object

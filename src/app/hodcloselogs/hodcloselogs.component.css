@@ -1,8 +1,9 @@
+.departmenCategoryText {
+    padding: 4.08%;
+}
+
 body {
     width: 100%;
-  }
-  .stats{
-    margin: 10.8%;
   }
   /* Start of the navigation bar*/
   .header {
@@ -93,6 +94,7 @@ body {
     border-bottom: 3px solid #005596;
     width: 115px;  
   }
+
   /* End of Everything on the side nav*/
   
   /*Disable the active link*/
@@ -198,7 +200,6 @@ body {
       border-radius: 0.25rem;
     }
   .content{
-    border: 1px solid #ccc;
     overflow-y: scroll;
     height: auto; 
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
@@ -206,15 +207,21 @@ body {
     width: 85%;
     margin: auto auto;
   }
-  
-  .btnAvailableTech{
-      background: black;
-      color: white;
-      width: 120px;
-      height: 30px;
-      border-radius: 5px;
-      text-align: center;
-  
-  
-    }
-  
+.status {
+        background-color: #7F4D3E;
+        color: white;
+  }
+.logbtn{
+    color: white;
+    background-color: #005596;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding:5px ;
+    width:70px;
+
+  }
+
+.logbtn:hover{
+    border: 1px solid black;
+    font-weight: 500;
+  }

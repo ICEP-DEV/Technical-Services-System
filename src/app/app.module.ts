@@ -20,11 +20,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { TrackformComponent } from './trackform/trackform.component';
 import { MatDialogModule } from '@angular/material/dialog';
-
-
-import{HttpClientModule} from '@angular/common/http'
+import { MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { HttpClientModule } from '@angular/common/http';
 import { ApiserviceService } from './apiservice.service';
-
 import { TechloginComponent } from './techlogin/techlogin.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { ViewrequestComponent } from './viewrequest/viewrequest.component';
@@ -36,17 +36,24 @@ import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component'
 import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
 import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
-import { TechpageComponent } from './techpage/techpage.component';
 import { HODpageComponent } from './hodpage/hodpage.component';
 import { CloselogComponent } from './closelog/closelog.component';
 import { ReportComponent } from './report/report.component';
-// import { Ng2OrderModule } from 'ng2-order-pipe';
-// import { NgxPaginationModule } from 'ngx-pagination';
-// import { Ng2SearchPipeModule } from 'ng2-search-filter/src/ng2-filter.module';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AvailableTechComponent } from './available-tech/available-tech.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
 import { HodSageComponent } from './hod-sage/hod-sage.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { TechpageComponent } from './techpage/techpage.component';
+import { HodprogressComponent } from './hodprogress/hodprogress.component';
+import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
+import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
+
+
+
 
 
 @NgModule({
@@ -61,26 +68,29 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     DashboardComponent,
     TrackformComponent,
     TechloginComponent,
-     AdminpageComponent,
-     ViewrequestComponent,
-     StaffpageComponent,
-     RefConfirmFormComponent,
-     TrackRequestComponent,
-     SidenavbarComponent,
-     StafffeedbackComponent,
-     
-     AdminassigntaskComponent,
-     AdminprogressComponent,
-     HODloginPageComponent,
-     TechpageComponent,
-     HODpageComponent,
-     CloselogComponent,
-     ReportComponent,
-     AdminassigntaskComponent,
+    AdminpageComponent,
+    ViewrequestComponent,
+    StaffpageComponent,
+    RefConfirmFormComponent,
+    TrackRequestComponent,
+    SidenavbarComponent,
+    StafffeedbackComponent,
+    AdminassigntaskComponent,
+    AdminprogressComponent,
+    HODloginPageComponent,
+    TechpageComponent,
+    HODpageComponent,
+    CloselogComponent,
+    ReportComponent,
+    AdminassigntaskComponent,
      AdmincloselogComponent,
      HodSageComponent,
-     AdmindashboardComponent
-     
+     AdmindashboardComponent,
+     TechpageComponent,
+     HodprogressComponent,
+     HodcloselogsComponent,
+     StaffsendrequestComponent,
+    AvailableTechComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,12 +108,20 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatDialogModule,
     HttpClientModule,
     FormsModule,
+    Ng2SearchPipeModule,
+    
     
     // Ng2OrderModule,
     // Ng2SearchPipeModule,
     // NgxPaginationModule
 
 
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [ApiserviceService],
   bootstrap: [AppComponent]

@@ -70,20 +70,20 @@ export class AdmindashboardComponent implements OnInit {
 
 
   getclosedlogs(){
-    // this.service.gettotalClosedLogs().subscribe((res)=>{
-    //     this.totalClosed = res;
+    this.service.gettotalClosedLogs().subscribe((res)=>{
+        this.totalClosed = res;
 
-    //     console.log(this.totalClosed,"Total Closed");
-    // })
+        console.log(this.totalClosed,"Total Closed");
+    })
   }
 
   gettotalArtisans(){
 
-    // this.service.getartisans().subscribe((res)=>{
-    //     this.totalartisan = res;
+    this.service.getartisans().subscribe((res)=>{
+        this.totalartisan = res;
 
-    //     console.log(this.totalartisan ,"Total artisan");
-    // })
+        console.log(this.totalartisan ,"Total artisan");
+    })
   }
 
    //TOTAL LOGS

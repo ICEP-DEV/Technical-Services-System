@@ -6,13 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiserviceService {
+ 
 
   constructor(private _http: HttpClient) { }
 
   //connect frontend to backend
 
-  //apiUrl  = 'http://localhost:3000';
-  apiUrl = "http://192.168.27.20:3000"
+   apiUrl  = 'http://localhost:3000';
+ // apiUrl = "http://192.168.27.20:3000"
   //get all data
 
   staffLogin(data: any) {
@@ -70,9 +71,19 @@ export class ApiserviceService {
 
   
   /*Admin Apis*/
+ /*Get the statistics of the services/logs*/
+ 
 
+ getCategories():Observable<any>{
+     return this._http.get(`${this.apiUrl + "/aggregate"}`);
+ }
+  gettotalClosedLogs():Observable<any>{
+    return this._http.get(`${this.apiUrl + "/admin/getTotalClossedLogs"}`);
+  }
 
-
+  getartisans():Observable<any>{
+    return this._http.get(`${this.apiUrl + "/admin/viewAllTechnicians"}`);
+  }
   /*Staff Apis*/
       //Api post feedback connection STAFF
       
@@ -97,15 +108,16 @@ export class ApiserviceService {
         return this._http.put(this.apiUrl + "/admin/setPriority/"+id, data);
       }
 
+      waitingToBeClose() {
+        return this._http.get(this.apiUrl+"/getFeedBack");
+      }
+
       category():Observable<any>{
         return this._http.get(`${this.apiUrl + "/getCategory"}`)
       }
       getCatIssues(id:number):Observable<any>{
         return this._http.get(`${this.apiUrl + "/getItem/"+id}`)
       }
-
-      
-
 
   /*Technician Apis*/
 
@@ -116,6 +128,11 @@ export class ApiserviceService {
 
   }
 
+  // +artisan_id+admin_id
+  assignavailArtisan(id:Number,data:any):Observable<any>{
+    return this._http.post(`${this.apiUrl}/admin/`+ "assignTechnician/"+ id,data);
+
+  }
   //Connection to get task assigned to technician from server, who logged based on the ID 
 
   getTechTaskById(id: Number): Observable<any> {
@@ -141,9 +158,13 @@ export class ApiserviceService {
         return this._http.get(this.apiUrl + "/technician/tasks/"+id);
       }
 
+
+      //HOD APIS 
+
       HODrequest(id : any) {
         return this._http.get(this.apiUrl + "/hod/getDept-Requests/"+id);
       }
+
 
       
 
@@ -171,11 +192,7 @@ export class ApiserviceService {
         return this._http.get(`${this.apiUrl + "/admin/requests"}`);
       }
 
-       // +artisan_id+admin_id
-  assignavailArtisan(id:Number,data:any):Observable<any>{
-    return this._http.post(`${this.apiUrl}/admin/`+ "assignTechnician/"+ id,data);
 
-  }
   
   getInprogressTasks():Observable<any>{
     return this._http.get(`${this.apiUrl + "/admin/viewInProgressTasks"}`)
@@ -190,7 +207,5 @@ export class ApiserviceService {
     return this._http.get(`${this.apiUrl + "/admin/ServiceStatistics"}`)
 
   }
-
-
       
 }

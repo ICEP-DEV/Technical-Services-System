@@ -54,7 +54,7 @@ export class FormComponent implements OnInit {
       if (this.staff_object.success == true) {
         localStorage.setItem('stafflogin', JSON.stringify(this.staffLogin.staff_id));
         this.close();
-        this._router.navigate(['staffpage']);
+        this._router.navigate(['/staffpage']);
       }
       else{
         //alert("Staff not found")

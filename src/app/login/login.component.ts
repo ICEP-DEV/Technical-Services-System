@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
         // localStorage.setItem("adminLogin",this.admin_object.body?.toString())
         localStorage.setItem('adminlogin',JSON.stringify(this.admin_object.admin_id))
         this.close()
-        this._router.navigate(['/admindash'])
+        this._router.navigate(['/dash2'])
       }else{
         alert("user not found with these credentials")
       }
