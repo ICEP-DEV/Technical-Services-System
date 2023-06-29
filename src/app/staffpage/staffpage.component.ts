@@ -24,13 +24,14 @@ export class StaffpageComponent implements OnInit {
   ]
 
   categoryItem = [
-    { item_id: 1, item: ["Table", "Door", "Computer"], category: "Hardware" },
-    { item_id: 2, item: ["Cable", "Geyser", "Lights"], category: "Electrical" },
-    { item_id: 3, item: ["Pipe", "Geyser", "Toilet"], category: "Plumbing" }
+    { item_id: 1, item: ["Mouse", "Keyboard", "Monitor"], category: "Computer" },
+    { item_id: 2, item: ["Wooden", "Steel", "Aluminium"], category: "Table, Door or Window" },
+    { item_id: 4, item: ["Cable", "Geyser", "Lights"], category: "Electrical" },
+    { item_id: 5, item: ["Pipe", "Geyser", "Toilet"], category: "Plumbing" }
   ]
 
   problemCategoryItem = [
-    { item_id: 1, problem: ["Broken", "Door", "Computer"], category: "Table" },
+    { item_id: 1, problem: ["Broken", "Door", "Computer"], category: "Aluminium" },
     { item_id: 2, problem: ["Broken", "Cannot lock", "is locked"], category: "Door" },
     {
       item_id: 3, problem: ["Mouse not moving, responding or connected properly", "Keyboard is not working, responding or connected properly", "Screen is on working", "Screen is cracked or broken",
