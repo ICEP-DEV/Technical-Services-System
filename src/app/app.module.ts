@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ScheduleModule, RecurrenceEditorModel , DayService, WeekService, WorkWeekService, MonthService, AgendaService } from '@syncfusion/ej2-angular-schedule';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'; 
 import { AppRoutingModule } from './app-routing.module';
@@ -47,6 +48,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableExporterModule, MatTableExporterDirective } from 'mat-table-exporter';
 import { MatButtonModule } from '@angular/material/button';
+import { CalenderComponent } from './calender/calender.component';
+
 
 @NgModule({
   declarations: [
@@ -75,6 +78,8 @@ import { MatButtonModule } from '@angular/material/button';
     ReportComponent,
     AdminassigntaskComponent,
     AvailableTechComponent,
+    CalenderComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -98,8 +103,18 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatTableExporterModule,
     MatButtonModule,
+    ScheduleModule,
+   
   ],
-  providers: [ApiserviceService],
+  providers: [ApiserviceService,DayService, WeekService, WorkWeekService, MonthService, AgendaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
+
+
+
+

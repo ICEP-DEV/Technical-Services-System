@@ -14,7 +14,7 @@
 top:50%;  
 transform: translateY(-50%);
   
-  background: rgba(155, 154, 154, 0.8);
+ 
   border-right: 5px solid #0e0f52;
   
   
@@ -37,7 +37,7 @@ transform: translateY(-50%);
     text-decoration: none;
     padding: 8px 0;
     border-left: 8px solid rgb(14, 60, 90);
-    box-shadow: 4px 4px 4px rgba(70, 69, 69, 0.993);
+   
   }
   
   
@@ -97,6 +97,9 @@ transform: translateY(-50%);
       bottom: 0;
       width: 100%;
   }
+  
+ 
+  
   
   
   
@@ -205,7 +208,7 @@ transform: translateY(-50%);
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     line-height: 1.5;
-    color: #495057;
+   
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -221,7 +224,7 @@ transform: translateY(-50%);
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     line-height: 1.5;
-    color: #495057;
+   
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -231,23 +234,6 @@ transform: translateY(-50%);
   }
   
   
-  form .div #reqhead{
-    position: absolute;
-  width: 271px;
-  height: 24px;
-  left: 483px;
-  top: 217px;
-  
-  font-family: 'Sansation';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 36px;
-  letter-spacing: 0.15em;
-  
-  color: #000000;
-  
-  }
   
   
   /* Three image containers (use 25% for four, and 50% for two, etc) */
@@ -258,10 +244,7 @@ transform: translateY(-50%);
   }
   
   /* Clear floats after image containers */
-  .row::after {
-    clear: both;
-    display: table;
-  }
+  
   
   #b12{
     float: right;
@@ -300,9 +283,6 @@ a {
   
 
   letter-spacing: 0.035em;
-  
-  
-  color: #2e2e2e;
   text-decoration: none;
 }
 
@@ -311,13 +291,7 @@ a {
   list-style:none ;
   flex-direction: column;
 }
-.breadcrumb-item.active {
- 
-  
-  border-bottom: 3px solid #4b4c4d;
-  width: 115px;  
-  
-}
+
 
 .anchorBorder{
 

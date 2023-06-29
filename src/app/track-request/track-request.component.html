@@ -54,9 +54,9 @@
             <div class="w-100% rounded-1 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3" >
                 <h1><b>Click on the tabs to view progress of your request(s)</b></h1>
                 <label for="zero" id="red" class="todo" (click)="recieveAllRequest()">Todo         {{todo}}</label>
-                <label for="zero" id="blue" class="Assigned" (click)="assignTask()">Assigned</label>
-                <label for="fifty" id="orange" class="InProgress" (click)="getInprogress()">InProgress</label>
-                <label for="zero" id="gray" class="OnHold" (click)="getOnHoldTasks()">OnHold</label>
+                <label for="zero" id="blue" class="Assigned" (click)="assignTask()">Assigned     {{assigned}}</label>
+                <label for="fifty" id="orange" class="InProgress" (click)="getInprogress()">InProgress      {{inprogress}}</label>
+                <label for="zero" id="gray" class="OnHold" (click)="getOnHoldTasks()">OnHold  {{hold}}</label>
                 <label for="hundred" id="green" class="Done" (click)="getCompleteTasks()">Done</label>
             </div>
             </form>

@@ -23,6 +23,7 @@ import { TechpageComponent } from './techpage/techpage.component';
 import { CloselogComponent } from './closelog/closelog.component';
 import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
 import { AdminprogressComponent } from './adminprogress/adminprogress.component';
+import { ReportComponent } from './report/report.component';
 
 
 const routes: Routes = [
@@ -42,11 +43,8 @@ const routes: Routes = [
   {path: 'techpage',component:TechpageComponent},
   {path: 'closelog',component:CloselogComponent},
   {path:'availableTechnician', component:AdminassigntaskComponent},
-  {path:'adminprogress',component:AdminprogressComponent}
-
-
-  
- 
+  {path:'adminprogress',component:AdminprogressComponent},
+  {path: 'report',component:ReportComponent}
 ];
 
 @NgModule({

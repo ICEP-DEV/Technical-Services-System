@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
 import { Router } from '@angular/router';
 
+
 @Component({ 
   selector: 'app-track-request',
   templateUrl: './track-request.component.html',
@@ -19,7 +20,7 @@ export class TrackRequestComponent {
   tempRequest: any;
   numberDone =0;
 
-  todo =0;
+  todo:any;
   assigned=0;
   inprogress=0;
   hold=0;
@@ -52,9 +53,13 @@ export class TrackRequestComponent {
           
           
         }
-        this.todo=i;
+        
         
       }
+
+      this.todo=requestcount;
+
+      
 
       //Storing the data in the all request variable/array
       this.allRequest = array
@@ -80,6 +85,8 @@ export class TrackRequestComponent {
     }
     this.allRequest = array
     console.log(this.allRequest)
+
+    
   }
    //get the onHold tasks
    getOnHoldTasks(){
@@ -117,7 +124,7 @@ export class TrackRequestComponent {
 
     var array = []
     for (let i = 0; i < requestcount; i++) {
-      console.log(i)
+      console.log('dollies',i++)
       if (this.tempRequest.result[i].progress == status) {
         this.numberDone++
         
@@ -125,7 +132,9 @@ export class TrackRequestComponent {
       }
     }
     this.allRequest = array
+    
   }
+  
   /*
       // Get the technician progress status method
   getTechProgressStatus() {

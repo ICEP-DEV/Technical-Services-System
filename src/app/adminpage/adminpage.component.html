@@ -5,8 +5,8 @@
             <nav class="header">
                 <div id="logo-text">
                     <a>
-                        <img src="../../../assets/images/tut.png" alt="SMART FARM"
-                            style="float: left;height: 72px;width: 225px;" routerLink="read">
+                        <img src="../../../assets/images/tut.png" 
+                        style="float: left;height: 72px;width: 225px;" routerLink="read">
                     </a>
                 </div>
                 <div id="menu-icon">
@@ -50,12 +50,8 @@
                 </ul>
                 <ul>
                     <div class="dropdown">
-                        <button class="dropbtn">Report</button>
-                        <div class="dropdown-content" >
-                          <a class="nav-link active" id="ModalExample" (click)="downloadFile()">All Tasks</a>
-                          <a class="nav-link active" id="ModalExample">Active Tasks</a>
-                          <a class="nav-link active" id="ModalExample">Closed Tasks</a>
-                        </div>
+                        <button class="dropbtn" routerLink="/report">Report</button>
+                        
                       </div>
                 </ul>
             </nav>

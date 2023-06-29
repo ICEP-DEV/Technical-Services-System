@@ -84,6 +84,8 @@
                                 <th scope="col">Category</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Priority</th>
+                                <th scope="col">Expected Finish Date</th>
+                                <th scope="col">Expected Finish Time</th>
                                 <th scope="col">Venue</th>
                                 <th scope="col">Progress Status</th>
                               </tr>
@@ -93,6 +95,8 @@
                                 <td>{{ data.category }}</td>
                                 <td>{{ data.description }}</td>
                                 <td>{{ data.priority }}</td>
+                                <td>{{ data.expected_date }}</td>
+                                <td>{{ data.expected_time }}</td>
                                 <td>{{ data.venue }}</td>
                                 <td>
                                   <select id="Cater" (change)="progressTask($event, data.id)" [(ngModel)]="data.progress">

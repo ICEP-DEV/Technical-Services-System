@@ -1,5 +1,34 @@
+<!-- <body class="container"> -->
 
 <div class="d-flex justify-content-between">
+    <div class="container-fluid">
+        <!-- <body class="container"> -->
+            <div class="log d-flex justify-content-end">
+                <nav class="header">
+                    <div id="logo-text">
+                        <a>
+                            <img src="../../../assets/images/tut.png" 
+                                style="float: left;height: 72px;width: 225px;" routerLink="read">
+                        </a>
+                    </div>
+                    <div id="menu-icon">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <ul>
+                        <li>
+            
+                            <a href="#" class="nav-link active" id="ModalExample"><button type="button"
+                                    class="btn btn-success">LOGOUT</button></a>
+                        </li>
+                    </ul>
+            
+                </nav>
+            </div>
+            <br>
+            <br>
+            <br>
+           <br>
+
     <div class="sideNav">
         <nav class="breadcrumbNav">
            <br>
@@ -29,6 +58,7 @@
         <input matInput placeholder="search" autocomplete="off" (keyup)="filterData($event)">
     </mat-form-field>
 
+
 </div>
 <div>
     &nbsp;&nbsp;<button mat-raised-button (click)="exporter.exportTable('xlsx')">.excel</button>
@@ -36,6 +66,7 @@
     &nbsp;&nbsp;<button mat-raised-button (click)="exporter.exportTable('json')">.json</button>
     &nbsp;&nbsp;<button mat-raised-button (click)="exporter.exportTable('txt')">.txt</button>
   </div>
+  <br>
 
  
   <mat-paginator #paginator
@@ -124,7 +155,13 @@
     
 
 
+    
+
+
 
 </div>
 
+
+
 </div>
+

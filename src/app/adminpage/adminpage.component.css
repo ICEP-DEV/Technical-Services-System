@@ -40,9 +40,7 @@
   
   }
 
-  .tab-content{
-    border-left: 5px solid #0e0f52;
-  }
+  
   
   .nav-item{
     padding: 8px 24px;
@@ -61,7 +59,7 @@
     text-decoration: none;
     padding: 8px 0;
     border-left: 8px solid rgb(14, 60, 90);
-    box-shadow: 4px 4px 4px rgba(70, 69, 69, 0.993);
+   
   }
   
   
@@ -286,13 +284,7 @@
   
 }
 
-.ticket:hover{
-    text-decoration: none;
-    
-    border-left: 8px solid rgb(14, 60, 90);
-    
 
-}
 
 .request{
     border: 2.5px solid #ccc;
@@ -303,7 +295,7 @@
 
 .sideNav {
   float: left;
-  box-shadow: 5px 0 2px #969292;
+  
   width: 335px;
   height: 1055px;
   
@@ -376,8 +368,8 @@ a {
     
     text-decoration: none;
     padding: 8px 0;
-    border-left: 8px solid rgb(14, 60, 90);
-    box-shadow: 4px 4px 4px rgba(70, 69, 69, 0.993);
+    
+    
   }
   
   
