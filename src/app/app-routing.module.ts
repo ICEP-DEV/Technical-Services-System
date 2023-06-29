@@ -46,12 +46,8 @@ const routes: Routes = [
   {path: 'hodloginpage',component:HODloginPageComponent},
   {path: 'techpage',component:TechpageComponent},
   {path: 'closelog',component:CloselogComponent},
-  {path:'availableTechnician', component:AdminassigntaskComponent}
-,
+  {path:'availableTechnician', component:AdminassigntaskComponent},
   {path:'admindash', component:AdmindashboardComponent}
-
-  
- 
 ];
 
 @NgModule({

@@ -54,6 +54,7 @@ this.id = Number(data)
     this.service.getTechAvailable(this.id).subscribe((res)=>{
       console.log(res,"res==>");
       this.availableTechData = res;
+      console.log(res)
 
  
       // let data = localStorage.getItem("techDetails");
