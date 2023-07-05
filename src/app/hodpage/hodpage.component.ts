@@ -37,7 +37,10 @@ export class HODpageComponent implements OnInit{
       this.readData = res;
 
     });
-}
+  }
 
+  logout(){
+    localStorage.removeItem('logindata')
+  }
 
   }

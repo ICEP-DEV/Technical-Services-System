@@ -114,90 +114,63 @@
                             <input class="form-control" [(ngModel)]="requestform.Image" name="requestform.Image" type="file"
                                 id="formFileDisabled" />
                         </label> -->
+    
+                        <label class="Cater" for="Cater">
+    
+                            <h4>Catergory</h4>
+    
+                            <select id="Cater" (change)="setCategory($event)" >
+                                <option value="#">Select Catergory</option>
+                                <option *ngFor="let catList of categoryList" value="{{[catList.id, catList.division_name]}}">{{catList.division_name}}</option>
+                            </select>
+                            
+                        </label>
+    
+                        <label class="Cater" for="Cater">
+    
+                            <h4>Catergory Issues</h4>
+    
+                            <select id="Cater" (change)="setCategoryItem($event)" >
+                                <option value="">Select Catergory Issue</option>
+                                <option *ngFor="let cat of catergoryIssue" value="{{cat.item_name}}">{{cat.item_name}}</option>
+                            </select>
+                            
+                        </label>
 
-                    <label class="Cater" for="Cater">
+                        <!-- <label class="Cater" for="Cater">
+    
+                            <h4>Problem</h4>
+    
+                            <select id="Cater" >
+                                <option value="">Select Problem</option>
+                                <option *ngFor="let catItem of problemcategoryItems" value="{{catItem}}">{{catItem}}</option>
+                            </select>
+                            
+                        </label> -->
 
-                        <h4>Catergory</h4>
-
-                        <select id="Cater" (change)="setCategory($event)">
-                            <option value="#">Select Catergory</option>
-                            <option value="Computer">Computer</option>
-                            <option value="Table, Door or Window">Table, Door or Window</option>
-                            <option value="Electrical">Electrical</option>
-                            <option value="Plumbing">Plumbing</option>
-                        </select>
-
-                    </label>
-
-                    <label class="Cater" for="Cater">
-
-                        <h4>Catergory Items</h4>
-
-                        <select id="Cater" (change)="setCategoryItem($event)">
-                            <option value="">Select Catergory Item</option>
-                            <option *ngFor="let cat of catItems" value="{{cat}}">{{cat}}</option>
-                        </select>
-
-                    </label>
-
-                    <label class="Cater" for="Cater">
-
-                        <h4>Problem</h4>
-
-                        <select id="Cater">
-                            <option value="">Select Problem</option>
-                            <option *ngFor="let catItem of problemcategoryItems" value="{{catItem}}">{{catItem}}
-                            </option>
-                        </select>
-
-                    </label>
-
-                    <label class="Cater" for="Cater">
-
-                        <h4>Priority</h4>
-
-                        <select>
-                            <option value="">Month</option>
-                            <option *ngFor="let mon of months" value="{{mon}}">{{mon}}</option>
-                        </select>
-
-                        <select>
-                            <option value="">date</option>
-                            <option *ngFor="let day of days" value="{{day}}">{{day}}</option>
-                        </select>
-                        <select>
-                            <option value="">Hour</option>
-                            <option *ngFor="let hour of hours" value="{{hour}}">{{hour}}</option>
-                        </select>
-                        <select>
-                            <option value="">Minute</option>
-                            <option *ngFor="let minute of minutes" value="{{minute}}">{{minute}}</option>
-                        </select>
-
-
-                    </label>
-
-                    <div class="mb-3">
-                        <button type="submit" (click)="clear()" (click)="request()"
-                            class="btn btn-primary px-3 rounded-3">
-                            Submit
-                        </button>
-                    </div>
-
-                    <div class="d-block text-end">
-
-                    </div>
-
-
-                </form>
-
-
+                   
+    
+                        <div class="mb-3">
+                            <button type="submit" (click)="clear()" (click)="request()"
+                                class="btn btn-primary px-3 rounded-3">
+                                Submit
+                            </button>
+                        </div>
+    
+                        <div class="d-block text-end">
+    
+                        </div>
+    
+    
+                    </form>
+    
+    
+                </div>
+    
+    
+    
             </div>
-
-
-
-        </div>
-        <!--         
+            <!--         
             <div class="tab-pane fade" id="in-progress" role="tabpanel" aria-labelledby="in-progress-tab">
     
     
