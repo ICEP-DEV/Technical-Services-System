@@ -11,8 +11,8 @@ export class ApiserviceService {
   constructor(private _http: HttpClient) { }
 
   //connect frontend to backend
-
-   apiUrl  = 'http://localhost:3000';
+  apiUrl  = 'https://naughty-blue-leg-warmers.cyclic.app'
+   //apiUrl  = 'http://localhost:3000';
  // apiUrl = "http://192.168.27.20:3000"
   //get all data
 
