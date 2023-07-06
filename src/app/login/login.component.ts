@@ -14,6 +14,18 @@ import { Router} from '@angular/router'
 })
 export class LoginComponent implements OnInit {
 
+  successmsg:any;
+  showSuccessMsg: any;
+
+  successmsg1:any;
+  showSuccessMsg1: any;
+
+  successmsg2:any;
+  showSuccessMsg2: any;
+
+  successmsg3:any;
+  showSuccessMsg3: any;
+
   errormsg: any;
   adminLogin= {
     admin_id:'',
@@ -33,17 +45,20 @@ export class LoginComponent implements OnInit {
   admin_object:any
   admin_login() {
      if(this.adminLogin.admin_id== '' && this.adminLogin.password == ''){
-      alert("Email and Password is required");
+      this.successmsg = "Email and Password is required";
+          this.showSuccessMsg = true;
       return;
      } 
      if(this.adminLogin.admin_id== ''){
-      alert("Email is required");
+      this.successmsg1 = "Email is required";
+          this.showSuccessMsg1 = true;
       return;
      } 
      if(this.adminLogin.password== ''){
-      alert("Password is required");
+      this.successmsg2 = "Password is required";
+      this.showSuccessMsg2 = true;
       return;
-     } 
+     }
 
     this.service.adminLogin(this.adminLogin)
     .subscribe((response)=>{
@@ -56,7 +71,8 @@ export class LoginComponent implements OnInit {
         this.close()
         this._router.navigate(['/dash2'])
       }else{
-        alert("user not found with these credentials")
+        this.successmsg3 = "user not found with these credentials";
+      this.showSuccessMsg3 = true;
       }
 
       //

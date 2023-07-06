@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
+
 import { MatDialogModule } from '@angular/material/dialog';
 import { TechloginComponent } from './techlogin/techlogin.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
@@ -17,7 +18,6 @@ import { TrackRequestComponent } from './track-request/track-request.component';
 import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component';
 
 import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
-import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 
@@ -29,6 +29,8 @@ import { HodprogressComponent } from './hodprogress/hodprogress.component';
 import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
 import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
 
+import { AdminprogressComponent } from './adminprogress/adminprogress.component';
+import { ReportComponent } from './report/report.component';
 
 
 const routes: Routes = [
@@ -55,7 +57,8 @@ const routes: Routes = [
   {path:'availableTechnician', component:AdminassigntaskComponent},
 
   {path:'admindash', component:AdmindashboardComponent},
-  {path:'dash2', component:DashboardComponent}
+  {path:'dash2', component:DashboardComponent},
+  {path:'report', component:ReportComponent}
 
   
  

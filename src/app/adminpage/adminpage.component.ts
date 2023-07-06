@@ -2,9 +2,7 @@ import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ApiserviceService } from '../apiservice.service';
 import { Route, Router } from '@angular/router';
-import { MatTableDataSource } from '@angular/material/table';
-import {MatPaginatorModule, MatPaginator} from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+
 
 @Component({
   selector: 'app-adminpage',
@@ -14,11 +12,7 @@ import { MatSort } from '@angular/material/sort';
 export class AdminpageComponent implements OnInit {
 
   id:any;
-  displayedColumns=['staff_id','category', 'priority', 'progress', 'assigned_date','completed_date','description','venue','staff_feedback','tech_feedback','status'];
-  dataSource! :MatTableDataSource<any>;
-
-  @ViewChild('paginator') paginator!: MatPaginator;
-  @ViewChild(MatSort) matSort!: MatSort;
+  
   constructor(private service:ApiserviceService,private navrouter:Router) { }
  
    data: any;
@@ -47,9 +41,7 @@ export class AdminpageComponent implements OnInit {
     
   }
 
-  filterData($event : any){
-    this.dataSource.filter = $event.target.value;
-  }
+
   
   total():void{
     this.service.totalRequests().subscribe((res)=>{
@@ -59,41 +51,41 @@ export class AdminpageComponent implements OnInit {
     })
   }
 
-  logout(){
-    localStorage.removeItem('logindata')
+logout(){
+  localStorage.removeItem('logindata')
+}
+
+priority(event:any,jobCardId:Number){
+  var data={
+    priority:event.target.value,
   }
+  
+  console.log(jobCardId)
 
-  priority(event:any,jobCardId:Number){
-    var data={
-      priority:event.target.value,
-    }
-    
-    console.log(jobCardId)
+  this.service.updatePriority(jobCardId,data)
 
-    this.service.updatePriority(jobCardId,data)
-
-      .subscribe((response) => {
-        this.set_object = response;
-        console.log(response);
-        if (this.set_object.success == true) {
-          localStorage.setItem('Priority', JSON.stringify(this.setPriority.priority));
-        }
-  })
+    .subscribe((response) => {
+      this.set_object = response;
+      console.log(response);
+      if (this.set_object.success == true) {
+        localStorage.setItem('Priority', JSON.stringify(this.setPriority.priority));
+      }
+})
 }
 printer(){
-  window.print();
+window.print();
 }
 
- viewAvailableTech(reference:Number){
-  
+viewAvailableTech(reference:Number){
+
 console.log(reference)
 
 localStorage.setItem('reference',reference.toString())
 
-  this.navrouter.navigate(['/availableTechnician'])
+this.navrouter.navigate(['/availableTechnician'])
 
 // //   this.service.allRequests().subscribe(response=>{
-    
+  
 // //     this.data = response.result
 // //     console.log(this.data)
 
@@ -110,7 +102,7 @@ localStorage.setItem('reference',reference.toString())
 // //   this.service.allRequests().subscribe((res)=>{
 // //     console.log(res.result,"res==>");
 // //     this.readData = res.result;
-  
+
 // //   })
 
 }
@@ -118,27 +110,28 @@ localStorage.setItem('reference',reference.toString())
 
 
 
+
 downloadFile() {
-  const apiUrl = "http://192.168.27.20:3000"; // Replace with your API URL
+const apiUrl = "http://192.168.27.20:3000"; // Replace with your API URL
 
-  // Create a link element
-  const link = document.createElement('a');
-  link.style.display = 'none';
+// Create a link element
+const link = document.createElement('a');
+link.style.display = 'none';
 
-  // Set the URL of the file to download
-  link.href = `${apiUrl}/admin/export`;
+// Set the URL of the file to download
+link.href = `${apiUrl}/admin/export`;
 
-  // Set the download attribute with the desired filename
-  link.download = 'requests.csv';
+// Set the download attribute with the desired filename
+link.download = 'requests.csv';
 
-  // Append the link to the document body
-  document.body.appendChild(link);
+// Append the link to the document body
+document.body.appendChild(link);
 
-  // Click the link to trigger the file download
-  link.click();
+// Click the link to trigger the file download
+link.click();
 
-  // Clean up by removing the link from the document body
-  document.body.removeChild(link);
+// Clean up by removing the link from the document body
+document.body.removeChild(link);
 }
 
 

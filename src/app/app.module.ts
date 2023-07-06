@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ScheduleModule, RecurrenceEditorModel , DayService, WeekService, WorkWeekService, MonthService, AgendaService } from '@syncfusion/ej2-angular-schedule';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'; 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,11 +21,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { TrackformComponent } from './trackform/trackform.component';
 import { MatDialogModule } from '@angular/material/dialog';
-
-
-import{HttpClientModule} from '@angular/common/http'
+import { MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { HttpClientModule } from '@angular/common/http';
 import { ApiserviceService } from './apiservice.service';
-
 import { TechloginComponent } from './techlogin/techlogin.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { ViewrequestComponent } from './viewrequest/viewrequest.component';
@@ -48,6 +49,7 @@ import { HodSageComponent } from './hod-sage/hod-sage.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TechpageComponent } from './techpage/techpage.component';
+import { MatTableExporterModule, MatTableExporterDirective } from 'mat-table-exporter';
 import { HodprogressComponent } from './hodprogress/hodprogress.component';
 import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
 import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
@@ -92,6 +94,7 @@ import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.c
      HodprogressComponent,
      HodcloselogsComponent,
      StaffsendrequestComponent,
+   
     
      
   ],
@@ -113,14 +116,27 @@ import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.c
     FormsModule,
     Ng2SearchPipeModule,
     
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+   
+    ScheduleModule,
+    MatTableExporterModule,
+    MatPaginatorModule,
     
-    // Ng2OrderModule,
-    // Ng2SearchPipeModule,
-    // NgxPaginationModule
 
-
+   
   ],
-  providers: [ApiserviceService],
+  providers: [ApiserviceService,DayService, WeekService, WorkWeekService, MonthService, AgendaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
+
+
+
+

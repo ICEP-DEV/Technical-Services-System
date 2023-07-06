@@ -14,7 +14,18 @@ import { Router} from '@angular/router'
 })
 export class HODloginPageComponent implements OnInit {
 
-  
+  successmsg:any;
+  showSuccessMsg: any;
+
+  successmsg1:any;
+  showSuccessMsg1: any;
+
+  successmsg2:any;
+  showSuccessMsg2: any;
+
+  successmsg3:any;
+  showSuccessMsg3: any;
+
   HODlogin= {
     hod_id:'',
     password:''
@@ -32,15 +43,18 @@ export class HODloginPageComponent implements OnInit {
   HOD_object:any
   HOD_login() {
      if(this.HODlogin.hod_id== '' && this.HODlogin.password == ''){
-      alert("Email and Password is required");
+      this.successmsg = "Email and Password is required";
+          this.showSuccessMsg = true;
       return;
      } 
      if(this.HODlogin.hod_id== ''){
-      alert("Email is required");
+      this.successmsg1 = "Email is required";
+      this.showSuccessMsg1 = true;
       return;
      } 
      if(this.HODlogin.password== ''){
-      alert("Password is required");
+      this.successmsg2 = "Password is required";
+      this.showSuccessMsg2 = true;
       return;
      } 
 
@@ -53,7 +67,8 @@ export class HODloginPageComponent implements OnInit {
         this.close()
         this._router.navigate(['/hodpage'])
       }else{
-        alert("user not found with these credentials")
+        this.successmsg3 = "user not found with these credentials";
+      this.showSuccessMsg3 = true;
       }
 
       //

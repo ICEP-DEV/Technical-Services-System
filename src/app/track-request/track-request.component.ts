@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-track-request',
   templateUrl: './track-request.component.html',
@@ -71,6 +72,10 @@ export class TrackRequestComponent {
 
       }
 
+      this.todo=requestcount;
+
+      
+
       //Storing the data in the all request variable/array
       this.allRequest = array
     })
@@ -134,7 +139,9 @@ export class TrackRequestComponent {
       }
     }
     this.allRequest = array
+    
   }
+  
   /*
       // Get the technician progress status method
   getTechProgressStatus() {

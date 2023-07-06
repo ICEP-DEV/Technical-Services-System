@@ -146,6 +146,10 @@ footer{
   float: right;
 }
 
+.red-button {
+    background-color: red;
+    color: white;
+  }
 
 
 

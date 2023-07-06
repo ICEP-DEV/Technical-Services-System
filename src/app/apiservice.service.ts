@@ -121,6 +121,7 @@ export class ApiserviceService {
         return this._http.put(this.apiUrl + "/admin/setPriority/"+id, data);
       }
 
+
   /*Technician Apis*/
 
   //Api connection to get the available technician
