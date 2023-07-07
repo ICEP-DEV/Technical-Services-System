@@ -6,14 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiserviceService {
- 
 
   constructor(private _http: HttpClient) { }
 
   //connect frontend to backend
 
   //apiUrl  = 'http://localhost:3000';
-  apiUrl = "http://192.168.27.20:3000"
+  apiUrl = "http://168.172.134.91:3000"
   //get all data
 
   staffLogin(data: any) {
@@ -71,11 +70,8 @@ export class ApiserviceService {
 
   
   /*Admin Apis*/
- /*Get the statistics of the services/logs*/
-  getLogServiceStatistics():Observable<any>{
-    return this._http.get(`${this.apiUrl + "/admin/ServiceStatistics"}`)
 
-  }
+
   /*Get in-progress tasks*/
 
   getInprogressTasks():Observable<any>{
@@ -92,11 +88,10 @@ export class ApiserviceService {
   /*Staff Apis*/
       //Api post feedback connection STAFF
       
-      postStaffFeedback(id: number, data: any): Observable<any> {
-        
-        return this._http.put(`${this.apiUrl}/staff/sendFeedback/${id}`, data);
+      postStaffFeedback(id : Number,data: any ): Observable<any> {
+        return this._http.put(this.apiUrl+"/staff/sendFeedback"+id,data);
+
       }
-      
 
       allRequests():Observable<any>
       {
@@ -152,12 +147,6 @@ export class ApiserviceService {
         return this._http.get(this.apiUrl + "/technician/tasks/"+id);
       }
 
-      HODrequest(id : any) {
-        return this._http.get(this.apiUrl + "/hod/getDept-Requests/"+id);
-      }
-
-      
-
 
       progressTech(id : Number,data: any) {
         return this._http.put(this.apiUrl + "/technician/updateTask/"+id, data);
@@ -178,9 +167,13 @@ export class ApiserviceService {
       }
     
 
-      allreq(): Observable<any> {
-        return this._http.get(`${this.apiUrl + "/admin/requests"}`);
-      }
-
       
+HODprogress(id : any){
+return this._http.get(this.apiUrl + "/hod/getDept-trackProgress/" + id)
+
 }
+
+}
+
+
+

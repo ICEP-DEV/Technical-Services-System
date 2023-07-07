@@ -49,7 +49,7 @@ export class HODloginPageComponent implements OnInit {
       this.HOD_object = response
       console.log(this.HOD_object.body)
       if(this.HOD_object.success == true){
-        localStorage.setItem('HODlogin',JSON.stringify(this.HODlogin.hod_id))
+        localStorage.setItem('HODlogin',JSON.stringify(this.HOD_object.body))
         this.close()
         this._router.navigate(['/hodpage'])
       }else{

@@ -89,9 +89,8 @@
                             <thead class="thead-dark">
                               <tr>
                                 <th scope="col">REF.</th>
-                                <th scope="col">Description</th>
+                                <th scope="col">Staff Name</th>
                                 <th scope="col">Staff-Feedback</th>
-                                <th scope="col">Tech-Feedback</th>
                                 <th scope="col">Task Status</th>
                                 <th scope="col">Log</th>
                               </tr>
@@ -101,10 +100,9 @@
                                 <td>{{data.id}}</td>
                                 <td>{{data.description}}</td>
                                 <td>{{data.staff_feedback}}</td>
-                                <td>{{data.progress}}</td>
                                 <td>{{data.status}}</td>
                                 <td>
-                                <button type="button" class="btn btn-light" (click)="log($event,data.id)" name="data.status" [(ngModel)]="data.status" >Close Log</button>
+                                <button type="button" class="btn btn-light" (click)="log($event,data.id)" [(ngModel)]="data.status">Close Log</button>
                                 </td>
                               </tr>
                             </tbody>

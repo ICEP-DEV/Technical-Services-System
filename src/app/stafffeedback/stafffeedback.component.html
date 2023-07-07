@@ -1,102 +1,97 @@
-<div class="log d-flex justify-content-end">
-    <nav class="header">
+
+<div class="log d-flex justify-content-end" >
+    <nav class="header" >
         <div id="logo-text">
             <a>
                 <img src="../../assets/images/tut.png" alt="tut logo"
-                    style="float: left;height: 72px;width: 225px;margin: 0 0 20px" routerLink="read">
+                style="float: left;height: 72px;width: 225px;margin: 0 0 20px" routerLink="read">
             </a>
         </div>
         <div id="menu-icon">
             <i class="fas fa-bars"></i>
         </div>
-        
+        <ul>
+            <li>
+                <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
+                        class="btn btn-success">LOGOUT</button></a>
+            </li>
+        </ul>
 
     </nav>
 </div>
 
 
 
-<body>
-    <div class="sideNav">
+    <body>
+        <div class="sideNav">
 
-        <nav class="breadcrumbNav">
-            <ul>
+            <nav class="breadcrumbNav">
+                <ul>
+                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
+                        routerLink="/staffpage">Request</a></li>
                 <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
-                        routerLink="/staffpage"><b>REQUEST</b></a></li>
-            </ul>
-            <ul>
-                <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
-                        routerLink="/trackrequest">TRACKING</a></li>
-            </ul>
-            <ul>
-                <li>
-                    <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
-                            class="btn btn-success">LOGOUT</button></a>
-                </li>
-            </ul>
+                    routerLink="/trackrequest">Tracking</a></li>
+                </ul>
 
-        </nav>
+            </nav>
 
-    </div><br>
-    <br>
-    <br>
-    <div class="contentContainerRight">
-        <div class="backFrom">
-            <div class="contentForm">
+        </div>
+        <div class="contentContainerRight">
+            <div class="backFrom">
+                <div class="contentForm">
 
-                <h3 class="toptitle">Staff Feedback</h3>
+                    <h3 class="toptitle">Staff Feedback</h3>
 
 
-                <div *ngIf="showSuccessMsg" class="alert alert-success" role="alert">
-                    <strong>{{successmsg}}</strong>
-                    <button id="b12" type="button" class="btn-close" data-bs-dismiss="alert"
-                        aria-label="Close" routerLink="/trackrequest"></button>
-                </div>
-
-                <div class="feedbackTopPara">
-                    <p class="">Thank you for taking your your time and give us feedback on the job we did for you.
-                        We promise to read your comments carefully. Hopefully we managed to solve your issues.</p>
-                </div>
-
-
-                <form #feedback="ngForm">
-                    <div class="radionBtn">
-                        <form></form>
-                        <div>
-                            <h5>Completed:</h5>
-                        </div>
-                        <div class="form-check form-check-inline">
-
-                            <input class="form-check-input" type="radio" name="staff_feedback" id="inlineRadio1"
-                                value="No, it is not resolved" [(ngModel)]="staff_feedback">
-                            <label class="form-check-label" for="inlineRadio1">No, it is not resolved</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="staff_feedback" id="inlineRadio2"
-                                value="Yes, it has been resolved" [(ngModel)]="staff_feedback">
-                            <label class="form-check-label" for="inlineRadio2">Yes, it has been resolved</label>
-                        </div>
+                    <div *ngIf="message !=''" class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
 
                     </div>
 
-                    <div class="descriptionTextarea">
-
-                        <!-- <h3 class="descriptionTitle">Give your description below</h3>
-                        <textarea id="description" rows="8" name="description"
-                            placeholder="Enter the description of the feedback">
-
-                                    </textarea> -->
-                        <div class="btn-submit">
-                            <button (click)="sendFeedBack()">Send</button>
-                        </div>
-
+                    <div class="feedbackTopPara">
+                        <p class="">Thank you for taking your your time and give us feedback on the job we did for you.
+                            We promise to read your comments carefully. Hopefully we managed to solve your issues.</p>
                     </div>
 
-                </form>
+
+                    <form #feedback="ngForm">
+                        <div class="radionBtn">
+                            <form></form>
+                            <div>
+                                <h5>Completed:</h5>
+                            </div>
+                            <div class="form-check form-check-inline">
+
+                                <input class="form-check-input" type="radio" name="option" id="inlineRadio1" value="No"
+                                    ngModel>
+                                <label class="form-check-label" for="inlineRadio1">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="option" id="inlineRadio2" value="Yes"
+                                    [(ngModel)]="option">
+                                <label class="form-check-label" for="inlineRadio2">Yes</label>
+                            </div>
+
+                        </div>
+
+                        <div class="descriptionTextarea" >
+
+                            <h3 class="descriptionTitle">Give your description below</h3>
+                            <textarea id="description" rows="8" name="description"
+                                placeholder="Enter the description of the feedback">
+
+                                    </textarea>
+                                    <div class="btn-submit">
+                                          <button type="submit" value="submit" >Send</button>
+                                    </div>
+                          
+                        </div>
+
+                    </form>
 
 
+                </div>
             </div>
         </div>
-    </div>
 
-</body>
+    </body>

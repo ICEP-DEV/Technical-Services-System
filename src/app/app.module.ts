@@ -37,13 +37,8 @@ import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.comp
 import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
 import { TechpageComponent } from './techpage/techpage.component';
-import { HODpageComponent } from './hodpage/hodpage.component';
 import { CloselogComponent } from './closelog/closelog.component';
-import { ReportComponent } from './report/report.component';
-// import { Ng2OrderModule } from 'ng2-order-pipe';
-// import { NgxPaginationModule } from 'ngx-pagination';
-// import { Ng2SearchPipeModule } from 'ng2-search-filter/src/ng2-filter.module';
-import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
+import { HodViewProgressComponent } from './hod-view-progress/hod-view-progress.component';
 
 
 @NgModule({
@@ -70,11 +65,8 @@ import { AdmincloselogComponent } from './admincloselog/admincloselog.component'
      AdminprogressComponent,
      HODloginPageComponent,
      TechpageComponent,
-     HODpageComponent,
      CloselogComponent,
-     ReportComponent,
-     AdminassigntaskComponent,
-     AdmincloselogComponent
+     HodViewProgressComponent
      
   ],
   imports: [
@@ -91,13 +83,7 @@ import { AdmincloselogComponent } from './admincloselog/admincloselog.component'
     ReactiveFormsModule,
     MatDialogModule,
     HttpClientModule,
-    FormsModule,
-    
-    // Ng2OrderModule,
-    // Ng2SearchPipeModule,
-    // NgxPaginationModule
-
-
+    FormsModule // <-- add FormsModule here
   ],
   providers: [ApiserviceService],
   bootstrap: [AppComponent]
