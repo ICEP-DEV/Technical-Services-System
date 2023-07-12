@@ -136,22 +136,22 @@ category(){
 
       return;
     }
-  
+
+    this.bld_no = []
+    this.selectedBuilding = []
+    this.categoryList = []
+    this.catergoryIssue=[]
 
     this.service.request(this.requestform)
-
       .subscribe((response) => {
         this.request_object = response;
         if (this.request_object.success == true) {
           this.successmsg = this.request_object.message;
           this.showSuccessMsg = true;
-          this.requestform = {
-            description: '',
-            category: '',
-            venue: '',
-            //Image: Blob,
-            staff_id: '',
-          };
+          setTimeout(function(){
+            window.location.reload();
+          }, 2000);
+      
         } else {
           console.log("User ID doesnt match credentials")
         }

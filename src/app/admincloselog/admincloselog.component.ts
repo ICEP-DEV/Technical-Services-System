@@ -10,14 +10,18 @@ export class AdmincloselogComponent {
   constructor(private service:ApiserviceService){}
 
   set_object:any;
-
+tempObject:any
   readData:any;
-  tempdata:any
   ngOnInit():void{
     this.service.waitingToBeClose().subscribe((res)=>{
-      this.tempdata = res
-      this.readData = this.tempdata.result
-      console.log(this.readData);
+      this.tempObject = res
+      if(this.tempObject.success == true){
+        this.readData = this.tempObject.results
+      }
+      else{
+
+      }
+      
     },(err)=>{
       console.log(err)
     })

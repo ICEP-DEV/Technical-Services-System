@@ -85,7 +85,7 @@
                                 <th scope="col">Description</th>
                                 <th scope="col">Assigned Task</th>
                                 <th scope="col">Expected</th>
-                                <!-- <th scope="col">Priority</th> -->
+                                <th scope="col">Duration & priority</th>
                                 <th scope="col">Venue</th>
                                 <th scope="col">Progress Status</th>
                               </tr>
@@ -96,11 +96,18 @@
                                 <td>{{ data.description }}</td>
                                 <td>{{ data.assigned_date }}</td>
                                 <td>{{ data.expected_date }}</td>
-                                <!-- <td>{{ data.priority }}</td> -->
+                                <td>{{ data.duration }} days(
+                                  <label *ngIf="data.duration == 1">High</label>
+                                  <label *ngIf="data.duration > 1 && data.duration < 4">Medium</label>
+                                  <label *ngIf="data.duration >= 4">Low</label>
+                                )
+                                  </td
+                                  
+                                  >
                                 <td>{{ data.venue }}</td>
                                 <td>
                                   <select id="Cater" (change)="progressTask($event, data.id)" [(ngModel)]="data.progress">
-                                    <option value="">Select Task Status</option>
+                                    <option value="" disabled>Select Task Status</option>
                                     <option value="on-hold">On-Hold</option>
                                     <option value="in-progress">in-progress</option>
                                     <option value="complete">complete</option>

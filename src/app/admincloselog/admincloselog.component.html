@@ -56,9 +56,9 @@
                             <thead class="thead-dark">
                               <tr>
                                 <th scope="col">Log Ref</th>
-                                <th scope="col">Staff Name</th>
+                                <th scope="col">Log Description</th>
                                 <th scope="col">Staff-Feedback</th>
-                                <th scope="col">Artisan Status</th>
+                                <!-- <th scope="col">Artisan Status</th> -->
                                 <th scope="col">Close</th>
                               </tr>
                             </thead>
@@ -67,8 +67,8 @@
                                 <td>{{data.id}}</td>
                                 <td>{{data.description}}</td>
                                 <td>{{data.staff_feedback}}</td>
-                                <td class="status">{{data.status}}</td>
-                                <td><button type="button" class="logbtn " (click)="log($event,data.id)" [(ngModel)]="data.status">Log</button> </td>
+                                <!-- <td class="status">{{data.status}}</td> -->
+                                <td><button type="button" class="logbtn " (click)="log($event,data.id)">Log</button> </td>
                               </tr>
                             </tbody>
                           </table>

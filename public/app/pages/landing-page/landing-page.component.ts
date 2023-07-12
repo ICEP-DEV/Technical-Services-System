@@ -5,7 +5,7 @@ import { TrackformComponent } from '../../trackform/trackform.component';
 import { LoginComponent } from 'src/app/login/login.component';
 import { TechloginComponent } from 'src/app/techlogin/techlogin.component';
 import { HODloginPageComponent } from 'src/app/hodlogin-page/hodlogin-page.component';
-
+import { BarcodeReader } from 'dynamsoft-javascript-barcode';
 
 
 @Component({

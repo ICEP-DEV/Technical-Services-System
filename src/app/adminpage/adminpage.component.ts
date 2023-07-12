@@ -3,7 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ApiserviceService } from '../apiservice.service';
 import { Route, Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
-import {MatPaginatorModule, MatPaginator} from '@angular/material/paginator';
+import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
 @Component({
@@ -13,145 +13,210 @@ import { MatSort } from '@angular/material/sort';
 })
 export class AdminpageComponent implements OnInit {
 
-  id:any;
-  displayedColumns=['staff_id','category', 'priority', 'progress', 'assigned_date','completed_date','description','venue','staff_feedback','tech_feedback','status'];
-  dataSource! :MatTableDataSource<any>;
+  id: any;
+  displayedColumns = ['staff_id', 'category', 'priority', 'progress', 'assigned_date', 'completed_date', 'description', 'venue', 'staff_feedback', 'tech_feedback', 'status'];
+  dataSource!: MatTableDataSource<any>;
 
   @ViewChild('paginator') paginator!: MatPaginator;
   @ViewChild(MatSort) matSort!: MatSort;
-  constructor(private service:ApiserviceService,private navrouter:Router) { }
-    
+  constructor(private service: ApiserviceService, private navrouter: Router) { }
 
 
-   data: any;
-  readData:any;
-  temData:any;
+
+  data: any;
+  readData: any;
+  temData: any;
   set_object: any;
-  set_print:any;
-  expo:any;
-  statsData:any;
- 
+  set_print: any;
+  expo: any;
+  statsData: any;
+
 
   setPriority = {
     priority: ''
   }
 
-  ngOnInit(): void{
-    this.service.allRequests().subscribe((res)=>{
-      console.log(res.result,"All the logs");
+  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  days: any
+  getDay() {
+    var arraydays = []
+    var count = 1
+    for (var k = 0; k < 31; k++) {
+
+      arraydays.push(count++)
+    }
+    this.days = arraydays;
+  }
+
+
+  day = ""
+  month = ""
+  year = ""
+  setDay(event: any) {
+    this.day = event.target.value;
+  }
+  setMonth(event: any) {
+    this.month = event.target.value;
+  }
+  setYear(event: any) {
+    this.year = event.target.value;
+  }
+
+  ngOnInit(): void {
+    this.service.allRequests().subscribe((res) => {
+      console.log(res.result, "All the logs");
       this.readData = res.result;
       localStorage.setItem('details', JSON.stringify(this.readData));
-      
+
     })
     this.total()
     this.getStats();
+    this.getDay()
 
-    
   }
 
-  filterData($event : any){
+  filterData($event: any) {
     this.dataSource.filter = $event.target.value;
   }
-  
-  total():void{
-    this.service.totalRequests().subscribe((res)=>{
+
+  total(): void {
+    this.service.totalRequests().subscribe((res) => {
       // console.log(res.result,"ram==>");
       this.temData = res
       console.log(this.temData)
     })
   }
 
-logout(){
-  localStorage.removeItem('logindata')
-}
-
-priority(event:any,jobCardId:Number){
-  var data={
-    priority:event.target.value,
+  logout() {
+    localStorage.removeItem('logindata')
   }
-  
-  console.log(jobCardId)
 
-  this.service.updatePriority(jobCardId,data)
+  priority(event: any, jobCardId: Number) {
+    var data = {
+      priority: event.target.value,
+    }
 
-    .subscribe((response) => {
-      this.set_object = response;
-      console.log(response);
-      if (this.set_object.success == true) {
-        localStorage.setItem('Priority', JSON.stringify(this.setPriority.priority));
+    console.log(jobCardId)
+
+    this.service.updatePriority(jobCardId, data)
+
+      .subscribe((response) => {
+        this.set_object = response;
+        console.log(response);
+        if (this.set_object.success == true) {
+          localStorage.setItem('Priority', JSON.stringify(this.setPriority.priority));
+        }
+      })
+  }
+  printer() {
+    window.print();
+  }
+  message = ""
+  viewAvailableTech(data: any) {
+    this.message = "";
+    console.log(data)
+
+    var reference = data.id
+    if (this.year == "") {
+      this.message = "Specify year";
+      return;
+
+    }
+    if (this.month == "") {
+      this.message = "Specify month";
+      return;
+
+    }
+    if (this.day == "") {
+      this.message = "Specify day";
+      return;
+    }
+    var setDate = new Date(this.year + "-" + this.month + "-" + this.day + " 23:59");
+    const currentdate = new Date()
+    console.log(setDate)
+    console.log(currentdate)
+    if (setDate >= currentdate) {
+      data = {
+        expected_date: setDate
       }
-})
-}
-printer(){
-window.print();
-}
+      console.log(reference)
+      this.service.updatePriority(reference, data).subscribe((respond) => {
+        console.log(respond)
+      }, err => {
+        console.log(err)
+      })
+      localStorage.setItem('reference', reference.toString())
 
-viewAvailableTech(reference:Number){
+      this.navrouter.navigate(['/availableTechnician'])
 
-console.log(reference)
-
-localStorage.setItem('reference',reference.toString())
-
-this.navrouter.navigate(['/availableTechnician'])
-
-// //   this.service.allRequests().subscribe(response=>{
-  
-// //     this.data = response.result
-// //     console.log(this.data)
-
-// //     const dataArray = []
-
-// //     for(let i = 0; i < this.data.length;i++){
-// //       if(this.data.result[i].category){
-
-// //       }
-
-// //     }
-// //   })
-// // //All Request data details are stored on the localStorage, with the details variable
-// //   this.service.allRequests().subscribe((res)=>{
-// //     console.log(res.result,"res==>");
-// //     this.readData = res.result;
-
-// //   })
-
-}
+    }
+    else {
+      this.message = "Date you are setting cannot be before the current date";
+      console.log(this.message)
+      return
+    }
 
 
 
 
+    // //   this.service.allRequests().subscribe(response=>{
 
-downloadFile() {
-const apiUrl = "http://192.168.27.20:3000"; // Replace with your API URL
+    // //     this.data = response.result
+    // //     console.log(this.data)
 
-// Create a link element
-const link = document.createElement('a');
-link.style.display = 'none';
+    // //     const dataArray = []
 
-// Set the URL of the file to download
-link.href = `${apiUrl}/admin/export`;
+    // //     for(let i = 0; i < this.data.length;i++){
+    // //       if(this.data.result[i].category){
 
-// Set the download attribute with the desired filename
-link.download = 'requests.csv';
+    // //       }
 
-// Append the link to the document body
-document.body.appendChild(link);
+    // //     }
+    // //   })
+    // // //All Request data details are stored on the localStorage, with the details variable
+    // //   this.service.allRequests().subscribe((res)=>{
+    // //     console.log(res.result,"res==>");
+    // //     this.readData = res.result;
 
-// Click the link to trigger the file download
-link.click();
+    // //   })
 
-// Clean up by removing the link from the document body
-document.body.removeChild(link);
-}
+  }
 
 
-  getStats(){
-    this.service.getLogServiceStatistics().subscribe((response)=>{
-        this.statsData = response;
-        // console.log(typeof(this.statsData), "Object Type");
 
-        // this.statsData.push(this.datadata)
-        console.log(this.statsData, "Statistics data");
+
+
+  downloadFile() {
+    const apiUrl = "http://192.168.27.20:3000"; // Replace with your API URL
+
+    // Create a link element
+    const link = document.createElement('a');
+    link.style.display = 'none';
+
+    // Set the URL of the file to download
+    link.href = `${apiUrl}/admin/export`;
+
+    // Set the download attribute with the desired filename
+    link.download = 'requests.csv';
+
+    // Append the link to the document body
+    document.body.appendChild(link);
+
+    // Click the link to trigger the file download
+    link.click();
+
+    // Clean up by removing the link from the document body
+    document.body.removeChild(link);
+  }
+
+
+  getStats() {
+    this.service.getLogServiceStatistics().subscribe((response) => {
+      this.statsData = response;
+      // console.log(typeof(this.statsData), "Object Type");
+
+      // this.statsData.push(this.datadata)
+      console.log(this.statsData, "Statistics data");
     })
   }
 

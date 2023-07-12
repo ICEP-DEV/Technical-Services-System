@@ -63,7 +63,7 @@
                                 <th scope="col">Artisan Name</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Tel Number</th>
-                                <th scope="col">Priority</th>
+                                <!-- <th scope="col">Priority</th> -->
                                 <th scope="col">Assign Artisan</th>
 
 
@@ -76,7 +76,7 @@
                                 <td scope="row">{{availabletech.email}}</td>
                                 
                                 <td>{{availabletech.phone}} </td>
-                                <td>
+                                <!-- <td>
                                     <select id="Cater" (change)="setDay($event)">
                                         <option value="">Day</option>
                                         <option *ngFor="let day of days" value="{{day}}">{{day}}</option>
@@ -91,7 +91,7 @@
                                         <option value="2024">2024</option>
 
                                     </select>
-                                </td>
+                                </td> -->
                                 <td><button class="btnAvailableTech"
                                         (click)="assignArtisan(availabletech.tech_id)">Assign</button></td>
                                 <td>

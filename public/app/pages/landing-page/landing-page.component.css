@@ -93,7 +93,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.2) url(../../../assets/images/pic.jpg);
+  /* background: rgba(0, 0, 0, 0.2) url(../../../assets/images/pic.jpg); */
   background-size: cover;
   background-attachment: fixed;
   background-position: center;

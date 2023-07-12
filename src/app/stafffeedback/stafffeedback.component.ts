@@ -70,7 +70,7 @@ export class StafffeedbackComponent implements OnInit {
     this.set_feedback = response;
     console.log(this.set_feedback)
     if(this.set_feedback.success == true){
-      
+      this.staff_feedback = ""
       this.successmsg = "Feedback Submitted";
       this.showSuccessMsg = true;
       //this._router.navigate(['/trackrequest']);
