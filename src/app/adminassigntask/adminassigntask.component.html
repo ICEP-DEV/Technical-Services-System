@@ -47,12 +47,17 @@
             <div class="contentForm">
 
                 <div class="departmenCategoryText">
-                    <h2>Campus: Soshanguve</h2>
-                    <h4></h4>
-                    <h5></h5>
+                    <div class="StaffDetails" *ngIf="staff">
+                        <h3 class=""><small><b>Campus:</b> {{staff.campus}}</small></h3>
+                        <div class="">
+                            <h3 class="" ><small><b>Staff Name:</b> {{staff.admin_name}} {{staff.admin_surname}}</small></h3>
+                        </div>
+                        
+                    </div>
+              
                 </div>
 
-                <div class="content card mt-4 p-4">
+                <div class="content card ">
 
 
                     <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">View

@@ -58,7 +58,7 @@ const routes: Routes = [
   {path:'adminprogress',component:AdminprogressComponent},
   {path:'admindash', component:AdmindashboardComponent},
   {path:'dash2', component:DashboardComponent},
-  //{path:'generatereport',component:ReportComponent}
+  {path:'generatereport',component:ReportComponent}
 
   
  

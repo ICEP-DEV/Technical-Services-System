@@ -1,5 +1,5 @@
 
-<div class="container-fluid">
+<div class="">
     <!-- <body class="container"> -->
         <div class="log d-flex justify-content-end">
             <nav class="header">
@@ -14,7 +14,7 @@
                 </div>
                 <ul>
                     <li>
-       
+        
                         <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
                                 class="btn btn-success">LOGOUT</button></a>
                     </li>
@@ -34,8 +34,17 @@
                 </ul>
             </nav>
         </div>
-        <div class="tab-content ps-5" id="myTabContent">
+        <div class="tab-content "  id="myTabContent">
             <div class="tab-pane fade show active" id="formContent" role="tabpanel" aria-labelledby="doing-tab">
+                <div class="StaffDetails" *ngIf="staff">
+                    <h3 class=""><small><b>Campus:</b> {{staff.campus}}</small></h3>
+                    <h3 class=""><small><b>Faculty:</b> {{staff.faculty}}</small></h3>
+                    <div class="displayFlex">
+                        <h3 class=""><small><b>Department:</b> {{staff.department}}</small></h3>
+                        <h3 class="left" ><small><b>Staff Name:</b> {{staff.staff_name}} {{staff.staff_surname}}</small></h3>
+                    </div>
+                    
+                </div>
     
                 <div class="table">
     
@@ -44,57 +53,65 @@
                         class="w-100 rounded-1 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3"
                         enctype="multipart/form-data">
                         <div class="reqhead1">SEND REQUEST</div>
-                        <div *ngIf="showSuccessMsg" class="alert alert-success" role="alert">
-                            <strong>{{successmsg}}</strong>
+                        <div *ngIf="showSuccessMsg" class="alert " role="alert">
+                            <strong style="background-color:#005596;color: white;">{{successmsg}}</strong>
                             <button id="b12" type="button" class="btn-close" data-bs-dismiss="alert"
                                 aria-label="Close"></button>
                         </div>
     
-                        <label class="d-block mb-4" >
-                            <br>
-                            <span class="form-label d-block">
-                                <h4 style="font-weight:500">Description</h4>
-                            </span>
-                            <textarea class="form-control" rows="3" [(ngModel)]="requestform.description"
-                                name="requestform.description" placeholder="Please describe your problem"></textarea>
+                        <br> <br> <br> 
+                        <label class="building" for="building">
+    
+                            <h4 style="font-weight:500">Building</h4>
+    
+                            <select style="padding: 5px;" tyle="padding: 5px;" id="Cater" (change)="buldingNoSelect($event)"  >
+                                <option value="#">Select Building Number</option>
+                                <option *ngFor="let bld of bld_no" value="{{bld}}">{{bld}}</option>
+                               
+                            </select>
+                            
+                        </label>
+
+
+                        <label class="venue" for="venue">
+    
+                            <h4 style="font-weight:500">venue</h4> 
+                            <select style="padding: 5px;" style="padding: 5px;" id="Cater" (change)="getVunueSelected($event)" >
+                                <option value="#">Select Venue</option>
+                                <option *ngFor="let vanue of selectedBuilding" value="{{vanue.v}}">{{vanue.v}}</option>
+                               
+                            </select>
+                            
                         </label>
     
                         <label class="Cater" for="Cater">
     
                             <h4 style="font-weight:500">Catergory</h4>
     
-                            <select style="padding: 5px;" id="Cater" [(ngModel)]="requestform.category" name="requestform.category" >
+                            <select style="padding: 5px;" id="Cater" (change)="setCategory($event)" >
                                 <option value="#">Select Catergory</option>
-                                <option value="Hardware">Hardware</option>
-                                <option value="Hardware">Software</option>
-                                <option value="Hardware">Electrical</option>
+                                <option *ngFor="let catList of categoryList" value="{{[catList.id, catList.division_name]}}">{{catList.division_name}}</option>
+                               
                             </select>
                             
                         </label>
     
     
-                        <div class="form-group">
-                            <br>
-                            <select (change)="buldingNoSelect($event)" class="form-control mb-2 mr-sm-2">
-                                <option value="" >Select Building Number</option>
-                                <option *ngFor="let bld of bld_no" value="{{bld}}">{{bld}}</option>
+                     
+    
+                        <label class="Cater" for="Cater">
+    
+                            <h4 style="font-weight:500">Catergory Issues</h4>
+    
+                            <select style="padding: 5px;" id="Cater" (change)="setCategoryItem($event)" >
+                                <option value="">Select Catergory Issue</option>
+                                <option *ngFor="let cat of catergoryIssue" value="{{cat.item_name}}">{{cat.item_name}}</option>
                             </select>
-                            <br>
-                            <select (change)="getVunueSelected($event)" class="form-control mb-2 mr-sm-2">
-                                <option value="#" >---Select Vanue---</option>
-                                <option *ngFor="let vanue of selectedBuilding" value="{{vanue.v}}">{{vanue.v}}</option>
-                            </select>
-                        </div>
-    
-    
-    
-                        <label for="formFileDisabled" class="form-label input-group"><span>
-                                <h4 style="font-weight:500;">Image</h4>
-                            </span>
-    
-                            <input style="padding: 8px;" class="form-control" [(ngModel)]="requestform.Image" name="requestform.Image" type="file"
-                                id="formFileDisabled" />
+                            
                         </label>
+    
+    
+                       
     
                         <label class="d-block mb-4 invisible">
                             <span class="form-label d-block">

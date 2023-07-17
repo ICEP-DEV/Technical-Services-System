@@ -46,6 +46,13 @@
             <div class="tab-pane fade show active" id="doing" role="tabpanel" aria-labelledby="doing-tab">
 
                 <div class="stats">
+                    <div class="StaffDetails" *ngIf="staff">
+                        <h3 class=""><small><b>Campus:</b> {{staff.campus}}</small></h3>
+                        <div class="displayFlex">
+                            <h3 class="left" ><small><b>Staff Name:</b> {{staff.admin_name}} {{staff.admin_surname}}</small></h3>
+                        </div>
+                        
+                    </div>
               
                 </div>
 

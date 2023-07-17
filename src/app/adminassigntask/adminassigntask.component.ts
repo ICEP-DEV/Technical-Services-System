@@ -11,6 +11,9 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./adminassigntask.component.css']
 })
 export class AdminassigntaskComponent implements OnInit{
+  Requesterdetails:any
+  staff: any;
+  data1:any
 
   availableTechData :any;
   months = ["January", "February", "March", "April", "May","June", "July","August","September","October","November","December"];
@@ -78,6 +81,16 @@ this.id = Number(data)
 
       // console.log(this.availableTechData)
       this.getDay()
+
+
+      this.data1 = localStorage.getItem('admindetails');
+
+      this.Requesterdetails = JSON.parse(this.data1)
+  
+      this.staff = this.Requesterdetails.result[0]
+  
+      console.log(this.staff,"AdminInformation")
+     console.log(this.Requesterdetails)
     })
 
 

@@ -65,6 +65,9 @@ export class TechloginComponent implements OnInit {
         console.log(this.techlog)
 
         localStorage.setItem('techlogin',JSON.stringify(this.techlog))
+
+
+        localStorage.setItem('artisanData',JSON.stringify(response))
         this.close()
         this._router.navigate(['/techpage'])
       }else{

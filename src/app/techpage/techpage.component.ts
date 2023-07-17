@@ -17,6 +17,11 @@ export class TechpageComponent implements OnInit{
   readData:any;
   set_object:any;
 
+
+  Requesterdetails:any
+  staff: any;
+  data1:any
+
   setProgress = {
     progress: ''
   }
@@ -37,6 +42,14 @@ export class TechpageComponent implements OnInit{
     
     
   
+    this.data1 = localStorage.getItem('artisanData');
+
+    this.Requesterdetails = JSON.parse(this.data1)
+
+    this.staff = this.Requesterdetails.result[0]
+
+    console.log(this.staff,"Artisan Information")
+   console.log(this.Requesterdetails)
 }
 
 progressTask(event:any,jobCardId:Number){

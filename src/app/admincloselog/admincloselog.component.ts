@@ -9,6 +9,11 @@ import { ApiserviceService } from '../apiservice.service';
 export class AdmincloselogComponent {
   constructor(private service:ApiserviceService){}
 
+
+  Requesterdetails:any
+  staff: any;
+  data1:any;
+
   set_object:any;
 
   readData:any;
@@ -21,6 +26,16 @@ export class AdmincloselogComponent {
     },(err)=>{
       console.log(err)
     })
+
+
+    this.data1 = localStorage.getItem('admindetails');
+
+    this.Requesterdetails = JSON.parse(this.data1)
+
+    this.staff = this.Requesterdetails.result[0]
+
+    console.log(this.staff,"AdminInformation")
+   console.log(this.Requesterdetails)
   }
 
   log(event:any,jobCardId:Number){

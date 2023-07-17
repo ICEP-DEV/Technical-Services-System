@@ -22,12 +22,25 @@ export class StafffeedbackComponent implements OnInit {
   readData:any;
   set_feedback:any
 
+  data1:any
+  Requesterdetails:any
+  staff: any;
+
   constructor(private service: ApiserviceService,private _router: Router) {}
 
   successmsg:any;
   showSuccessMsg: any;
  
   ngOnInit(): void {
+
+    this.data1 = localStorage.getItem('staff');
+
+    this.Requesterdetails = JSON.parse(this.data1)
+
+    this.staff = this.Requesterdetails.result[0]
+
+    console.log(this.staff)
+   console.log(this.Requesterdetails)
   }
 
   remove(){

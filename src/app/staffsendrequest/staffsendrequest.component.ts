@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
 import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-staffsendrequest',
   templateUrl: './staffsendrequest.component.html',
   styleUrls: ['./staffsendrequest.component.css']
 })
-export class StaffsendrequestComponent {
+export class StaffsendrequestComponent { 
+  
+
+  data:any
+  Requesterdetails:any
+  data1:any
   bld_no = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   venue = [{ buld_no: 10, vanues: [{ v: "LG1" }, { v: "LG2" }, { v: "G10" }, { v: "G12" }, { v: "110" }, { v: "111" }, { v: "112" }, { v: "210" }, { v: "220" }, { v: "238" }] },
   { buld_no: 1, vanues: [{ v: "LG1" }, { v: "LG2" }, { v: "G10" }, { v: "G12" }, { v: "110" }, { v: "111" }, { v: "112" }, { v: "210" }, { v: "220" }, { v: "238" }] },
@@ -19,27 +26,52 @@ export class StaffsendrequestComponent {
   { buld_no: 8, vanues: [{ v: "LG1" }, { v: "LG2" }, { v: "G10" }, { v: "G12" }, { v: "110" }, { v: "111" }, { v: "112" }, { v: "210" }, { v: "220" }, { v: "238" }] },
   ]
 
+ 
+  
   selectedBuilding: any
   buildingNo = ""
   requestform = {
     description: '',
     category: '',
     venue: this.buildingNo,
-    Image: Blob,
+    //Image: Blob,
     staff_id: "",
-     
-  };
-  
 
-  constructor(private service: ApiserviceService, private _router: Router) {}
+  };
+
+  categoryList:any;
+  catergoryIssue:any;
+
+  getSelectedMonth:any
+  staff: any;
+
+  constructor(private service: ApiserviceService, private _router: Router) { }
   errormsg: any;
-  successmsg:any;
+  successmsg: any;
   showSuccessMsg: any;
-  staffId:any
+  staffId: any
   ngOnInit(): void {
-    var myid =localStorage.getItem('stafflogin')?.toString()
-    this.staffId = myid?.substring(1,myid.length-1)
-    this.requestform.staff_id = this.staffId
+    
+    // var myid = localStorage.getItem('stafflogin')?.toString()
+    // this.staffId = myid?.substring(1, myid.length - 1)
+    // this.requestform.staff_id = this.staffId
+    // console.log(this.staffId)
+     this.category()
+
+     this.data1 = localStorage.getItem('staff');
+
+      this.Requesterdetails = JSON.parse(this.data1)
+
+      this.staff = this.Requesterdetails.result[0]
+
+      console.log(this.staff)
+     console.log(this.Requesterdetails)
+
+
+
+
+    
+
   }
 
   buldingNoSelect(event: any) {
@@ -59,60 +91,104 @@ export class StaffsendrequestComponent {
     this.requestform.venue = this.buildingNo + " - " + selectedV.target.value;
   }
 
+  catItems: any
+  tempCat: any
+  setCategory(event: any) {
+    console.log(event.target.value)
+  let param = event.target.value
+  let getId = param.substring(0, param.indexOf(','))
+    this.requestform.category=param.substring(param.indexOf(',')+1)
+  this.service.getCatIssues(getId).subscribe(res=>{
+    this.catergoryIssue = res
+  })
+   
+  }
+
+  tempcatItem: any
+  problemcategoryItems: any
+  setCategoryItem(event: any) {
+    console.log(event.target.value)
+    this.requestform.description=event.target.value
+  }
+
+
+
+category(){
+  this.service.category().subscribe(res=>{
+    this.categoryList = res
+  })
+}
+
+
   request_object: any
   request() {
+    var myid = localStorage.getItem('stafflogin')?.toString()
+    this.staffId = myid?.substring(1, myid.length - 1)
+    this.requestform.staff_id = this.staffId
     console.log(this.requestform)
-    if (this.requestform.staff_id) {
-      const staff_id = JSON.parse(this.requestform.staff_id);
-    }
+    // if (this.requestform.staff_id) {
+    //   const staff_id = JSON.parse(this.requestform.staff_id);
+    // }
     if (this.requestform.description == '' && this.requestform.category == '' && this.requestform.venue == '') {
-    alert("Fill in the Form")
+      this.successmsg=  "Fill in the Form"
+      this.showSuccessMsg = true;
+
       return;
     }
 
     if (this.requestform.category == '') {
-      
-      alert("Choose Catergory")
+
+      this.successmsg=  "Choose Catergory"
+      this.showSuccessMsg = true;
+
       return;
     }
 
     if (this.requestform.description === '') {
-      alert("Describe the issue")
-     
+      this.successmsg=  "Describe the issue"
+      this.showSuccessMsg = true;
+
       return;
     }
     if (this.requestform.venue === '') {
-      alert("Choose Building")
-      
+      this.successmsg= "Choose Building"
+      this.showSuccessMsg = true;
+
       return;
     }
+  
 
     this.service.request(this.requestform)
 
       .subscribe((response) => {
         this.request_object = response;
-        console.log(response);
+
+      
         if (this.request_object.success == true) {
           this.successmsg = this.request_object.message;
           this.showSuccessMsg = true;
+          this.requestform = {
+            description: '',
+            category: '',
+            venue: '',
+            //Image: Blob,
+            staff_id: '',
+           
+            
+            
+          };
         } else {
           console.log("User ID doesnt match credentials")
         }
-
+        
       },
         (error) => {
           this.errormsg = error;
         });
 
-        this.requestform = {
-          description: '',
-          category: '',
-          venue: this.buildingNo,
-          Image: Blob,
-          staff_id: '',
-        };
+ 
 
-        
+
   }
 
 
@@ -146,14 +222,14 @@ export class StaffsendrequestComponent {
   //   });
   // }
 
- 
+
 
   logout() {
     localStorage.removeItem('stafflogin')
   }
 
-  clear(){
-    
-    
+  clear() {
+
+
   }
 }

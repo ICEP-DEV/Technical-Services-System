@@ -52,7 +52,10 @@ export class LoginComponent implements OnInit {
       console.log(this.admin_object.admin_id)
       if(this.admin_object.success == true){
         // localStorage.setItem("adminLogin",this.admin_object.body?.toString())
+
         localStorage.setItem('adminlogin',JSON.stringify(this.admin_object.admin_id))
+
+        localStorage.setItem('admindetails',JSON.stringify(response));
         this.close()
         this._router.navigate(['/dash2'])
       }else{

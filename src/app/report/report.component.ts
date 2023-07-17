@@ -6,6 +6,7 @@ import {MatPaginatorModule, MatPaginator} from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
 
+
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
@@ -24,6 +25,10 @@ export class ReportComponent implements OnInit{
   set_object:any;
 
   readData:any;
+
+  adminAllRequests:any;
+  searchButton = "";
+  
   ngOnInit(){
     this.service.allreq().subscribe((res:any)=>{
        this.dataSource = new MatTableDataSource(res.result);
@@ -34,6 +39,8 @@ export class ReportComponent implements OnInit{
       // console.log(this.readData);
       
     })
+
+    this.allRequest()
   }
 
   filterData($event : any){
@@ -52,5 +59,14 @@ export class ReportComponent implements OnInit{
   logout(){
     localStorage.removeItem('logindata')
   }
+
+
+  allRequest(){
+    this.service.adminAllRequest().subscribe((res)=>{
+        this.adminAllRequests=res.result;
+        console.log(this.adminAllRequests, "All the requests")
+    })
+  }
+ 
 
 }

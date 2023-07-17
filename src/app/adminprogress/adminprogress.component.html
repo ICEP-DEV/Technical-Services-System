@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="">
     <!-- <body class="container"> -->
         <div class="log d-flex justify-content-end">
             <nav class="header">
@@ -35,30 +35,33 @@
                         <li class = "" id = "breadcrumbpadding"><a class ="" id="hover"  routerLink="/admincloselog" >Close Logs</a></li>
                         <!-- *ngIf= "statsData" statsData.totalUnassigned-->
                         <div class="progressTotalsDiv"  >
-                          <div class="contentMargin">
+                          <!-- <div class="contentMargin">
                             <h3 class="totaltasksTitle"  >Total Tasks</h3>
                             <label class="In-progressTasks"  *ngIf= "inprogressTasks">In-progress &nbsp;&nbsp;<span class="numbertotal">{{inprogressTasks.length}}</span></label><br>
                             <label class="completedTasks" *ngIf= "completedTasks">completed &nbsp;&nbsp;<span class="numbertotal">{{completedTasks.length}}</span></label>
-                          </div>
+                          </div> -->
                       </div>
                 </ul>
             </nav>
         </div>
   
-        <div class="tab-content  ps-3 mt-5" id="myTabContent">
+        <div class="tab-content " id="myTabContent">
   
                 <div class = "contentForm" >
                    
-                    <div class="departmenCategoryText">
-                        <h2></h2>
-                        <h4></h4>
-                        <h5></h5>
+                  <div class="departmenCategoryText">
+                    <div class="StaffDetails" *ngIf="staff">
+                        <h3 class=""><small><b>Campus:</b> {{staff.campus}}</small></h3>
+                        <div class="">
+                            <h3 class="" ><small><b>Staff Name:</b> {{staff.admin_name}} {{staff.admin_surname}}</small></h3>
+                        </div>
+                        
                     </div>
+              
+                </div>
                     
-                    <div class="content  mt-4 p-4">
-  
-                
-                        <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Admin View Progress</h1>
+                    <div class="content card">
+                        <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179); ">Admin View Progress</h1>
                         <div class = "contentForm">
   
                                 <nav class="navtab">

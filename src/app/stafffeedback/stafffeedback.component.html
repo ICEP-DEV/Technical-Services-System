@@ -30,11 +30,8 @@
         <div class="sideNav">
             <nav class="breadcrumbNav">
                 <ul>
-                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="" disabled>View Logs</a></li>
-                    <li class = "" id = "breadcrumbpadding"><a class ="" id="hover" href="#"   routerLink="/adminprogress">View Progress</a></li>
-                    <li class = "" id = "breadcrumbpadding"><a class ="" id="hover" href="#"   routerLink="/admincloselog">Close Logs</a></li>
-                    
-                        
+                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="" disabled>Feedback</a></li>  
+                    <li class = "" id = "breadcrumbpadding"><a class ="" id="hover" href="#"   routerLink="/trackrequest">Track Request</a></li>
                         
                 </ul>
             </nav>
@@ -49,28 +46,28 @@
                 <!-- class="ps-5 w-90 rounded-1 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-8 px-lg-2 col-xl-11 px-xl-0 px-xxl-3" -->
                 <!-- <button type="button" class="btn btn-primary justify-content-center printReportBtn" (click)="export()" target="_blank">Export Report</button> -->
                 <div class="content  mt-4 p-4">
-                    <h1 class="reqhead1 d-flex justify-content-center">Staff Feedback</h1>
-
+                    <div class="StaffDetails" *ngIf="staff">
+                        <h3 class=""><small><b>Campus:</b> {{staff.campus}}</small></h3>
+                        <h3 class=""><small><b>Faculty:</b> {{staff.faculty}}</small></h3>
+                        <div class="displayFlex">
+                            <h3 class=""><small><b>Department:</b> {{staff.department}}</small></h3>
+                            <h3 class="left" ><small><b>Staff Name:</b> {{staff.staff_name}} {{staff.staff_surname}}</small></h3>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="backFrom" >
+                        <h3 class="reqhead1">Staff Feedback</h3>
+                    </div>
                     <div class="down">
-                        <div *ngIf="showSuccessMsg down" class="alert alert-success" role="alert">
-                            <strong>{{successmsg}}</strong>
-                            <button id="b12" type="button" class="btn-close" data-bs-dismiss="alert"
-                                aria-label="Close" routerLink="/trackrequest"></button>
-                        </div>
-        
-                        <div class="feedbackTopPara">
-                            <p class="">Thank you for taking your your time and give us feedback on the job we did for you.
-                                We promise to read your comments carefully. Hopefully we managed to solve your issues.</p>
-                        </div>
-        
-        
-                        <form #feedback="ngForm">
+                    
+                        <form #feedback="ngForm" class="w-100% rounded-1  border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3" >
                             <div class="radionBtn">
-                                <form></form>
+                                
                                 <div>
-                                    <h5>Completed:</h5>
+                                    <h4 style="font-weight:500">Completed:</h4>
                                 </div>
-                                <div class="form-check form-check-inline">
+                                <div class="form-check form-check-inline" id="leftRadio">
         
                                     <input class="form-check-input" type="radio" name="staff_feedback" id="inlineRadio1"
                                         value="No, it is not resolved" [(ngModel)]="staff_feedback">

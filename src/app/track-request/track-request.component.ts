@@ -11,9 +11,20 @@ import { Router } from '@angular/router';
 export class TrackRequestComponent {
 
   constructor(private service: ApiserviceService, private _router: Router) { }
-
+  data:any
+  Requesterdetails:any
+  staff: any;
   ngOnInit(): void {
     this.recieveAllRequest()
+
+    this.data = localStorage.getItem('staff');
+
+    this.Requesterdetails = JSON.parse(this.data)
+
+    this.staff = this.Requesterdetails.result[0]
+
+    console.log(this.staff)
+   console.log(this.Requesterdetails)
   }
 
   allRequest: any;

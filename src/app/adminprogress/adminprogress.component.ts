@@ -24,6 +24,10 @@ export class AdminprogressComponent {
   searchButton = "";
 
 
+  Requesterdetails:any
+  staff: any;
+  data1:any
+
   constructor(private service:ApiserviceService){}
 
   
@@ -41,7 +45,14 @@ export class AdminprogressComponent {
 
     // //get the total number of tasks completed
     //  this. gettotalCompleteted();
-    
+    this.data1 = localStorage.getItem('admindetails');
+
+    this.Requesterdetails = JSON.parse(this.data1)
+
+    this.staff = this.Requesterdetails.result[0]
+
+    console.log(this.staff,"AdminInformation")
+   console.log(this.Requesterdetails)
 
      
   }

@@ -30,7 +30,9 @@ export class AdminpageComponent implements OnInit {
   set_print:any;
   expo:any;
   statsData:any;
- 
+  Requesterdetails:any
+  staff: any;
+  data1:any
 
   setPriority = {
     priority: ''
@@ -45,6 +47,16 @@ export class AdminpageComponent implements OnInit {
     })
     this.total()
     this.getStats();
+
+    
+    this.data1 = localStorage.getItem('admindetails');
+
+    this.Requesterdetails = JSON.parse(this.data1)
+
+    this.staff = this.Requesterdetails.result[0]
+
+    console.log(this.staff,"AdminInformation")
+   console.log(this.Requesterdetails)
 
     
   }

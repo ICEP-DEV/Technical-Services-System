@@ -1,3 +1,11 @@
+.search{
+  height: 40px;
+  width: 15%;
+  padding: 1%;
+}
+
+
+
 .header {
   height: 82px;
   background: #0c0c0c;
@@ -144,10 +152,15 @@ a:disabled, a[disabled] {
 .searchDiv{
   margin-top: -5% ;
 }
-table {
-    margin-left: -6% ;
-  }
-  
+.table {
+       
+  width: 92%;
+  margin: auto auto;
+  height: auto;
+}
+.content {
+  width: auto;
+}
   /*Footer*/
   footer{
     background: black;

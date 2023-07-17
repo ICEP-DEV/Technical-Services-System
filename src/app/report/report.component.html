@@ -40,9 +40,58 @@
             </nav>
         </div>
 
-        <!-- <div class="container ">
+        <div class="container ">
             <h1 class="reqhead1 d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Admin Report</h1>
-            <div class="searchDiv">
+            <input class="search" type="text" name="searchButton" [(ngModel)]="searchButton" placeholder="search for tasks" style="margin-bottom: 1%; border-radius: 5px;">
+            <div class="content card ">
+                        <table class="table">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Request Reference</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Proirity</th>
+                                <th scope="col">Venue</th>
+                                <th scope="col">Request_Date</th>
+                                <th scope="col">Assigned_date</th>
+                                <th scope="col">completed_date</th>
+                                <th scope="col">Progress</th>
+                                <th scope="col">Staff_feedback</th>
+                                <th scope="col">Tech_feedback</th>
+                                
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor = "let me of adminAllRequests | filter:searchButton">
+                                <th >{{me.id}}</th>
+                                <th >{{me.category}}</th>
+                                <td>{{me.description}}</td>
+                                <td>{{me.priority}}</td>
+                               <!-- <td>
+                                    <input type="text" placeholder="Day">
+                                    <input type="text"  placeholder="Month">
+                                    <input type="text"  placeholder="Year">
+
+                                     <select id="Cater" (change)="priority($event, me.id)" [(ngModel)]="me.priority"  >
+                                    <option value="High">High</option>
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option> 
+                                </select>
+                            </td>-->
+                                <td>{{me.venue}}</td>
+                                <td>{{me.req_date}}</td>
+                                <td>{{me.assigned_date}}</td>
+                                <td>{{me.completed_date}}</td>
+                                <td>{{me.progress}}</td>
+                                <td>{{me.staff_feedback}}</td>
+                                <td>{{me.tech_feedback}}</td>
+                    
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+            </div>
+            <!-- <div class="searchDiv">
                 <div class="Search-container">
                     <mat-form-field appearance="fill">
                         <input matInput placeholder="search" autocomplete="off" (keyup)="filterData($event)">
@@ -56,7 +105,18 @@
                     &nbsp;&nbsp;<button mat-raised-button (click)="exporter.exportTable('txt')">.txt</button>
                 </div>
             </div>
-          
+          Staff Id 
+          Tasks ref
+          Category
+          Proirity
+          progress
+          Req Date
+          Assigned dta
+          completed_date
+          description
+          venue
+          staff_feedback
+          tech_feedback
 
         
             <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[2,5, 10, 25, 100]">
@@ -135,9 +195,9 @@
                     
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                </table>
+                </table> -->
 
-        </div> -->
+        </div>
 
     </div>
     <footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>

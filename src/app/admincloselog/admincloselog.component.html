@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="">
     <!-- <body class="container"> -->
         <div class="log d-flex justify-content-end">
             <nav class="header">
@@ -37,18 +37,23 @@
             </nav>
         </div>
 
-        <div class="tab-content ps-3 mt-5" id="myTabContent">
+        <div class="tab-content " id="myTabContent">
 
               
                 <div class = "contentForm" >
                    
                     <div class="departmenCategoryText">
-                        <h2></h2>
-                        <h4></h4>
-                        <h5></h5>
+                        <div class="StaffDetails" *ngIf="staff">
+                            <h3 class=""><small><b>Campus:</b> {{staff.campus}}</small></h3>
+                            <div class="">
+                                <h3 class="" ><small><b>Staff Name:</b> {{staff.admin_name}} {{staff.admin_surname}}</small></h3>
+                            </div>
+                            
+                        </div>
+                  
                     </div>
                     
-                    <div class="content card mt-4 p-4">
+                    <div class="content card ">
 
                 
                         <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Admin Close Logs</h1>

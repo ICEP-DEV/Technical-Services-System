@@ -1,7 +1,43 @@
+
+.StaffDetails{
+  margin-left: 24%;
+  margin-top: 3.99%;
+}
+
+
+.backFrom{
+ padding-right:53.5%;
+ margin-top: 2.98%;
+}
+
+
 .stats{
     margin: 3.47%;
   }
 
+  .displayFlex{
+    display: flex;
+    flex-direction: row;
+  }
+  .left{
+    margin-left: 40%;
+  }
+  body{
+    margin-top: 3.8%;
+  }
+
+  .contentContainerRight{
+
+    margin-top: 1%;
+  }
+  .reqhead1{
+    font-weight: bold;
+font-size: 28px;
+color: #000000;
+text-align: center;
+
+margin-top: 3%;
+}
 
 
 /* Start of the navigation bar*/
@@ -61,7 +97,7 @@
    
     box-shadow: 5px 0 2px #969292;
     width: 335px;
-    height: 1055px;
+    height: 1248px;
     
   }
   .breadcrumbNav {
@@ -132,12 +168,15 @@
 
 footer{
   background: black;
-    padding: 8px;
-    color: #eee;
-   text-align: center;
-    bottom: 0;
-    width: 100%;
+  padding: 8px;
+  color: #eee;
+  text-align: center;
+  margin-left: 0%;
+  margin-top: 15%;
+  width: 100%;
+  height: 40px;
 }
+/* margin-top: 4.9%; */
 
 
 
@@ -190,6 +229,7 @@ form {
 }
 .middleTableDivTextMargin {
     margin: 1%;
+   
 }
 
 label {
@@ -205,51 +245,43 @@ label {
 }
 
 .todo{
-    background-color: red;  
+  color: red;
+  border: 1px solid lightgray;
+  width: 180px;
+  text-align: center;
+    
 }
 .Assigned{
 
-    background-color: #005596;
+  color: #005596;
+  border: 1px solid lightgray;
+  width: 180px;
+  text-align: center;
 }
 .InProgress{
 
-    background-color: orange;
+  color: orange;
+  border: 1px solid lightgray;
+  width: 180px;
+  text-align: center;
 }
 .OnHold{
 
-    background-color: lightgrey;
+  color: lightgrey;
+  border: 1px solid lightgray;
+  width: 180px;
+  text-align: center;
 }
 .Done{
 
-    background-color: green;
+  color: green;
+  border: 1px solid lightgray;
+  width: 180px;
+  text-align: center;
 }
 
 
-.todo:hover{
-    color: red;
-    background-color: white;
 
-}
-.Assigned:hover{
-    color: #005596;
-    background-color: white;
-
-}
-.InProgress:hover{
-    color: orange;
-    background-color: white;
-
-}
-.OnHold:hover{
-    color: lightgrey;
-    background-color: white;
-
-}
-.Done:hover{
-    color: green;
-    background-color: white;
-
-}
 
 
 

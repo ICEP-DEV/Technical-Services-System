@@ -93,7 +93,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.2) url(../../../assets/images/pic.jpg);
+  background: #005596; 
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -122,7 +122,7 @@ h1 {
     margin-top: 4rem;
 }
 #about {
-    background: #b6eadd;
+    background: white;
   }
 #about span {
     color: #ff9c11;

@@ -1,21 +1,28 @@
 <!-- <body class="container"> -->
-    <div class="log d-flex justify-content-end">
-        <nav class="header">
-            <div id="logo-text">
-                <a>
-                    <img src="../../../assets/images/tut.png" alt="SMART FARM"
-                    style="float: left;height: 77px;width: 225px;" routerLink="read">
-                </a>
-            </div>
-            <div id="menu-icon">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul>
-               
-            </ul>
-    
-        </nav>
-    </div>
+  <div class="">
+    <!-- <body class="container"> -->
+        <div class="log d-flex justify-content-end">
+            <nav class="header">
+                <div id="logoDiv">
+                    <a>
+                        <img class="logo" src="../../../assets/images/tut.png" alt="SMART FARM"
+                            style="float: left;height: 70px;width: 225px;" routerLink="read">
+                    </a>
+                </div>
+                <div id="menu-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul>
+                    <li>
+        
+                        <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
+                                class="btn btn-success">LOGOUT</button></a>
+                    </li>
+                </ul>
+        
+            </nav>
+        </div>
+</div>
     
     
     
@@ -30,50 +37,29 @@
             <nav class="breadcrumbNav">
                 <ul>
                     <li class="breadcrumb-item active" id="breadcrumbpadding">
-                      <a class="anchorBorder" id="hover" disabled="true"><b>TASKS</b></a>
+                      <a class="" id="hover" disabled="true">Tasks</a>
                     </li>
                 </ul>
-                    
-                    <br>
-                    <br>
-                    <br>
-                    <ul>
-                    <li>
-                      <a href="#" class="nav-link active" id="ModalExample" >
-                        <button type="button" class="btn btn-success" (click)="logout()">LOGOUT</button>
-                      </a>
-                    </li>
-                  </ul>
-                  
-                
+              
+
             </nav>
         </div>
-        <!-- <ul class="nav nav-tabs flex-column justify-content-center" id="myTab" role="tablist">
-    
-            <li>
-                <img src=".../../../../assets/images/download.png" alt="">
-            </li>
-            <li class="nav-item" role="presentation" id="doing-tab1">
-                <button class="nav-link active colorRed" id="doing-tab" data-bs-toggle="tab" data-bs-target="#doing"
-                    type="button" role="tab" aria-controls="doing" aria-selected="true">
-                    <br><a>Request</a></button>
-            </li>
-            <li class="nav-item" role="presentation" id="doing-tab2">
-                <button class="nav-link colorAmber" id="in-progress-tab" data-bs-toggle="tab" data-bs-target="#in-progress"
-                    type="button" role="tab" aria-controls="in-progress" aria-selected="false"><br><a>Tracking</a></button>
-    
-            </li>
-            <li class="nav-item" role="presentation" id="doing-tab3">
-                <button class="nav-link colorGreen" id="done-tab" data-bs-toggle="tab" data-bs-target="#done" type="button"
-                    role="tab" aria-controls="done" aria-selected="false"><br><a>Feedback</a></button>
-            </li>
-        </ul> -->
+   
         <div class="tab-content ps-5" id="myTabContent">
             <div class="tab-pane fade show active" id="doing" role="tabpanel" aria-labelledby="doing-tab">
-    
-                <br>
+              <div class="departmenCategoryText">
+                <div class="StaffDetails" *ngIf="staff">
+                    <h3 class=""><small><b>Campus:</b> {{staff.campus}}</small></h3>
+                    <div class="">
+                        <h3 class="" ><small><b>Staff Name:</b> {{staff.name}} {{staff.surname}}</small></h3>
+                    </div>
+                    
+                </div>
+          
+            </div>
+                
                     <div class="content card mt-4 p-4">
-
+                      
                 
                         <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Artisan View Task</h1>
 
