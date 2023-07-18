@@ -41,10 +41,24 @@
         </div>
 
         <div class="container ">
+            <div class="departmenCategoryText">
+                <div class="StaffDetails" *ngIf="staff">
+                    <h3 class=""><small><b>Campus:</b> {{staff.campus}}</small></h3>
+                    <div class="">
+                        <h3 class="" ><small><b>Staff Name:</b> {{staff.admin_name}} {{staff.admin_surname}}</small></h3>
+                    </div>
+                    
+                </div>
+          
+              </div>
             <h1 class="reqhead1 d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Admin Report</h1>
-            <input class="search" type="text" name="searchButton" [(ngModel)]="searchButton" placeholder="search for tasks" style="margin-bottom: 1%; border-radius: 5px;">
+            <div class="searchAndexport">
+                <input class="search" type="text" name="searchButton" [(ngModel)]="searchButton" placeholder="search for tasks" style="margin-bottom: 1%; border-radius: 5px;"><br>
+                <button  class="btn btn-success export" (click)="exportexcel()">Export to excel</button>
+            </div>
+            
             <div class="content card ">
-                        <table class="table">
+                        <table class="table" id="excel-table" >
                             <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Request Reference</th>

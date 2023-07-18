@@ -15,6 +15,7 @@ import { Router} from '@angular/router'
 export class LoginComponent implements OnInit {
 
   errormsg: any;
+  showSuccessMsg:any
   adminLogin= {
     admin_id:'',
     password:''
@@ -33,16 +34,29 @@ export class LoginComponent implements OnInit {
   admin_object:any
   admin_login() {
      if(this.adminLogin.admin_id== '' && this.adminLogin.password == ''){
-      alert("Email and Password is required");
-      return;
+
+      this.errormsg = "Admin number and Password is required"
+      this.showSuccessMsg = true
+
+      // alert("Email and Password is required");
+      // return;
+
+     
      } 
      if(this.adminLogin.admin_id== ''){
-      alert("Email is required");
-      return;
+
+      this.errormsg = "Admin number is required"
+      this.showSuccessMsg = true
+      // alert("Email is required");
+      // return;
      } 
      if(this.adminLogin.password== ''){
-      alert("Password is required");
-      return;
+
+      this.errormsg = "Password is required"
+      this.showSuccessMsg = true
+
+      // alert("Password is required");
+      // return;
      } 
 
     this.service.adminLogin(this.adminLogin)
@@ -51,6 +65,8 @@ export class LoginComponent implements OnInit {
       this.admin_object = response
       console.log(this.admin_object.admin_id)
       if(this.admin_object.success == true){
+
+        
         // localStorage.setItem("adminLogin",this.admin_object.body?.toString())
 
         localStorage.setItem('adminlogin',JSON.stringify(this.admin_object.admin_id))
@@ -59,13 +75,20 @@ export class LoginComponent implements OnInit {
         this.close()
         this._router.navigate(['/dash2'])
       }else{
-        alert("user not found with these credentials")
+
+        this.errormsg = "User with these credentials not found!"
+        this.showSuccessMsg = true
+        // alert("user not found with these credentials")
       }
 
       //
     },
     (err)=>{
-      alert("something is wrong")
+
+      this.errormsg = "Something is wrong!"
+        this.showSuccessMsg = true
+        
+      // alert("something is wrong")
       //alert(err.message)
     }
     )

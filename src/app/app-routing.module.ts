@@ -1,13 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormComponent } from './form/form.component';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-
-
 import { MatDialogModule } from '@angular/material/dialog';
 import { TechloginComponent } from './techlogin/techlogin.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
@@ -16,7 +12,6 @@ import { AuthGuard } from './auth.guard';
 import { StaffpageComponent } from './staffpage/staffpage.component';
 import { TrackRequestComponent } from './track-request/track-request.component';
 import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component';
-
 import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
 import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
@@ -29,6 +24,7 @@ import { CloselogComponent } from './closelog/closelog.component';
 import { HodprogressComponent } from './hodprogress/hodprogress.component';
 import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
 import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
+import { QRcodeComponent } from './qrcode/qrcode.component';
 
 
 
@@ -58,7 +54,8 @@ const routes: Routes = [
   {path:'adminprogress',component:AdminprogressComponent},
   {path:'admindash', component:AdmindashboardComponent},
   {path:'dash2', component:DashboardComponent},
-  {path:'generatereport',component:ReportComponent}
+  {path:'generatereport',component:ReportComponent},
+  {path:'qr-code',component:QRcodeComponent}
 
   
  

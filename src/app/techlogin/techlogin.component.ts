@@ -13,6 +13,7 @@ import { Route, Router } from '@angular/router';
 export class TechloginComponent implements OnInit {
 
   errormsg: any;
+  showSuccessMsg:any
 
 
 
@@ -42,16 +43,29 @@ export class TechloginComponent implements OnInit {
   tech_object:any
   tech_login() {
     if(this.techLogin.tech_id== '' && this.techLogin.password == ''){
-      alert("Email and password required");
-      return;
+
+      this.errormsg = "Artisan number and password required" 
+      this.showSuccessMsg = true
+
+      // alert("Email and password required");
+      // return;
+
     }
      if(this.techLogin.tech_id== ''){
-      alert("Email required");
-      return;
+
+      this.errormsg = "Artisan number required" 
+      this.showSuccessMsg = true
+
+      // alert("Email required");
+      // return;
     }
     if(this.techLogin.password== ''){
-      alert("Password required");
-      return;
+
+      this.errormsg = "Password required" 
+      this.showSuccessMsg = true
+
+      // alert("Password required");
+      // return;
     }
   
 
@@ -71,13 +85,22 @@ export class TechloginComponent implements OnInit {
         this.close()
         this._router.navigate(['/techpage'])
       }else{
-        alert("user not found with these credentials")
+
+        this.errormsg = "User with these credentials not found! " 
+        this.showSuccessMsg = true
+
+        // alert("user not found with these credentials")
       }
 
       //
     },
     (err)=>{
-      alert("Something went wrong, please try after some time")
+
+      this.errormsg = "Something went wrong, please try after some time! " 
+      this.showSuccessMsg = true
+
+
+      // alert("Something went wrong, please try after some time")
       //alert(err.message)
     }
     )

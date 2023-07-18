@@ -6,6 +6,7 @@
           method="POST"
           class="w-543px h-383px rounded-1 p-4 border bg-white"
           enctype="multipart/form-data">
+          <p *ngIf="showSuccessMsg"><b>{{errormsg}}</b></p>
           <button id="b12" type="button" class="btn-close" (click)="close()" aria-label="Close"></button>
           <br>
         
@@ -16,7 +17,7 @@
             [(ngModel)]="adminLogin.admin_id" name="adminLogin.admin_id"
               type="text"
               class="form-control"
-              placeholder="Staff number"
+              placeholder="Enter staff number"
             />
           </label>
 

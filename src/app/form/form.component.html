@@ -3,6 +3,7 @@
     <div class="body">
       <form method="POST" class="w-543px h-383px rounded-1 p-4 border bg-white" action="#"
         enctype="multipart/form-data">
+        <p *ngIf="showSuccessMsg"><b>{{errormsg}}</b></p>
         <button id="b12" type="button" class="btn-close float-right" (click)="close()" aria-label="Close"></button>
         <br>
         <label class="d-block mb-4">

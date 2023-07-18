@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
 import { Router } from '@angular/router';
+import { RouterTestingHarness } from '@angular/router/testing';
 @Component({
   selector: 'app-staffsendrequest',
   templateUrl: './staffsendrequest.component.html',
@@ -94,7 +95,7 @@ export class StaffsendrequestComponent {
         console.log(response);
         if (this.request_object.success == true) {
           this.successmsg = this.request_object.message;
-          this.showSuccessMsg = true;
+          this.showSuccessMsg = true; 
         } else {
           console.log("User ID doesnt match credentials")
         }
@@ -112,6 +113,9 @@ export class StaffsendrequestComponent {
           staff_id: '',
         };
 
+
+      window.location.reload()
+        // this._router.navigate(['/trackrequest'])
         
   }
 

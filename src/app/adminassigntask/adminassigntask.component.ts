@@ -187,9 +187,9 @@ this.id = Number(data)
 
      console.log(this.AdminArtisan_object )
      this.message = "Successfully assigned the request to the artisan "+ tech_id;        
-        setTimeout(function(){
-         window.location.reload();
-       }, 2000);
+      //   setTimeout(function(){
+      //    window.location.reload();
+      //  }, 2000);
        this.navrouter.navigate(['/adminpage'])
     })
     

@@ -7,17 +7,18 @@
           action="#"
           enctype="multipart/form-data"
           >
+          <p *ngIf="showSuccessMsg"><b>{{errormsg}}</b></p>
           <button id="b12" type="button" class="btn-close float-right" (click)="close()" aria-label="Close"></button>
           <br>
           <label class="d-block mb-4">
-            <span class="form-label d-block" class="row mx-0 justify-content-center">Technician Number</span>
+            <span class="form-label d-block" class="row mx-0 justify-content-center">Artisan Number</span>
             <br>
             <input
             [(ngModel)]="techLogin.tech_id" name="techLogin.email"
            
               type="text"
               class="form-control"
-              placeholder="214412845"
+              placeholder="Enter staff number"
             />
           </label>
 

@@ -1,3 +1,9 @@
+.departmenCategoryText {
+  padding-top: 6.19%;
+  padding-left: 3%;
+ 
+}
+
 .search{
   height: 40px;
   width: 15%;
@@ -112,7 +118,7 @@ a {
 
 
 .container2{
-  margin-top: 3.8%;
+  margin-top: 2.9%;
 }
 /* End of Everything on the side nav*/
 .content{
@@ -148,9 +154,13 @@ a:disabled, a[disabled] {
     margin: 8% auto; 
 
   }
-  
-.searchDiv{
-  margin-top: -5% ;
+.searchAndexport{
+  display: flex;
+  flex-direction: row;
+}
+
+.btn.export{
+  margin-left: 1%;
 }
 .table {
        

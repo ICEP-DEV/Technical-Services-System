@@ -15,6 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class FormComponent implements OnInit {
 
   errormsg: any;
+  showSuccessMsg: any;
   staffLogin = {
     staff_id: '',
   }
@@ -43,8 +44,11 @@ export class FormComponent implements OnInit {
   staff_login(): void {
 
     if(this.staffLogin.staff_id == ''){
-      alert("Staff number is required");
-      return;
+
+      this.errormsg = "Staff number is required"
+      this.showSuccessMsg = true
+      // alert("Staff number is required");
+      // return;
     }
 
     this.service.staffLogin(this.staffLogin)
@@ -52,6 +56,9 @@ export class FormComponent implements OnInit {
       this.staff_object = response
       console.log(this.staff_object.body)
       if (this.staff_object.success == true) {
+
+        this.errormsg = this.staff_object.message
+        this.showSuccessMsg = true
         localStorage.setItem('stafflogin', JSON.stringify(this.staffLogin.staff_id));
 
         localStorage.setItem('staff',JSON.stringify(response));
@@ -62,6 +69,8 @@ export class FormComponent implements OnInit {
       }
       else{
         //alert("Staff not found")
+        this.errormsg = "Staff number not found"
+        this.showSuccessMsg = true
       }
 
       //
@@ -69,6 +78,8 @@ export class FormComponent implements OnInit {
     (err)=>{
       //alert("Something went wrong, please try after some time")
       //alert(err.message)
+      this.errormsg = "Something went wrong, please try after some time"
+      this.showSuccessMsg = true
     }
     )
   }

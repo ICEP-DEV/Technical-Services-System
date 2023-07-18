@@ -177,6 +177,7 @@ category(){
             
             
           };
+          this._router.navigate(['/trackrequest'])
         } else {
           console.log("User ID doesnt match credentials")
         }
@@ -192,35 +193,6 @@ category(){
   }
 
 
-
-  // staffRequest()
-  // {
-  //   if(this.userForm.valid)
-  //   {
-  //     console.log(this.userForm.value);
-  //     this.service.staffRequests(this.userForm.value).subscribe((res)=>{
-  //       console.log(res,'res==>');
-  //       this.userForm.reset();
-  //     })
-  //   }
-  //   else{
-  //     this.errormsg = 'all field is required';
-  //   }
-
-  // }
-
-  // constructor(private dialog: MatDialog) {}
-
-  // openTrackForm(): void {
-  //   const dialogRef = this.dialog.open(TrackformComponent, {
-  //     width: '700px',
-  //     disableClose: true
-  //   });
-
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log('The dialog was closed');
-  //   });
-  // }
 
 
 

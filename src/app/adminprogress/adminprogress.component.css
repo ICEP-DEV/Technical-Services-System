@@ -183,18 +183,27 @@ a:disabled, a[disabled] {
         padding-left: 40%;
     }
     
-  
-.colorAmber{
+  .colorAmber{
+      /* background: orange; */
+      color: black;
+      font-weight: bold;
+     } 
+.colorAmber.active{
     background: orange;
     color: white;
     font-weight: bold;
    }
     
-.colorRed{
-    background: red;
-    color: white;
+   .colorGreen{
+    /* background: orange; */
+    color: black;
     font-weight: bold;
-   }
+   } 
+.colorGreen.active{
+  background: green;
+  color: white;
+  font-weight: bold;
+ }
 
 .table {
        

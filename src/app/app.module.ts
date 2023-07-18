@@ -51,6 +51,8 @@ import { TechpageComponent } from './techpage/techpage.component';
 import { HodprogressComponent } from './hodprogress/hodprogress.component';
 import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
 import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
+import { QRcodeComponent } from './qrcode/qrcode.component';
+
 
 
 
@@ -91,6 +93,7 @@ import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.c
      HodcloselogsComponent,
      StaffsendrequestComponent,
     AvailableTechComponent,
+    QRcodeComponent,
   ],
   imports: [
     BrowserModule,
