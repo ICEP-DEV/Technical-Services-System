@@ -1,36 +1,42 @@
-<div class="container-fluid">
-    <!-- <body class="container"> -->
-        <div class="log d-flex justify-content-end">
-            <nav class="header">
-                <div id="logoDiv">
-                    <a>
-                        <img class="logo" src="../../../assets/images/tut.png" alt="SMART FARM"
-                            style="float: left;height: 70px;width: 225px;" routerLink="read">
-                    </a>
-                </div>
-                <div id="menu-icon">
-                    <i class="fas fa-bars"></i>
-                </div>
-               
-        
-            </nav>
+<div class="log d-flex justify-content-end" >
+    <nav class="header" >
+        <div id="logo-text">
+            <a>
+                <img src="../../assets/images/tut.png" alt="tut logo"
+                style="float: left;height: 72px;width: 225px;margin: 0 0 20px" routerLink="read">
+            </a>
         </div>
-</div>  
-<div class="container2 d-flex justify-content-between ">
-    <div class="sideNav">
-        <nav class="breadcrumbNav">
-            <ul>
-                <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="" 
-                  disabled  >View Requests</a></li>
-                    <li class = "" id = "breadcrumbpadding"><a class ="" id="hover" href="#"  routerLink="/hodviewProgress">View Progress</a></li>
-            </ul>
-        </nav>
-    </div>
+        <div id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li>
+                <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
+                        class="btn btn-success">LOGOUT</button></a>
+            </li>
+        </ul>
+
+    </nav>
 </div>
 
-<br>
-<br>
-<br>
+
+
+    <body>
+        <div class="sideNav">
+
+            <nav class="breadcrumbNav">
+                <ul>
+                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
+                        > View Request</a></li>
+                <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
+                    routerLink="/hodtrackprogress">View progress</a></li>
+                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
+                        routerLink="/hodfeedback">Send feedback</a></li>
+                </ul>
+
+            </nav>
+
+        </div>
 
 <div class="tab-content ps-5" id="myTabContent">
     <div class="tab-pane fade show active" id="doing" role="tabpanel" aria-labelledby="doing-tab">
@@ -45,24 +51,24 @@
                 <table class="table">
                     <thead class="thead-dark">
                       <tr>
-                        <th scope="col">Staff Name</th>
+                        <th scope="col"> Staff Name</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Venue</th>
-                        <th scope="col">category</th>
-                        <th scope="col">Request Date</th>
-                        <th scope="col">Priority</th>
                         
+                        <th scope="col">Venue</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Request date</th>
+                        <th scope="col">Priority</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor="let data of readData">
-                        <td> {{ data.staff_name }} {{ data.staff_surname }}</td>
+                        <td>{{ data.staff_name }}{{ data.staff_surname }}</td>
                         <td>{{ data.description }}</td>
-                        <td>{{ data.venue}}</td>
+                        <td>{{ data.venue }}</td>
+                       
                         <td>{{ data.category }}</td>
                         <td>{{ data.req_date }}</td>
-                        <td>{{ data.priority }}</td>
-                        <td></td>
+                        <td>{{ data.priority}}</td>
                         
                       </tr>
                     </tbody>

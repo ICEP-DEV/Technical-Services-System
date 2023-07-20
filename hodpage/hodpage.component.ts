@@ -39,5 +39,8 @@ export class HODpageComponent implements OnInit{
     });
 }
 
+logout() {
+localStorage.removeItem('hodlogin')
+}
 
   }

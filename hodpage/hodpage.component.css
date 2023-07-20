@@ -1,351 +1,131 @@
-body {
- 
 
-  
-    width: 100%;
-  }
-  .container-fluid{
-    flex:1;
-    
-  }
-  
-  #logoDiv{
-  
-    margin-left: 1%;
-    margin-top: 7.2px;
-  
-  }
-  .container2{
-    
-    margin-top: 3.8%;
-  }
-  
-  .tab-content {
-      float: right;
-      width: 80%;
-      margin-right: 0%;
-      
-    }
-    
-    .nav-tabs {
-    position: center;
-    width: 335px;
-    height: 600px;
-    left: 2px;
-    float: left;
+.sticky {
+    background-color: #005596;
+    height:115px;
     width: 100%;
     
-    
-     font-family: "Times New Roman";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 25px;
-    letter-spacing: 0.035em;
-    width: 335px;
-    
-    left: -2px;
-    top: 110px;
-    
-    background: rgba(255, 255, 255, 0.8);
-   
-    
-    
-    }
+  }
   
-   
-    
-    .nav-item{
-      padding: 8px 24px;
-      
-      transition: 0.4s;
-      font-family: 'georgia';
-      margin-bottom: 24px;
-      margin-left: 24px;
-      font-weight: bold;
-      cursor: pointer;
-      background: white;
-    }
-    
-    .nav-item:hover {
-      
-      text-decoration: none;
-      padding: 8px 0;
-      border-left: 8px solid rgb(14, 60, 90);
-      box-shadow: 4px 4px 4px rgba(70, 69, 69, 0.993);
-    }
-    
-    
-    .nav-link.active {
-      border: none;
-    }
-    
-    .reqhead1{
-      
-        border: 2px solid rgb(255, 255, 255);
-        background-color: #ECE7E7; 
-        font-weight: bold;
-    
-    
-    
-    
-    font-family: 'Sansation';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 36px;
-    letter-spacing: 0.15em;
-    
-    color: #000000;
-    }
-    
-    .reqhead2{
-      
-      border: 2px solid rgb(255, 255, 255);
-      background-color: #ECE7E7; 
-      font-weight: bold;
-    
-    
-    
-    
-    font-family: 'Sansation';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 36px;
-    letter-spacing: 0.15em;
-    
-    color: #000000;
-    }
-    
-    
-    
-    /*Footer*/
-    
-    footer{
-      background: black;
-      padding: 8px;
-      color: #eee;
-      text-align: center;
-      margin-left: 0%;
-      margin-top: auto;
-      width: 100%;
-      height: 40px;
-      /* position: absolute; */
-      /* bottom: 0;
-      width: 100%; */
-    }
-    
-    
-    
-    /*Navigation*/
-  /*   
-    nav {
-      height: 72px;
-      background: #0c0c0c;
-      width: 100%;
-      margin: 0;
-      position: fixed;
-      font-family: 'Roboto Condensed',sans-serif;
-      font-size: 20px;
-      display: flex;
-      justify-content: space-between;
-      padding:0 16px 0 0;
-      box-sizing: border-box;
-      z-index: 100;
-    }
-    
-    nav a {
-      padding: 0 32px;
-      color: #eee;
-      transition: 0.4s;
-    }
-    
-    nav a:hover {
-      text-decoration: none;
-      color: red;
-    }
-    
-    nav ul {
-      display: flex;
-      list-style: none;
-      justify-content: space-around;
-      align-items: center;
-      height: 100%;
-      margin: 0;
-    }
-    
-    .active {
-      color:#0e0d0d;
-    } */
-    .table {
   
-      width: 90%;
-      margin: auto auto;
-    }
-    #menu-icon {
-      height: 100%;
-      font-size: 28px;
-      padding: 0 4px;
-      color: #eee;
-      display: none;
-      align-items: center;
-    }
+  .nav-item{
+    padding: 8px 24px;
     
+    transition: 0.4s;
+    font-family: 'georgia';
+    margin-bottom: 24px;
+    margin-left: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    background: white;
+  }
+  
+  .nav-item:hover {
     
-    
-    /* Dropdown Button */
-    .dropbtn {
-      background-color: #04AA6D;
-      color: white;
-      padding: 16px;
-      font-size: 16px;
-      border: none;
-    }
-    
-    /* The container <div> - needed to position the dropdown content */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    
-    /* Dropdown Content (Hidden by Default) */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-    
-    /* Links inside the dropdown */
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    
-    /* Change color of dropdown links on hover */
-    .dropdown-content a:hover {background-color: #ddd;}
-    
-    /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-content {display: block;}
-    
-    /* Change the background color of the dropdown button when the dropdown content is shown */
-    .dropdown:hover .dropbtn {background-color: #3e8e41;}
-    
-    
-    select#Cater,
-    input.form-control {
-      display: block;
-      width: 100%;
-      padding: 0.375rem 0.75rem;
-      font-size: 1rem;
-      line-height: 1.5;
-      color: #495057;
-      background-color: #fff;
-      background-clip: padding-box;
-      border: 1px solid #ced4da;
-      border-radius: 0.25rem;
-      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-      margin-bottom: 1rem;
-    }
-    
-    
-    form .div #reqhead{
-      position: absolute;
-    width: 271px;
-    height: 24px;
-    left: 483px;
-    top: 217px;
-    
-    font-family: 'Sansation';
-    font-style: normal;
-    font-weight: 400;
+    text-decoration: none;
+    padding: 8px 0;
+    border-left: 8px solid rgb(14, 60, 90);
+    box-shadow: 4px 4px 4px rgba(70, 69, 69, 0.993);
+  }
+  
+  
+  .nav-link.active {
+    border: none;
+  }
+  
+  
+  .header {
+    height: 72px;
+    background: #0c0c0c;
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    font-family: 'Roboto Condensed',sans-serif;
     font-size: 20px;
-    line-height: 36px;
-    letter-spacing: 0.15em;
-    
-    color: #000000;
-    
-    }
-    
-    
-    /* Three image containers (use 25% for four, and 50% for two, etc) */
-    .column {
-      float: left;
-      width: 33.33%;
-      padding: 5px;
-    }
-    
-    /* Clear floats after image containers */
-    .row::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-    
-  .content{
-    border: 1px solid #ccc;
-    overflow-y: scroll;
-    height: auto; 
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    width: 85%;
-    margin: auto auto;
+    display: flex;
+    justify-content: space-between;
+    padding:0 16px 0 0;
+    box-sizing: border-box;
+    z-index: 100;
   }
   
-  .ticket{
-      border: 1px solid #ccc;
-      box-shadow: 2px 2px 2px rgba(94, 93, 93, 0.993);
-      font-family: "Times New Roman";
-      font-style: normal;
-      
-    
+  .header a {
+    padding: 0 32px;
+    color: #eee;
+    transition: 0.4s;
   }
   
-  .ticket:hover{
-      text-decoration: none;
-      
-      border-left: 8px solid rgb(14, 60, 90);
-      
-  
+  .header a:hover {
+    text-decoration: none;
+    color: red;
   }
   
-  .request{
-      border: 2.5px solid #ccc;
-      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
-      padding: 15px;
-  }
-   
-  
-  .sideNav {
-    float: left;
-   
-    box-shadow: 5px 0 2px #969292;
-    width: 335px;
-    height: 1055px;
-    
+  .header ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin: 0;
   }
   
-  .breadcrumbNav {
-    margin: 12% 10px;
-    padding: 20px 30px;      
-  }
-  #breadcrumbpadding {
   
-    width: 120px;  
-    padding: 6px 0;
+  .toggleMenu {
+    cursor: pointer;
+    display:none;
+  }
+  .center 
+  {
+    margin-right: 35%;
+    font-weight: bold;
+    font-size: 50px;
+    color: aliceblue;
   }
   
   a {
-    padding-top: 20px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  
+  #left {
+  
+    padding-left:75%;
+  }
+  .logo {
+    height: 100px;
+  
+    margin-top: 10px;
+  }
+  
+  img {
+    height: 100px;
+  
+    margin-top: 20px;
+  }
+  body {
+  
+    margin-top: 100px;
+    height: 1055px;
+    /*border: 1px solid blue;*/
+  }
+  
+  
+  
+  .breadcrumbNav {
+    margin: 12% 10px;
+    padding: 20px 30px;
+  }
+  #breadcrumbpadding {
+  
+    width: 115px;  
+    padding: 10px 0;
+  }
+  
+  a {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 25px;
     /* identical to box height */
   
     letter-spacing: 0.035em;
@@ -355,112 +135,451 @@ body {
     text-decoration: none;
   }
   
-  .breadcrumbNav ul {
+  nav,ul {
   
     list-style:none ;
-    flex-direction: column;
   }
   .breadcrumb-item.active {
    
     
     border-bottom: 3px solid #005596;
-    width: 115px;  
+    width: 115px;
+   
     
-  }
-  
-  a:disabled, a[disabled] {
-  
-    color: #005596;
   }
   .anchorBorder{
   
-      
-    margin:0 20%;
+   
+    margin:0 15%;
   }
+  .anchorBorderActive{
+   
+    margin:0 15%;
   
+  }
+  .sideNav {
+  
+    
+    float: left;
+    box-shadow: 5px 0 2px #969090;
+    width: 335px;
+    height: 1055px;
+   
+  
+  }
   #hover:hover {
     font-weight: bold;
    
    
   }
+  .contentContainerRight {
+    
+    width:1562px;
+    height: 1055px;
+    margin-left: 17.9%;
+    
+   padding-left: 50px;
+   /*border: 1px solid green;*/
+  
+  
+  }
+  .backFrom {
+    
+    width: 1300px;
+    margin: 5% 5%;
+    height: 830px;
+  
+    /*
+     background: #ffffff;
+    mix-blend-mode: normal;
+    border: 1px solid #969090;
+    box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    */
+   
+  
+  
+  }
+  
+  .contentForm {
+        
+        margin-top: 7%;
+  }
+  .toptitle {
+   
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 0.15em;
+    background: #ECE7E7;
+    width: 1110px;
+    height: 40px;
+    margin:5% 6%;
+    padding-left: 50px;
+  }
+  
+  
+  .color {
+    color: black;
+  }
+  .feedbackTopPara {
+  
+    font-style: normal;
+    font-weight: 490;
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: 0.06em;
+    /*border: 1px solid red;*/
+    
+    width: 1110px;
+    margin: 0% 6%;
+    padding: 1.5%;
+  
+  }
+  .backFrom {
+    
+    width: 1300px;
+    height: 350px;
+    /*background: #c51919;*/
+    
     
   
-  .nav-item{
-      padding: 8px 24px;
+  
+  }
+  .radionBtn {
+  
+    display: flex;
+    flex-direction:row;
+    margin: 1% 7.78%;
+  
+    /*border: 1px solid red;*/
+    
+  
+  }
+  
+  .form-check-input {
+    width: 20px;
+    height: 20px;
+    border: 4px solid #000000;
+    border-radius: 10px;
+  
+  }
+  .form-check-label {
+  
+    padding-top: 2px;
+  }
+  .form-check {
+    padding-left: 3.5%;
+  }
+  
+  .descriptionTitle {
+  
+    /*border: 1px solid red;*/
+    
+    margin: 2% 35%;
+  }
+  
+  textarea {
+    padding: 10px;
+    width: 60%;
+    margin-left: 20%;
+  
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.06em;
+  
+    border: 2px solid #000000;
+    border-radius: 10px;
+    
+  }
+  
+  
+  .btn-submit button {
+  
+    width: 100px;
+    height: 45px;
+    background: #005596;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+   margin: 2% 45%;
+  
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0.06em;
+  
+    color: #FFFFFF;
+   
+  }
+  
+  @media only screen and (max-width: 1200px) {
+  
+  
+    /*
+    
+    
+    */
+    .sticky {
+        width: 100%;
+    }
+    body {
+        
+        /*background-color: yellow;*/
+        width: 100%;
+    }
+    .sideNav {
+        width: 280px;
+  
+    }
+    .contentContainerRight {
+       
+        width: 900px;
+        margin-top:0%;
+        margin-left: 13%;
+    }
+    form { 
+        width: 900px;
+        /*background: #da3737;*/
+    }
+    .toptitle {
+        /*border:1px solid BLUE;*/
+        width: 700px;
+        margin:5% 17%;
+    }
+    .feedbackTopPara{
+        
+        /*
+        font-weight: 490;
+        font-size: 20px;
+        letter-spacing: 0.06em;
+        border: 1px solid red;
+        
+        */
+       
+        width: 800px;
+        margin: 0% 9%;
+        padding: 1.5%;
+  
+    }
+    .backFrom {
+    
+        width: 700px;
+    
+    }
+    .descriptionTitle {
+  
+        margin: 2% 30%;
+    }
+    button{
+        margin: 2% 41%;
+    }
+  
+  }
+  
+  
+  
+  @media only screen and (max-width: 992px) {
+    body {
+       /*
+       background-color:lightgray;
+       */ 
+        width: 100%;
+    }
+    .logo {
+        height: 90px;
+        margin-top: -2%;
+    }
+    .sticky {
+        width: 100%;
+    }
+    .sideNav {
+        width: 200px;
+  
+    }
+    .contentContainerRight {
+        width: 800px;
+        
+        margin-top: 0%;
+        margin-left: 12%;
+    
+    
+    }
+    form { 
+  
+        width: 700px;
+    }
+   
+    .toptitle {
+  
+        /*
+                 font-weight: 700;
+        font-size: 28px;
+        border:1px solid BLUE;
+        */
+       
+        width: 700px;
+        margin:5% 5%;
+        
+        
+    }
+    .feedbackTopPara{
+        /*
+                 font-weight: 490;
+        font-size: 20px;
+        letter-spacing: 0.06em;
+        border: 1px solid red;
+        
+        */
+       
+        width: 600px;
+        margin: 0% 6%;
+        padding: 1.5%;
+  
+    }
+    .descriptionTitle {
+  
+        
+        margin: 2% 22%;
+    }
+    .btn-submit button{
+        margin: 2% 40%;
+    }
+  
+  }
+  
+  
+  @media only screen and (max-width: 768px) {
+    body {
+       
+         /*background-color: rgb(235, 143, 89);*/
+        width: 100%;
+    }
+    
+    .sticky{
+        width: 100%;
+        /* border: 1px solid red;*/
+       
+    }
+    .logo {
+       height: 80px;
+    }
+    .sideNav {
+        display: none;
+  
+    }
+    .toggleMenu {
+  
+        display:block;
+       
+        
+        
+        
+        
+    }
+    .contentContainerRight {
       
-      transition: 0.4s;
-      font-family: 'georgia';
-      margin-bottom: 24px;
-      margin-left: 24px;
-      font-weight: bold;
-      cursor: pointer;
-      background: white;
-    }
+        margin-top: 0%;
+        margin-left: -11%;
     
-    .nav-item:hover {
+    
+    }
+  
+    form { 
+  
+        width: 700px;
+    }
+   
+    .toptitle {
+  
+        /*
+             font-weight: 700;
+        font-size: 28px;
+        border:1px solid BLUE;
+        
+        */
+       
+        width: 680px;
+        margin:5% 5%;
+        
+        
+    }
+    .feedbackTopPara{
+        /*
+             font-weight: 490;
+        font-size: 20px;
+        letter-spacing: 0.06em;
+        border: 1px solid red;
+        */
+       
+        width: 600px;
+        margin: 0% 6%;
+        padding: 1.5%;
+  
+    }
+    .descriptionTitle {
+  
+        
+        margin: 2% 22%;
+    }
+    .btn-submit button{
+        margin: 2% 40%;
+    }
+  
+  }
+  
+  
+  @media only screen and (max-width: 576px) {
+  
+    body{
+        /*background-color: rgb(131, 247, 116);*/
+        
+        width: 100%;
+    }
+    .sideNav {
+        display: none;
+  
+    }
+    .contentContainerRight {
+        width: 670px;
+       
+        margin-top: 0%;
+        margin-left: -22%;
+    
+    
+    }
+    .backFrom {
+    
+        width: 590px;
+       
       
-      text-decoration: none;
-      padding: 8px 0;
-      border-left: 8px solid rgb(14, 60, 90);
-      box-shadow: 4px 4px 4px rgba(70, 69, 69, 0.993);
-    }
     
     
-    .nav-link.active {
-      border: none;
     }
+    form { 
   
-    
-    .header {
-      height: 82px;
-      background: #0c0c0c;
-      width: 100%;
-      margin: 0;
-      position: fixed;
-      font-family: 'Roboto Condensed',sans-serif;
-      font-size: 20px;
-      display: flex;
-      justify-content: space-between;
-      padding:0 16px 0 0;
-      box-sizing: border-box;
-      z-index: 100;
+        width: 590px;
     }
+    .feedbackTopPara{
+        
     
-    .header a {
-      padding: 0 32px;
-      color: #eee;
-      transition: 0.4s;
+      
+        width: 550px;
+        margin: 0% 7%;
+        padding: .5%;
+  
     }
-    
-    .header a:hover {
-      text-decoration: none;
-      color: red;
-    }
-    
-    .header ul {
-      display: flex;
-      list-style: none;
-      justify-content: space-around;
-      align-items: center;
-      height: 100%;
-      margin: 0;
+    .toptitle {
+        width: 510px;
+        margin:5% 11%;
+        font-size: 18px;
+        
+        padding-left: 40px;
+        
     }
   
   
-    .btnAvailableTech{
-      background: black;
-      color: white;
-      width: 120px;
-      height: 30px;
-      border-radius: 5px;
-      text-align: center;
-  
-  
-    }
-    .table{
-
-        width: 90%;
-        margin: auto auto;
-      }
-    
-  
+  }
