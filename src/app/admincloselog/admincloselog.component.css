@@ -211,6 +211,9 @@ body {
   }
 .status {
         font-weight: bold;
+        color: black;
+        ;
+      
   }
 .logbtn{
     color: white;

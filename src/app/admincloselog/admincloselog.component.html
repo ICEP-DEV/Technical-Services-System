@@ -63,17 +63,17 @@
                                 <th scope="col">Requests Reference</th>
                                 <th scope="col">Staff Name</th>
                                 <th scope="col">Staff-Feedback</th>
-                                <th scope="col">Artisan Progress Status</th>
+                                <th scope="col">Artisan Progress</th>
                                 <th scope="col">Close</th>
                               </tr>
                             </thead>
                             <tbody>
-                              <tr *ngFor="let data of readData">
+                              <tr *ngFor="let data of tasksToClose">
                                 <td>{{data.id}}</td>
                                 <td>{{data.description}}</td>
-                                <td>{{data.staff_feedback}}</td>
+                                <td class="status">{{data.staff_feedback}}</td>
                                 <td class="status">{{data.progress}}</td>
-                                <td><button type="button" class="logbtn " (click)="log($event,data.id)" [(ngModel)]="data.status">Log</button> </td>
+                                <td><button type="button" class="logbtn " (click)="log($event,data.id)" [(ngModel)]="data.status" *ngIf="data.staff_feedback.length != 0 &&  data.progress == 'complete' ">Log</button> </td>
                               </tr>
                             </tbody>
                           </table>
