@@ -19,18 +19,14 @@ export class AdmincloselogComponent {
   readData:any;
   tempdata:any
   ngOnInit():void{
-    // this.service.waitingToBeClose().subscribe((res)=>{
-    //   this.tempdata = res
-    //   this.readData = this.tempdata.result
-    //   console.log(this.readData);
-    // },(err)=>{
-    //   console.log(err)
-    // })
-    this.service.allRequests().subscribe((res)=>{
-      console.log(res.result,"res==>");
-      this.readData = res.result;
-      // localStorage.setItem('details', JSON.stringify(this.readData));
+    this.service.waitingToBeClose().subscribe((res)=>{
+      this.tempdata = res
+      this.readData = this.tempdata.result
+      console.log(this.readData);
+    },(err)=>{
+      console.log(err)
     })
+     
 
 
     this.data1 = localStorage.getItem('admindetails');

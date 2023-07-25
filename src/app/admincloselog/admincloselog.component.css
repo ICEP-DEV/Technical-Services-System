@@ -210,8 +210,7 @@ body {
     margin-left: 8.56%;
   }
 .status {
-        background-color: #7F4D3E;
-        color: white;
+        font-weight: bold;
   }
 .logbtn{
     color: white;
