@@ -9,6 +9,9 @@ body {
     width: 100%;
   }
   
+  .alert {
+    width: 98%;
+  }
 .header {
     height: 82px;
     background: #0c0c0c;

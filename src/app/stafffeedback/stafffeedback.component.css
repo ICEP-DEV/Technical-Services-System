@@ -18,6 +18,11 @@
  }
 
 
+ .alert{
+  background: #005596;
+  color: white;
+}
+
 body {
     width: 100%;
   }

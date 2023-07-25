@@ -59,6 +59,9 @@
                     <div class="backFrom" >
                         <h3 class="reqhead1">Staff Feedback</h3>
                     </div>
+                    <div *ngIf="showSuccessMsg" class="alert " role="alert">
+                        <strong style="background-color:#005596;color: white;">{{successmsg}}</strong>
+                    </div>
                     <div class="down">
                     
                         <form #feedback="ngForm" class="w-100% rounded-1  border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3" >

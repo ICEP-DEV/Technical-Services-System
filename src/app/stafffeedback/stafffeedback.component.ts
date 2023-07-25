@@ -74,7 +74,8 @@ export class StafffeedbackComponent implements OnInit {
     }
 
     if(data.staff_feedback == ""){
-      alert("Option not selected");
+      this.successmsg = "Option not selected";
+      this.showSuccessMsg = true;
       return;
     }
     console.log(staffId,data)
@@ -86,6 +87,7 @@ export class StafffeedbackComponent implements OnInit {
       
       this.successmsg = "Feedback Submitted";
       this.showSuccessMsg = true;
+      return;
       //this._router.navigate(['/trackrequest']);
     }
       console.log(response)

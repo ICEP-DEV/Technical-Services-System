@@ -12,6 +12,12 @@ body {
   .stats{
     margin: 10.8%;
   }
+
+  .alert{
+    background: #005596;
+    color: white;
+    width: 98%;
+  }
   /* Start of the navigation bar*/
   .header {
     height: 82px;

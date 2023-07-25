@@ -18,6 +18,7 @@ export class TechpageComponent implements OnInit{
   set_object:any;
 
 
+  value1:any;
   Requesterdetails:any
   staff: any;
   data1:any
@@ -55,8 +56,15 @@ export class TechpageComponent implements OnInit{
 progressTask(event:any,jobCardId:Number){
   var data={
     progress:event.target.value,
+    
   }
   
+
+  this.value1 = "Progress status updated to " + data.progress
+
+ //  this.navrouter.navigate(['/adminpage'])
+
+  console.log(this.value1)
   console.log(jobCardId)
 
   this.service.progressTech(jobCardId,data)
@@ -68,6 +76,7 @@ progressTask(event:any,jobCardId:Number){
         localStorage.setItem('Progress', JSON.stringify(this.setProgress.progress));
       }
 })
+
   
 
 
