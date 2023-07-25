@@ -39,6 +39,7 @@ import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
 import { TechpageComponent } from './techpage/techpage.component';
 import { CloselogComponent } from './closelog/closelog.component';
 import { HodViewProgressComponent } from './hod-view-progress/hod-view-progress.component';
+import { HodgeneratereportsComponent } from './hodgeneratereports/hodgeneratereports.component';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { HodViewProgressComponent } from './hod-view-progress/hod-view-progress.
      HODloginPageComponent,
      TechpageComponent,
      CloselogComponent,
-     HodViewProgressComponent
+     HodViewProgressComponent,
+     HodgeneratereportsComponent
      
   ],
   imports: [

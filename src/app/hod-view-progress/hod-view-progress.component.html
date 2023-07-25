@@ -75,30 +75,30 @@
 <div class="container">
 
 
-<table class="table">
-  <thead>
-        <tr>
-            <th scope="col">Staff name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Venue</th>
-            <th scope="col">Category</th>
-            <th scope="col">Request date</th>
-            <th scope="col">Priority</th>
-        </tr>
-  </thead>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Staff name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Venue</th>
+                <th scope="col">Category</th>
+                <th scope="col">Request date</th>
+                <th scope="col">Priority</th>
+            </tr>
+        </thead>
 
-  <tbody>
-    <tr *ngFor="let data of readData">
-      <td>{{ data.staff_name }}</td>
-      <td>{{ data.description }}</td>
-      <td>{{ data.venue }}</td>
-      <td>{{ data.Category }}</td>
-      <td>{{ data.request_date }}</td>
-      <td>{{ data.priority }}</td>
+        <tbody>
+            <tr *ngFor="let data of readData">
+                <td>{{ data.staff_name }}</td>
+                <td>{{ data.description }}</td>
+                <td>{{ data.venue }}</td>
+                <td>{{ data.Category }}</td>
+                <td>{{ data.request_date }}</td>
+                <td>{{ data.priority }}</td>
       
       
-    </tr>
-  </tbody>
+            </tr>
+        </tbody>
 
   
 </table>

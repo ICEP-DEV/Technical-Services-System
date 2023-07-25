@@ -22,6 +22,7 @@ import { HodViewProgressComponent } from './hod-view-progress/hod-view-progress.
 import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
 import { TechpageComponent } from './techpage/techpage.component';
 import { CloselogComponent } from './closelog/closelog.component';
+import { HodgeneratereportsComponent } from './hodgeneratereports/hodgeneratereports.component';
 
 
 
@@ -41,7 +42,8 @@ const routes: Routes = [
   {path: 'hodviewprogress',component:HodViewProgressComponent},
   {path: 'hodloginpage',component:HODloginPageComponent},
   {path: 'techpage',component:TechpageComponent},
-  {path: 'closelog',component:CloselogComponent}
+  {path: 'closelog',component:CloselogComponent},
+  {path: 'hodgeneratereports',component:HodgeneratereportsComponent},
 
 
   
