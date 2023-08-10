@@ -22,7 +22,7 @@
 }
 .header a:hover {
   text-decoration: none;
-  color:#005596;
+  color:#3b577c;
 }
 .header ul {
   display: flex;
@@ -47,7 +47,7 @@
 .dropbtn {
   background-color:#005596 ;
  
-  border-radius: 5px;
+  border-radius: 15px;
   height: 50px;
   color: white;
   padding: 16px;
@@ -93,7 +93,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.2) url(../../../assets/images/pic.jpg);
+  background: rgba(0, 0, 0, 0.2) url(../../../assets/images/muzi1.jpeg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -101,9 +101,9 @@
   color: white;
 }
 #banner h3 {
-  background: black;
+  background: rgba(0, 0, 0, 0.425);
   border-radius: 8px;
-  padding: 0 24px;
+  padding: 10 24px;
   font-size: 24px;
 }
 /*End of Banner making*/
