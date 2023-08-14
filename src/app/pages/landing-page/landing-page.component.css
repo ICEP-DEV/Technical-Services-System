@@ -93,12 +93,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.2) url(../../../assets/images/muzi1.jpeg);
+  /*background: rgba(0, 0, 0, 0.2) url(../../../assets/images/muzi1.jpeg);*/
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
   background-blend-mode: overlay;
-  color: white;
+  color: rgb(41, 62, 131);
 }
 #banner h3 {
   background: rgba(0, 0, 0, 0.425);
