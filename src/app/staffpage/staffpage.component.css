@@ -116,7 +116,7 @@ input.form-control {
 
 .sideNav {
 float: left;
-box-shadow: 5px 0 2px #575656;
+box-shadow: 5px 0 2px black;
 width: 300px;
 height: 850px;
 

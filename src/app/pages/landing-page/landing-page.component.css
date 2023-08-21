@@ -45,17 +45,20 @@
 /* #04AA6D */
 /* Start of Dropdown Buttons on the navigation bar */
 .dropbtn {
-  background-color:#005596 ;
+  background-color:#ffffff;
  
   border-radius: 15px;
   height: 50px;
-  color: white;
-  padding: 16px;
+  color: black;
+  padding: 5px 30px;
   font-size: 16px;
   border: none;
+  margin-left: 50px;
+ 
 }
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
+  margin: 15px 10px;
   position: relative;
   display: inline-block;
 }
@@ -88,7 +91,7 @@
 
 /*Start of Banner making*/
 #banner {
-  height: 100vh;
+  height: 30vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -119,13 +122,25 @@ h1 {
     font-weight: 500;
     font-size: 3rem;
     margin-bottom: .5rem;
-    margin-top: 4rem;
+    margin-top: 8rem;
+    color: #000000;
 }
 #about {
-    background: #b6eadd;
+    background: #cfcaca;
+    /* margin-bottom: 120px; */
+margin-left:auto ;
+ margin-right: auto;
+  
+
+     width:90%;
+     height:65%;
+     box-shadow:"10px 10px 17px -12px rgba(0,0,0,0.75)" ;
+ margin-top:30 ;
+   
+ 
   }
 #about span {
-    color: #ff9c11;
+    color: #005596;
     margin-left: .7rem;
 }
 #about h1 {
@@ -135,9 +150,10 @@ h1 {
     font-size: 1.2em;
 }
 #about-text { 
-    max-width: 600px;
-    padding-bottom: 6rem;
-    float: left;
+    width: 690px;
+    height: 225px;
+    flex-shrink: 0;
+    
 }
 .about-img img {
     width: 32rem; 
