@@ -119,6 +119,7 @@ float: left;
 box-shadow: 5px 0 2px black;
 width: 300px;
 height: 850px;
+background-color: #0c0c0c;
 
 
 }
@@ -138,7 +139,7 @@ padding: 6px 0;
 a {
 font-size: 16px;
 line-height: 20px;
-color: #2e2e2e;
+color: #ffffff;
 text-decoration: none;
 }
 
@@ -163,7 +164,7 @@ margin:0 0%;
 
 #hover:hover {
 font-weight: 700px;
-color: rgb(6, 85, 42);
+color: #2e2e2e;
 font-size: large;
 
 
@@ -176,6 +177,18 @@ cursor: pointer;
 
 
 
+}
+.btn{
+background-color: #0c0c0c;
+border: 1px solid black;
+}
+.mb-3 
+{
+ margin-left: 800px;
+}
+.header .btn{
+  background-color: #005596;
+  margin-top: 20px;
 }
 
 
