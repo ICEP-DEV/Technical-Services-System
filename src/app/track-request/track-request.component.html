@@ -69,8 +69,10 @@
 <form>
     
             <div class="d-flex justify-content-center w-100 rounded-5 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3" style="width:100%">
+                <div id="REQUEST" class="tabcontent">
                 <h1><b>REQUESTS</b></h1>
-                <div class="middleTableDivTextMargin" *ngFor="let request of allRequest">
+                </div>
+                <!-- <div class="middleTableDivTextMargin" *ngFor="let request of allRequest">
                     <p>Category: {{request.category}}</p>
                     <p>Description: {{request.description}}</p>
                     <p>Request Date: {{request.req_date}}</p>
@@ -78,7 +80,31 @@
                     <p>Venue: {{request.venue}}</p>
                     <button type="button" class="btn btn-secondary" *ngIf="numberDone > 0" (click)="feedback(request.id)">Feedback</button>
                     <hr>
-                </div>
+                </div> -->
+                <table class="table table-dark" >
+                    <thead>
+                      <tr>
+                        <th scope="col">Category</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Request Date</th>
+                        <!-- <th scope="col" >Expected to be fixed</th> -->
+                        <th scope="col">Venue</th>
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr *ngFor="let request of allRequest">
+                        <th scope="row">{{request.category}}</th>
+                        <td>{{request.description}}</td>
+                        <td>{{request.req_date}}</td>
+                        <!-- <td >{{request.expected_date}}</td>  -->
+                        <td>{{request.venue}}</td>
+                        <button type="button" class="btn btn-secondary" *ngIf="numberDone > 0" (click)="feedback(request.id)">Feedback</button>
+                        <!-- <hr> -->
+                      </tr>
+                    
+                    </tbody>
+                    
+                  </table>
 
 
             </div>

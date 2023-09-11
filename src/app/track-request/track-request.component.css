@@ -83,7 +83,7 @@
     /* identical to box height */
     letter-spacing: 0.035em;
     text-transform: capitalize;
-    color: #005596;
+    color: white;
     text-decoration: none;
   }
   .breadcrumbNav ul {
@@ -91,14 +91,14 @@
     flex-direction: column;
   }
   .breadcrumb-item.active {
-    border-bottom: 3px solid #005596;
+    border-bottom: 3px solid white;
     width: 115px;  
   }
   /* End of Everything on the side nav*/
   
   /*Disable the active link*/
   a:disabled, a[disabled] {
-    color: #005596;
+    color: white;
   }
   .anchorBorder{
     margin:0 20%;
@@ -269,6 +269,9 @@ letter-spacing: 0.15em;
 margin-left: 400px;
 padding-top: 2px;
 color: #000000;
+}
+.tabcontent{
+  text-align: center;
 }
 
 
