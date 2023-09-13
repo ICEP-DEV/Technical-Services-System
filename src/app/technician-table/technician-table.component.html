@@ -1,0 +1,47 @@
+<p>technician-table works!</p>
+<div class="container-fluid">
+    <!-- <body class="container"> -->
+        <div class="log d-flex justify-content-end">
+            <nav class="header">
+                <div id="logoDiv">
+                    <a>
+                     
+                        <img class="logo" src="../../../assets/images/tut.png" alt="SMART FARM"
+                            style="float: left;height: 70px;width: 225px;" routerLink="read">
+                    </a>
+                </div>
+                <div id="menu-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul>
+                    <li>
+        
+                        <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
+                                class="btn btn-success">LOGOUT</button></a>
+                    </li>
+                </ul>
+        
+            </nav>
+        </div>
+</div>
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Gender</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let technician of technicians">
+        <td>{{ technician.id }}</td>
+        <td>{{ technician.name }}</td>
+        <td>{{ technician.surname }}</td>
+        <td>{{ technician.gender }}</td>
+        <td>{{ technician.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

@@ -29,6 +29,7 @@ import { CloselogComponent } from './closelog/closelog.component';
 import { HodprogressComponent } from './hodprogress/hodprogress.component';
 import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
 import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
+import { TechnicianTableComponent } from './technician-table/technician-table.component';
 
 
 
@@ -58,6 +59,7 @@ const routes: Routes = [
   {path:'adminprogress',component:AdminprogressComponent},
   {path:'admindash', component:AdmindashboardComponent},
   {path:'dash2', component:DashboardComponent},
+  {path:'technician-table', component:TechnicianTableComponent}
   //{path:'generatereport',component:ReportComponent}
 
   

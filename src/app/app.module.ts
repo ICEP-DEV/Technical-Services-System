@@ -51,6 +51,7 @@ import { TechpageComponent } from './techpage/techpage.component';
 import { HodprogressComponent } from './hodprogress/hodprogress.component';
 import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
 import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
+import { TechnicianTableComponent } from './technician-table/technician-table.component';
 
 
 
@@ -91,6 +92,7 @@ import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.c
      HodcloselogsComponent,
      StaffsendrequestComponent,
     AvailableTechComponent,
+    TechnicianTableComponent,
   ],
   imports: [
     BrowserModule,
