@@ -24,24 +24,82 @@
             </nav>
         </div>
 </div>
-<table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Surname</th>
-        <th>Gender</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let technician of technicians">
-        <td>{{ technician.id }}</td>
-        <td>{{ technician.name }}</td>
-        <td>{{ technician.surname }}</td>
-        <td>{{ technician.gender }}</td>
-        <td>{{ technician.email }}</td>
-      </tr>
-    </tbody>
-  </table>
+<!-- <body>
+
+  <div class="container2 d-flex justify-content-between ">
+    <div class="sideNav">
+      <nav class="breadcrumbNav">
+          <ul>
+              <li class = "" id = "breadcrumbpadding"><a class ="" id="hover" href="#" routerLink="/adminpage"  >View Logs</a></li>
+              <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="" disabled>technicians</a></li>
+              
+                  
+          </ul>
+      </nav>
+  </div>
+
+  <div class="tab-content ps-3 mt-5" id="myTabContent">
+
+              
+    <div class = "contentForm" >
+       
+        <div class="departmenCategoryText">
+            <h2></h2>
+            <h4></h4>
+            <h5></h5>
+        </div>
+        
+        <div class="content card mt-4 p-4">
+
+    
+            <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Available technicians</h1>
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Available</th>
+                    <th scope="col">Campus</th>
+                    <th scope="col">Password</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let technician of technicians">
+                    <td>{{ technician.ID }}</td>
+                    <td>{{ technician.name }}</td>
+                    <td>{{ technician.surname }}</td>
+                    <td>{{ technician.phone }}</td>
+                    <td>{{ technician.email }}</td>
+                    <td>{{ technician.gender }}</td>
+                    <td>{{ technician.available }}</td>
+                    <td>{{ technician.campus}}</td>
+                    <td>{{ technician.password }}</td>
+
+                    <td class="status">{{data.status}}</td> -->
+<!--                     
+                    <td><button type="button" class="logbtn " (click)="log($event,data.id)" [(ngModel)]="data.status">Log</button> </td>
+                  </tr>
+                </tbody>
+              </table>
+            
+        </div>
+
+
+       
+    </div>
+
+
+
+
+
+
+</div>
+  </div>
+  <footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
+  </footer>  -->
+
   
