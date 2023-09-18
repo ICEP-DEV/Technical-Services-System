@@ -12,8 +12,8 @@ export class ApiserviceService {
 
   //connect frontend to backend
   // apiUrl  = 'https://naughty-blue-leg-warmers.cyclic.app'
-   apiUrl  = 'http://localhost:3000';
-//  apiUrl = "http://192.168.27.20:3000"
+   //apiUrl  = 'http://localhost:3000';
+  apiUrl = "http://192.168.27.54:3000"
   //get all data
 
   staffLogin(data: any) {
@@ -207,5 +207,5 @@ export class ApiserviceService {
     return this._http.get(`${this.apiUrl + "/admin/ServiceStatistics"}`)
 
   }
-      
+
 }
