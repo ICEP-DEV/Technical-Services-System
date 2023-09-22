@@ -1,8 +1,9 @@
 <!-- <body class="container"> -->
+    <!-- nav bar -->
 <div class="log d-flex justify-content-end">
     <nav class="header">
         <div id="logo-text">
-            <a>
+            <a href="index.html"(click)="logout()">
                 <img src="../../../assets/images/tut.png" alt="SMART FARM"
                     style="float: left;height: 72px;width: 225px;" routerLink="read">
             </a>
@@ -21,7 +22,7 @@
 <br>
 <br>
 
-
+<!-- side nav bar -->
 <div class="d-flex justify-content-between">
     <div class="sideNav">
         <nav class="breadcrumbNav">
@@ -48,32 +49,35 @@
 
         </nav>
     </div>
-    <!-- <ul class="nav nav-tabs flex-column justify-content-center" id="myTab" role="tablist">
-    
-            <li>
-                <img src=".../../../../assets/images/download.png" alt="">
-            </li>
-            <li class="nav-item" role="presentation" id="doing-tab1">
-                <button class="nav-link active colorRed" id="doing-tab" data-bs-toggle="tab" data-bs-target="#doing"
-                    type="button" role="tab" aria-controls="doing" aria-selected="true">
-                    <br><a>Request</a></button>
-            </li>
-            <li class="nav-item" role="presentation" id="doing-tab2">
-                <button class="nav-link colorAmber" id="in-progress-tab" data-bs-toggle="tab" data-bs-target="#in-progress"
-                    type="button" role="tab" aria-controls="in-progress" aria-selected="false"><br><a>Tracking</a></button>
-    
-            </li>
-            <li class="nav-item" role="presentation" id="doing-tab3">
-                <button class="nav-link colorGreen" id="done-tab" data-bs-toggle="tab" data-bs-target="#done" type="button"
-                    role="tab" aria-controls="done" aria-selected="false"><br><a>Feedback</a></button>
-            </li>
-        </ul> -->
+   
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Request</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" *ngIf="showSuccessMsg" class="alert alert-success" role="alert">
+            <strong>{{successmsg}}</strong>
+        </div>
+        <div class="modal-footer" >
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+          <button type="button" class="btn btn-primary" (click)="doSomething()" routerLink="/trackrequest">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+        <!-- send request -->
     <div class="tab-content ps-5" id="myTabContent">
         <div class="tab-pane fade show active" id="doing" role="tabpanel" aria-labelledby="doing-tab">
 
             <div>
-
-
                 <form method="POST"
                     class="w-100 rounded-1 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3"
                     enctype="multipart/form-data">
@@ -83,15 +87,7 @@
                         <button id="b12" type="button" class="btn-close" data-bs-dismiss="alert"
                             aria-label="Close"></button>
                     </div>
-                    <!-- 
-                        <label class="d-block mb-4" >
-                            <br>
-                            <span class="form-label d-block">
-                                <h4>Description</h4>
-                            </span>
-                            <textarea class="form-control" rows="3" [(ngModel)]="requestform.description"
-                                name="requestform.description" placeholder="Please describe your problem"></textarea>
-                        </label> -->
+                    
                     <div class="form-group">
                         <br>
                         <select (change)="buldingNoSelect($event)" class="form-control mb-2 mr-sm-2">
@@ -107,13 +103,7 @@
 
 
 
-                    <!-- <label for="formFileDisabled" class="form-label input-group"><span>
-                                <h4>Image</h4>
-                            </span>
-    
-                            <input class="form-control" [(ngModel)]="requestform.Image" name="requestform.Image" type="file"
-                                id="formFileDisabled" />
-                        </label> -->
+                   
     
                         <label class="Cater" for="Cater">
     
@@ -137,21 +127,11 @@
                             
                         </label>
 
-                        <!-- <label class="Cater" for="Cater">
-    
-                            <h4>Problem</h4>
-    
-                            <select id="Cater" >
-                                <option value="">Select Problem</option>
-                                <option *ngFor="let catItem of problemcategoryItems" value="{{catItem}}">{{catItem}}</option>
-                            </select>
-                            
-                        </label> -->
-
+                        
                    
     
                         <div class="mb-3">
-                            <button type="submit" (click)="clear()" (click)="request()"
+                            <button type="submit" (click)="clear()" (click)="request()" (click)="openModal()" (click)=" someEvent()"
                                 class="btn btn-primary px-3 rounded-3">
                                 Submit
                             </button>
@@ -170,102 +150,7 @@
     
     
             </div>
-            <!--         
-            <div class="tab-pane fade" id="in-progress" role="tabpanel" aria-labelledby="in-progress-tab">
-    
-    
-                <div class="row" id="tabContentPar">
-                    <div class="column">
-                        <img src="../../assets/images/todolist.png" alt="Snow" style="width:30%">
-                    </div>
-                    <div class="column">
-                        <img src="../../assets/images/inProgress.png" alt="Forest" style="width:30%">
-                    </div>
-                    <div class="column">
-                        <img src="../../assets/images/LikeHand.png" alt="Mountains" style="width:30%">
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="done" role="tabpanel" aria-labelledby="done-tab">
-                <br>
-                <div class="row" id="tabContentPar">
-                    <div id="done" role="tabpanel" aria-labelledby="done-tab">
-    
-    
-                        <div>
-    
-                            <form method="POST"
-                                class="w-100 rounded-1 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-8 px-lg-2 col-xl-8 px-xl-0 px-xxl-3"
-                                action="#" enctype="multipart/form-data">
-                                <div class="reqhead2">
-                                    <h1>Staff Feedback</h1>
-                                </div>
-    
-                                <br>
-                                <br>
-                                <br>
-                                <label class="d-block mb-4">
-                                    <span class="form-label d-block">
-                                        <h2>
-                                            <p>Thank you for taking your your time and give us feedback on the job we did
-                                                for you.</p> We
-                                            promise to read your comments carefully. Hopefully we managed to solve your
-                                            issues.
-                                        </h2>
-                                    </span>
-    
-                                </label>
-    
-                                <label class="d-block mb-2">
-                                    <span class="form-label d-block">
-                                        <h1>Finished?</h1>
-                                    </span>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                            value="option1">
-                                        <label class="form-check-label" for="inlineCheckbox1">Yes</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                            value="option2">
-                                        <label class="form-check-label" for="inlineCheckbox2">No</label>
-                                    </div>
-                                </label>
-    
-                                <label class="d-block mb-0">
-                                    <span class="form-label d-block">
-                                        <h1>Description</h1>
-                                    </span>
-                                    <textarea class="form-control" rows="3"
-                                        placeholder="Please describe your problem"></textarea>
-                                </label>
-    
-    
-                                <div class="mb-3">
-                                    <br>
-                                    <br>
-                                    <button type="submit" class="btn btn-primary px-3 rounded-3">
-                                        Submit
-                                    </button>
-                                </div>
-    
-                                <div class="d-block text-end">
-    
-                                </div>
-    
-    
-                            </form>
-                        </div>
-    
-    
-    
-                    </div>
-    
-    
-                </div>
-    
-            </div> -->
-
+           
 
 
     </div>

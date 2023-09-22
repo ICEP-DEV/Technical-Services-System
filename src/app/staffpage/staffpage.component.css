@@ -104,7 +104,10 @@ input.form-control {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   margin-bottom: 1rem;
 }
+#logo-text{
+  margin-left: 5%;
 
+}
 
 
 #b12{

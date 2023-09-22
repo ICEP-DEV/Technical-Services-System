@@ -1,3 +1,4 @@
+ <!-- nav bar -->
 <div class="log d-flex justify-content-end">
     <nav class="header">
         <div id="logo-text">
@@ -23,6 +24,7 @@
     <div class="d-flex justify-content-between">
     
     </div>
+         <!-- side nav bar -->
         <div class="sideNav">
             <nav class="breadcrumbNav">
                 <ul>
@@ -44,10 +46,14 @@
     
             </nav>
         </div>
+
+        <!-- staff request  -->
     <div class="contentContainerRight">
         <div class="backFrom" >
-            <h3 class="toptitle">Staff Track Request</h3>
+            <h2 class="toptitle">Staff Track Request</h2>
         </div>
+
+        <!-- request stats -->
         <div class="stats d-flex justify-content-left px-4">
         <form>
 
@@ -59,12 +65,13 @@
                 <label for="zero" id="gray" class="OnHold" (click)="getOnHoldTasks()">OnHold  {{hold}}</label>
                 <label for="hundred" id="green" class="Done" (click)="getCompleteTasks()">Done {{done}}</label>
             </div>
-            </form>
-<form>
+        </form>
+
+        <form>
     
             <div class="d-flex justify-content-center w-100 rounded-5 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3" style="width:100%">
                 <h1><b>REQUESTS</b></h1>
-                <div class="middleTableDivTextMargin" *ngFor="let request of allRequest">
+                <!-- <div class="middleTableDivTextMargin" *ngFor="let request of allRequest">
                     <p>Category: {{request.category}}</p>
                     <p>Description: {{request.description}}</p>
                     <p>Request Date: {{request.req_date}}</p>
@@ -72,7 +79,31 @@
                     <p>Venue: {{request.venue}}</p>
                     <button type="button" class="btn btn-secondary" *ngIf="numberDone > 0" (click)="feedback(request.id)">Feedback</button>
                     <hr>
-                </div>
+                </div> -->
+                <table class="table table-dark" >
+                    <thead>
+                      <tr>
+                        <th scope="col">Category</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Request Date</th>
+                        <!-- <th scope="col" >Expected to be fixed</th> -->
+                        <th scope="col">Venue</th>
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr *ngFor="let request of allRequest">
+                        <th scope="row">{{request.category}}</th>
+                        <td>{{request.description}}</td>
+                        <td>{{request.req_date}}</td>
+                        <!-- <td >{{request.expected_date}}</td>  -->
+                        <td>{{request.venue}}</td>
+                        <button type="button" class="btn btn-secondary" *ngIf="numberDone > 0" (click)="feedback(request.id)">Feedback</button>
+                        <!-- <hr> -->
+                      </tr>
+                    
+                    </tbody>
+                    
+                  </table>
 
 
             </div>
@@ -81,7 +112,13 @@
     </div>
     </div>
 
-    <footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
-    </footer>
+   
 
 </body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
+</footer>
