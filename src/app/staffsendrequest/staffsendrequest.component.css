@@ -38,11 +38,11 @@ body {
   }
   #logoDiv{
   
-    margin-left: 1%;
+    margin-left: 5%;
     margin-top: 7.2px;
   
   }
-  
+ 
   /*logout button*/
   .btn-success{
     color: white;

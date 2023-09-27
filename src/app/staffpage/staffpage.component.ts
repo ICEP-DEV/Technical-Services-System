@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild, AfterViewInit } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { RefConfirmFormComponent } from '../ref-confirm-form/ref-confirm-form.component';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
+declare var window:any;
 @Component({
+  providers:[DashboardComponent ],
   selector: 'app-staffpage',
   templateUrl: './staffpage.component.html',
   styleUrls: ['./staffpage.component.css']
@@ -23,8 +26,9 @@ export class StaffpageComponent implements OnInit {
   { buld_no: 8, vanues: [{ v: "LG1" }, { v: "LG2" }, { v: "G10" }, { v: "G12" }, { v: "110" }, { v: "111" }, { v: "112" }, { v: "210" }, { v: "220" }, { v: "238" }] },
   ]
 
+
  
-  
+  formModal:any;
   selectedBuilding: any
   buildingNo = ""
   requestform = {
@@ -41,7 +45,7 @@ export class StaffpageComponent implements OnInit {
 
   getSelectedMonth:any
 
-  constructor(private service: ApiserviceService, private _router: Router, private dialog: MatDialog) { }
+  constructor(private service: ApiserviceService, private _router: Router, private dialog: MatDialog,private admin:DashboardComponent) { }
   errormsg: any;
   successmsg: any;
   showSuccessMsg: any;
@@ -52,6 +56,28 @@ export class StaffpageComponent implements OnInit {
     // this.requestform.staff_id = this.staffId
     // console.log(this.staffId)
      this.category()
+     this.formModal=new window.bootstrap.Modal(
+      document.getElementById("exampleModalCenter")
+     );
+    //form modal
+  }
+  someEvent() {
+    // Trigger the popup event
+    this.service.triggerPopup();
+  }
+  openModal(){
+    this.formModal.show();
+    // this.admin.openAdminModal();
+  }
+  doSomething(){
+    ///close modal
+    this.formModal.hide();
+  }
+  //admin alert function
+  adminAlert(){
+    this.service.adminModal().subscribe(()=>{
+      console.log("admin pop");
+    })
   }
 
   buldingNoSelect(event: any) {
@@ -165,6 +191,8 @@ category(){
 
 
   }
+  
+
 
 
 
