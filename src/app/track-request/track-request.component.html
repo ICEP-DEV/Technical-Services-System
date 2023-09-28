@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
 <div class="log d-flex justify-content-end">
     <nav class="header">
         <div id="logo-text">
@@ -9,6 +12,14 @@
         <div id="menu-icon">
             <i class="fas fa-bars"></i>
         </div>
+
+        <ul>
+            <li>
+
+                <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
+                        class="btn btn-success">LOGOUT</button></a>
+            </li>
+        </ul>
 
     </nav>
 </div>
@@ -33,20 +44,13 @@
                     <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="anchorBorder" id="hover"
                             disabled="true"><b>TRACKING</b></a></li>
                 </ul>
-   
-                <ul>
-                    <li>
-        
-                        <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
-                                class="btn btn-success">LOGOUT</button></a>
-                    </li>
-                </ul>
+
     
             </nav>
         </div>
     <div class="contentContainerRight">
         <div class="backFrom" >
-            <h3 class="toptitle">Staff Track Request</h3>
+            <h3 class="toptitle">STAFF TRACK REQUEST</h3>
         </div>
         <div class="stats d-flex justify-content-left px-4">
         <form>
@@ -60,11 +64,12 @@
                 <label for="hundred" id="green" class="Done" (click)="getCompleteTasks()">Done {{done}}</label>
             </div>
             </form>
-<form>
-    
+            <form>
+<!--     
             <div class="d-flex justify-content-center w-100 rounded-5 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3" style="width:100%">
-                <h1><b>REQUESTS</b></h1>
-                <div class="middleTableDivTextMargin" *ngFor="let request of allRequest">
+
+                <h1 class="reqhead"><b>REQUESTS</b></h1>
+                <!--<div class="middleTableDivTextMargin" *ngFor="let request of allRequest">
                     <p>Category: {{request.category}}</p>
                     <p>Description: {{request.description}}</p>
                     <p>Request Date: {{request.req_date}}</p>
@@ -73,15 +78,41 @@
                     <button type="button" class="btn btn-secondary" *ngIf="numberDone > 0" (click)="feedback(request.id)">Feedback</button>
                     <hr>
                 </div>
+            </div> -->
+       
+            <h1 class="reqhead"><b>REQUESTS</b></h1>
+      <table class="table table-hover"><!--d-flex justify-content-center w-50 rounded-5 p-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-4 col-lg- px-lg-2 col-xl-8 px-xl-0 px-xxl-3" style="width:50%-->
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Category</th>
+                <th scope="col">Description</th>
+                <th scope="col">Request Date</th>
+                <th scope="col">Venue</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider " *ngFor="let request of allRequest">
+              <tr>
+                <th scope="row"></th>
+                <td>{{request.category}}</td>
+                <td>{{request.description}}</td>
+                <td>{{request.req_date}}</td>
+                <td>{{request.venue}}</td>
+            </tr>
+  </tbody>
+</table></form>
 
-
-            </div>
-
-        </form>
     </div>
     </div>
-
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br> <br> <br> <br> <br> <br> <br>   
     <footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
     </footer>
 
 </body>
+</html>

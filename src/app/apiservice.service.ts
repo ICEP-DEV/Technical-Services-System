@@ -11,15 +11,19 @@ export class ApiserviceService {
   constructor(private _http: HttpClient) { }
 
   //connect frontend to backend
-  apiUrl  = 'https://naughty-blue-leg-warmers.cyclic.app'
+  // apiUrl  = 'https://naughty-blue-leg-warmers.cyclic.app'
    //apiUrl  = 'http://localhost:3000';
- // apiUrl = "http://192.168.27.20:3000"
+  apiUrl = "http://192.168.27.54:3030"
   //get all data
 
   staffLogin(data: any) {
     return this._http.post(this.apiUrl + "/staff/authenticateStaffNumber", data);
   }
 
+  //creating new artisan
+  createNewArtisan(data:any):Observable<any>{
+    return this._http.post(`${this.apiUrl}`, data);
+  }
 
   adminLogin(data: any) {
     return this._http.post(this.apiUrl + "/admin/login", data);

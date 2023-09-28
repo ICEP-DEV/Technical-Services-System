@@ -14,10 +14,11 @@
   padding:0 16px 0 0;
   box-sizing: border-box;
   z-index: 100;
+  right:0px;
 }
 .header a {
   padding: 0 32px;
-  color: #eee;
+  color: rgb(227, 227, 233);
   transition: 0.4s;
 }
 .header a:hover {
@@ -34,7 +35,7 @@
 }
 #logoDiv{
 
-  margin-left: 1%;
+  margin-left: 5%;
   margin-top: 7.2px;
 
 }
@@ -45,19 +46,21 @@
 /* #04AA6D */
 /* Start of Dropdown Buttons on the navigation bar */
 .dropbtn {
-  background-color:#005596 ;
- 
+  background-color:#eceef3 ;
+
   border-radius: 5px;
-  height: 50px;
-  color: white;
+  height:50px;
+  color: black;
   padding: 16px;
   font-size: 16px;
   border: none;
+  font-weight: bold;
 }
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
+  padding: 14px 40px;
 }
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -82,7 +85,9 @@
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #005596;}
+.dropdown:hover .dropbtn {background-color: #005596;
+color: white;
+}
 
 /* End of Dropdown Buttons on the navigation bar */
 
@@ -90,18 +95,18 @@
 #banner {
   height: 100vh;
   display: flex;
+  background-color: #f7f7f7;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.2) url(../../../assets/images/pic.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
   background-blend-mode: overlay;
-  color: white;
+  color: rgb(11, 11, 12);
 }
 #banner h3 {
-  background: black;
+  background: #c7c3be;
   border-radius: 8px;
   padding: 0 24px;
   font-size: 24px;
@@ -120,12 +125,13 @@ h1 {
     font-size: 3rem;
     margin-bottom: .5rem;
     margin-top: 4rem;
+    font-family: 'Sansation Bold', italic;
 }
 #about {
-    background: #b6eadd;
+    background: #D9D9D9;
   }
 #about span {
-    color: #ff9c11;
+    color: #0f83d1;
     margin-left: .7rem;
 }
 #about h1 {
@@ -146,6 +152,7 @@ h1 {
     padding-left: 3rem;
     float: right;
 }
+
 p {
   line-height: 1.5;
 }

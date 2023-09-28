@@ -13,14 +13,14 @@ border-right: 5px solid #0e0f52;
 
 .reqhead1{
   
-    border: 2px solid rgb(255, 255, 255);
-    background-color: #ECE7E7; 
+    border: 2px solid rgb(211, 211, 211);
+    background-color: #dfdddd; 
     font-weight: bold;
 
 
 
 
-font-family: 'Sansation';
+font-family: 'monaco';
 font-style: normal;
 font-weight: 700;
 font-size: 32px;
@@ -28,6 +28,17 @@ line-height: 36px;
 letter-spacing: 0.15em;
 
 color: #000000;
+}
+.btn-success {
+  background-color:#eceef3 ;
+
+  border-radius: 5px;
+  height:50px;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  font-weight: bold;
 }
 
 .reqhead2{
@@ -47,6 +58,11 @@ line-height: 36px;
 letter-spacing: 0.15em;
 
 color: #000000;
+}
+#logo-text{
+  margin-left: 7%;
+  margin-top: 7.2px;
+
 }
 
 
@@ -116,7 +132,7 @@ input.form-control {
 
 .sideNav {
 float: left;
-box-shadow: 5px 0 2px #575656;
+box-shadow: 5px 0 2px grey;
 width: 300px;
 height: 850px;
 
@@ -129,9 +145,12 @@ padding: 20px 30px;
 top:0%;  
     
 }
+
+
 #breadcrumbpadding {
 
 width: 115px;  
+font-family: 'Arial';
 padding: 6px 0;
 }
 
@@ -150,7 +169,7 @@ flex-direction: column;
 .breadcrumb-item.active {
 
 
-border-bottom: 3px solid #4b4c4d;
+border-bottom: 3px solid #2046c4;
 width: 115px;  
 
 }

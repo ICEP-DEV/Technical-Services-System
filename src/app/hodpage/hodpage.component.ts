@@ -17,6 +17,11 @@ export class HODpageComponent implements OnInit{
   readData: any;
 
 
+  logout(){
+    localStorage.removeItem('logindata')
+  }
+  
+
 
   ngOnInit(): void {
     

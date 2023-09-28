@@ -16,7 +16,7 @@
                     <li>
         
                         <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
-                                class="btn btn22" style="padding: 0 10px;">LOGOUT</button></a>
+                                class="btn btn-success" style="padding: 0 10px;">LOGOUT</button></a>
                     </li>
                 </ul>
         
@@ -57,12 +57,12 @@
 				</ul>
 			</nav>
 		</div>
+
+		<br><br>
+
 		<div class="main">
-
-	
-
 			<div class="box-container">
-
+            
 				<div class="box box1">
 					<svg class ="svg" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" width="40px" height="64px"
                                 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
@@ -143,6 +143,7 @@
 
 					<div class="items">
 						<div class="item1">
+							
 							<h3 class="t-op-nextlvl">{{statsData.active}}%</h3>
 							<h3 class="t-op-nextlvl">{{statsData.averageInProgress}}%</h3>
 							<h3 class="t-op-nextlvl">{{statsData.averageCompleted}}%</h3>
@@ -155,25 +156,29 @@
 					<h1 class="Tasks-Categories">Tasks Categories</h1>
 				</div>
 				
+			<!-- <div class="report-body"> -->
+				<table class="table table-striped " >
+					<thead>
+					  <tr>
+						<th scope="col">Categories</th>
+						<th scope="col">Total</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<tbody class="item1" *ngFor="let categories of taskCategories ">
+						<td>{{categories.category}}<td>
+						<td>{{categories.total}}</td>
+					  </tr>
+					</tbody>
+				</table> 
 
-				<div class="report-body">
-					<div class="report-topic-heading">
-						<h3 class="t-op">Categories</h3>
-						<h3 class="t-op">Total</h3>
-						<!-- <h3 class="t-op">Comments</h3>
-						<h3 class="t-op">Status</h3> -->
-					</div>
-					<div class="items">
-						<div class="item1" *ngFor="let categories of taskCategories ">
-							<h3 class="t-op-nextlvl">{{categories.category}}</h3>
-							<h3 class="t-op-nextlvl">{{categories.total}}</h3>
-						</div>
-					</div>
-				</div>
-			</div>
+				
+				</div> 
+			<!-- </div> -->
 			<!--eND OF Bottom part/UNDER THE TICKETS  -->
 		</div>
-	</div>
+	</div><br><br>
 	<footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
 	</footer>
 	

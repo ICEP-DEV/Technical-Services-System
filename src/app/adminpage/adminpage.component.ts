@@ -30,6 +30,8 @@ export class AdminpageComponent implements OnInit {
   set_print:any;
   expo:any;
   statsData:any;
+  
+  
  
 
   setPriority = {
@@ -93,6 +95,11 @@ console.log(reference)
 localStorage.setItem('reference',reference.toString())
 
 this.navrouter.navigate(['/availableTechnician'])
+
+// deleteItem(reference: number) {
+//   // Perform deletion logic here
+//   console.log("Item deleted with reference:", reference);
+// }
 
 // //   this.service.allRequests().subscribe(response=>{
   

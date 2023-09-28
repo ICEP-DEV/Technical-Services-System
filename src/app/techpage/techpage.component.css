@@ -24,6 +24,18 @@ body {
     color: #eee;
     transition: 0.4s;
   }
+  .btn22 {
+    background-color:#eceef3 ;
+  
+    border-radius: 5px;
+    height:50px;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    font-weight: bold;
+  }
+
   .header a:hover {
     text-decoration: none;
     color: red;

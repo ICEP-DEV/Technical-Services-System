@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { RefConfirmFormComponent } from '../ref-confirm-form/ref-confirm-form.component';
 
+declare var window:any;
 @Component({
   selector: 'app-staffpage',
   templateUrl: './staffpage.component.html',
@@ -23,8 +24,8 @@ export class StaffpageComponent implements OnInit {
   { buld_no: 8, vanues: [{ v: "LG1" }, { v: "LG2" }, { v: "G10" }, { v: "G12" }, { v: "110" }, { v: "111" }, { v: "112" }, { v: "210" }, { v: "220" }, { v: "238" }] },
   ]
 
- 
-  
+   
+  showButton: boolean=true;
   selectedBuilding: any
   buildingNo = ""
   requestform = {
@@ -35,6 +36,7 @@ export class StaffpageComponent implements OnInit {
     staff_id: "",
 
   };
+  btnClose:any;
 
   categoryList:any;
   catergoryIssue:any;
@@ -52,7 +54,36 @@ export class StaffpageComponent implements OnInit {
     // this.requestform.staff_id = this.staffId
     // console.log(this.staffId)
      this.category()
+     this.formModal=new window.bootstrap.Modal(
+      document.getElementById("exampleModalCenter")
+     );
+    //form modal
+    this.btnClose.getElementById("close");
+   
   }
+  openModal(){
+    this.formModal.show();
+  }
+  doSomething(){
+    ///close modal
+    this.formModal.hide();
+  }
+
+    
+  close(){
+    var myid = localStorage.getItem('stafflogin')?.toString()
+    this.staffId = myid?.substring(1, myid.length - 1)
+    this.requestform.staff_id = this.staffId
+    console.log(this.requestform)
+    
+    if (this.requestform.description == '' && this.requestform.category == '' && this.requestform.venue == '') {
+      
+     this.btnClose.hide();
+    }
+  }
+
+
+ 
 
   buldingNoSelect(event: any) {
     var venueArray = []
@@ -165,6 +196,8 @@ category(){
 
 
   }
+  formModal:any;
+
 
 
 
@@ -209,4 +242,3 @@ category(){
   }
 
 }
-
