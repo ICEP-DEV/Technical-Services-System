@@ -4,6 +4,7 @@ import { ApiserviceService } from '../apiservice.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { RefConfirmFormComponent } from '../ref-confirm-form/ref-confirm-form.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-staffpage',
@@ -11,6 +12,9 @@ import { RefConfirmFormComponent } from '../ref-confirm-form/ref-confirm-form.co
   styleUrls: ['./staffpage.component.css']
 })
 export class StaffpageComponent implements OnInit {
+  data:any
+  Requesterdetails:any
+  data1:any
   bld_no = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   venue = [{ buld_no: 10, vanues: [{ v: "LG1" }, { v: "LG2" }, { v: "G10" }, { v: "G12" }, { v: "110" }, { v: "111" }, { v: "112" }, { v: "210" }, { v: "220" }, { v: "238" }] },
   { buld_no: 1, vanues: [{ v: "LG1" }, { v: "LG2" }, { v: "G10" }, { v: "G12" }, { v: "110" }, { v: "111" }, { v: "112" }, { v: "210" }, { v: "220" }, { v: "238" }] },
@@ -40,18 +44,35 @@ export class StaffpageComponent implements OnInit {
   catergoryIssue:any;
 
   getSelectedMonth:any
+  staff: any;
 
-  constructor(private service: ApiserviceService, private _router: Router, private dialog: MatDialog) { }
+  constructor(private service: ApiserviceService, private _router: Router,private location: Location) { }
   errormsg: any;
   successmsg: any;
   showSuccessMsg: any;
   staffId: any
   ngOnInit(): void {
+    
     // var myid = localStorage.getItem('stafflogin')?.toString()
     // this.staffId = myid?.substring(1, myid.length - 1)
     // this.requestform.staff_id = this.staffId
     // console.log(this.staffId)
      this.category()
+
+     this.data1 = localStorage.getItem('staff');
+
+      this.Requesterdetails = JSON.parse(this.data1)
+
+      this.staff = this.Requesterdetails.result[0]
+
+      console.log(this.staff)
+     console.log(this.Requesterdetails)
+
+
+
+
+    
+
   }
 
   buldingNoSelect(event: any) {
@@ -142,6 +163,8 @@ category(){
 
       .subscribe((response) => {
         this.request_object = response;
+
+      
         if (this.request_object.success == true) {
           this.successmsg = this.request_object.message;
           this.showSuccessMsg = true;
@@ -151,11 +174,17 @@ category(){
             venue: '',
             //Image: Blob,
             staff_id: '',
+           
+            
+            
           };
+          setTimeout(() => {
+            this.refreshPage();
+          }, 5000);
         } else {
           console.log("User ID doesnt match credentials")
         }
-
+        
       },
         (error) => {
           this.errormsg = error;
@@ -166,36 +195,11 @@ category(){
 
   }
 
+  refreshPage(): void {
+    this.location.replaceState('/staffpage');
+    window.location.reload();
+  }
 
-
-  // staffRequest()
-  // {
-  //   if(this.userForm.valid)
-  //   {
-  //     console.log(this.userForm.value);
-  //     this.service.staffRequests(this.userForm.value).subscribe((res)=>{
-  //       console.log(res,'res==>');
-  //       this.userForm.reset();
-  //     })
-  //   }
-  //   else{
-  //     this.errormsg = 'all field is required';
-  //   }
-
-  // }
-
-  // constructor(private dialog: MatDialog) {}
-
-  // openTrackForm(): void {
-  //   const dialogRef = this.dialog.open(TrackformComponent, {
-  //     width: '700px',
-  //     disableClose: true
-  //   });
-
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log('The dialog was closed');
-  //   });
-  // }
 
 
 
@@ -207,6 +211,4 @@ category(){
 
 
   }
-
 }
-

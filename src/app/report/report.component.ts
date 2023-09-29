@@ -30,8 +30,7 @@ export class ReportComponent implements OnInit{
        this.dataSource.paginator = this.paginator;
        this.dataSource.sort = this.matSort
       console.log(res.result,"res==>");
-      // this.readData = res.result;
-      // console.log(this.readData);
+      
       
     })
   }
@@ -40,17 +39,6 @@ export class ReportComponent implements OnInit{
     this.dataSource.filter = $event.target.value;
   }
 
-  // Search() {
-  //   if (this.id == "") {
-  //     this.ngOnInit();
-  //   } else {
-  //     this.readData = this.readData.filter((res: { id: string }) => {
-  //       return res.id.toLowerCase().includes(this.id.toLowerCase());
-  //     });
-  //   }
-  // }
-  logout(){
-    localStorage.removeItem('logindata')
-  }
+  
 
 }

@@ -1,10 +1,14 @@
-import { Component, OnInit, Inject, ViewChild } from '@angular/core';
+
+import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ApiserviceService } from '../apiservice.service';
-import { Route, Router } from '@angular/router';
-import { MatTableDataSource } from '@angular/material/table';
-import {MatPaginatorModule, MatPaginator} from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { Route, Router,NavigationExtras } from '@angular/router';
+import { AssignPopupComponent } from '../assign-popup/assign-popup.component';
+import { MatDialog } from '@angular/material/dialog';
+import { AdminprogressComponent } from '../adminprogress/adminprogress.component';
+import { Location } from '@angular/common';
+
+
 
 @Component({
   selector: 'app-adminpage',
@@ -13,53 +17,79 @@ import { MatSort } from '@angular/material/sort';
 })
 export class AdminpageComponent implements OnInit {
 
-  id:any;
-  displayedColumns=['staff_id','category', 'priority', 'progress', 'assigned_date','completed_date','description','venue','staff_feedback','tech_feedback','status'];
-  dataSource! :MatTableDataSource<any>;
 
-  @ViewChild('paginator') paginator!: MatPaginator;
-  @ViewChild(MatSort) matSort!: MatSort;
-  constructor(private service:ApiserviceService,private navrouter:Router) { }
-    
+  currentPage = 1;
+  itemsPerPage = 5;
 
-
-   data: any;
+  constructor(private service:ApiserviceService, private navrouter:Router, private dialog: MatDialog,private location: Location) { }
+  statsData:any;
   readData:any;
   temData:any;
   set_object: any;
   set_print:any;
   expo:any;
-  statsData:any;
+  set_object2: any;
+  repo:any;
+  complete:any;
+  tech:any;
  
 
   setPriority = {
     priority: ''
   }
 
+  
+ 
+  
+
   ngOnInit(): void{
     this.service.allRequests().subscribe((res)=>{
       console.log(res.result,"All the logs");
       this.readData = res.result;
       localStorage.setItem('details', JSON.stringify(this.readData));
-      
     })
     this.total()
-    this.getStats();
-
+    this.totalcomplete()
+    this.totalTech()
+    this.getStats()
+    
     
   }
 
-  filterData($event : any){
-    this.dataSource.filter = $event.target.value;
-  }
-  
-  total():void{
-    this.service.totalRequests().subscribe((res)=>{
+  totalcomplete():void{
+    this.service.totalcomplete().subscribe((res)=>{
       // console.log(res.result,"ram==>");
-      this.temData = res
-      console.log(this.temData)
-    })
-  }
+      this.complete = res
+      console.log(this.complete)
+  })
+}
+
+getStats() {
+  this.service.getLogServiceStatistics().subscribe((res) => {
+    this.statsData = res;
+    // console.log(typeof(this.statsData), "Object Type");
+
+    // this.statsData.push(this.datadata)
+    console.log(this.statsData, "Statistics data");
+  })
+}
+
+
+total():void{
+  this.service.totalRequests().subscribe((res)=>{
+    // console.log(res.result,"ram==>");
+    this.temData = res
+    console.log(this.temData)
+})
+}
+
+totalTech():void{
+  this.service.totalTech().subscribe((res)=>{
+    // console.log(res.result,"ram==>");
+    this.tech = res
+    console.log(this.tech)
+})
+}
 
 logout(){
   localStorage.removeItem('logindata')
@@ -120,7 +150,6 @@ this.navrouter.navigate(['/availableTechnician'])
 
 
 
-
 downloadFile() {
 const apiUrl = "http://192.168.27.20:3000"; // Replace with your API URL
 
@@ -145,16 +174,65 @@ document.body.removeChild(link);
 }
 
 
-  getStats(){
-    this.service.getLogServiceStatistics().subscribe((response)=>{
-        this.statsData = response;
-        // console.log(typeof(this.statsData), "Object Type");
 
-        // this.statsData.push(this.datadata)
-        console.log(this.statsData, "Statistics data");
-    })
-  }
+openForm(reference:Number): void {
 
+  console.log(reference)
+
+localStorage.setItem('reference',reference.toString())
+
+  const dialogRef = this.dialog.open(AssignPopupComponent, {
+    width: '700px',
+    disableClose: true
+  });
+
+  dialogRef.afterClosed().subscribe((res:any) => {
+    console.log('The dialog was closed');
+  });
+
+ 
+}
+
+deletereq(event:any,jobCardId:Number){
+ 
+  
+  console.log(jobCardId)
+
+  this.service.deleteReq(jobCardId)
+
+    .subscribe((response) => {
+      this.set_object = response;
+      alert(this.set_object.message)
+      
+        this.refreshPage();
+      
+
+      
+})
+}
+
+refreshPage(): void {
+  this.location.replaceState('/adminpage');
+  window.location.reload();
+}
+
+getPageData(): any[] {
+  const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  const endIndex = startIndex + this.itemsPerPage;
+  return this.readData.slice(startIndex, endIndex);
+}
+
+// Function to set the current page
+setPage(pageNumber: number) {
+  this.currentPage = pageNumber;
+}
+
+// Function to generate an array of page numbers for the pagination control
+get pages(): number[] {
+  const pageCount = Math.ceil(this.readData.length / this.itemsPerPage);
+  return Array.from({ length: pageCount }, (_, i) => i + 1);
+}
 
 }
+
 

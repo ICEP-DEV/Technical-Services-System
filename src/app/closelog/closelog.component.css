@@ -332,3 +332,11 @@ a {
  
  
 }
+
+.chart2 {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 7px 25px rgba(175, 173, 173, 0.8);
+  width: 95%;
+}

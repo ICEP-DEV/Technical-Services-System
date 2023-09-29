@@ -15,7 +15,7 @@ export class CloselogComponent implements OnInit{
 
   readData:any;
   ngOnInit():void{
-    this.service.allRequests().subscribe((res)=>{
+    this.service.logreq().subscribe((res)=>{
       console.log(res.result,"res==>");
       this.readData = res.result;
       // localStorage.setItem('details', JSON.stringify(this.readData));
