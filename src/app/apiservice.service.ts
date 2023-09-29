@@ -13,8 +13,8 @@ export class ApiserviceService {
   constructor(private _http: HttpClient) { }
 
   //connect frontend to backend
-  // apiUrl  = 'https://naughty-blue-leg-warmers.cyclic.app'
-   apiUrl  = 'http://localhost:3030';
+   apiUrl  = 'https://pink-splendid-cheetah.cyclic.cloud'
+   //apiUrl  = 'http://localhost:3030';
  // apiUrl = "http://192.168.27.20:3030"
   //get all data
   formModal:any;
