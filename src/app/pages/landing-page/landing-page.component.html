@@ -1,36 +1,52 @@
-<!-- <body class="container"> -->
-   <div class="log d-flex justify-content-end">
-    <NAv>
-      <div id="logo-text">
-        <a href="#">
-          <img src="../../../assets/images/tut.png" alt="TUT" style="float: left;height: 74px;width: 225px;">
-        </a>
-      </div>
-      
-      <div id="menu-icon">
-          <i class="fas fa-bars"></i>
-      </div>
+<div class="container-fluid">
+  <!-- <body class="container"> -->
+      <div class="log d-flex justify-content-end">
+          <nav class="header">
+              <div id="logoDiv">
+                  <a>
+                      <img class="logo" src="../../../assets/images/tut.png" alt="SMART FARM"
+                          style="float: left;height: 70px;width: 225px;" routerLink="read" />
+                  </a>
+              </div>
+              <!-- <div id="menu-icon">
+                  <i class="fas fa-bars"></i>
+              </div> -->
+              <ul>
+                <div class="dropdown">
+                  <button class="dropbtn">SIGN IN</button>
+                  <div class="dropdown-content">
+                    <a class="nav-link active" id="ModalExample" (click)="openForm()">Log Complaint</a>
 
-      <ul>
-        <div class="dropdown">
-          <button class="dropbtn">REQUEST</button>
-          <div class="dropdown-content">
-            <a class="nav-link active" id="ModalExample" (click)="openForm()">Log Complaint</a>
-          </div>
-        </div>
-          <li>
-              <a class="nav-link active" id="ModalExample" (click)="openLogin()">ADMIN</a>
-          </li>
-          <li>
-            <a class="nav-link active" id="ModalExample" (click)="openTech()">ARTISAN</a>
-          </li>
-          
-      </ul>
-  </NAv>
-   </div>
+
+                    <li>
+                      <a class="nav-link active" id="ModalExample" (click)="openLogin()">ADMIN</a>
+                  </li>
+                  <li>
+                    <a class="nav-link active" id="ModalExample" (click)="openHOD()">HOD</a>
+                </li>
+                  <li>
+                    <a class="nav-link active" id="ModalExample" (click)="openTech()">TECHNICIAN</a>
+                  </li>
+                  </div>
+                </div>
+                 
+                  
+              </ul>
+      
+          </nav>
+      </div>
+</div>
+
+
+
+
+
+<!-- <body class="container"> -->
+   
+
 
    
-   <div id="banner">
+<div id="banner">
     <h1>Technical Services</h1>
     <!-- <h3>We Can Help You Fix All Of Your Technical Problems</h3> -->
 </div> 
@@ -46,11 +62,11 @@
           Regardless of of such, they are innefective. The Technical Services System aims to improve/help employees in an orgarnisation solve
         technical difficulties effectively. Thus improving productivity in orgarnisations.</p>
       </div> 
-      <div class="about-img"><img src="../../../assets/images/footer.png"  style="height: 350px;width: 250px;"></div>
+      <div class="about-img"><img src="../../../assets/images/footer.png"  style="height: 500px;width: 400px;"></div>
     </section>
     
     
-  </body>
+    
     
     <footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
     </footer>

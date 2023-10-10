@@ -6,8 +6,7 @@ import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-
-
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TechloginComponent } from './techlogin/techlogin.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';

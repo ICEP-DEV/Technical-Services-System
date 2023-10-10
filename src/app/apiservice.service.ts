@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 // import { DashboardComponent } from './dashboard/dashboard.component';
 
-declare var window:any;
+declare var window: any;
 @Injectable({
   providedIn: 'root'
 })
@@ -12,35 +12,35 @@ export class ApiserviceService {
   constructor(private _http: HttpClient) { }
 
   //connect frontend to backend
-  apiUrl  = 'https://pink-splendid-cheetah.cyclic.cloud'
-  // apiUrl  = 'http://localhost:3000';
+  // apiUrl = 'https://pink-splendid-cheetah.cyclic.cloud'
+  apiUrl  = 'http://localhost:3030';
   // apiUrl = "http://192.168.27.20:3000"
   //get all data
-  formModal:any;
+  formModal: any;
   popupEvent: EventEmitter<void> = new EventEmitter<void>();
 
   triggerPopup() {
     this.popupEvent.emit();
   }
 
- 
+
   ////pop functions
- adminModal(): Observable<any>{///create an instance of the modal
-  this.formModal=new window.bootstrap.Modal(
-    document.getElementById("exampleModalCenter")
-   );
-  
+  adminModal(): Observable<any> {///create an instance of the modal
+    this.formModal = new window.bootstrap.Modal(
+      document.getElementById("exampleModalCenter")
+    );
+
     return this.formModal.show();
-  
- }
 
- ////open modal
+  }
 
-adminClose(): Observable<any>{
-  ///close modal
-  return this.formModal.hide();
-}
-   
+  ////open modal
+
+  adminClose(): Observable<any> {
+    ///close modal
+    return this.formModal.hide();
+  }
+
 
   staffLogin(data: any) {
     return this._http.post(this.apiUrl + "/staff/authenticateStaffNumber", data);
@@ -55,7 +55,7 @@ adminClose(): Observable<any>{
     return this._http.post(this.apiUrl + "/hod/login", data);
   }
 
-  
+
   techLogin(data: any) {
     return this._http.post(this.apiUrl + "/technician/login", data);
   }
@@ -83,59 +83,61 @@ adminClose(): Observable<any>{
   }
 
 
-/*
-  createData(data: any): Observable<any> {
-    console.log(data, 'createapi=>');
-
-    return this._http.post(`${this.apiUrl}`, data);
-  }
-*/
+  /*
+    createData(data: any): Observable<any> {
+      console.log(data, 'createapi=>');
+  
+      return this._http.post(`${this.apiUrl}`, data);
+    }
+  */
 
   getDataById(id: number): Observable<any> {
     return this._http.get(`${this.apiUrl}/${id}`);
   }
 
-  
+
   /*Admin Apis*/
 
 
 
   /*Staff Apis*/
-      //Api post feedback connection STAFF
-      
-      postStaffFeedback(id: number, data: any): Observable<any> {
-        
-        return this._http.put(`${this.apiUrl}/staff/sendFeedback/${id}`, data);
-      }
-      
+  //Api post feedback connection STAFF
+  
+  gettotalClosedLogs():Observable<any>{
+    return this._http.get(`${this.apiUrl + "/admin/getTotalClossedLogs"}`);
+  }
 
-      allRequests():Observable<any>
-      {
-        return this._http.get(`${this.apiUrl+"/admin/viewAll"}`);
-      }
+  postStaffFeedback(id: number, data: any): Observable<any> {
 
-      logreq():Observable<any>
-      {
-        return this._http.get(`${this.apiUrl+"/admin/requests"}`);
-      }
-      
-      
-      /*Get the staff request that are logged based on the staff id STAFF */ 
-      getRequestsBystaffId(id : Number){
-        return this._http.get(this.apiUrl+"/staff/loggedRequests/"+id)
-      }
+    return this._http.put(`${this.apiUrl}/staff/sendFeedback/${id}`, data);
+  }
 
-      updatePriority(id : Number,data: any) {
-        return this._http.put(this.apiUrl + "/admin/setPriority/"+id, data);
-      }
 
-      getCatIssues(id:number):Observable<any>{
-        return this._http.get(`${this.apiUrl + "/getItem/"+id}`)
-      }
+  allRequests(): Observable<any> {
+    return this._http.get(`${this.apiUrl + "/admin/viewAll"}`);
+  }
 
-      category():Observable<any>{
-        return this._http.get(`${this.apiUrl + "/getCategory"}`)
-      }
+  logreq(): Observable<any> {
+    return this._http.get(`${this.apiUrl + "/admin/requests"}`);
+  }
+
+
+  /*Get the staff request that are logged based on the staff id STAFF */
+  getRequestsBystaffId(id: Number) {
+    return this._http.get(this.apiUrl + "/staff/loggedRequests/" + id)
+  }
+
+  updatePriority(id: Number, data: any) {
+    return this._http.put(this.apiUrl + "/admin/setPriority/" + id, data);
+  }
+
+  getCatIssues(id: number): Observable<any> {
+    return this._http.get(`${this.apiUrl + "/getItem/" + id}`)
+  }
+
+  category(): Observable<any> {
+    return this._http.get(`${this.apiUrl + "/getCategory"}`)
+  }
 
   /*Technician Apis*/
 
@@ -162,69 +164,71 @@ adminClose(): Observable<any>{
 
   }
 
-  report():Observable<any>
-      {
-        return this._http.get(`${this.apiUrl+"/admin/export"}`);
-      }
+  report(): Observable<any> {
+    return this._http.get(`${this.apiUrl + "/admin/export"}`);
+  }
 
-      Techdata(id : any) {
-        return this._http.get(this.apiUrl + "/technician/tasks/"+id);
-      }
+  Techdata(id: any) {
+    return this._http.get(this.apiUrl + "/technician/tasks/" + id);
+  }
 
-      HODrequest(id : any) {
-        return this._http.get(this.apiUrl + "/hod/getDept-Requests/"+id);
-      }
-
-      
+  HODrequest(id: any) {
+    return this._http.get(this.apiUrl + "/hod/getDept-Requests/" + id);
+  }
 
 
-      progressTech(id : Number,data: any) {
-        return this._http.put(this.apiUrl + "/technician/updateTask/"+id, data);
-      }
-
-  
-      closeLog(id : Number,data: any) {
-        return this._http.put(this.apiUrl + "/admin/log-close/"+id, data);
-      }
 
 
-      totalcomplete(): Observable<any> {
-        return this._http.get(`${this.apiUrl + "/admin/viewTotalComplete"}`);
-      }
+  progressTech(id: Number, data: any) {
+    return this._http.put(this.apiUrl + "/technician/updateTask/" + id, data);
+  }
 
-      totalTech(): Observable<any> {
-        return this._http.get(`${this.apiUrl + "/admin/viewNumTechnicians"}`);
-      }
-    
 
-      allreq(): Observable<any> {
-        return this._http.get(`${this.apiUrl + "/admin/requests"}`);
-      }
+  closeLog(id: Number, data: any) {
+    return this._http.put(this.apiUrl + "/admin/log-close/" + id, data);
+  }
 
-       // +artisan_id+admin_id
-  assignavailArtisan(id:Number,data:any):Observable<any>{
-    return this._http.post(`${this.apiUrl}/admin/`+ "assignTechnician/"+ id,data);
+
+  totalcomplete(): Observable<any> {
+    return this._http.get(`${this.apiUrl + "/admin/viewTotalComplete"}`);
+  }
+
+  totalTech(): Observable<any> {
+    return this._http.get(`${this.apiUrl + "/admin/viewNumTechnicians"}`);
+  }
+
+
+  allreq(): Observable<any> {
+    return this._http.get(`${this.apiUrl + "/admin/requests"}`);
+  }
+
+  // +artisan_id+admin_id
+  assignavailArtisan(id: Number, data: any): Observable<any> {
+    return this._http.post(`${this.apiUrl}/admin/` + "assignTechnician/" + id, data);
 
   }
-  
-  getInprogressTasks():Observable<any>{
+  getartisans(): Observable<any> {
+    return this._http.get(`${this.apiUrl + "/admin/viewAllTechnicians"}`);
+  }
+
+  getInprogressTasks(): Observable<any> {
     return this._http.get(`${this.apiUrl + "/admin/viewInProgressTasks"}`)
 
   }
 
-  getCompletedTasks():Observable<any>{
+  getCompletedTasks(): Observable<any> {
     return this._http.get(`${this.apiUrl + "/admin/viewCompletedTasks"}`);
   }
 
-  getLogServiceStatistics():Observable<any>{
+  getLogServiceStatistics(): Observable<any> {
     return this._http.get(`${this.apiUrl + "/admin/ServiceStatistics"}`)
 
   }
 
   //delete request
-  deleteReq(id : Number) {
-        return this._http.get(this.apiUrl + "/admin/deleteRequest/"+id);
-      }
-      
-      
+  deleteReq(id: Number) {
+    return this._http.get(this.apiUrl + "/admin/deleteRequest/" + id);
+  }
+
+
 }

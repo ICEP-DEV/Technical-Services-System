@@ -44,6 +44,7 @@ import { Ng2SearchPipe } from 'ng2-search-filter';
 import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
 import { AvailableTechComponent } from './available-tech/available-tech.component';
 import { AdminprogressComponent } from './adminprogress/adminprogress.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableExporterModule, MatTableExporterDirective } from 'mat-table-exporter';
@@ -84,9 +85,9 @@ import { TechnicianTableComponent } from './technician-table/technician-table.co
     AvailableTechComponent,
     CalenderComponent,
     AssignPopupComponent,
-    AdminprogressComponent
-    
+    AdminprogressComponent,    
     TechnicianTableComponent,
+    AdmindashboardComponent
   ],
   imports: [
     BrowserModule,

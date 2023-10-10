@@ -67,6 +67,10 @@ openTrackForm(): void {
       });
       }
 
+      logout(){
+        localStorage.removeItem('logindata')
+      }      
+      
       openHOD(): void {
         const dialogRef = this.dialog.open(HODloginPageComponent, {
           width: '700px',
