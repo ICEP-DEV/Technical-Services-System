@@ -1,20 +1,40 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
-import { Route, Router } from '@angular/router';
-import { ThisReceiver } from '@angular/compiler';
+import { Router } from '@angular/router';
+
+
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-adminassigntask',
-  templateUrl: './adminassigntask.component.html',
-  styleUrls: ['./adminassigntask.component.css']
+  selector: 'app-assign-popup',
+  templateUrl: './assign-popup.component.html',
+  styleUrls: ['./assign-popup.component.css']
 })
-export class AdminassigntaskComponent implements OnInit{
+export class AssignPopupComponent implements OnInit{
+
+
+  
+
 
   availableTechData :any;
+  months = ["January", "February", "March", "April", "May","June", "July","August","September","October","November","December"];
+  days:any
+  getDay(){
+    var arraydays=[]
+    var count= 1
+    for(var k =0;k< 31;k++){
+      
+      arraydays.push(count++)
+    }
+   this.days = arraydays;
+  }
   
   adminTechDetails= {
     tech_id:1,
-    admin_id:12
+    admin_id:12,
+    expected_date: ""
   }
   id:Number =1;
   object_:any;
@@ -24,7 +44,11 @@ export class AdminassigntaskComponent implements OnInit{
   status =false;
   AdminArtisan_object: any;
 
-  constructor(private service:ApiserviceService, private navrouter:Router){}
+  constructor(
+    public dialogRef: MatDialogRef<AssignPopupComponent>,
+    @Inject(MAT_DIALOG_DATA) public daata: any,
+    private service:ApiserviceService, private navrouter:Router
+  ) {}
 
 
   ngOnInit(): void{
@@ -50,7 +74,6 @@ this.id = Number(data)
   console.log("NEW LINE")
     //Fetch the available artisan of the/based on the reference number.                or Number(data);
     this.service.getTechAvailable(this.id).subscribe((res)=>{
-      console.log(res,"res==>");
       this.availableTechData = res;
 
  
@@ -64,21 +87,24 @@ this.id = Number(data)
       // console.log(typeof(staff_id))
 
       // console.log(this.availableTechData)
-     
+      this.getDay()
     })
 
 
 
       
      //Getting the admin id in the local storage,the data is a string
-    let admin = localStorage.getItem('stafflogin');
+    let admin = localStorage.getItem('adminlogin');
    
     let admin_temp_Id = admin?.slice(1,10);
     console.log(admin_temp_Id)
 
+    this.adminTechDetails.admin_id = Number(admin_temp_Id);
+    console.log(this.adminTechDetails.admin_id)
+
 
     //Displaying both staff number(of the Artisan&admin)
-    console.log(this.adminTechDetails,"Display both of them")
+    console.log(this.adminTechDetails,"Display both of them CHECK THE ADMIN")
 
 
 
@@ -98,44 +124,55 @@ this.id = Number(data)
 
   }
 
-
+  day= ""
+  month=""
+  year=""
+ setDay(event:any){
+  this.day = event.target.value;
+ }
+ setMonth(event:any){
+  this.month = event.target.value;
+ }
+ setYear(event:any){
+  this.year = event.target.value;
+ }
 
   logout(){
     localStorage.removeItem('logindata')
   }
 
   assignArtisan(tech_id:Number) {
-
-     
-   
     this.message = "";
-      
-
-    this.message = "Successfully assigned the request to the artisan"+tech_id;
 
 
-
-   
+    var setDate = new Date(this.year+"-"+this.month+"-"+this.day);
+    const currentdate = new Date()
+    console.log(setDate)
+    console.log(currentdate)
+    if(setDate < currentdate){
+      this.message = "Date you are setting cannot be before the current date";
+      return
+    }
+    console.log(setDate)
+    console.log(currentdate)
+    this.adminTechDetails.expected_date = setDate.toString()
     //Get the Artisan id from the assignArtisan button(which is the data from the get available tech api), we only passsing and tech id from the html file 
   
      this.adminTechDetails.tech_id = Number(tech_id);
 
-
+     let admin = localStorage.getItem('adminlogin');
    
-     //Artisan staff number
-    //console.log("25897486")
-
-     console.log(this.adminTechDetails.tech_id,'ARTISAN NUMBER');
-    // console.log(typeof(staff_id))
-
-
+     let admin_temp_Id = admin?.slice(1,10);
+ 
+     this.adminTechDetails.admin_id = Number(admin_temp_Id);
+   
       
     //  //Getting the admin id in the local storage,the data is a string
     // let admin = localStorage.getItem('admin_id');
 
     // //Convert the local storage admin id to a number
     // this.adminTechDetails.admin_id= Number(admin);
-    // console
+     console.log(this.adminTechDetails)
 
 
     // console.log(this.adminTechDetails.admin_id,"Admin idCHECK THIS");
@@ -145,18 +182,34 @@ this.id = Number(data)
 
         this.AdminArtisan_object = res;
 
-      console.log(this.AdminArtisan_object )
-      // setTimeout(function(){
-      //   window.location.reload();
-      //  }, 2000);
-      
-        
+     console.log(this.AdminArtisan_object )
+     this.message = "Successfully assigned the request to the artisan "+ tech_id;        
+        setTimeout(function(){
+         window.location.reload();
+       }, 2000);
+       this.navrouter.navigate(['/adminpage'])
     })
+    
       return  this.status =true
 
+      
      
   }
 
  
   
+
+
+
+
+
+
+
+
+
+  close() {
+    this.dialogRef.close();
+  }
+
+
 }

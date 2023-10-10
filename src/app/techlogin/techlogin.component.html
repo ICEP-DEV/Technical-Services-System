@@ -8,9 +8,26 @@
           enctype="multipart/form-data"
           >
           <button id="b12" type="button" class="btn-close float-right" (click)="close()" aria-label="Close"></button>
-          <br>
+        
+          <div *ngIf="showSuccessMsg1" class="alert alert-success" role="alert">
+            <strong>{{successmsg1}}</strong>
+            <button id="b12" type="button" class="btn-close" data-bs-dismiss="alert"
+                aria-label="Close"></button>
+        </div>
+  
+        <div *ngIf="showSuccessMsg2" class="alert alert-success" role="alert">
+          <strong>{{successmsg2}}</strong>
+          <button id="b12" type="button" class="btn-close" data-bs-dismiss="alert"
+              aria-label="Close"></button>
+      </div>
+  
+      <div *ngIf="showSuccessMsg3" class="alert alert-success" role="alert">
+        <strong>{{successmsg3}}</strong>
+        <button id="b12" type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+    </div>
           <label class="d-block mb-4">
-            <span class="form-label d-block" class="row mx-0 justify-content-center">Technician Number</span>
+            <span class="form-label d-block" class="row mx-0 justify-content-center">Artisan Number</span>
             <br>
             <input
             [(ngModel)]="techLogin.tech_id" name="techLogin.email"
@@ -27,9 +44,9 @@
             <input
             [(ngModel)]="techLogin.password" name="techLogin.password"
             
-              type="password"
+              type="text"
               class="form-control"
-              placeholder="Password"
+              placeholder="214412845"
             />
           </label>
   

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ScheduleModule, RecurrenceEditorModel , DayService, WeekService, WorkWeekService, MonthService, AgendaService } from '@syncfusion/ej2-angular-schedule';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'; 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,27 +34,24 @@ import { RefConfirmFormComponent } from './ref-confirm-form/ref-confirm-form.com
 import { TrackRequestComponent } from './track-request/track-request.component';
 import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
 import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component';
-import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
-import { AdminprogressComponent } from './adminprogress/adminprogress.component';
+import { AdminviewprogressComponent } from './adminviewprogress/adminviewprogress.component';
 import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
+import { TechpageComponent } from './techpage/techpage.component';
 import { HODpageComponent } from './hodpage/hodpage.component';
 import { CloselogComponent } from './closelog/closelog.component';
 import { ReportComponent } from './report/report.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2SearchPipe } from 'ng2-search-filter';
+import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
 import { AvailableTechComponent } from './available-tech/available-tech.component';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
-import { HodSageComponent } from './hod-sage/hod-sage.component';
-import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { TechpageComponent } from './techpage/techpage.component';
-import { HodprogressComponent } from './hodprogress/hodprogress.component';
-import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
-import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableExporterModule, MatTableExporterDirective } from 'mat-table-exporter';
+import { MatButtonModule } from '@angular/material/button';
+import { CalenderComponent } from './calender/calender.component';
+import { AssignPopupComponent } from './assign-popup/assign-popup.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { TechnicianTableComponent } from './technician-table/technician-table.component';
-
-
 
 
 
@@ -76,22 +74,18 @@ import { TechnicianTableComponent } from './technician-table/technician-table.co
     TrackRequestComponent,
     SidenavbarComponent,
     StafffeedbackComponent,
-    AdminassigntaskComponent,
-    AdminprogressComponent,
+    AdminviewprogressComponent,
     HODloginPageComponent,
     TechpageComponent,
     HODpageComponent,
     CloselogComponent,
     ReportComponent,
     AdminassigntaskComponent,
-     AdmincloselogComponent,
-     HodSageComponent,
-     AdmindashboardComponent,
-     TechpageComponent,
-     HodprogressComponent,
-     HodcloselogsComponent,
-     StaffsendrequestComponent,
     AvailableTechComponent,
+    CalenderComponent,
+    AssignPopupComponent,
+    AdminprogressComponent
+    
     TechnicianTableComponent,
   ],
   imports: [
@@ -102,7 +96,6 @@ import { TechnicianTableComponent } from './technician-table/technician-table.co
     MatSidenavModule,
     MatToolbarModule,
     MatMenuModule,
-    MatFormFieldModule,
     MatIconModule,
     MatDividerModule,
     MatListModule,
@@ -110,22 +103,26 @@ import { TechnicianTableComponent } from './technician-table/technician-table.co
     MatDialogModule,
     HttpClientModule,
     FormsModule,
-    Ng2SearchPipeModule,
-    
-    
-    // Ng2OrderModule,
-    // Ng2SearchPipeModule,
-    // NgxPaginationModule
-
-
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableExporterModule,
     MatButtonModule,
+    ScheduleModule,
+    NgxPaginationModule
+   
   ],
-  providers: [ApiserviceService],
+  providers: [ApiserviceService,DayService, WeekService, WorkWeekService, MonthService, AgendaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
+
+
+
+

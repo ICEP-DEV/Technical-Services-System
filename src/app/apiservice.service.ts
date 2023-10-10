@@ -8,14 +8,13 @@ declare var window:any;
   providedIn: 'root'
 })
 export class ApiserviceService {
- 
 
   constructor(private _http: HttpClient) { }
 
   //connect frontend to backend
-   apiUrl  = 'https://pink-splendid-cheetah.cyclic.cloud'
-   //apiUrl  = 'http://localhost:3030';
- // apiUrl = "http://192.168.27.20:3030"
+  apiUrl  = 'https://pink-splendid-cheetah.cyclic.cloud'
+  // apiUrl  = 'http://localhost:3000';
+  // apiUrl = "http://192.168.27.20:3000"
   //get all data
   formModal:any;
   popupEvent: EventEmitter<void> = new EventEmitter<void>();
@@ -98,19 +97,9 @@ adminClose(): Observable<any>{
 
   
   /*Admin Apis*/
- /*Get the statistics of the services/logs*/
- 
 
- getCategories():Observable<any>{
-     return this._http.get(`${this.apiUrl + "/aggregate"}`);
- }
-  gettotalClosedLogs():Observable<any>{
-    return this._http.get(`${this.apiUrl + "/admin/getTotalClossedLogs"}`);
-  }
 
-  getartisans():Observable<any>{
-    return this._http.get(`${this.apiUrl + "/admin/viewAllTechnicians"}`);
-  }
+
   /*Staff Apis*/
       //Api post feedback connection STAFF
       
@@ -124,6 +113,11 @@ adminClose(): Observable<any>{
       {
         return this._http.get(`${this.apiUrl+"/admin/viewAll"}`);
       }
+
+      logreq():Observable<any>
+      {
+        return this._http.get(`${this.apiUrl+"/admin/requests"}`);
+      }
       
       
       /*Get the staff request that are logged based on the staff id STAFF */ 
@@ -135,15 +129,12 @@ adminClose(): Observable<any>{
         return this._http.put(this.apiUrl + "/admin/setPriority/"+id, data);
       }
 
-      waitingToBeClose() {
-        return this._http.get(this.apiUrl+"/getFeedBack");
+      getCatIssues(id:number):Observable<any>{
+        return this._http.get(`${this.apiUrl + "/getItem/"+id}`)
       }
 
       category():Observable<any>{
         return this._http.get(`${this.apiUrl + "/getCategory"}`)
-      }
-      getCatIssues(id:number):Observable<any>{
-        return this._http.get(`${this.apiUrl + "/getItem/"+id}`)
       }
 
   /*Technician Apis*/
@@ -155,11 +146,6 @@ adminClose(): Observable<any>{
 
   }
 
-  // +artisan_id+admin_id
-  assignavailArtisan(id:Number,data:any):Observable<any>{
-    return this._http.post(`${this.apiUrl}/admin/`+ "assignTechnician/"+ id,data);
-
-  }
   //Connection to get task assigned to technician from server, who logged based on the ID 
 
   getTechTaskById(id: Number): Observable<any> {
@@ -185,13 +171,9 @@ adminClose(): Observable<any>{
         return this._http.get(this.apiUrl + "/technician/tasks/"+id);
       }
 
-
-      //HOD APIS 
-
       HODrequest(id : any) {
         return this._http.get(this.apiUrl + "/hod/getDept-Requests/"+id);
       }
-
 
       
 
@@ -207,7 +189,7 @@ adminClose(): Observable<any>{
 
 
       totalcomplete(): Observable<any> {
-        return this._http.get(`${this.apiUrl + "/admin/getTotalClossedLogs"}`);
+        return this._http.get(`${this.apiUrl + "/admin/viewTotalComplete"}`);
       }
 
       totalTech(): Observable<any> {
@@ -219,7 +201,11 @@ adminClose(): Observable<any>{
         return this._http.get(`${this.apiUrl + "/admin/requests"}`);
       }
 
+       // +artisan_id+admin_id
+  assignavailArtisan(id:Number,data:any):Observable<any>{
+    return this._http.post(`${this.apiUrl}/admin/`+ "assignTechnician/"+ id,data);
 
+  }
   
   getInprogressTasks():Observable<any>{
     return this._http.get(`${this.apiUrl + "/admin/viewInProgressTasks"}`)
@@ -235,4 +221,10 @@ adminClose(): Observable<any>{
 
   }
 
+  //delete request
+  deleteReq(id : Number) {
+        return this._http.get(this.apiUrl + "/admin/deleteRequest/"+id);
+      }
+      
+      
 }

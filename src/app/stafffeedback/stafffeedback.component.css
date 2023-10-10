@@ -1,14 +1,40 @@
-body {
+
+/* .sticky {
+    background-color: #005596;
+    height:115px;
     width: 100%;
-  }
-  .stats{
-    margin: -0.8%;
-  }
+    
+} */
 
 
-/* Start of the navigation bar*/
-.header {
-    height: 82px;
+/* .nav-item{
+    padding: 8px 24px;
+    
+    transition: 0.4s;
+    font-family: 'georgia';
+    margin-bottom: 24px;
+    margin-left: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    background: white;
+  } */
+  
+  /* .nav-item:hover {
+    
+    text-decoration: none;
+    padding: 8px 0;
+    border-left: 8px solid rgb(14, 60, 90);
+    box-shadow: 4px 4px 4px rgba(70, 69, 69, 0.993);
+  } */
+  
+  
+  /* .nav-link.active {
+    border: none;
+  } */
+
+  
+  .header {
+    height: 85px;
     background: #0c0c0c;
     width: 100%;
     margin: 0;
@@ -21,15 +47,18 @@ body {
     box-sizing: border-box;
     z-index: 100;
   }
+  
   .header a {
     padding: 0 32px;
     color: #eee;
     transition: 0.4s;
   }
+  
   .header a:hover {
     text-decoration: none;
     color: red;
   }
+  
   .header ul {
     display: flex;
     list-style: none;
@@ -38,127 +67,187 @@ body {
     height: 100%;
     margin: 0;
   }
-  #logoDiv{
-  
-    margin-left: 1%;
-    margin-top: 7.2px;
-  
-  }
-  
-  /*logout button*/
-  .btn-success{
-    color: white;
-    border: 2px solid white;
-    height: 40px;
-    background-color: #005596;
-  }
-  .btn-success:active{
-    border: white;
-    background-color: #005596;
-  }
-  /* End of the navigation bar*/
 
-  /* Start of  Everything on the side nav*/
-.sideNav {
-    float: left;
+
+.toggleMenu {
+    cursor: pointer;
+    display:none;
+}
+.center 
+{
+    margin-right: 35%;
+    font-weight: bold;
+    font-size: 50px;
+    color: aliceblue;
+}
+
+a {
+    color: white;
+    font-weight: bold;
+}
+
+
+#left {
+
+    padding-left:75%;
+}
+.logo {
+    height: 100px;
+
+    margin-top: 100px;
+}
+
+img {
+    height: 100px;
+
+    margin-top: 6.5px;
+}
+
+footer{
+    background: black;
+      padding: 8px;
+      color: #eee;
+      display: center;
+      bottom: 0;
+      width: 100%;
+  }
+body {
+
+    margin-top: 100px;
+    
+    /*border: 1px solid blue;*/
+}
+
+
+
+.breadcrumbNav {
+    margin: 12% 10px;
+    padding: 20px 30px; 
+    top:0%;  
+        
+    }
+#breadcrumbpadding {
+
+    width: 115px;  
+    padding: 10px 0;
+}
+
+ a {
+    font-size: 16px;
+line-height: 20px;
+color: #2e2e2e;
+text-decoration: none;
+ }
+
+ nav,ul {
+
+    list-style:none ;
+ }
+ .breadcrumb-item.active {
+
+
+    border-bottom: 3px solid #4b4c4d;
+    width: 115px;  
+    
+    }
+.anchorBorder{
+
    
-    box-shadow: 5px 0 2px #969292;
+    margin:0 15%;
+}
+/* .anchorBorderActive{
+   
+    margin:0 15%;
+
+} */
+ .sideNav {
+
+    
+    float: left;
+    
     width: 335px;
     height: 1055px;
+   
+
+}
+#hover:hover {
+    font-weight: bold;
+   
+   
+}
+.contentContainerRight {
     
-  }
-  .breadcrumbNav {
-    margin: 12% 10px;
-    padding: 20px 30px;      
-  }
-  #breadcrumbpadding {
-  
-    width: 120px;  
-    padding: 6px 0;
-  }
-  a {
-    padding-top: 20px;
+    width:1562px;
+    height: 1055px;
+    margin-left: 17.9%;
+    
+   padding-left: 50px;
+   /*border: 1px solid green;*/
+
+
+}
+.backFrom {
+    
+    width: 1300px;
+    margin: 5% 5%;
+    height: 830px;
+
+    /*
+     background: #ffffff;
+    mix-blend-mode: normal;
+    border: 1px solid #969090;
+    box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    */
+   
+
+
+}
+
+/* .contentForm {
+        
+        margin-top: 7%;
+} */
+.toptitle {
+   
     font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    /* identical to box height */
-    letter-spacing: 0.035em;
-    text-transform: capitalize;
-    color: #005596;
-    text-decoration: none;
-  }
-  .breadcrumbNav ul {
-    list-style:none ;
-    flex-direction: column;
-  }
-  .breadcrumb-item.active {
-    border-bottom: 3px solid #005596;
-    width: 115px;  
-  }
-  /* End of Everything on the side nav*/
-  
-  /*Disable the active link*/
-  a:disabled, a[disabled] {
-    color: #005596;
-  }
-  .anchorBorder{
-    margin:0 20%;
-  }
-  /*Adding a hover effect on the sidenav links*/
-  #hover:hover {
-    font-weight: bold;
-    width: 115px; 
-   
-   
-  }
-
-  /*SideNav content on the left*/
-.container2{
-    margin-top: 3.8%;
-  }
-  /*Div for the content on the right*/
-.tab-content {
-    float: right;
-    width: 80%;
-    margin-right: 7%;
-  }
-
-
-
-  footer{
-    background: black;
-    padding: 8px;
-    color: #eee;
-    text-align: center;
-    margin-left: 0%;
-    margin-top: auto;
-    width: 100%;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 0.15em;
+    background: #ECE7E7;
+    width: 1110px;
     height: 40px;
-    /* position: absolute; */
-    /* bottom: 0;
-    width: 100%; */
-  }
-
-  .reqhead1{
-     
-    font-weight: bold;
-  font-size: 28px;
-  color: #000000;
-  height: 40px;
     margin:5% 6%;
     padding-left: 50px;
 }
 
 
-.down{
-  margin: 7%;
-}
-
 .color {
     color: black;
 }
+.feedbackTopPara {
 
+    font-style: normal;
+    font-weight: 490;
+    font-size: 22px;
+    line-height: 30px;
+    
+    
+    
+    
+   
+}
+/* .backFrom { */
+    
+    /* width: 1300px;
+    height: 350px; */
+    /*background: #c51919;*/
+    
+    
+
+
+/* } */
 .radionBtn {
 
     display: flex;
@@ -170,6 +259,30 @@ body {
     
 
 }
+
+/* .form-check-input {
+    width: 20px;
+    height: 20px;
+    border: 4px solid #000000;
+    border-radius: 10px;
+
+} */
+/* .form-check-label {
+
+    padding-top: 2px;
+} */
+/* .form-check {
+    padding-left: 3.5%;
+} */
+
+/* .descriptionTitle {
+
+   
+    
+    margin: 2% 35%;
+} */
+
+
 
 .btn-submit button {
 
@@ -190,6 +303,41 @@ body {
    
 }
 
-#b12{
-    float: right;
-  }
+
+
+
+  .reqhead1{
+  
+    border: 2px solid rgb(255, 255, 255);
+    background-color: #ECE7E7; 
+    font-weight: bold;
+
+
+
+
+font-family: 'Sansation';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 36px;
+letter-spacing: 0.15em;
+
+color: #000000;
+}
+
+  #hover:hover {
+    font-weight: 700px;
+    color: rgb(6, 85, 42);
+    font-size: large;
+    
+    
+    
+    margin-bottom: 24px;
+    margin-left: 10px;
+    
+    cursor: pointer;
+    
+    
+    
+    
+    }

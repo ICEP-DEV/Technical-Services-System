@@ -16,21 +16,15 @@ import { AuthGuard } from './auth.guard';
 import { StaffpageComponent } from './staffpage/staffpage.component';
 import { TrackRequestComponent } from './track-request/track-request.component';
 import { StafffeedbackComponent } from './stafffeedback/stafffeedback.component';
-
-import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
-import { AdminprogressComponent } from './adminprogress/adminprogress.component';
-import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
-import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
-import { ReportComponent } from './report/report.component';
+import { AdminviewprogressComponent } from './adminviewprogress/adminviewprogress.component';
 import { HODpageComponent } from './hodpage/hodpage.component';
 import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
 import { TechpageComponent } from './techpage/techpage.component';
 import { CloselogComponent } from './closelog/closelog.component';
-import { HodprogressComponent } from './hodprogress/hodprogress.component';
-import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
-import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
+import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.component';
+import { AdminprogressComponent } from './adminprogress/adminprogress.component';
+import { ReportComponent } from './report/report.component';
 import { TechnicianTableComponent } from './technician-table/technician-table.component';
-
 
 
 
@@ -40,20 +34,15 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'dashboard',component: DashboardComponent},
   {path: 'techlogin',component: TechloginComponent},
-  {path: 'adminpage',component: AdminpageComponent},
+  {path: 'adminpage',component: AdminpageComponent,canActivate:[AuthGuard]},
   {path: 'viewrequest',component: ViewrequestComponent,canActivate:[AuthGuard]},
-  {path: 'staffpage',component: StaffpageComponent},
-  {path: 'sendrequest',component: StaffsendrequestComponent},
+  {path: 'staffpage',component: StaffpageComponent,canActivate:[AuthGuard]},
   {path:'trackrequest',component:TrackRequestComponent},
   {path:'stafffeedback',component:StafffeedbackComponent},
-  {path:'availableTechnician', component:AdminassigntaskComponent},
-  {path:'adminprogress',component:AdminprogressComponent},
-  {path:'admincloselog', component:AdmincloselogComponent},
+  {path:'adminviewprogress',component:AdminviewprogressComponent},
   {path: 'hodpage',component:HODpageComponent},
-  {path: 'hodprogress',component:HodprogressComponent},
-  {path: 'hodcloselogs',component:HodcloselogsComponent},
   {path: 'hodloginpage',component:HODloginPageComponent},
-  {path: 'techpage',component:TechpageComponent},
+  {path: 'techpage',component:TechpageComponent,canActivate:[AuthGuard]},
   {path: 'closelog',component:CloselogComponent},
   {path:'availableTechnician', component:AdminassigntaskComponent},
   {path:'adminprogress',component:AdminprogressComponent},

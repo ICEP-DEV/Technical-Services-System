@@ -4,6 +4,11 @@
       <form method="POST" class="w-543px h-383px rounded-1 p-4 border bg-white" action="#"
         enctype="multipart/form-data">
         <button id="b12" type="button" class="btn-close float-right" (click)="close()" aria-label="Close"></button>
+        <div *ngIf="showSuccessMsg" class="alert alert-success" role="alert">
+          <strong>{{successmsg}}</strong>
+          <button id="b12" type="button" class="btn-close" data-bs-dismiss="alert"
+              aria-label="Close"></button>
+      </div>
         <br>
         <label class="d-block mb-4">
           <span class="form-label d-block" class="row mx-0 justify-content-center">Staff Number</span>
@@ -13,7 +18,7 @@
         </label>
 
         <div class="mb-3 row mx-0 justify-content-center">
-          <button type="submit" class="btn btn-primary px-3 rounded-3" (click)="staff_login()">
+          <button type="submit" id=""class="btn btn-primary px-3 rounded-3" (click)="staff_login()">
             Submit
           </button>
         </div>
