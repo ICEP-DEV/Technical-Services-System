@@ -1,6 +1,6 @@
 import { validateVerticalPosition } from '@angular/cdk/overlay';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl,FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiserviceService } from '../apiservice.service';
 
@@ -41,36 +41,47 @@ export class CreateNewArtisanComponent implements OnInit {
   ) { }
   tech_form={
     id:0,
-    name:''
+    name:'',
+    surname: '',
+    phone:'',
+    email: '',
+    gender: '',
+    division: ''
+
   }
 
   ngOnInit(): void {
-    this.userForm = this.fb.group({
-      id: ['', Validators.required],
-      name: ['', Validators.required],
-      surname: ['', Validators.required],
-      phone: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
-      email: ['', [Validators.required, Validators.email]],
-      gender: ['', Validators.required],
-      division: ['', Validators.required]
+    this.userForm = new FormGroup({
+      id: new FormControl('',[Validators.required]),
+      name: new FormControl('',[Validators.required]),
+      surname: new FormControl('',[Validators.required]),
+      phone: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      gender:new FormControl('',[Validators.required]),
+      division: new FormControl('',[Validators.required])
      
 
     })
+  }
+  
+  get fc(){
+    return this.userForm.controls;
   }
 
   submit_artisan() {
     /*if (!this.userForm.valid) {
       return;
     }*/
-    console.log(this.tech_form)
-    if (this.userForm.valid) {
+    console.log(this.userForm.value)
+    if(this.userForm) {
       /*this.apiservice.createNewArtisan(this.userForm.value).subscribe((res)=>{
         console.log(res, 'data submitted');
         this.userForm.reset();
         this.successmsg = res.message;
       })*/
-      const formData=this.userForm.value;
-      console.log(formData);
+      // const formData=this.userForm.value;
+      console.log("success")
+      console.log(this.userForm.value);
     } else {
       this.errormsg = "All fields required.";
     }
