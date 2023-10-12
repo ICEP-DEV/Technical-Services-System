@@ -229,6 +229,8 @@ export class ApiserviceService {
   deleteReq(id: Number) {
     return this._http.get(this.apiUrl + "/admin/deleteRequest/" + id);
   }
-
+// waitingToBeClose(){
+//   return this._http.get(`${this.apiUrl + "/admin/ServiceStatistics"}`)
+// }
 
 }

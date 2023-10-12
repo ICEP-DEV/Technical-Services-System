@@ -24,6 +24,7 @@ import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.comp
 import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 import { ReportComponent } from './report/report.component';
 import { TechnicianTableComponent } from './technician-table/technician-table.component';
+// import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
 
 
 
@@ -47,8 +48,9 @@ const routes: Routes = [
   {path:'adminprogress',component:AdminprogressComponent},
   {path:'admindash', component:AdmindashboardComponent},
   {path:'dash2', component:DashboardComponent},
-  {path:'technician-table', component:TechnicianTableComponent}
-  //{path:'generatereport',component:ReportComponent}
+  {path:'technician-table', component:TechnicianTableComponent},
+  // {path:'admincloselog', component:AdmincloselogComponent},
+  {path:'generatereport',component:ReportComponent}
 
   
  
