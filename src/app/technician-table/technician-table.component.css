@@ -54,3 +54,121 @@
   th {
     text-align: left;
   }
+  
+.sideNav {
+  float: left;
+ 
+  width: 300px;
+  height: 200vh;
+  
+  
+  }
+  
+  .breadcrumbNav {
+  margin: 12% 10px;
+  padding: 20px 30px; 
+  top:0%;  
+      
+  }
+  #breadcrumbpadding {
+  margin-top: 20px;
+  width: 115px;  
+  padding: 6px 0;
+  }
+  
+  a {
+  font-size: 16px;
+  line-height: 20px;
+  color: #2e2e2e;
+  text-decoration: none;
+  }
+  
+  .breadcrumbNav ul {
+  
+  list-style:none ;
+  flex-direction: column;
+  }
+  .breadcrumb-item.active {
+  
+  
+  border-bottom: 3px solid #4b4c4d;
+  width: 115px;  
+  
+  }
+  
+  .anchorBorder{
+  
+    
+  margin:0 0%;
+  }
+  
+  #hover:hover {
+  font-weight: 700px;
+  color: rgb(6, 85, 42);
+  font-size: large;
+  
+  
+  
+  margin-bottom: 24px;
+  margin-left: 10px;
+  
+  cursor: pointer;
+  
+  
+  
+  
+  }
+  
+  .nav-tabs {
+    position: center;
+    width: 100px;
+    height: 400px;
+    left: 2px;
+    float: left;
+    width: 100%;
+    
+    
+     font-family: "Times New Roman";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 25px;
+    letter-spacing: 0.035em;
+    width: 335px;
+    
+    left: -2px;
+    top: 110px;
+    
+    background: rgba(255, 255, 255, 0.8);
+   
+    
+    
+    }
+  
+    
+    
+    .nav-item{
+      padding: 8px 24px;
+      
+      transition: 0.4s;
+      font-family: 'georgia';
+      margin-bottom: 24px;
+      margin-left: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      background: white;
+      border-left: 8px solid rgb(14, 60, 90);
+    }
+    
+    .nav-item:hover {
+      
+      text-decoration: none;
+      padding: 8px 0;
+      
+     
+    }
+    
+    
+    .nav-link.active {
+      border: none;
+    }

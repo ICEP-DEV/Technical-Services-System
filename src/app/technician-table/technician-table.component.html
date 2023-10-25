@@ -26,16 +26,27 @@
 <body>
 
   <div class="container2 d-flex justify-content-between ">
-      <!-- <div class="sideNav">
-          <nav class="breadcrumbNav">
-              <ul>
-                  <li class = "" id = "breadcrumbpadding"><a class ="" id="hover" href="#" routerLink="/adminpage"  >View Logs</a></li>
-                  <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="" disabled>Technicians</a></li>
-                  
-                      
-              </ul>
-          </nav>
-      </div> -->
+      <div class="sideNav">
+       
+
+          <ul class="nav nav-tabs flex-column justify-content-center" id="myTab" role="tablist">
+
+            <li class="nav-item" role="presentation" id="doing-tab1" routerLink="/adminpage"  >
+                <a class="nav-link active colorRed" id="doing-tab"  type="text"
+                    role="tab" aria-controls="doing" aria-selected="true">
+                    <br><a><b>View Logs</b></a></a>
+            </li>
+            <li class="nav-item" role="presentation" id="doing-tab2">
+                <a class="nav-link colorAmber" id="done-tab"  type="text"
+                    role="tab" aria-controls="done" aria-selected="false"><br><a><b>Technicians</b></a></a>
+    
+            </li>
+    
+           
+        </ul>
+      </div>
+
+      
 
       <div class="tab-content ps-3 mt-5" id="myTabContent">
 
