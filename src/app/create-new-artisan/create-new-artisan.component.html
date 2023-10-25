@@ -43,36 +43,35 @@
             <div class="tab-pane fade show active" id="doing" role="tabpanel" aria-labelledby="doing-tab">
 
                 <div>
-                    <form [formGroup]="userForm" (ngSubmit)="submit_artisan()"
+                    <form
                         class="w-100 rounded-1 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3"
                         enctype="multipart/form-data"> 
                         <!--"form-row row" -->
                         <div class="reqhead1">Create new Artisan</div>
                         <br><br>
-
                         <label for="Id">Tech_Id :</label>
-                        <input formControlName="id" type="text" class="form-control mb-2" id="id" name="id" 
+                        <input formcontrolName="Tech_Id" type="text" class="form-control mb-2" id="id" name="id" [(ngModel)]="tech_form.id"
                             placeholder="Enter your Id"><br>
                         <!-- <div *ngIf="userForm.controls ['id'].touched && userForm.controls['id'].invalid">
                             <span *ngIf="userForm.controls ['id'].errors['required']">This field is mandatory.</span>
                         </div> -->
 
                         <label for="name">Name : </label>
-                        <input formControlName="name" type="text" class="form-control mb-2" id="name" name="name" 
+                        <input formcontrolName="Name" type="text" class="form-control mb-2" id="name" name="name" [(ngModel)]="tech_form.name"
                             placeholder="Enter your name"><br>
                         <!-- <div *ngIf="userForm.controls ['name'].touched && userForm.controls['name'].invalid">
                             <span *ngIf="userForm.controls ['name'].errors['required']">This field is mandatory.</span>
                         </div> -->
 
                         <label for="surname">Surname :</label>
-                        <input formControlName="surname" type="text" class="form-control mb-2" id="surname" 
+                        <input formcontrolName="Surname" type="text" class="form-control mb-2" id="surname" [(ngModel)]="tech_form.surname"
                             name="surname" placeholder="Enter your surname"><br>
                         <!-- <div *ngIf="userForm.controls ['surname'].touched && userForm.controls['surname'].invalid">
                             <span *ngIf="userForm.controls ['surname'].errors['required']">This field is mandatory.</span>
                         </div> -->
 
                         <label for="phone">phone :</label>
-                        <input formControlName="phone" type="text" class="form-control mb-2" id="phone" name="phone" 
+                        <input formcontrolName="Phone" type="text" class="form-control mb-2" id="phone" name="phone" [(ngModel)]="tech_form.phone"
                             placeholder="Enter your phone"><br>
                         <!-- <div *ngIf="userForm.controls ['phone'].touched && userForm.controls['phone'].invalid">
                             <span *ngIf="userForm.controls ['phone'].errors['required']">This field is mandatory.</span>
@@ -81,7 +80,7 @@
                         </div> -->
 
                         <label for="email">email :</label>
-                        <input formControlName="email" type="text" class="form-control mb-2" id="email" name="email"
+                        <input formcontrolName="email" type="text" class="form-control mb-2" id="email" name="email" [(ngModel)]="tech_form.email"
                             placeholder="Enter your email"><br>
                         <!-- <div *ngIf="userForm.controls ['email'].touched && userForm.controls['email'].invalid">
                             <span *ngIf="userForm.controls ['email'].errors['required']">This field is mandatory.</span>
@@ -90,13 +89,28 @@
                         </div> -->
 
                         <label for="gender">Gender :</label>
-                        <select formControlName="gender" id="gender" name="gender" >
+                        <select id="gender" name="gender">
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select><br>
 
+                        <label for="divisions">Divisions :</label>
+                        <select name="division" id="division">
+                            <option value="">select division</option>
+                            <option *ngFor="let item of divisions" [value]="item.division_id">{{item.division_name}}</option>
+                        </select><br>
+
+                        <label for="campus">Campus :</label>
+                        <select id="campus" name="campus">
+                            <option value="south">South</option>
+                            <option value="north">North</option>
+                            <option value="ga-rankuwa">Ga-rankuwa</option>
+                            <option value="pretoria">Pretoria</option>
+                            <option value="mbombela">Mbombela</option>
+                        </select><br>
+
                         
-                      <input type="submit" placeholder="Register">
+                      <input type="submit" (click)="submit_artisan()" placeholder="Register">
                     </form>
                 </div>
             </div>

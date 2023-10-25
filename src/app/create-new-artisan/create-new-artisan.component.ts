@@ -40,28 +40,37 @@ export class CreateNewArtisanComponent implements OnInit {
 
   ) { }
   tech_form={
-    id:0,
+    id:'',
     name:'',
     surname: '',
     phone:'',
     email: '',
     gender: '',
-    division: ''
+    division: '',
+    campus: ''
 
   }
+  divisions: any
 
   ngOnInit(): void {
-    this.userForm = new FormGroup({
-      id: new FormControl('',[Validators.required]),
-      name: new FormControl('',[Validators.required]),
-      surname: new FormControl('',[Validators.required]),
-      phone: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      gender:new FormControl('',[Validators.required]),
-      division: new FormControl('',[Validators.required])
+    // this.userForm = new FormGroup({
+    //   id: new FormControl('',[Validators.required]),
+    //   name: new FormControl('',[Validators.required]),
+    //   surname: new FormControl('',[Validators.required]),
+    //   phone: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
+    //   email: new FormControl('', [Validators.required, Validators.email]),
+    //   gender:new FormControl('',[Validators.required]),
+    //   division: new FormControl('',[Validators.required])
      
-
-    })
+    // this.apiservice.allDivisions().subscribe((respo)=>{
+    //   console.log(respo);
+    //   this.divisions=respo
+ 
+    //  },(error: any)=>{
+    //    console.log(error);
+    //  })
+      
+    // })
   }
   
   get fc(){
