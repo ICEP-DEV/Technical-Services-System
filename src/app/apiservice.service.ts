@@ -21,8 +21,8 @@ export class ApiserviceService {
   }
 
   //creating new artisan
-  createNewArtisan(data:any):Observable<any>{
-    return this._http.post(`${this.apiUrl}`, data);
+  createNewArtisan(data:any){
+    return this._http.post(this.apiUrl+"/add_new_tech",data);
   }
 
   adminLogin(data: any) {
@@ -87,6 +87,9 @@ export class ApiserviceService {
 
   getartisans():Observable<any>{
     return this._http.get(`${this.apiUrl + "/admin/viewAllTechnicians"}`);
+  }
+  allDivisions():Observable<any>{
+    return this._http.get(`${this.apiUrl + "/alldivisions"}`);
   }
   /*Staff Apis*/
       //Api post feedback connection STAFF

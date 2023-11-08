@@ -50,28 +50,28 @@
                         <div class="reqhead1">Create new Artisan</div>
                         <br><br>
                         <label for="Id">Tech_Id :</label>
-                        <input formcontrolName="Tech_Id" type="text" class="form-control mb-2" id="id" name="id" [(ngModel)]="tech_form.id"
-                            placeholder="Enter your Id"><br>
+                        <input  type="text" class="form-control mb-2" id="tech_id" name="tech_form.tech_id" [(ngModel)]="tech_form.tech_id"
+                            placeholder="Enter your Id" ><br>
                         <!-- <div *ngIf="userForm.controls ['id'].touched && userForm.controls['id'].invalid">
-                            <span *ngIf="userForm.controls ['id'].errors['required']">This field is mandatory.</span>
+                            <span *ngIf="!tech_form.id" ['id'].errors['required']">This field is mandatory.</span>
                         </div> -->
-
+                       
                         <label for="name">Name : </label>
-                        <input formcontrolName="Name" type="text" class="form-control mb-2" id="name" name="name" [(ngModel)]="tech_form.name"
+                        <input  type="text" class="form-control mb-2" id="name" name="tech_form.name" [(ngModel)]="tech_form.name"
                             placeholder="Enter your name"><br>
                         <!-- <div *ngIf="userForm.controls ['name'].touched && userForm.controls['name'].invalid">
                             <span *ngIf="userForm.controls ['name'].errors['required']">This field is mandatory.</span>
                         </div> -->
 
                         <label for="surname">Surname :</label>
-                        <input formcontrolName="Surname" type="text" class="form-control mb-2" id="surname" [(ngModel)]="tech_form.surname"
+                        <input  type="text" class="form-control mb-2" id="tech_form.surname" [(ngModel)]="tech_form.surname"
                             name="surname" placeholder="Enter your surname"><br>
                         <!-- <div *ngIf="userForm.controls ['surname'].touched && userForm.controls['surname'].invalid">
                             <span *ngIf="userForm.controls ['surname'].errors['required']">This field is mandatory.</span>
                         </div> -->
 
                         <label for="phone">phone :</label>
-                        <input formcontrolName="Phone" type="text" class="form-control mb-2" id="phone" name="phone" [(ngModel)]="tech_form.phone"
+                        <input  type="text" class="form-control mb-2" id="phone" name="tech_form.phone" [(ngModel)]="tech_form.phone"
                             placeholder="Enter your phone"><br>
                         <!-- <div *ngIf="userForm.controls ['phone'].touched && userForm.controls['phone'].invalid">
                             <span *ngIf="userForm.controls ['phone'].errors['required']">This field is mandatory.</span>
@@ -80,7 +80,7 @@
                         </div> -->
 
                         <label for="email">email :</label>
-                        <input formcontrolName="email" type="text" class="form-control mb-2" id="email" name="email" [(ngModel)]="tech_form.email"
+                        <input  type="text" class="form-control mb-2" id="email" name="tech_form.email" [(ngModel)]="tech_form.email"
                             placeholder="Enter your email"><br>
                         <!-- <div *ngIf="userForm.controls ['email'].touched && userForm.controls['email'].invalid">
                             <span *ngIf="userForm.controls ['email'].errors['required']">This field is mandatory.</span>
@@ -89,19 +89,19 @@
                         </div> -->
 
                         <label for="gender">Gender :</label>
-                        <select id="gender" name="gender">
+                        <select id="gender" name="tech_form.gender"[(ngModel)]="tech_form.gender">
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select><br>
 
-                        <label for="divisions">Divisions :</label>
-                        <select name="division" id="division">
+                        <!-- <label for="divisions">Divisions :</label>
+                        <select name="tech_form.division" id="division" [(ngModel)]="tech_form.division">
                             <option value="">select division</option>
                             <option *ngFor="let item of divisions" [value]="item.division_id">{{item.division_name}}</option>
-                        </select><br>
+                        </select><br> -->
 
                         <label for="campus">Campus :</label>
-                        <select id="campus" name="campus">
+                        <select id="campus" name="tech_form.campus" [(ngModel)]="tech_form.campus">
                             <option value="south">South</option>
                             <option value="north">North</option>
                             <option value="ga-rankuwa">Ga-rankuwa</option>

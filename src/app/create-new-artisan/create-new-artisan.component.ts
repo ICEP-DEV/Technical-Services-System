@@ -6,7 +6,7 @@ import { ApiserviceService } from '../apiservice.service';
 
 export class createNewArtisan {
 
-  id: number | undefined;
+  tech_id: number | undefined;
   name: string = '';
   surname: string = '';
   phone: string = '';
@@ -40,13 +40,13 @@ export class CreateNewArtisanComponent implements OnInit {
 
   ) { }
   tech_form={
-    id:'',
+    tech_id:'',
     name:'',
     surname: '',
     phone:'',
     email: '',
     gender: '',
-    division: '',
+    division: 'Plumbing',
     campus: ''
 
   }
@@ -62,38 +62,61 @@ export class CreateNewArtisanComponent implements OnInit {
     //   gender:new FormControl('',[Validators.required]),
     //   division: new FormControl('',[Validators.required])
      
-    // this.apiservice.allDivisions().subscribe((respo)=>{
-    //   console.log(respo);
-    //   this.divisions=respo
- 
-    //  },(error: any)=>{
-    //    console.log(error);
-    //  })
+   
       
-    // })
+    //  })
+    this.apiservice.allDivisions().subscribe((respo)=>{
+      console.log(respo);
+      this.divisions=respo
+ 
+     },(error: any)=>{
+       console.log(error);
+     })
   }
   
   get fc(){
     return this.userForm.controls;
   }
-
-  submit_artisan() {
-    /*if (!this.userForm.valid) {
-      return;
-    }*/
-    console.log(this.userForm.value)
-    if(this.userForm) {
-      /*this.apiservice.createNewArtisan(this.userForm.value).subscribe((res)=>{
-        console.log(res, 'data submitted');
-        this.userForm.reset();
-        this.successmsg = res.message;
-      })*/
-      // const formData=this.userForm.value;
-      console.log("success")
-      console.log(this.userForm.value);
-    } else {
-      this.errormsg = "All fields required.";
+ ////check if fileds are empty
+  areValuesEmpty(obj:any) {
+    for (const prop in obj) {
+      if (obj.hasOwnProperty(prop) && obj[prop] === '') {
+        return true; // If any property is empty, return true
+      }
     }
+    return false; // If all properties are non-empty, return false
+  }
+////SET valies to be empty aftr
+resetValuesToEmpty(obj:any) {
+  for (const prop in obj) {
+    if (obj.hasOwnProperty(prop)) {
+      obj[prop] = ''; // Set the property value to an empty string
+    }
+  }
+}
+  submit_artisan() {
+    
+    console.log(this.tech_form)
+    
+    const valuesEmpty = this.areValuesEmpty(this.tech_form);
+
+    if (valuesEmpty) {
+
+      console.log('Some values in tech_form are empty.');
+      alert("All fields must be entered");
+        return;
+    } else {
+      console.log('All values in tech_form are non-empty.');
+      this.apiservice.createNewArtisan(this.tech_form).subscribe((res)=>{
+        console.log(res, 'data submitted');
+        this.resetValuesToEmpty(this.tech_form);
+        // this.successmsg = res.message;
+      })
+    }
+      
+
+
+  
   }
 
   logout() {
