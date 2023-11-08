@@ -39,13 +39,13 @@
             </nav>
         </div>
         <br><br>
-        <div class="tab-content ps-5" id="myTabContent">
+        <div class="tab-content d-flex align-items-center justify-content-center float-start" id="myTabContent">
             <div class="tab-pane fade show active" id="doing" role="tabpanel" aria-labelledby="doing-tab">
 
-                <div>
-                    <form
-                        class="w-100 rounded-1 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3"
-                        enctype="multipart/form-data"> 
+               
+                <form class="w-100 rounded-1 p-4 border bg-white mt-0 mb-4 shadow-lg p-3 mb-5 bg-white 
+                            rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8
+                             px-xl-0 px-xxl-3" enctype="multipart/form-data">
                         <!--"form-row row" -->
                         <div class="reqhead1">Create new Artisan</div>
                         <br><br>
@@ -94,11 +94,11 @@
                             <option value="female">Female</option>
                         </select><br>
 
-                        <!-- <label for="divisions">Divisions :</label>
-                        <select name="tech_form.division" id="division" [(ngModel)]="tech_form.division">
+                        <label for="divisions">Divisions :</label>
+                        <select name="tech_form.division_id" id="division_id" [(ngModel)]="tech_form.division_id">
                             <option value="">select division</option>
-                            <option *ngFor="let item of divisions" [value]="item.division_id">{{item.division_name}}</option>
-                        </select><br> -->
+                            <option *ngFor="let item of divisions" [value]="item.id">{{item.division_name}}</option>
+                        </select><br>
 
                         <label for="campus">Campus :</label>
                         <select id="campus" name="tech_form.campus" [(ngModel)]="tech_form.campus">
@@ -110,11 +110,32 @@
                         </select><br>
 
                         
-                      <input type="submit" (click)="submit_artisan()" placeholder="Register">
+                      <input type="submit" (click)="submit_artisan()"(click)="openModal()" placeholder="Register">
                     </form>
-                </div>
+                
             </div>
         </div>
+
+        <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Request</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close" (click)="doSomething()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body"  class="alert alert-success" role="alert">
+                <strong>{{message}}</strong>
+            </div>
+            <div class="modal-footer" >
+              <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+              <button type="button" class="btn btn-primary" (click)="doSomething()"  routerLink="/trackrequest" id="close">OK</button>
+            </div>
+          </div>
+        </div>
+    </div>
 
 
     </div>

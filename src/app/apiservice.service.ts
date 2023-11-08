@@ -21,7 +21,7 @@ export class ApiserviceService {
   }
 
   //creating new artisan
-  createNewArtisan(data:any){
+  createNewArtisan(data: any){
     return this._http.post(this.apiUrl+"/add_new_tech",data);
   }
 

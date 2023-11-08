@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl,FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiserviceService } from '../apiservice.service';
+import { MatDialog } from '@angular/material/dialog';
 
 export class createNewArtisan {
 
@@ -17,7 +18,7 @@ export class createNewArtisan {
 
 }
 
-
+declare var window:any;
 @Component({
   selector: 'app-create-new-artisan',
   templateUrl: './create-new-artisan.component.html',
@@ -36,7 +37,8 @@ export class CreateNewArtisanComponent implements OnInit {
     private fb: FormBuilder,
     private apiservice: ApiserviceService,
     private actrouter: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog
 
   ) { }
   tech_form={
@@ -46,11 +48,13 @@ export class CreateNewArtisanComponent implements OnInit {
     phone:'',
     email: '',
     gender: '',
-    division: 'Plumbing',
+    division_id: '',
     campus: ''
 
   }
-  divisions: any
+  divisions: any;
+  formModal:any;
+  btnClose:any;
 
   ngOnInit(): void {
     // this.userForm = new FormGroup({
@@ -65,13 +69,27 @@ export class CreateNewArtisanComponent implements OnInit {
    
       
     //  })
+
+    this.formModal=new window.bootstrap.Modal(
+      document.getElementById("exampleModalCenter")
+     );
+    //form modal
+    // this.btnClose.getElementById("close");
     this.apiservice.allDivisions().subscribe((respo)=>{
-      console.log(respo);
-      this.divisions=respo
+      console.log(respo.results);
+      this.divisions=respo.results;
  
      },(error: any)=>{
        console.log(error);
      })
+     
+  }
+  openModal(){
+    this.formModal.show();
+  }
+  doSomething(){
+    ///close modal
+    this.formModal.hide();
   }
   
   get fc(){
@@ -86,14 +104,16 @@ export class CreateNewArtisanComponent implements OnInit {
     }
     return false; // If all properties are non-empty, return false
   }
-////SET valies to be empty aftr
-resetValuesToEmpty(obj:any) {
-  for (const prop in obj) {
-    if (obj.hasOwnProperty(prop)) {
-      obj[prop] = ''; // Set the property value to an empty string
+  ////SET valies to be empty aftr
+  resetValuesToEmpty(obj:any) {
+    for (const prop in obj) {
+      if (obj.hasOwnProperty(prop)) {
+        obj[prop] = ''; // Set the property value to an empty string
+      }
     }
   }
-}
+ message:any;
+  
   submit_artisan() {
     
     console.log(this.tech_form)
@@ -109,7 +129,9 @@ resetValuesToEmpty(obj:any) {
       console.log('All values in tech_form are non-empty.');
       this.apiservice.createNewArtisan(this.tech_form).subscribe((res)=>{
         console.log(res, 'data submitted');
+        this.message=res;
         this.resetValuesToEmpty(this.tech_form);
+        
         // this.successmsg = res.message;
       })
     }

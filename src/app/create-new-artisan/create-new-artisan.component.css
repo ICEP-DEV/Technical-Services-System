@@ -42,6 +42,7 @@
 }
 
 
+
 /*logout button*/
 .btn-success{
   color: white;
@@ -95,6 +96,11 @@ a {
 .breadcrumb-item.active {
   border-bottom: 3px solid #005596;
   width: 115px;  
+  text-align: center;
+}
+.breadcrumb-item a {
+  
+  text-align: center;
 }
 
 /* End of Everything on the side nav*/
@@ -131,9 +137,11 @@ a:disabled, a[disabled] {
 }
 /*Div for the content on the right*/
 .tab-content {
+    margin-top: -10%;
     float: right;
-    width: 60%;
-    margin-right: 0%;
+    width: 100%;
+    margin-right: 10%;
+    margin-left: 10%;
   }
   /*Footer*/
 footer{
@@ -238,6 +246,7 @@ font-weight: 700;
 font-size: 32px;
 line-height: 36px;
 letter-spacing: 0.15em;
+text-align: center;
 
 color: #000000;
 }
