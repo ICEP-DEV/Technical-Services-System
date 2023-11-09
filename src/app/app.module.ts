@@ -52,6 +52,7 @@ import { HodprogressComponent } from './hodprogress/hodprogress.component';
 import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
 import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
 import { CreateNewArtisanComponent } from './create-new-artisan/create-new-artisan.component';
+import { TechnicianTableComponent } from './tech-table/tech-table.component';
 
 
 
@@ -93,6 +94,7 @@ import { CreateNewArtisanComponent } from './create-new-artisan/create-new-artis
      StaffsendrequestComponent,
     AvailableTechComponent,
     CreateNewArtisanComponent,
+    TechTableComponent,
   ],
   imports: [
     BrowserModule,
