@@ -7,7 +7,7 @@
 
     width: 100%;
   }
-.header {
+  .header {
     height: 82px;
     background: #0c0c0c;
     width: 100%;
@@ -43,7 +43,7 @@
   }
 
 #logoDiv{
-    margin-left: 1%;
+    margin-left: 5%;
     margin-top: 7.2px;
   }
 
@@ -111,6 +111,16 @@ a:disabled, a[disabled] {
   margin: 80% auto;
   
 }
+.btn-success{
+  color: white;
+  border: 2px solid white;
+  height: 40px;
+  background-color: #005596;
+}
+ .btn-success:active{
+  border: white;
+  background-color: #005596;
+}
 .contentMargin,label{
   margin: 3.5px 0;
   text-align: center;
@@ -121,6 +131,21 @@ a:disabled, a[disabled] {
   padding: 6px;
   color: black;
   
+}
+.btn{
+  background-color:#eceef3 ;
+
+  border-radius: 5px;
+  height:50px;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  font-weight: bold;
+  }
+ .btn-success:active{
+  border: white;
+  background-color: #005596;
 }
 .In-progressTasks{
   background-color: orange;

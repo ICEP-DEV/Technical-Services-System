@@ -7,7 +7,7 @@ body {
     width: 100%;
   }
   
-.header {
+  .header {
     height: 82px;
     background: #0c0c0c;
     width: 100%;
@@ -21,7 +21,12 @@ body {
     box-sizing: border-box;
     z-index: 100;
   }
+  #logoDiv{
   
+    margin-left: 5%;
+    margin-top: 7.2px;
+  
+  }
 .header a {
     padding: 0 32px;
     color: #eee;
@@ -42,20 +47,18 @@ body {
     margin: 0;
   }
 /*logout button*/
-.btn-success{
-  color: white;
+.btn{
+  font-weight: bold;
+  color:black;
   border: 2px solid white;
   height: 40px;
-  background-color: #005596;
-}
-.btn-success:active{
+  background-color:white;
+  }
+ .btn-success:active{
   border: white;
   background-color: #005596;
 } 
-#logoDiv{
-    margin-left: 1%;
-    margin-top: 7.2px
-  }
+
 
 .sideNav {
     float: left;

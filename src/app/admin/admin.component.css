@@ -18,6 +18,12 @@
 #menu-toggle {
     display: none;
 }
+#logoDiv{
+  
+    margin-left: 5%;
+    margin-top: 7.2px;
+  
+  }
 
 .sidebar {
     position: fixed;

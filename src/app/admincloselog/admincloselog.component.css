@@ -39,18 +39,23 @@ body {
   }
   #logoDiv{
   
-    margin-left: 1%;
+    margin-left: 5%;
     margin-top: 7.2px;
   
   }
   
   /*logout button*/
-  .btn-success{
-    color: white;
-    border: 2px solid white;
-    height: 40px;
-    background-color: #005596;
-  }
+  .btn{
+    background-color:#eceef3 ;
+
+    border-radius: 5px;
+    height:50px;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    font-weight: bold;
+    }
   .btn-success:active{
     border: white;
     background-color: #005596;

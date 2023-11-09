@@ -30,6 +30,7 @@ export class CreateNewArtisanComponent implements OnInit {
 
   errormsg: any;
   successmsg: any;
+  boolmsg:any;
   //  user: any= new this.user
   userForm!: FormGroup;
 
@@ -123,13 +124,18 @@ export class CreateNewArtisanComponent implements OnInit {
     if (valuesEmpty) {
 
       console.log('Some values in tech_form are empty.');
-      alert("All fields must be entered");
+      this.boolmsg=true;
+      this.successmsg="All fields must be entered"
+      // alert("All fields must be entered");
         return;
     } else {
       console.log('All values in tech_form are non-empty.');
       this.apiservice.createNewArtisan(this.tech_form).subscribe((res)=>{
-        console.log(res, 'data submitted');
+        console.log(res);
         this.message=res;
+        this.boolmsg=true;
+        this.successmsg=this.message;
+        
         this.resetValuesToEmpty(this.tech_form);
         
         // this.successmsg = res.message;
