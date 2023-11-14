@@ -1,10 +1,7 @@
-body {
-  width: 100%;
-}
-.stats{
-  margin: 10.8%;
-}
+
+
 /* Start of the navigation bar*/
+
 .header {
   height: 82px;
   background: #0c0c0c;
@@ -18,15 +15,16 @@ body {
   padding:0 16px 0 0;
   box-sizing: border-box;
   z-index: 100;
+  right:0px;
 }
 .header a {
   padding: 0 32px;
-  color: #eee;
+  color: rgb(227, 227, 233);
   transition: 0.4s;
 }
 .header a:hover {
   text-decoration: none;
-  color: red;
+  color:#005596;
 }
 .header ul {
   display: flex;
@@ -38,10 +36,12 @@ body {
 }
 #logoDiv{
 
-  margin-left: 1%;
+  margin-left: 5%;
   margin-top: 7.2px;
 
 }
+
+
 
 /*logout button*/
 .btn{
@@ -54,8 +54,8 @@ body {
   font-size: 16px;
   border: none;
   font-weight: bold;
-}
- .btn-success:active{
+  }
+.btn-success:active{
   border: white;
   background-color: #005596;
 }
@@ -63,12 +63,15 @@ body {
 /* Start of  Everything on the side nav*/
 .sideNav {
   float: left;
- 
+  /* flex: 0 0 auto; */
   box-shadow: 5px 0 2px #969292;
   width: 335px;
   height: 1055px;
   
 }
+
+
+
 .breadcrumbNav {
   margin: 12% 10px;
   padding: 20px 30px;      
@@ -91,13 +94,20 @@ a {
   text-decoration: none;
 }
 .breadcrumbNav ul {
+  
   list-style:none ;
   flex-direction: column;
 }
 .breadcrumb-item.active {
   border-bottom: 3px solid #005596;
   width: 115px;  
+  text-align: center;
 }
+.breadcrumb-item a {
+  
+  text-align: center;
+}
+
 /* End of Everything on the side nav*/
 
 /*Disable the active link*/
@@ -132,9 +142,11 @@ a:disabled, a[disabled] {
 }
 /*Div for the content on the right*/
 .tab-content {
+    margin-top: -10%;
     float: right;
-    width: 80%;
-    margin-right: 0%;
+    width: 100%;
+    margin-right: 10%;
+    margin-left: 10%;
   }
   /*Footer*/
 footer{
@@ -150,49 +162,50 @@ footer{
     /* bottom: 0;
     width: 100%; */
   }
-  
-  
-  
-  /*Navigation*/
-/*   
-  nav {
-    height: 72px;
-    background: #0c0c0c;
+  .nav-tabs {
+    position: center;
+    width: 335px;
+    height: 600px;
+    left: 2px;
+    float: left;
     width: 100%;
-    margin: 0;
-    position: fixed;
-    font-family: 'Roboto Condensed',sans-serif;
-    font-size: 20px;
-    display: flex;
-    justify-content: space-between;
-    padding:0 16px 0 0;
-    box-sizing: border-box;
-    z-index: 100;
-  }
+    
+  top:50%;  
+  transform: translateY(-50%);
+    
+    background: rgba(155, 154, 154, 0.8);
+    border-right: 5px solid #0e0f52;
+    
+    
+    }
+    
+    .nav-item{
+      padding: 8px 24px;
+      
+      transition: 0.4s;
+      font-family: 'georgia';
+      margin-bottom: 24px;
+      margin-left: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      background: white;
+    }
+    
+    .nav-item:hover {
+      
+      text-decoration: none;
+      padding: 8px 0;
+      border-left: 8px solid rgb(14, 60, 90);
+      box-shadow: 4px 4px 4px rgba(70, 69, 69, 0.993);
+    }
+    
+    
+    .nav-link.active {
+      border: none;
+    }
+    
   
-  nav a {
-    padding: 0 32px;
-    color: #eee;
-    transition: 0.4s;
-  }
   
-  nav a:hover {
-    text-decoration: none;
-    color: red;
-  }
-  
-  nav ul {
-    display: flex;
-    list-style: none;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-    margin: 0;
-  }
-  
-  .active {
-    color:#0e0d0d;
-  } */
 .table {
     width: 90%;
     margin: auto auto;
@@ -203,7 +216,6 @@ select#Cater,input.form-control {
     border-radius: 0.25rem;
   }
 .content{
-  border: 1px solid #ccc;
   overflow-y: scroll;
   height: auto; 
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
@@ -211,14 +223,35 @@ select#Cater,input.form-control {
   width: 85%;
   margin: auto auto;
 }
+.status {
+      background-color: #7F4D3E;
+      color: white;
+}
+.btn-success{
+  color: white;
+  border: 2px solid white;
+  height: 40px;
+  background-color: #005596;
+}
+.btn-success:active{
+  border: white;
+  background-color: #005596;
+}
 
-.btnAvailableTech{
-    background: black;
-    color: white;
-    width: 120px;
-    height: 30px;
-    border-radius: 5px;
-    text-align: center;
+.reqhead1{
+  
+  border: 2px solid rgb(211, 211, 211);
+  background-color: #dfdddd; 
+  font-weight: bold;
+  color: #0e0f52;
 
+font-family: 'monaco';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 36px;
+letter-spacing: 0.15em;
+text-align: center;
 
-  }
+color: #000000;
+}

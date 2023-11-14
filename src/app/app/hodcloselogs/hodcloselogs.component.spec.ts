@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TechpageComponent } from './techpage.component';
+import { HodcloselogsComponent } from './hodcloselogs.component';
 
-describe('TechpageComponent', () => {
-  let component: TechpageComponent;
-  let fixture: ComponentFixture<TechpageComponent>;
+describe('HodcloselogsComponent', () => {
+  let component: HodcloselogsComponent;
+  let fixture: ComponentFixture<HodcloselogsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TechpageComponent ]
+      declarations: [ HodcloselogsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TechpageComponent);
+    fixture = TestBed.createComponent(HodcloselogsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

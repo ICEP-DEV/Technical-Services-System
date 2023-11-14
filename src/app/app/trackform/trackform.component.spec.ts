@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TechpageComponent } from './techpage.component';
+import { TrackformComponent } from './trackform.component';
 
-describe('TechpageComponent', () => {
-  let component: TechpageComponent;
-  let fixture: ComponentFixture<TechpageComponent>;
+describe('TrackformComponent', () => {
+  let component: TrackformComponent;
+  let fixture: ComponentFixture<TrackformComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TechpageComponent ]
+      declarations: [ TrackformComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TechpageComponent);
+    fixture = TestBed.createComponent(TrackformComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

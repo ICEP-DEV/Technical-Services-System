@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TechpageComponent } from './techpage.component';
+import { AvailableTechComponent } from './available-tech.component';
 
-describe('TechpageComponent', () => {
-  let component: TechpageComponent;
-  let fixture: ComponentFixture<TechpageComponent>;
+describe('AvailableTechComponent', () => {
+  let component: AvailableTechComponent;
+  let fixture: ComponentFixture<AvailableTechComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TechpageComponent ]
+      declarations: [ AvailableTechComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TechpageComponent);
+    fixture = TestBed.createComponent(AvailableTechComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

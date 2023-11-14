@@ -1,0 +1,104 @@
+<div class="container-fluid">
+    <!-- <body class="container"> -->
+        <div class="log d-flex justify-content-end">
+            <nav class="header">
+                <div id="logoDiv">
+                    <a>
+                     
+                        <img class="logo" src="../../../assets/images/tut.png" alt="SMART FARM"
+                            style="float: right;height: 70px;width: 225px;" routerLink="read">
+                    </a>
+                </div>
+                <div id="menu-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul>
+                    <li>
+        
+                        <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
+                                class="btn ">LOGOUT</button></a>
+                    </li>
+                </ul>
+        
+            </nav>
+        </div>
+  </div>
+  <body>
+  <br><br>
+    <div class="container2 d-flex justify-content-between ">
+        <div class="sideNav">
+            <nav class="breadcrumbNav">
+                <ul>
+
+                    <li class="" id="breadcrumbpadding"><a class="" id="hover" routerLink="/adminpage">View Logs</a>
+                    </li>
+                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="" disabled>Tech-table</a></li>
+                </ul>
+            </nav>
+        </div>
+  
+        
+        <br><br>
+        <div class="tab-content ps-3 mt-5" id="myTabContent">
+  
+              
+                <div class = "contentForm" >
+                   
+                    <!-- <div class="departmenCategoryText">
+                        <h2></h2>
+                        <h4></h4>
+                        <h5></h5>
+                    </div>
+                     -->
+                    <div class="content card mt-4 p-4">
+  
+                
+                        <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Technicians</h1>
+                        <table class="table">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Surname</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Available</th>
+                                <th scope="col">Division_Name</th>
+                                <th scope="col">Campus</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let technician of technicians">
+                                <td>{{ technician.tech_id }}</td>
+                                <td>{{ technician.name }}</td>
+                                <td>{{ technician.surname }}</td>
+                                <td>{{ technician.phone }}</td>
+                                <td>{{ technician.email }}</td>  
+                                <td>{{ technician.availability }}</td>
+                                <td>{{ technician.division_name }}</td>
+                                <td>{{ technician.campus}}</td>
+                                <td class="status">{{data.status}}</td>
+  
+                               
+                                <!-- <td><button type="button" class="logbtn" (click)="log($event,data.id)" [(ngModel)]="data.status">Log</button> </td> -->
+                              </tr>
+                            </tbody>
+                          </table>
+                        
+                    </div>
+    
+        
+                   
+                </div>
+         
+           
+           
+  
+  
+  
+        </div>
+  
+    </div>
+    <footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
+    </footer> 
+  </body>

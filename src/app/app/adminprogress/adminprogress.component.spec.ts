@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TechpageComponent } from './techpage.component';
+import { AdminprogressComponent } from './adminprogress.component';
 
-describe('TechpageComponent', () => {
-  let component: TechpageComponent;
-  let fixture: ComponentFixture<TechpageComponent>;
+describe('AdminprogressComponent', () => {
+  let component: AdminprogressComponent;
+  let fixture: ComponentFixture<AdminprogressComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TechpageComponent ]
+      declarations: [ AdminprogressComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TechpageComponent);
+    fixture = TestBed.createComponent(AdminprogressComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

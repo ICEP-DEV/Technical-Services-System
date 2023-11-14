@@ -1,0 +1,172 @@
+
+    <!-- nav bar -->
+    <div class="log d-flex justify-content-end">
+        <nav class="header">
+            <div id="logo-text">
+                <a href="index.html"(click)="logout()">
+                    <img src="../../../assets/images/tut.png" alt="SMART FARM"
+                        style="float: left;height: 72px;width: 225px;" routerLink="read">
+                </a>
+            </div>
+            <div id="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul>
+                <li>
+                    <a href="#" class="nav-link active" id="ModalExample" (click)="logout()">
+                        <button type="button" class="btn btn-success">LOGOUT</button>
+                    </a>
+                </li>
+            </ul>
+
+    
+        </nav>
+    </div>
+    
+    
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <!-- side nav bar -->
+    <div class="d-flex justify-content-between">
+        <div class="sideNav">
+            <nav class="breadcrumbNav">
+                <ul>
+                    <li class="breadcrumb-item active" id="breadcrumbpadding">
+                        <a class="anchorBorder" id="hover" disabled="true"><b>REQUEST</b></a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="breadcrumb-item active" id="breadcrumbpadding">
+                        <a class="anchorBorder" id="hover" routerLink="/trackrequest"><b>TRACKING</b></a>
+                    </li>
+                </ul>
+    
+    
+                <!-- <ul>
+                    <li>
+                        <a href="#" class="nav-link active" id="ModalExample" (click)="logout()">
+                            <button type="button" class="btn btn-success">LOGOUT</button>
+                        </a>
+                    </li>
+                </ul>
+     -->
+    
+            </nav>
+        </div>
+       
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Request</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close" (click)="doSomething()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" *ngIf="showSuccessMsg" class="alert alert-success" role="alert">
+                <strong>{{successmsg}}</strong>
+            </div>
+            <div class="modal-footer" >
+              <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+              <button type="button" class="btn btn-primary" (click)="doSomething()"  routerLink="/trackrequest" id="close">OK</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    
+            <!-- send request -->
+        <div class="tab-content ps-5" id="myTabContent">
+            <div class="tab-pane fade show active" id="doing" role="tabpanel" aria-labelledby="doing-tab">
+    
+                <div>
+                    <form method="POST"
+                        class="w-100 rounded-1 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3"
+                        enctype="multipart/form-data">
+                        <div class="reqhead1">SEND REQUEST</div>
+                        <div *ngIf="showSuccessMsg" class="alert alert-success" role="alert">
+                            <strong>{{successmsg}}</strong>
+                            <button id="b12" type="button" class="btn-close" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                        </div>
+                        
+                        <div class="form-group">
+                            <br>
+                            <select (change)="buldingNoSelect($event)" class="form-control mb-2 mr-sm-2">
+                                <option value="">Select Building Number</option>
+                                <option *ngFor="let bld of bld_no" value="{{bld}}">{{bld}}</option>
+                            </select>
+                            <br>
+                            <select (change)="getVunueSelected($event)" class="form-control mb-2 mr-sm-2">
+                                <option value="#">---Select Vanue---</option>
+                                <option *ngFor="let vanue of selectedBuilding" value="{{vanue.v}}">{{vanue.v}}</option>
+                            </select>
+                        </div>
+    
+    
+    
+                       
+        
+                            <label class="Cater" for="Cater">
+        
+                                <h4>Catergory</h4>
+        
+                                <select id="Cater" (change)="setCategory($event)" >
+                                    <option value="#">Select Catergory</option>
+                                    <option *ngFor="let catList of categoryList" value="{{[catList.id, catList.division_name]}}">{{catList.division_name}}</option>
+                                </select>
+                                
+                            </label>
+        
+                            <label class="Cater" for="Cater">
+        
+                                <h4>Catergory Issues</h4>
+        
+                                <select id="Cater" (change)="setCategoryItem($event)" >
+                                    <option value="">Select Catergory Issue</option>
+                                    <option *ngFor="let cat of catergoryIssue" value="{{cat.item_name}}">{{cat.item_name}}</option>
+                                </select>
+                                
+                            </label>
+    
+                            
+                       
+        
+                            <div class="mb-3 d-flex justify-content-center">
+                                <button type="submit" (click)="clear()" (click)="request()" (click)="openModal()"
+                                    class="btn btn-primary px-3 rounded-3">
+                                    Submit
+                                </button>
+                            </div>
+        
+                            <div class="d-block text-end">
+        
+                            </div>
+        
+        
+                        </form>
+        
+        
+                    </div>
+        
+        
+        
+                </div>
+               
+    
+    
+        </div>
+    
+    
+    
+    </div>
+    
+    <footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
+    </footer>
+    
