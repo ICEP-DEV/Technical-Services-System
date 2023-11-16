@@ -37,46 +37,47 @@ export class TrackRequestComponent {
     this.done = 0;
     this.isPending = false
     var tempId = localStorage.getItem('stafflogin')
+    console.log("locals storage",tempId)
     var staffId = Number(tempId?.substring(1, tempId.length - 1))
     this.service.getRequestsBystaffId(staffId).subscribe(respond => {
-      console.log(respond)
+      console.log("api res",respond)
       //storing the data fetched from the server in a temporary variable
-      this.tempRequest = respond
-      let requestcount = this.tempRequest.result.length
-      console.log(this.tempRequest.result )
+      this.tempRequest = respond;
+      let requestcount = this.tempRequest.result.length;
+      console.log("results variable",this.tempRequest.result )
       //array 
       var array = []
       for (let i = 0; i < requestcount; i++) {
         //Validating the data in the tempRequest variable
         if (this.tempRequest.result[i].progress == "pending" && this.tempRequest.result[i].tech_id == null) {
-          this.unAssign++
-          this.isPending = true
+          this.unAssign++;
+          this.isPending = true;
           //If it matches, push the MATCHED DATA to the array variable.
           array.push(this.tempRequest.result[i]);
         }
 
         else if (this.tempRequest.result[i].progress == "pending") {
-          this.assigned++
+          this.assigned++;
           //If it matches, push the MATCHED DATA to the array variable.
         }
 
         else if (this.tempRequest.result[i].progress == "in-progress") {
-          this.inprogress++
+          this.inprogress++;
           //If it matches, push the MATCHED DATA to the array variable.
         }
 
         else if (this.tempRequest.result[i].progress == "on-hold") {
-          this.hold++
+          this.hold++;
           //If it matches, push the MATCHED DATA to the array variable.
         }
 
         else if (this.tempRequest.result[i].progress == "complete") {
-          this.done++
+          this.done++;
           //If it matches, push the MATCHED DATA to the array variable.
         }
 
         else if (this.tempRequest.result[i].progress == "assign") {
-          this.assigned++
+          this.assigned++;
           //If it matches, push the MATCHED DATA to the array variable.
         }
       }

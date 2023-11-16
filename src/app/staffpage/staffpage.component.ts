@@ -61,10 +61,7 @@ export class StaffpageComponent implements OnInit {
      );
     //form modal
   }
-  someEvent() {
-    // Trigger the popup event
-    this.service.triggerPopup();
-  }
+  
   openModal(){
     this.formModal.show();
     // this.admin.openAdminModal();
@@ -74,11 +71,7 @@ export class StaffpageComponent implements OnInit {
     this.formModal.hide();
   }
   //admin alert function
-  adminAlert(){
-    this.service.adminModal().subscribe(()=>{
-      console.log("admin pop");
-    })
-  }
+  
 
   buldingNoSelect(event: any) {
     var venueArray = []

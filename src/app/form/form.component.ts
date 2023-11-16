@@ -39,6 +39,7 @@ export class FormComponent implements OnInit {
   ngOnInit() { }
 
   staff_object:any
+  local:any;
 
   staff_login(): void {
 
@@ -50,9 +51,11 @@ export class FormComponent implements OnInit {
     this.service.staffLogin(this.staffLogin)
     .subscribe((response)=>{
       this.staff_object = response
-      console.log(this.staff_object.body)
+      console.log(this.staff_object)
       if (this.staff_object.success == true) {
         localStorage.setItem('stafflogin', JSON.stringify(this.staffLogin.staff_id));
+        this.local=localStorage.getItem('stafflogin');
+        console.log(this.local)
         this.close();
         this._router.navigate(['/staffpage']);
       }

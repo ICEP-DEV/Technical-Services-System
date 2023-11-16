@@ -21,13 +21,12 @@ export class DashboardComponent implements OnInit {
   totalartisan: any;
   statsData: any;
   formModal:any;
+  span=false;
+  private intervalId: any;
+  showModal=false;
 
   constructor(private service: ApiserviceService,public dialog: MatDialog) { 
    
-    this.service.popupEvent.subscribe(() => {
-      this.formModal.show();
-      this.showPopup();
-    });
   }
   
   
@@ -40,16 +39,33 @@ export class DashboardComponent implements OnInit {
     this.formModal.show();
  
   }
+  messages:string='';
   ngOnInit(): void {
+    this.getMessage();
+    this.formModal=new window.bootstrap.Modal(
+      document.getElementById("adminPop")
+     );
     this.service.allRequests().subscribe((res) => {
       console.log(res.result, "Active tasks/pending before setting priority");
       this.readData = res.result;
 
-      
+      // setInterval(() => {
+      //   this.getMessage();
+       
+      // }, 5000); 
+      setInterval(() => {
+        this.getMessage();
+        this.messages=this.message;
+        if(this.messages===''&&this.intervalId){
+          this.stopInterval()
+         
+        }else if(this.messages!=''&&this.intervalId){
+              
+               this.startInterval()
+        }
+      }, 5000); // 1000 milliseconds (1 second)
 
-      // this.formModal=new window.bootstrap.Modal(
-      //   document.getElementById("adminPop")
-      //  );
+      
       
 
     })
@@ -81,6 +97,60 @@ export class DashboardComponent implements OnInit {
   closeAdminModal(){
     ///close modal
     this.formModal.hide();
+    this.showModal=false;
+    this.messages='';
+    console.log("close modal")
+    // this.message='';
+    this.stopInterval()
+  
+  }
+  message='';
+  id=''
+  category='';
+  description=''
+  getMessage() {
+    this.service.getRequest().subscribe(
+      data => {
+        
+          this.message = data.request.id;
+        if(this.message){
+          this.id=data.request.id;
+          this.description=data.request.description;
+          this.category=data.request.category
+          console.log(this.message)
+          this.showModal=true;
+          this.openAdminModal()
+        }
+       
+        
+      
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+   // Function to stop the interval
+   stopInterval() {
+    clearInterval(this.intervalId);
+    console.log("stopped")
+  }
+
+  startInterval() {
+    // Set up the interval and store the interval ID
+    this.intervalId = setInterval(() => {
+    
+      console.log("running")
+    }, 5000); // 1000 milliseconds (1 second)
+  }
+
+  onToggleInterval() {
+    // Toggle between starting and stopping the interval
+    if (this.intervalId) {
+      this.stopInterval();
+    } else {
+      this.startInterval();
+    }
   }
   
 
