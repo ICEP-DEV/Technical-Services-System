@@ -21,7 +21,6 @@ import { AdminassigntaskComponent } from './adminassigntask/adminassigntask.comp
 import { AdminprogressComponent } from './adminprogress/adminprogress.component';
 import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
-import { ReportComponent } from './report/report.component';
 import { HODpageComponent } from './hodpage/hodpage.component';
 import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
 import { TechpageComponent } from './techpage/techpage.component';
@@ -30,7 +29,10 @@ import { HodprogressComponent } from './hodprogress/hodprogress.component';
 import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
 import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
 import { CreateNewArtisanComponent } from './create-new-artisan/create-new-artisan.component';
-import { TechnicianTableComponent } from './tech-table/tech-table.component';
+import { TechnicianTableComponent } from './technician-table/technician-table.component';
+import { AssignPopupComponent } from './assign-popup/assign-popup.component';
+import { ReportComponent } from './report/report.component';
+
 
 
 
@@ -61,7 +63,11 @@ const routes: Routes = [
   {path:'admindash', component:AdmindashboardComponent},
   {path:'dash2', component:DashboardComponent},
   {path:'newArtisan', component:CreateNewArtisanComponent},
-  {path:'tech-table', component:TechnicianTableComponent}
+  {path:'tech-table', component:TechnicianTableComponent},
+  {path:'assignpopup',component:AssignPopupComponent},
+  {path:'report',component:ReportComponent}
+  
+
 
   //{path:'generatereport',component:ReportComponent}
 

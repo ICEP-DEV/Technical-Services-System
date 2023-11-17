@@ -161,7 +161,7 @@ export class ApiserviceService {
         return this._http.get(`${this.apiUrl+"/admin/export"}`);
       }
 
-      Techdata(id : any) {
+  Techdata(id : any) {
         return this._http.get(this.apiUrl + "/technician/tasks/"+id);
       }
 

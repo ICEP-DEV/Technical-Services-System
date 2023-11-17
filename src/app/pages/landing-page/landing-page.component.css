@@ -96,6 +96,7 @@ color: white;
   height: 100vh;
   display: flex;
   background-color: #f7f7f7;
+  
   align-items: center;
   justify-content: center;
   flex-direction: column;

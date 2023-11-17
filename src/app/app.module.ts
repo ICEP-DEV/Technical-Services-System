@@ -38,7 +38,6 @@ import { AdminprogressComponent } from './adminprogress/adminprogress.component'
 import { HODloginPageComponent } from './hodlogin-page/hodlogin-page.component';
 import { HODpageComponent } from './hodpage/hodpage.component';
 import { CloselogComponent } from './closelog/closelog.component';
-import { ReportComponent } from './report/report.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AvailableTechComponent } from './available-tech/available-tech.component';
 import { MatInputModule } from '@angular/material/input';
@@ -52,7 +51,9 @@ import { HodprogressComponent } from './hodprogress/hodprogress.component';
 import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
 import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
 import { CreateNewArtisanComponent } from './create-new-artisan/create-new-artisan.component';
-import { TechnicianTableComponent } from './tech-table/tech-table.component';
+import { TechnicianTableComponent } from './technician-table/technician-table.component';
+import { AssignPopupComponent } from './assign-popup/assign-popup.component';
+import { ReportComponent } from './report/report.component';
 
 
 
@@ -83,7 +84,6 @@ import { TechnicianTableComponent } from './tech-table/tech-table.component';
     TechpageComponent,
     HODpageComponent,
     CloselogComponent,
-    ReportComponent,
     AdminassigntaskComponent,
      AdmincloselogComponent,
      HodSageComponent,
@@ -94,7 +94,9 @@ import { TechnicianTableComponent } from './tech-table/tech-table.component';
      StaffsendrequestComponent,
     AvailableTechComponent,
     CreateNewArtisanComponent,
-    TechTableComponent,
+    TechnicianTableComponent,
+    AssignPopupComponent,
+    ReportComponent,
   ],
   imports: [
     BrowserModule,

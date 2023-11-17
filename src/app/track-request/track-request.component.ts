@@ -25,7 +25,7 @@ export class TrackRequestComponent {
   assigned = 0;
   inprogress = 0;
   hold = 0;
-  done = 0;
+  done: any;
   isPending = false
   //get the todo tasks
   recieveAllRequest() {
@@ -86,7 +86,9 @@ export class TrackRequestComponent {
 
 
       //Storing the data in the all request variable/array
-      this.allRequest = array
+      this.allRequest = array;
+      console.log('todo', array)
+
       console.log('todo', this.allRequest)
 
     })

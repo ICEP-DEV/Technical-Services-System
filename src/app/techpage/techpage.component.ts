@@ -58,7 +58,7 @@ progressTask(event:any,jobCardId:Number){
   
 
 
-
+console
 
 
 }
