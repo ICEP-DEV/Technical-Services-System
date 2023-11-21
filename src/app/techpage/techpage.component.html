@@ -89,7 +89,9 @@
                             <tr>
                                 <th scope="col"> </th>
                                 <th scope="col">Ref.</th>
-                                <th scope="col">Requested Date</th>
+                                <th scope="col">Assigned Date</th>
+                                <th scope="col">Expected Date</th>                            
+                                <!-- <th scope="col">Expected Date</th> -->
                                 <th scope="col">Description</th>
                                 <!-- <th scope="col">Priority</th> -->
                                 <th scope="col">Venue</th>
@@ -111,8 +113,9 @@
                     c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z" />
                                     </g>
                                 </svg></th>
-                                <th scope="row">{{ data.req_date }}</th>
                                 <th scope="row">{{ data.id }}</th>
+                                <th scope="row">{{ data.assigned_date }}</th> 
+                                <th scope="row">{{ data.expected_date }}</th>                            
                                 <th scope="row">{{ data.description }}</th>
                                 <td>{{ data.venue }}</td>
                                 <td>

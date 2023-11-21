@@ -233,4 +233,13 @@ export class ApiserviceService {
 //   return this._http.get(`${this.apiUrl + "/admin/ServiceStatistics"}`)
 // }
 
+  //creating new artisan
+  createNewArtisan(data: any){
+    return this._http.post(this.apiUrl+"/add_new_tech",data);
+  }
+
+  allDivisions():Observable<any>{
+    return this._http.get(`${this.apiUrl + "/alldivisions"}`);
+  }
+
 }

@@ -143,8 +143,6 @@ this.id = Number(data)
       this.message = "Date you are setting cannot be before the current date";
       return
     }
-    console.log(setDate)
-    console.log(currentdate)
     this.adminTechDetails.expected_date = setDate.toString()
     //Get the Artisan id from the assignArtisan button(which is the data from the get available tech api), we only passsing and tech id from the html file 
   

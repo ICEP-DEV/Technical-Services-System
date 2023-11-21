@@ -53,6 +53,7 @@ import { CalenderComponent } from './calender/calender.component';
 import { AssignPopupComponent } from './assign-popup/assign-popup.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { TechnicianTableComponent } from './technician-table/technician-table.component';
+import { CreateNewArtisanComponent } from './create-new-artisan/create-new-artisan.component';
 
 
 
@@ -87,7 +88,8 @@ import { TechnicianTableComponent } from './technician-table/technician-table.co
     AssignPopupComponent,
     AdminprogressComponent,    
     TechnicianTableComponent,
-    AdmindashboardComponent
+    AdmindashboardComponent,
+    CreateNewArtisanComponent
   ],
   imports: [
     BrowserModule,
