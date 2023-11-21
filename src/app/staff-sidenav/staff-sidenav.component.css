@@ -1,0 +1,43 @@
+
+
+.sideNav {
+    float: left;
+    box-shadow: 5px 0 2px #575656;
+    width: 300px;
+    height: 850px;
+    
+    
+    }
+    
+    .breadcrumbNav {
+    margin: 12% 10px;
+    padding: 20px 30px; 
+    top:0%;  
+        
+    }
+    #breadcrumbpadding {
+    
+    width: 115px;  
+    padding: 6px 0;
+    }
+    
+    a {
+    font-size: 16px;
+    line-height: 20px;
+    color: #2e2e2e;
+    text-decoration: none;
+    }
+    
+    .breadcrumbNav ul {
+    
+    list-style:none ;
+    flex-direction: column;
+    }
+    .breadcrumb-item.active {
+    
+    
+    border-bottom: 3px solid #4b4c4d;
+    width: 115px;  
+    
+    }
+    

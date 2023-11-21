@@ -29,24 +29,10 @@ export class AdminprogressComponent {
   
   ngOnInit(): void{
     let data = localStorage.getItem('reference');
-
-   
-
    this.getInProgress();
 
      this.getCompleted();
-
-    // //get the total number of tasks inprogress
-    //  this.gettotalInprogress();
-
-    // //get the total number of tasks completed
-    //  this. gettotalCompleteted();
-    
-
-     
   }
-
- 
 
 
   logout(): void{
@@ -59,29 +45,7 @@ export class AdminprogressComponent {
     window.print();
   }
 
-  // Get the total Inprogress tasks 
-  // gettotalInprogress(){
-  //   this.service.getInprogressTasks().subscribe((res)=>{
-  //     // this.data = res;
-  //     this.totalInprogress = res;
-  //     this.total = this.totalInprogress.length;
-  //   console.log(this.total,"total inprogress")
-     
-  //   });
-    
-  // }
-  // // Get the total completed tasks 
-  // gettotalCompleteted(){
-  //   this.service.getInprogressTasks().subscribe((res)=>{
-  //     // this.data = res;
-  //     this.totalCompleted = res;
-  //     this.total = this.totalCompleted.length;
-  //   console.log(this.total,"total Completed")
-     
-  //   });
-    
-  // }
-  // Get the all Inprogress tasks 
+
   getInProgress(){
     this.service.getInprogressTasks().subscribe((res)=>{
         // this.data = res;

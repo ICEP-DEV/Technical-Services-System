@@ -1,130 +1,65 @@
-<div class="">
-    <!-- <body class="container"> -->
-    <div class="log d-flex justify-content-end">
-        <nav class="header">
-            <div id="logoDiv">
-                <a>
-                    <img class="logo" src="../../../assets/images/tut.png" alt="SMART FARM"
-                        style="float: left;height: 70px;width: 225px;" routerLink="read">
-                </a>
-            </div>
-            <div id="menu-icon">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul>
-                <li>
+<app-admin-header></app-admin-header>
 
-                    <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
-                            class="btn btn-success">LOGOUT</button></a>
-                </li>
-            </ul>
+<div class="main_content">
+    <div class="body" style="display: flex;">
+        <header>
+            <app-admin-sidenav></app-admin-sidenav>
+        </header>
+        <div class="tab-content m-2 " id="myTabContent">
 
-        </nav>
+            <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="message !=''">
+                <strong>{{message}}</strong>
+            </div>
+            <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Admin
+                View
+                Request</h1>
+            <table id="customers">
+                <thead>
+                    <tr>
+                        <th>Ref.</th>
+                        <th>Staff Number</th>
+                        <th>Description</th>
+                        <th>venue</th>
+                        <th>Requested Date</th>
+                        <th>Expected Date</th>
+                        <th>View Available</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let me of readData" class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content"
+                        data-aos="fade-right" data-aos-delay="100">
+                        <td>{{me.id}}</td>
+                        <td>{{me.staff_id}}</td>
+                        <td>{{me.description}}</td>
+                        <td>{{me.venue}}</td>
+                        <td>{{me.req_date}}</td>
+                        <td>
+                            <select id="Cater" (change)="setDay($event)">
+                                <option value="">Day</option>
+                                <option *ngFor="let day of days" value="{{day}}">{{day}}</option>
+                            </select>
+                            <select id="Cater" (change)="setMonth($event)">
+                                <option value="">Month</option>
+                                <option *ngFor="let month of months" value="{{month}}">{{month}}</option>
+                            </select>
+                            <select id="Cater" (change)="setYear($event)">
+                                <option value="">Year</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+
+                            </select>
+                        </td>
+                        <td><button type="button" class="btnAvailableTech" (click)=viewAvailableTech(me)>
+                                <p>Artisan</p>
+                            </button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
     </div>
 </div>
-
-<body>
-
-    <div class="container2 d-flex justify-content-between ">
-        <div class="sideNav">
-            <nav class="breadcrumbNav">
-                <ul>
-                    <li class="" id="breadcrumbpadding"><a class="" id="hover" href="#"
-                            routerLink="/dash2">Dashboard</a></li>
-                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="" disabled>View Logs</a></li>
-                    <li class="" id="breadcrumbpadding"><a class="" id="hover" href="#" routerLink="/adminprogress">View
-                            Progress</a></li>
-                    <li class="" id="breadcrumbpadding"><a class="" id="hover" href="#"
-                            routerLink="/admincloselog">Close Logs</a></li>
-                    <li class="" id="breadcrumbpaddingreport"><a class="" id="hover" href="#"
-                            routerLink="/generatereport">Generate Report</a></li>
-                </ul>
-            </nav>
-        </div>
-
-
-        <div class="tab-content ps-5 " id="myTabContent">
-            <div class="tab-pane fade show active" id="doing" role="tabpanel" aria-labelledby="doing-tab">
-
-                <div class="stats">
-
-                </div>
-
-                <!-- class="ps-5 w-90 rounded-1 p-4 border bg-white  mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-8 px-lg-2 col-xl-11 px-xl-0 px-xxl-3" -->
-                <!-- <button type="button" class="btn btn-primary justify-content-center printReportBtn" (click)="export()" target="_blank">Export Report</button> -->
-                <div class="content card ">
-
-                    <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="message !=''">
-                        <strong>{{message}}</strong>
-                    </div>
-                    <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Admin View
-                        Request</h1>
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">Ref.</th>
-                                <th scope="col">Staff Number</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">venue</th>
-                                <!-- <th scope="col">Priority</th> -->
-                                <th scope="col">Requested Date</th>
-                                <th scope="col">Expected Date</th>
-                                <th scope="col">View Available</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let me of readData">
-                                <th scope="row">{{me.id}}</th>
-                                <th scope="row">{{me.staff_id}}</th>
-                                <td>{{me.description}}</td>
-                                <td>{{me.venue}}</td>
-                                <!-- <td>
-                                        <input type="text" placeholder="Day">
-                                        <input type="text"  placeholder="Month">
-                                        <input type="text"  placeholder="Year">
-
-                                         <select id="Cater" (change)="priority($event, me.id)" [(ngModel)]="me.priority"  >
-                                        <option value="High">High</option>
-                                        <option value="Low">Low</option>
-                                        <option value="Medium">Medium</option> 
-                                    </select>
-                                </td>-->
-                                <td>{{me.req_date}}</td>
-                                <td>
-                                    <select id="Cater" (change)="setDay($event)">
-                                        <option value="">Day</option>
-                                        <option *ngFor="let day of days" value="{{day}}">{{day}}</option>
-                                    </select>
-                                    <select id="Cater" (change)="setMonth($event)">
-                                        <option value="">Month</option>
-                                        <option *ngFor="let month of months" value="{{month}}">{{month}}</option>
-                                    </select>
-                                    <select id="Cater" (change)="setYear($event)">
-                                        <option value="">Year</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2024">2024</option>
-
-                                    </select>
-                                </td>
-                                <td><button type="button" class="btnAvailableTech" (click)=viewAvailableTech(me)>
-                                        <p>Artisan</p>
-                                    </button></td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-
-
-
-            </div>
-
-
-
-
-        </div>
-
-    </div>
-    <footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
-    </footer>
-</body>
+<footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
+</footer>

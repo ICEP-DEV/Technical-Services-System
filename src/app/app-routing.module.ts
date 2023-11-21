@@ -34,34 +34,34 @@ import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.c
 
 
 const routes: Routes = [
-  {path: '', component: LandingPageComponent},
-  {path: 'form', component: FormComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'dashboard',component: DashboardComponent},
-  {path: 'techlogin',component: TechloginComponent},
-  {path: 'adminpage',component: AdminpageComponent},
-  {path: 'viewrequest',component: ViewrequestComponent,canActivate:[AuthGuard]},
-  {path: 'staffpage',component: StaffpageComponent},
-  {path: 'sendrequest',component: StaffsendrequestComponent},
-  {path:'trackrequest',component:TrackRequestComponent},
-  {path:'stafffeedback',component:StafffeedbackComponent},
-  {path:'availableTechnician', component:AdminassigntaskComponent},
-  {path:'adminprogress',component:AdminprogressComponent},
-  {path:'admincloselog', component:AdmincloselogComponent},
-  {path: 'hodpage',component:HODpageComponent},
-  {path: 'hodprogress',component:HodprogressComponent},
-  {path: 'hodcloselogs',component:HodcloselogsComponent},
-  {path: 'hodloginpage',component:HODloginPageComponent},
-  {path: 'techpage',component:TechpageComponent},
-  {path: 'closelog',component:CloselogComponent},
-  {path:'availableTechnician', component:AdminassigntaskComponent},
-  {path:'adminprogress',component:AdminprogressComponent},
-  {path:'admindash', component:AdmindashboardComponent},
-  {path:'dash2', component:DashboardComponent},
+  { path: '', component: LandingPageComponent },
+  { path: 'form', component: FormComponent },
+  { path: 'login', component: LoginComponent },
+  // {path: 'dashboard',component: DashboardComponent},
+  { path: 'techlogin', component: TechloginComponent },
+  { path: 'adminpage', component: AdminpageComponent },
+  { path: 'viewrequest', component: ViewrequestComponent, canActivate: [AuthGuard] },
+  { path: 'staffpage', component: StaffpageComponent },
+  { path: 'sendrequest', component: StaffsendrequestComponent },
+  { path: 'trackrequest', component: TrackRequestComponent },
+  { path: 'stafffeedback', component: StafffeedbackComponent },
+  { path: 'availableTechnician', component: AdminassigntaskComponent },
+  { path: 'adminprogress', component: AdminprogressComponent },
+  { path: 'admincloselog', component: AdmincloselogComponent },
+  { path: 'hodpage', component: HODpageComponent },
+  { path: 'hodprogress', component: HodprogressComponent },
+  { path: 'hodcloselogs', component: HodcloselogsComponent },
+  { path: 'hodloginpage', component: HODloginPageComponent },
+  { path: 'techpage', component: TechpageComponent },
+  { path: 'closelog', component: CloselogComponent },
+  { path: 'availableTechnician', component: AdminassigntaskComponent },
+  { path: 'adminprogress', component: AdminprogressComponent },
+  { path: 'admindash', component: AdmindashboardComponent },
+  { path: 'dash2', component: DashboardComponent },
   //{path:'generatereport',component:ReportComponent}
 
-  
- 
+
+
 ];
 
 @NgModule({

@@ -51,6 +51,12 @@ import { TechpageComponent } from './techpage/techpage.component';
 import { HodprogressComponent } from './hodprogress/hodprogress.component';
 import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
 import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
+import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
+import { TechHeaderComponent } from './tech-header/tech-header.component';
+import { TechSidenavComponent } from './tech-sidenav/tech-sidenav.component';
+import { StaffHeaderComponent } from './staff-header/staff-header.component';
+import { StaffSidenavComponent } from './staff-sidenav/staff-sidenav.component';
 
 
 
@@ -91,6 +97,12 @@ import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.c
      HodcloselogsComponent,
      StaffsendrequestComponent,
     AvailableTechComponent,
+    AdminHeaderComponent,
+    AdminSidenavComponent,
+    TechHeaderComponent,
+    TechSidenavComponent,
+    StaffHeaderComponent,
+    StaffSidenavComponent,
   ],
   imports: [
     BrowserModule,

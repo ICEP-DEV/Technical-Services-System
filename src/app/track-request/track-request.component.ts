@@ -43,7 +43,6 @@ export class TrackRequestComponent {
       //storing the data fetched from the server in a temporary variable
       this.tempRequest = respond
       let requestcount = this.tempRequest.result.length
-      console.log(this.tempRequest.result )
       //array 
       var array = []
       for (let i = 0; i < requestcount; i++) {
@@ -81,13 +80,8 @@ export class TrackRequestComponent {
         }
       }
 
-      //this.todo=requestcount;
-
-
-
       //Storing the data in the all request variable/array
       this.allRequest = array
-      console.log('todo', this.allRequest)
 
     })
   }

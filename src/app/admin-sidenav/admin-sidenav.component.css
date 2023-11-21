@@ -1,0 +1,32 @@
+
+  .sideNav {
+    float: left;
+    box-shadow: 5px 0 2px #969292;
+    width: 335px;
+    min-height: 80vh;
+  }
+a{
+  text-decoration: none;
+}
+  .breadcrumbNav {
+    margin: 12px 20px; 
+  }
+
+  .breadcrumbNav ul {
+    list-style:none ;
+    flex-direction: column;
+  }
+
+  #breadcrumbpadding {
+    width: 120px;  
+    padding: 10px 0;
+  }
+  #breadcrumbpaddingreport {
+  
+    width: 150px;  
+    padding: 6px 0;
+  }
+
+  #hover:hover {
+    font-weight: bold;
+  }

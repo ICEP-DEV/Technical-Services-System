@@ -1,59 +1,10 @@
 
-<div class="topNav">
-    <!-- <body class="container"> -->
-        <div class="log d-flex justify-content-end">
-            <nav class="header">
-                <div id="logoDiv">
-                    <a>
-                        <img class="logo" src="../../../assets/images/tut.png" alt="SMART FARM"
-                            style="float: left;height: 70px;width: 225px;" routerLink="read">
-                    </a>
-                </div>
-                <div id="menu-icon">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <h4 class="admindashText" style="color: aliceblue;">Admin dashboard</h4>
-                <ul>
-                    <li>
-        
-                        <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
-                                class="btn btn-success">LOGOUT</button></a>
-                    </li>
-                </ul>
-        
-            </nav>
-        </div>
-</div>
+<app-admin-header></app-admin-header>
 <body>
 
     <div class="container2 d-flex justify-content-between ">
-        <div class="sideNav">
-            <nav class="breadcrumbNav">
-                <ul>
-                    <li class = "" id = "breadcrumbpadding"><a class ="" id="hover" href="#"   routerLink="/adminpage">View Logs</a></li>
-                    <!-- <li class = "" id = "breadcrumbpadding"><a class ="" id="hover" href="#"   routerLink="/adminprogress">View Progress</a></li>
-                    <li class = "" id = "breadcrumbpadding"><a class ="" id="hover" href="#"   routerLink="/admincloselog">Close Logs</a></li> -->
-                    
-                        <div class="dropdown">
-                            <button class="dropbtn">Report</button>
-                            <div class="dropdown-content" >
-                              <a class="nav-link active" id="ModalExample" (click)="downloadFile()">All Tasks</a>
-                              <a class="nav-link active" id="ModalExample">Active Tasks</a>
-                              <a class="nav-link active" id="ModalExample">Closed Tasks</a>
-                            </div>
-                        </div>
-                        <!-- <div class="logstats"  *ngIf= "statsData">
-                            <h3 class="averageTitle"  >Tasks Average</h3>
-                            <label class="unassigned">Unassigned Tasks&nbsp;&nbsp;<span class="numberStats">{{statsData.totalUnassigned}}</span></label>
-                            <label class="pendingTasks">Pending Tasks &nbsp;&nbsp;<span class="numberStats">{{statsData.averagePending}}%</span></label>
-                            <label class="In-progressTasks">In-progress &nbsp;&nbsp;<span class="numberStats">{{statsData.averageInProgress}}%</span></label>
-
-                            <label class="completedTasks">Completed &nbsp;&nbsp;<span class="numberStats">{{statsData.averageInProgress}}%</span></label>
-                            <label class="ClosedTasks">Closed &nbsp;&nbsp;<span class="numberStats">{{statsData.averageInProgress}}%</span></label>
-                        </div> -->
-                </ul>
-            </nav>
-        </div>
+        <app-admin-sidenav></app-admin-sidenav>
+        
         <div class="tab-content ps-3 " id="myTabContent">
 
             <h1 class="totalheaderText"><b>Total</b></h1>
