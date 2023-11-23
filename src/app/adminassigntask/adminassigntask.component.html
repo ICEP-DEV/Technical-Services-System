@@ -1,5 +1,5 @@
-<div class="">
-    <!-- <body class="container"> -->
+<!-- <div class="">
+    
     <div class="log d-flex justify-content-end">
         <nav class="header">
             <div id="logoDiv">
@@ -22,18 +22,36 @@
 
         </nav>
     </div>
-</div>
+</div> -->
 
-<body>
+<app-staff-navbar></app-staff-navbar>
+<!-- <body> -->
 
     <div class="container2 d-flex justify-content-between ">
         <div class="sideNav">
             <nav class="breadcrumbNav">
                 <ul>
 
-                    <li class="" id="breadcrumbpadding"><a class="" id="hover" routerLink="/adminpage">View Requests</a>
+                    <li class="breadcrumb-item active" id="breadcrumbpadding">
+                        <a class="anchorBorder" id="hover" routerLink="/adminpage">
+                            <img
+								src="../../assets/icons/log.png"
+								height="35"
+								width="35"
+								/><br>  VIEW LOGS
+                        </a>
                     </li>
-                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="" disabled>Assign Tasks</a></li>
+                </ul>
+                <ul>
+                    <li class="breadcrumb-item active" id="breadcrumbpadding">
+                        <a class="anchorBorder" disabled>
+                            <img
+								src="../../assets/icons/delegation.png"
+								height="35"
+								width="35"
+								/><br>ASSIGN TASKS
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -112,7 +130,6 @@
 
         </div>
 
-    </div>
-    <footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
-    </footer>
-</body>
+</div>
+<app-footer></app-footer>
+ -->

@@ -10,56 +10,7 @@
 
 
 
-/* Start of the navigation bar*/
-.header {
-    height: 82px;
-    background: #0c0c0c;
-    width: 100%;
-    margin: 0;
-    position: fixed;
-    font-family: 'Roboto Condensed',sans-serif;
-    font-size: 20px;
-    display: flex;
-    justify-content: space-between;
-    padding:0 16px 0 0;
-    box-sizing: border-box;
-    z-index: 100;
-  }
-  .header a {
-    padding: 0 32px;
-    color: #eee;
-    transition: 0.4s;
-  }
-  .header a:hover {
-    text-decoration: none;
-    color: red;
-  }
-  .header ul {
-    display: flex;
-    list-style: none;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-    margin: 0;
-  }
-  #logo-text{
-  
-    margin-left: 5%;
-    margin-top: 7.2px;
-  
-  }
-  
-  /*logout button*/
-  .btn-success{
-    color: white;
-    border: 2px solid white;
-    height: 40px;
-    background-color: #005596;
-  }
-  .btn-success:active{
-    border: white;
-    background-color: #005596;
-  }
+
   /* End of the navigation bar*/
   /* Start of  Everything on the side nav*/
   .sideNav {
@@ -67,7 +18,7 @@
    
     box-shadow: 5px 0 2px #969292;
     width: 335px;
-    height: 1055px;
+    height: 1080px;
     
   }
   .breadcrumbNav {
@@ -88,17 +39,37 @@
     /* identical to box height */
     letter-spacing: 0.035em;
     text-transform: capitalize;
-    color: #005596;
+    color: #2e2e2e;
     text-decoration: none;
   }
   .breadcrumbNav ul {
     list-style:none ;
     flex-direction: column;
   }
-  .breadcrumb-item.active {
-    border-bottom: 3px solid #005596;
+  #breadcrumb-item.active {
+    border-bottom: 3px solid#4b4c4d;
     width: 115px;  
   }
+  .breadcrumb-item.active {
+    border-bottom: 3px solid#4b4c4d;
+    width: 115px;  
+  }
+  #hover:hover {
+    font-weight: 700px;
+    color: rgb(6, 85, 42);
+    font-size: large;
+    
+    
+    
+    margin-bottom: 24px;
+    margin-left: 10px;
+    
+    cursor: pointer;
+    
+    
+    
+    
+    }
   /* End of Everything on the side nav*/
   
   /*Disable the active link*/
@@ -136,20 +107,7 @@
   }
 /*Footer*/
 
-footer{
-  background: black;
-    padding: 8px;
-    color: #eee;
-   text-align: center;
-    bottom: 0;
-    width: 100%;
-    background: black;
-    padding: 8px;
-    color: #eee;
-    margin-top: auto;
-    text-align: center;
-    height: 40px;
-}
+
 
 
 
@@ -172,7 +130,7 @@ form {
     
     width: 600px;
     
-    height: 600px;
+    height: 500px;
 
     /*Note that the background form is not visible behind, nut it is there*/
 }
@@ -217,7 +175,7 @@ label {
 }
 
 .todo{
-    background-color: red;  
+    background-color: #005596;  
 }
 .Assigned{
 
@@ -225,15 +183,15 @@ label {
 }
 .InProgress{
 
-    background-color: orange;
+    background-color: #005596;
 }
 .OnHold{
 
-    background-color: lightgrey;
+    background-color:  #005596;
 }
 .Done{
 
-    background-color: green;
+    background-color: #005596;
 }
 
 

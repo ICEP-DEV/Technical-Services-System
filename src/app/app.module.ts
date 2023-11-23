@@ -51,6 +51,12 @@ import { TechpageComponent } from './techpage/techpage.component';
 import { HodprogressComponent } from './hodprogress/hodprogress.component';
 import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
 import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { StaffSidebarComponent } from './staff-sidebar/staff-sidebar.component';
+import { StaffNavbarComponent } from './staff-navbar/staff-navbar.component';
+import { CreateNewArtisanComponent } from './create-new-artisan/create-new-artisan.component';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -91,6 +97,11 @@ import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.c
      HodcloselogsComponent,
      StaffsendrequestComponent,
     AvailableTechComponent,
+    NavbarComponent,
+    FooterComponent,
+    StaffSidebarComponent,
+    StaffNavbarComponent,
+    CreateNewArtisanComponent
   ],
   imports: [
     BrowserModule,
@@ -122,6 +133,7 @@ import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.c
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    
   ],
   providers: [ApiserviceService],
   bootstrap: [AppComponent]

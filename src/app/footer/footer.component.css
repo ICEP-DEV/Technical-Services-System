@@ -1,0 +1,9 @@
+    /* Custom styles for the footer */
+    footer {
+        background-color:black; /* Light gray background color */
+        padding: 20px 0; /* Padding on the top and bottom */
+      }
+      p{
+        color: white;
+      }
+  

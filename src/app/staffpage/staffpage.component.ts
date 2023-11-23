@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { RefConfirmFormComponent } from '../ref-confirm-form/ref-confirm-form.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import * as FontAwesome from '@fortawesome/free-solid-svg-icons';
+
 
 declare var window:any;
 @Component({
@@ -14,6 +16,7 @@ declare var window:any;
   styleUrls: ['./staffpage.component.css']
 })
 export class StaffpageComponent implements OnInit {
+  myIcon: any = FontAwesome.faCheck;
   bld_no = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   venue = [{ buld_no: 10, vanues: [{ v: "LG1" }, { v: "LG2" }, { v: "G10" }, { v: "G12" }, { v: "110" }, { v: "111" }, { v: "112" }, { v: "210" }, { v: "220" }, { v: "238" }] },
   { buld_no: 1, vanues: [{ v: "LG1" }, { v: "LG2" }, { v: "G10" }, { v: "G12" }, { v: "110" }, { v: "111" }, { v: "112" }, { v: "210" }, { v: "220" }, { v: "238" }] },

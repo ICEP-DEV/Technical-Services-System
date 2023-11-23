@@ -42,9 +42,11 @@ export class DashboardComponent implements OnInit {
   messages:string='';
   ngOnInit(): void {
     this.getMessage();
+    //initial pop modal
     this.formModal=new window.bootstrap.Modal(
       document.getElementById("adminPop")
      );
+
     this.service.allRequests().subscribe((res) => {
       console.log(res.result, "Active tasks/pending before setting priority");
       this.readData = res.result;
@@ -53,6 +55,7 @@ export class DashboardComponent implements OnInit {
       //   this.getMessage();
        
       // }, 5000); 
+      ///refresh page every 5 seconds to get data
       setInterval(() => {
         this.getMessage();
         this.messages=this.message;
@@ -91,6 +94,7 @@ export class DashboardComponent implements OnInit {
 
    
   }
+  //open modal
   openAdminModal(){
     this.formModal.show();
   }
@@ -108,6 +112,7 @@ export class DashboardComponent implements OnInit {
   id=''
   category='';
   description=''
+  ///get requests api
   getMessage() {
     this.service.getRequest().subscribe(
       data => {

@@ -22,7 +22,13 @@ export class ApiserviceService {
  
  
 
-   
+   //creating new artisan
+  createNewArtisan(data: any){
+    return this._http.post(this.apiUrl+"/add_new_tech",data);
+  }
+  allDivisions():Observable<any>{
+    return this._http.get(`${this.apiUrl + "/alldivisions"}`);
+  }
 
   staffLogin(data: any) {
     return this._http.post(this.apiUrl + "/staff/authenticateStaffNumber", data);
@@ -121,7 +127,7 @@ getRequest(): Observable<any> {
       }
 
       waitingToBeClose() {
-        return this._http.get(this.apiUrl+"/getFeedBack");
+        return this._http.get(this.apiUrl+"/admin/viewFeedback");
       }
 
       category():Observable<any>{
@@ -169,6 +175,10 @@ getRequest(): Observable<any> {
       Techdata(id : any) {
         return this._http.get(this.apiUrl + "/technician/tasks/"+id);
       }
+      ////alert artisan of new task
+      TechdataArlet(id : any) {
+        return this._http.get(this.apiUrl + "/adminTo/technician/tasks/"+id);
+      }
 
 
       //HOD APIS 
@@ -186,8 +196,12 @@ getRequest(): Observable<any> {
       }
 
   
-      closeLog(id : Number,data: any) {
-        return this._http.put(this.apiUrl + "/admin/log-close/"+id, data);
+      closeLog(id : Number,data:any) {
+        return this._http.put(this.apiUrl + "/admin/log-close/"+id,data);
+      }
+      closeLogs(id: Number): Observable<any> {
+        // Assuming you want to handle the response, use 'any' or replace it with a specific type.
+        return this._http.put<any>(`${this.apiUrl}/admin/log-close/${id}`, {});
       }
 
 

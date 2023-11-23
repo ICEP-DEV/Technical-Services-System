@@ -65,6 +65,7 @@ this.id = Number(data)
     //Fetch the available artisan of the/based on the reference number.                or Number(data);
     this.service.getTechAvailable(this.id).subscribe((res)=>{
       this.availableTechData = res;
+      console.log("response",res)
 
  
       // let data = localStorage.getItem("techDetails");
@@ -137,8 +138,8 @@ this.id = Number(data)
 
     var setDate = new Date(this.year+"-"+this.month+"-"+this.day);
     const currentdate = new Date()
-    console.log(setDate)
-    console.log(currentdate)
+    console.log("set date",setDate)
+    console.log("current date",currentdate)
     if(setDate < currentdate){
       this.message = "Date you are setting cannot be before the current date";
       return

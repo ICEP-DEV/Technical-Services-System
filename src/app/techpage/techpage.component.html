@@ -1,4 +1,26 @@
 <!-- <body class="container"> -->
+  <div class="modal fade" id="techpop" [ngClass]="{ 'show': showModal }" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"><img src="../../assets/icons/icons8-alert.gif"/>  New Task Alert</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="closeTechModal()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body"  class="alert alert-success" role="alert">
+            	<h3 >id:{{id}} </h3>
+				<h3 >description:{{description}} </h3>
+				<h3 >expected_date:{{expected_date}} </h3>
+        <h3 >priority:{{priority}} </h3>
+        </div>
+        <div class="modal-footer" >
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+          <button type="button" class="btn btn-primary" (click)="closeTechModal()" >OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <div class="log d-flex justify-content-end">
         <nav class="header">
             <div id="logo-text">
@@ -85,7 +107,7 @@
                                 <th scope="col">Description</th>
                                 <th scope="col">Assigned Task</th>
                                 <th scope="col">Expected</th>
-                                <!-- <th scope="col">Priority</th> -->
+                                <th scope="col">Priority</th>
                                 <th scope="col">Venue</th>
                                 <th scope="col">Progress Status</th>
                               </tr>
@@ -96,7 +118,7 @@
                                 <td>{{ data.description }}</td>
                                 <td>{{ data.assigned_date }}</td>
                                 <td>{{ data.expected_date }}</td>
-                                <!-- <td>{{ data.priority }}</td> -->
+                                <td>{{ data.priority }}</td>
                                 <td>{{ data.venue }}</td>
                                 <td>
                                   <select id="Cater" (change)="progressTask($event, data.id)" [(ngModel)]="data.progress">

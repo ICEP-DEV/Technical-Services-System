@@ -4,76 +4,13 @@ body {
 .stats{
   margin: 5.5%;
 }
-/* Start of the navigation bar*/
-.header {
-  height: 82px;
-  background: #0c0c0c;
-  width: 100%;
-  margin: 0;
-  position: fixed;
-  font-family: 'Roboto Condensed',sans-serif;
-  font-size: 20px;
-  display: flex;
-  justify-content: space-between;
-  padding:0 16px 0 0;
-  box-sizing: border-box;
-  z-index: 100;
-}
-.dropbtn {
-  background-color:white ;
- 
-  border-radius: 5px;
-  height: 50px;
-  color: black;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  padding-left: 45px;;
-  padding-right: 45px;
-  font-weight: bold;
-}
-.header a {
-  padding: 0 32px;
-  color: #eee;
-  transition: 0.4s;
-}
-.header a:hover {
-  text-decoration: none;
-  color: red;
-}
-.header ul {
-  display: flex;
-  list-style: none;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
-  margin: 0;
-}
-#logoDiv{
 
-  margin-left: 1%;
-  margin-top: 7.2px;
-
-}
-
-/*logout button*/
-.btn-success{
-  color: white;
-  border: 2px solid white;
-  height: 40px;
-  background-color: #005596;
-}
-.btn-success:active{
-  border: white;
-  background-color: #005596;
-}
-/* End of the navigation bar*/
 /* Start of  Everything on the side nav*/
 .sideNav {
   float: left;
  
   box-shadow: 5px 0 2px #969292;
-  width: 335px;
+  /* width: 335px; */
   height: 1055px;
   
 }
@@ -88,14 +25,14 @@ body {
 }
 #breadcrumbpaddingreport {
 
-  width: 150px;  
+  width: 120px;  
   padding: 6px 0;
 }
 a {
   padding-top: 20px;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
   /* identical to box height */
   letter-spacing: 0.035em;
@@ -111,6 +48,25 @@ a {
   border-bottom: 3px solid #005596;
   width: 115px;  
 }
+.anchorBorder{
+  margin:0 20%;
+}
+#hover:hover {
+  font-weight: 700px;
+  color: rgb(6, 85, 42);
+  font-size: large;
+  
+  
+  
+  margin-bottom: 24px;
+  margin-left: 10px;
+  
+  cursor: pointer;
+  
+  
+  
+  
+  }
 /* End of Everything on the side nav*/
 
 /*Disable the active link*/
@@ -140,29 +96,16 @@ a:disabled, a[disabled] {
   border-left: 8px solid rgb(14, 60, 90);
 }
 /*SideNav content on the left*/
-.container2{
+/* .container2{
   margin-top: 3.8%;
-}
+} */
 /*Div for the content on the right*/
 .tab-content {
     float: right;
     width: 80%;
     margin-right: 0%;
   }
-  /*Footer*/
-footer{
-    background: black;
-    padding: 8px;
-    color: #eee;
-    text-align: center;
-    margin-left: 0%;
-    margin-top: auto;
-    width: 100%;
-    height: 40px;
-    /* position: absolute; */
-    /* bottom: 0;
-    width: 100%; */
-  }
+ 
   
   
   

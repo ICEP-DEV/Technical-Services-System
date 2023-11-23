@@ -1,0 +1,148 @@
+<div class="container-fluid">
+    <!-- <body class="container"> -->
+    <div class="log d-flex justify-content-end">
+        <nav class="header">
+            <div id="logoDiv">
+                <a>
+
+                    <img class="logo" src="../../../assets/images/tut.png" alt="SMART FARM"
+                        style="float: left;height: 70px;width: 225px;" routerLink="read">
+                </a>
+            </div>
+            <div id="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul>
+                <li>
+
+                    <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
+                            class="btn ">LOGOUT</button></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<body>
+
+
+    <div class="container2 d-flex justify-content-between ">
+        <div class="sideNav">
+            <nav class="breadcrumbNav">
+                <ul>
+
+                    <li class="" id="breadcrumbpadding"><a class="" id="hover" routerLink="/adminpage">View Logs</a>
+                    </li>
+                    <li class="breadcrumb-item active" id="breadcrumbpadding"><a class="" disabled>create new
+                            tech</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="tab-content d-flex align-items-center justify-content-center float-start" id="myTabContent">
+            <div class="tab-pane fade show active" id="doing" role="tabpanel" aria-labelledby="doing-tab">
+
+               
+                <form class="w-100 rounded-1 p-4 border bg-white mt-0 mb-4 shadow-lg p-3 mb-5 bg-white 
+                            rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8
+                             px-xl-0 px-xxl-3" enctype="multipart/form-data">
+                        <!--"form-row row" -->
+                        <div class="reqhead1">Create new Technician</div>
+                        <br><br>
+                        <label for="Id">Tech_Id :</label>
+                        <input  type="text" class="form-control mb-2" id="tech_id" name="tech_form.tech_id" [(ngModel)]="tech_form.tech_id"
+                            placeholder="Enter your Id" ><br>
+                        <!-- <div *ngIf="userForm.controls ['id'].touched && userForm.controls['id'].invalid">
+                            <span *ngIf="!tech_form.id" ['id'].errors['required']">This field is mandatory.</span>
+                        </div> -->
+                       
+                        <label for="name">Name : </label>
+                        <input  type="text" class="form-control mb-2" id="name" name="tech_form.name" [(ngModel)]="tech_form.name"
+                            placeholder="Enter your name"><br>
+                        <!-- <div *ngIf="userForm.controls ['name'].touched && userForm.controls['name'].invalid">
+                            <span *ngIf="userForm.controls ['name'].errors['required']">This field is mandatory.</span>
+                        </div> -->
+
+                        <label for="surname">Surname :</label>
+                        <input  type="text" class="form-control mb-2" id="tech_form.surname" [(ngModel)]="tech_form.surname"
+                            name="surname" placeholder="Enter your surname"><br>
+                        <!-- <div *ngIf="userForm.controls ['surname'].touched && userForm.controls['surname'].invalid">
+                            <span *ngIf="userForm.controls ['surname'].errors['required']">This field is mandatory.</span>
+                        </div> -->
+
+                        <label for="phone">phone :</label>
+                        <input  type="text" class="form-control mb-2" id="phone" name="tech_form.phone" [(ngModel)]="tech_form.phone"
+                            placeholder="Enter your phone"><br>
+                        <!-- <div *ngIf="userForm.controls ['phone'].touched && userForm.controls['phone'].invalid">
+                            <span *ngIf="userForm.controls ['phone'].errors['required']">This field is mandatory.</span>
+                            <span *ngIf="userForm.controls ['phone'].errors['required']">Mobile number must be at least 10 charactors short.</span>
+                            <span *ngIf="userForm.controls ['phone'].errors['required']">Mobile number must be at least 10 charactors long.</span>
+                        </div> -->
+
+                        <label for="email">email :</label>
+                        <input  type="text" class="form-control mb-2" id="email" name="tech_form.email" [(ngModel)]="tech_form.email"
+                            placeholder="Enter your email"><br>
+                        <!-- <div *ngIf="userForm.controls ['email'].touched && userForm.controls['email'].invalid">
+                            <span *ngIf="userForm.controls ['email'].errors['required']">This field is mandatory.</span>
+                            <span *ngIf="userForm.controls ['email'].errors['email']">this field is invalid</span>
+                            
+                        </div> -->
+
+                        <label for="gender">Gender :</label>
+                        <select id="gender" name="tech_form.gender"[(ngModel)]="tech_form.gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select><br>
+
+                        <label for="divisions">Divisions :</label>
+                        <select name="tech_form.division_id" id="division_id" [(ngModel)]="tech_form.division_id">
+                            <option value="">select division</option>
+                            <option *ngFor="let item of divisions" [value]="item.id">{{item.division_name}}</option>
+                        </select><br>
+
+                        <label for="campus">Campus :</label>
+                        <select id="campus" name="tech_form.campus" [(ngModel)]="tech_form.campus">
+                            <option value="south">South</option>
+                            <option value="north">North</option>
+                            <option value="ga-rankuwa">Ga-rankuwa</option>
+                            <option value="pretoria">Pretoria</option>
+                            <option value="mbombela">Mbombela</option>
+                            <option value="arcadia">Arcadia</option>
+                            <option value="polokwane">polokwane</option>
+                        </select><br>
+
+                        
+                      <input type="submit" (click)="submit_artisan()"(click)="openModal()" placeholder="Register">
+                    </form>
+                
+            </div>
+        </div>
+
+        <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Request</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close" (click)="doSomething()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" *ngIf="boolmsg" class="alert alert-success" role="alert">
+                <strong>{{successmsg}}</strong>
+            </div>
+            <div class="modal-footer" >
+              <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+              <button type="button" class="btn btn-primary" (click)="doSomething()"   id="close">OK</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    </div>
+
+</body>
+<br><br><br><br><br><br><br>
+<footer>&copy; 2023 Informatics Community Engagement Project . All Rights Reserved <p></p>
+</footer>

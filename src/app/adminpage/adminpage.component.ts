@@ -65,20 +65,36 @@ logout(){
   localStorage.removeItem('logindata')
 }
 
-priority(event:any,jobCardId:Number){
+expected_date: string =''; // variable to store the selected date
+//   priority: string=''; // variable to store the selected option
+
+handleDateChange(event: any,id:number) {
+  // 'event.target.value' contains the selected date
+  // 'item' is the object associated with the datepicker
+ this.expected_date = event.target.value;
+}
+
+prioritis(event:any,jobCardId:Number){
+ if(this.expected_date===""){
+  console.log("date empty")
+  return
+ }
   var data={
     priority:event.target.value,
+    expected_date:this.expected_date
   }
   
   console.log(jobCardId)
-
+  // const combinedValue = {"expected_date":this.expected_date,"priority":this.priority};
+  // console.log('Combined Value:', combinedValue);
   this.service.updatePriority(jobCardId,data)
 
     .subscribe((response) => {
       this.set_object = response;
-      console.log(response);
+      console.log("priority res",response);
       if (this.set_object.success == true) {
         localStorage.setItem('Priority', JSON.stringify(this.setPriority.priority));
+        console.log("sucess")
       }
 })
 }

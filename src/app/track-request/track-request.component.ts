@@ -175,6 +175,16 @@ export class TrackRequestComponent {
     // this._router.navigate(['/stafffeedback', {state:{reference}}])
   }
 
+  navigateToTable() {
+    // Get the reference to the table element
+    const table = document.querySelector('.table-responsive');
+
+    // Scroll to the table
+    if (table) {
+      table.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   logout() {
     localStorage.removeItem('stafflogin')
   }

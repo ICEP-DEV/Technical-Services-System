@@ -29,6 +29,9 @@ import { CloselogComponent } from './closelog/closelog.component';
 import { HodprogressComponent } from './hodprogress/hodprogress.component';
 import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
 import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
+import { CreateNewArtisanComponent } from './create-new-artisan/create-new-artisan.component';
+
+
 
 
 
@@ -58,7 +61,9 @@ const routes: Routes = [
   {path:'adminprogress',component:AdminprogressComponent},
   {path:'admindash', component:AdmindashboardComponent},
   {path:'dash2', component:DashboardComponent},
+  {path:'newArtisan', component:CreateNewArtisanComponent}
   //{path:'generatereport',component:ReportComponent}
+
 
   
  
