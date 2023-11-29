@@ -62,12 +62,14 @@ id:any;
 description='';
 priority='';
 expected_date='';
+assigned_date='';
+progress='';
 
 matchingData:any;
 getTasks(){
   console.log("tech_id",this.tech_id)
   this.service.TechdataArlet(Number(this.tech_id)).subscribe((respo: any) => {
-    // console.log(respo.result)
+    console.log(respo)
 
   
     // Extract the array from the response object
@@ -77,17 +79,26 @@ getTasks(){
     if(test===true){
       this.readDatas.forEach((data: any) => {
         // if (data.tech_id === this.tech_id) {
-          console.log("id true")
+          // console.log("id true")
           // Store the results for the matching id in a variable
           this.matchingData = data;
           // console.log("matching data",data)
           this.id=data.tech_id;
-          // console.log(this.id)
+          console.log("res id",this.id)
+          console.log("local storage id",this.id)
             this.description=data.description;
             this.expected_date=data.expected_date;
             this.priority=data.priority;
-            this.showModal=true;
-          this.openTechModal()
+            this.assigned_date=data.assigned_date;
+            this.progress=data.progress;
+            if(this.id===Number(this.tech_id) && this.progress==="in-progress"){
+                this.showModal=true;
+            this.openTechModal()
+            console.log("id match")
+            }else{
+              console.log("id not match")
+            }
+          
         // }
       })
       
