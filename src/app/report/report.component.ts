@@ -14,7 +14,7 @@ import { MatSort } from '@angular/material/sort';
 export class ReportComponent implements OnInit{
 
   id:any;
-  displayedColumns=['staff_id','id','category', 'priority', 'progress','req_date', 'assigned_date','completed_date','description','venue','staff_feedback','tech_feedback','status'];
+  displayedColumns=['staff_id','id','category', 'priority', 'progress','req_date', 'assigned_date','completed_date','description','venue','staff_feedback','status'];
   dataSource! :MatTableDataSource<any>;
 
   @ViewChild('paginator') paginator!: MatPaginator;
