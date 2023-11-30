@@ -26,6 +26,7 @@ import { ReportComponent } from './report/report.component';
 import { TechnicianTableComponent } from './technician-table/technician-table.component';
 import { CreateNewArtisanComponent } from './create-new-artisan/create-new-artisan.component';
 // import { AdmincloselogComponent } from './admincloselog/admincloselog.component';
+import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
 
 
 
@@ -52,7 +53,8 @@ const routes: Routes = [
   {path:'technician-table', component:TechnicianTableComponent},
   // {path:'admincloselog', component:AdmincloselogComponent},
   {path:'newArtisan', component:CreateNewArtisanComponent},
-  {path:'generatereport',component:ReportComponent}
+  {path:'generatereport',component:ReportComponent},
+  {path:'hodCloseLog',component:HodcloselogsComponent}
 
   
  

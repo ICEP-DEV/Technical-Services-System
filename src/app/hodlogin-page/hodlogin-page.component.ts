@@ -65,7 +65,7 @@ export class HODloginPageComponent implements OnInit {
       if(this.HOD_object.success == true){
         localStorage.setItem('HODlogin',JSON.stringify(this.HODlogin.hod_id))
         this.close()
-        this._router.navigate(['/hodpage'])
+        this._router.navigate(['/generatereport'])
       }else{
         this.successmsg3 = "user not found with these credentials";
       this.showSuccessMsg3 = true;
