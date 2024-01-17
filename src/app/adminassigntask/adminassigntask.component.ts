@@ -53,15 +53,7 @@ export class AdminassigntaskComponent implements OnInit{
 
  //Convert the local storage reference to a number
 this.id = Number(data)
-
-  
-  
-
-
  //Displaying the data
-  console.log(this.id, "REFENCE ID NUMBER")
- 
-  console.log("NEW LINE")
     //Fetch the available artisan of the/based on the reference number.                or Number(data);
     this.service.getTechAvailable(this.id).subscribe((res)=>{
       this.availableTechData = res;
@@ -168,6 +160,7 @@ this.id = Number(data)
     // console.log(this.adminTechDetails.admin_id,"Admin idCHECK THIS");
     // //Have to post the assigned Artisan status
   
+     /*
      this.service.assignavailArtisan(this.id,this.adminTechDetails).subscribe((res)=>{
 
         this.AdminArtisan_object = res;
@@ -179,7 +172,7 @@ this.id = Number(data)
        }, 2000);
        this.navrouter.navigate(['/adminpage'])
     })
-    
+    */
       return  this.status =true
 
       

@@ -133,20 +133,17 @@ export class AdminpageComponent implements OnInit {
     }
     var setDate = new Date(this.year + "-" + this.month + "-" + this.day + " 23:59");
     const currentdate = new Date()
-    console.log(setDate)
-    console.log(currentdate)
     if (setDate >= currentdate) {
       data = {
         expected_date: setDate
       }
-      console.log(reference)
-      this.service.updatePriority(reference, data).subscribe((respond) => {
+      /*this.service.updatePriority(reference, data).subscribe((respond) => {
         console.log(respond)
       }, err => {
         console.log(err)
-      })
+      })*/
       localStorage.setItem('reference', reference.toString())
-
+      localStorage.setItem('expected_date', setDate.toString())
       this.navrouter.navigate(['/availableTechnician'])
 
     }
