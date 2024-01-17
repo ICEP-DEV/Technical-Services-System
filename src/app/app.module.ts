@@ -57,6 +57,7 @@ import { TechHeaderComponent } from './tech-header/tech-header.component';
 import { TechSidenavComponent } from './tech-sidenav/tech-sidenav.component';
 import { StaffHeaderComponent } from './staff-header/staff-header.component';
 import { StaffSidenavComponent } from './staff-sidenav/staff-sidenav.component';
+import { HodSidebarComponent } from './hod-sidebar/hod-sidebar.component';
 
 
 
@@ -103,6 +104,7 @@ import { StaffSidenavComponent } from './staff-sidenav/staff-sidenav.component';
     TechSidenavComponent,
     StaffHeaderComponent,
     StaffSidenavComponent,
+    HodSidebarComponent,
   ],
   imports: [
     BrowserModule,

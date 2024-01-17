@@ -133,6 +133,7 @@ export class AdminpageComponent implements OnInit {
     }
     var setDate = new Date(this.year + "-" + this.month + "-" + this.day + " 23:59");
     const currentdate = new Date()
+    console.log(setDate, ' = ',currentdate)
     if (setDate >= currentdate) {
       data = {
         expected_date: setDate
@@ -142,8 +143,9 @@ export class AdminpageComponent implements OnInit {
       }, err => {
         console.log(err)
       })*/
+      var mydate = this.year + "-" + this.month + "-" + this.day + " 23:59"
       localStorage.setItem('reference', reference.toString())
-      localStorage.setItem('expected_date', setDate.toString())
+      localStorage.setItem('expected_date', mydate.toString())
       this.navrouter.navigate(['/availableTechnician'])
 
     }

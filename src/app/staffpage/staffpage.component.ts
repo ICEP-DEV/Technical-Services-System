@@ -143,10 +143,17 @@ export class StaffpageComponent implements OnInit {
         if (this.request_object.success == true) {
           this.successmsg = this.request_object.message;
           this.showSuccessMsg = true;
-          setTimeout(function () {
-            window.location.reload();
-          }, 2000);
+          /*setTimeout(function () {
+            this._router.navigate(['/trackrequest'])
 
+          }, 2000);*/
+
+          setTimeout(() => {
+            setTimeout(() => {
+              this._router.navigateByUrl("/trackrequest");
+            });
+          }, 3400);
+          
         } else {
           console.log("User ID doesnt match credentials")
         }

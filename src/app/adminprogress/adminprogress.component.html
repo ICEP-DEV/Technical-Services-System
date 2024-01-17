@@ -57,7 +57,12 @@
                     <td>{{inprogress.venue}}</td>
                     <td>{{inprogress.req_date}}</td>
                     <td>{{inprogress.expected_date}}</td>
-                    <td>{{inprogress.priority}}</td>
+                    <td>
+                      <label *ngIf="inprogress.count_duration == 1">High</label>
+                      <label *ngIf="inprogress.count_duration > 1 && inprogress.count_duration < 4">Medium</label>
+                      <label *ngIf="inprogress.count_duration >= 4">Low</label>
+                      {{inprogress.priority}}
+                    </td>
                     <td>{{inprogress.count_duration}}</td>
 
                   </tr>
