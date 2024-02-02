@@ -1,0 +1,55 @@
+
+
+
+  
+
+
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <!-- Logo on the left -->
+      <a class="navbar-brand" href="#">
+        <img src="../../assets/images/tut.png" alt="Your Logo" height="50">
+      </a>
+      <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+  
+      <!-- Navbar items -->
+      <div class="collapse navbar-collapse ml-auto" id="navbarNav"  [ngClass]="{ 'show': isNavbarCollapsed }">
+           
+        
+            <!-- Hide on larger screens -->
+            <ul class="navbar-nav ml-auto " *ngIf="isNavbarCollapsed && isScreenSizeLargerThan991">
+                <li class="nav-item">
+                <a class="nav-link" href="#" routerLink="/adminpage">VIEW LOGS</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#" routerLink="/adminprogress">VIEW PROGRESS</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#" routerLink="/generatereport">REPORT</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/technician-table">TABLE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/newArtisan">CREATE ARTISAN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/admincloselog">CLOSE LOG</a>
+                </li>
+            </ul>
+
+             <!-- Sign-out button visible on all screens -->
+             <ul class="navbar-nav ml-auto sign-out-container">
+                <li class="nav-item" (click)="logout()">
+                <button class="btn btn-signin" (click)="logout()" routerLink="/">Sign Out <i class="fa fa-sign-out" aria-hidden="true"></i></button>
+                </li>
+            </ul>
+    </div>
+    </div>
+  </nav>
+  
+  

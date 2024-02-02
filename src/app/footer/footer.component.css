@@ -2,8 +2,19 @@
     footer {
         background-color:black; /* Light gray background color */
         padding: 20px 0; /* Padding on the top and bottom */
+        bottom: 0;
+
       }
       p{
         color: white;
+      }
+
+      @media only screen and (max-width: 767px) {
+        /* Adjust styles for mobile view */
+        footer {
+          position: fixed;
+          width: 100%;
+          bottom: 0;
+        }
       }
   

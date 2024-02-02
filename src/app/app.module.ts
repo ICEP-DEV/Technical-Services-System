@@ -57,6 +57,8 @@ import { StaffSidebarComponent } from './staff-sidebar/staff-sidebar.component';
 import { StaffNavbarComponent } from './staff-navbar/staff-navbar.component';
 import { CreateNewArtisanComponent } from './create-new-artisan/create-new-artisan.component';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { AdminnavComponent } from './adminnav/adminnav.component';
 
 
 
@@ -101,7 +103,8 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
     FooterComponent,
     StaffSidebarComponent,
     StaffNavbarComponent,
-    CreateNewArtisanComponent
+    CreateNewArtisanComponent,
+    AdminnavComponent
   ],
   imports: [
     BrowserModule,
@@ -133,6 +136,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MDBBootstrapModule.forRoot()
     
   ],
   providers: [ApiserviceService],

@@ -2,28 +2,29 @@
 
 <!-- side nav bar -->
 <div class="d-flex justify-content-between">
+
   <div class="sideNav">
     <nav class="breadcrumbNav">
       <ul>
-        <li class="breadcrumb-item active justify-content-center" id="breadcrumbpadding">
+        <li class="breadcrumb-item active" id="breadcrumbpadding">
           <a class="anchorBorder " id="hover" disabled="true"
             ><img
               src="../../assets/icons/request-for-proposal.png"
               height="35"
               width="35"
-            /><br><b> REQUEST</b></a
-          >
+            /><b> REQUEST</b>
+          </a>
         </li>
       </ul>
       <ul>
-        <li class="breadcrumb-item active align-items-center" id="breadcrumbpadding">
+        <li class="breadcrumb-item active " id="breadcrumbpadding">
           <a class="anchorBorder " id="hover" routerLink="/trackrequest"
             ><img
               src="../../assets/icons/tracking.png"
               height="35"
               width="35"
-            /><br><b>TRACKING</b></a
-          >
+            /><b>TRACKING</b>
+          </a>
         </li>
       </ul>
     </nav>
@@ -83,12 +84,12 @@
       role="tabpanel"
       aria-labelledby="doing-tab"
     >
-      <div>
+      <div class="mx-auto">
         <form
-          method="POST"
-          class="w-100 rounded-1 p-4 border bg-white mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row mx-0 justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3"
-          enctype="multipart/form-data"
-        >
+        method="POST"
+        class="w-100 rounded-1 p-4 pr-10 border bg-white mt-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded row justify-content-center col-md-8 col-lg-11 px-lg-2 col-xl-8 px-xl-0 px-xxl-3"
+        enctype="multipart/form-data"
+      >
           <div class="reqhead1">SEND REQUEST</div>
           <div *ngIf="showSuccessMsg" class="alert alert-success" role="alert">
             <strong>{{ successmsg }}</strong>
