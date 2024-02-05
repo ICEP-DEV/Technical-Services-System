@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, ViewChild } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild, HostListener  } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ApiserviceService } from '../apiservice.service';
 import { MatTableDataSource } from '@angular/material/table';
@@ -14,7 +14,7 @@ import { MatSort } from '@angular/material/sort';
 export class ReportComponent implements OnInit{
 
   id:any;
-  displayedColumns=['staff_id','id','category', 'priority', 'progress','req_date', 'assigned_date','completed_date','description','venue','staff_feedback','tech_feedback','status'];
+  displayedColumns=['staff_id','id','category', 'priority', 'progress','req_date', 'assigned_date','completed_date','description','venue','staff_feedback','status'];
   dataSource! :MatTableDataSource<any>;
 
   @ViewChild('paginator') paginator!: MatPaginator;
@@ -30,8 +30,7 @@ export class ReportComponent implements OnInit{
        this.dataSource.paginator = this.paginator;
        this.dataSource.sort = this.matSort
       console.log(res.result,"res==>");
-      // this.readData = res.result;
-      // console.log(this.readData);
+      
       
     })
   }
@@ -39,18 +38,21 @@ export class ReportComponent implements OnInit{
   filterData($event : any){
     this.dataSource.filter = $event.target.value;
   }
+   //show side nav on large screens
+   isScreenSizeLargerThanThreshold = true;
 
-  // Search() {
-  //   if (this.id == "") {
-  //     this.ngOnInit();
-  //   } else {
-  //     this.readData = this.readData.filter((res: { id: string }) => {
-  //       return res.id.toLowerCase().includes(this.id.toLowerCase());
-  //     });
-  //   }
-  // }
-  logout(){
-    localStorage.removeItem('logindata')
-  }
+   @HostListener('window:resize', ['$event'])
+   onResize(event: Event) {
+     this.checkScreenSize();
+   }
+ 
+  
+ 
+   private checkScreenSize() {
+     // Set the threshold value based on your requirement
+     const threshold = 991; // Change this value as needed
+     this.isScreenSizeLargerThanThreshold = window.innerWidth > threshold;
+   }
+  
 
 }

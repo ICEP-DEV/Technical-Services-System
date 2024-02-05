@@ -48,9 +48,9 @@
  
   @media (min-width: 991px) {
     .sign-out-container {
-      position: fixed;
+      /* position: fixed; */
       /* top: 0; */
-      right: 10%;
+      right: 15.9%;
       /*margin: 10px;  Adjust the margin as needed for spacing */
     }
   }

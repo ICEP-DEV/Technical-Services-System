@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild , HostListener  } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterTestingHarness } from '@angular/router/testing';
 import { SearchPipe } from '../search.pipe';
@@ -26,7 +26,21 @@ export class AdminprogressComponent {
 
   constructor(private service:ApiserviceService){}
 
+   //show side nav on large screens
+   isScreenSizeLargerThanThreshold = true;
+
+   @HostListener('window:resize', ['$event'])
+   onResize(event: Event) {
+     this.checkScreenSize();
+   }
+ 
   
+ 
+   private checkScreenSize() {
+     // Set the threshold value based on your requirement
+     const threshold = 991; // Change this value as needed
+     this.isScreenSizeLargerThanThreshold = window.innerWidth > threshold;
+   }
   ngOnInit(): void{
     let data = localStorage.getItem('reference');
 

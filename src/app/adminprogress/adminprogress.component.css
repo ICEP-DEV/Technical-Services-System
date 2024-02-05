@@ -6,23 +6,52 @@
   
 
   /*Start of Side navigation */
-.sideNav {
+  .nav-tabs  {
+    position: center;
+    width: 100px;
+    height: auto;
+    left: 2px;
     float: left;
-   
-    box-shadow: 5px 0 2px #969292;
+    width: 100%;
+    font-family: "Times New Roman";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 25px;
+    letter-spacing: 0.035em;
     width: 335px;
-    height: 1055px;
     
-  }
+    left: -2px;
+    top: 110px;
+    
+    background: rgba(255, 255, 255, 0.8);
+   
+    }
+    .nav-item{
+      padding: 8px 24px;
+      
+      transition: 0.4s;
+      font-family: 'georgia';
+      margin-bottom: 24px;
+      margin-left: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      background: white;
+      border-left: 8px solid rgb(14, 60, 90);
+    }
+    
+    .nav-item:hover {
+      
+      text-decoration: none;
+      padding: 8px 0;
+      
+     
+    }
+    
+    .nav-link.active {
+      border: none;
+    }
 
-.breadcrumbNav {
-    margin: 12% 10px;
-    padding: 20px 30px;      
-  }
-#breadcrumbpadding {
-    width: 120px;  
-    padding: 6px 0;
-  }
   
 a {
     padding-top: 20px;
@@ -37,15 +66,7 @@ a {
     text-decoration: none;
   }
   
-.breadcrumbNav ul {
-    list-style:none ;
-    flex-direction: column;
-  }
-.breadcrumb-item.active {
-    border-bottom: 3px solid #005596;
-    width: 115px;  
-    
-  }
+
   
 a:disabled, a[disabled] {
     color: #005596;
@@ -120,7 +141,13 @@ a:disabled, a[disabled] {
     margin-top: 3.8%;
    
   } */
-  
+  .main {
+    flex: 1;
+    height: calc(100vh - 70px);
+    width: 75%;
+    padding: 40px 30px 30px 30px;
+    padding-right: 25%;
+  }
 .tab-content {
       float: right;
       width: 80%;

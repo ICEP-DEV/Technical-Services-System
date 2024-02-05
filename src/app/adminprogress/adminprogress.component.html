@@ -1,83 +1,94 @@
-<!-- <div class="container-fluid">
+<app-adminnav></app-adminnav>
+   <!-- <app-staff-navbar></app-staff-navbar>  -->
 
-    
-        <div class="log d-flex justify-content-end">
-            <nav class="header">
-                <div id="logoDiv">
-                    <a>
-                     
-                        <img class="logo" src="../../../assets/images/tut.png" alt="SMART FARM"
-                            style="float: left;height: 70px;width: 225px;" routerLink="read">
-                    </a>
-                </div>
-                <div id="menu-icon">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul>
-                    <li>
-        
-                        <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
-                          class="dropbtn">LOGOUT</button></a>
-                    </li>
-                </ul>
-        
-            </nav>
-        </div>
-  </div>
-  <body>
-   -->
-   <app-staff-navbar></app-staff-navbar> 
    <div class="container2 d-flex justify-content-between ">
-        <div class="sideNav">
-            <nav class="breadcrumbNav">
-                <ul>
-                    <ul>
-                        <li class = "breadcrumb-item active" id = "breadcrumbpadding">
-                          <a class ="anchorBorder" id="hover"  routerLink="/adminpage" >
-                            <img
-                            src="../../assets/icons/log.png"
-                            height="35"
-                            width="35"
-                            /><br>VIEW LOGS
-                          </a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li class="breadcrumb-item active" id="breadcrumbpadding">
-                          <a class="anchorBorder"  disabled>
-                            
-                                          <img
-                            src="../../assets/icons/cog-wheel.png"
-                            height="35"
-                            width="35"
-                            /><br>VIEW PROGRESS
-                          </a>
-                        </li>
-                    </ul>   
-                  
-                    <ul>
-                        <li class = "breadcrumb-item active" id = "breadcrumbpadding">
-                          <a class ="anchorBorder" id="hover" href="#"   routerLink="/admincloselog">
-                            <img
-                              src="../../assets/icons/circle.png"
-                              height="35"
-                              width="35"
-                              /><br>CLOSE LOGS
-                          </a>
-                        </li>
-                    </ul>
-                        <!-- *ngIf= "statsData" statsData.totalUnassigned-->
-                        <div class="progressTotalsDiv"  >
-                          <div class="contentMargin">
-                            <h3 class="totaltasksTitle"  >Total Tasks</h3>
-                            <label class="In-progressTasks"  *ngIf= "inprogressTasks">In-progress &nbsp;&nbsp;<span class="numbertotal">{{inprogressTasks.length}}</span></label><br>
-                            <label class="completedTasks" *ngIf= "completedTasks">completed &nbsp;&nbsp;<span class="numbertotal">{{completedTasks.length}}</span></label>
-                          </div>
-                      </div>
-                </ul>
-            </nav>
-        </div>
-  
+    <ul class="nav nav-tabs flex-column justify-content-center" id="myTab" role="tablist" *ngIf="isScreenSizeLargerThanThreshold">
+
+			<li class="nav-item" role="presentation"   >
+				<a class="nav-link  " id="doing-tab"  type="text" role="tab" aria-controls="doing" aria-selected="true" 
+				routerLink="/dash2"><br><a>
+					<img
+					src="../../assets/icons/logs.png"
+					height="35"
+					width="35"
+					/> <b> DASHBOARD</b></a></a>
+			</li>
+			<li class="nav-item" role="presentation">
+				<a class="nav-link  " id="doing-tab"  type="text" role="tab" aria-controls="doing" aria-selected="true" 
+				routerLink="/adminpage"><br><a>
+					<img
+					src="../../assets/icons/logs.png"
+					height="35"
+					width="35"
+					/> <b> VIEW LOGS</b></a></a>
+			</li>
+	
+			<!-- <li class="nav-item" role="presentation" id="doing-tab3">
+				<a class="nav-link colorAmber" id="progress-tab" data-bs-toggle="tab" data-bs-target="#progress" type="text"
+					role="tab" aria-controls="progress" aria-selected="false"><br><a><b>View LOGS</b></a></a>
+	
+			</li> -->
+	
+			<li class="nav-item" role="presentation">
+				<a class="nav-link" data-bs-toggle="tab" type="text" role="tab" aria-selected="false"
+					routerLink="/generatereport"><br><a>
+						<img
+					src="../../assets/icons/reports.png"
+					height="35"
+					width="35"
+					/>
+					  <b> REPORT</b></a></a>
+	
+			</li>
+	
+			<li class="nav-item" role="presentation">
+				<a class="nav-link " data-bs-toggle="tab" type="text" role="tab" aria-selected="false"
+					routerLink="/technician-table"><br><a>
+						<img
+					src="../../assets/icons/list.png"
+					height="35"
+					width="35"
+					/>
+						<b> TABLE</b></a></a>
+	
+			</li>
+	
+			<li class="nav-item" role="presentation">
+				<a class="nav-link " data-bs-toggle="tab" type="text" role="tab" aria-selected="false"
+					routerLink="/newArtisan">
+					<br><a><img
+						src="../../assets/icons/add.png"
+						height="35"
+						width="35"
+						/><b> CREATE ARTISAN</b></a></a>
+	
+			</li>
+	
+			<li class="nav-item" role="presentation">
+				<a class="nav-link " data-bs-toggle="tab" type="text" role="tab" aria-selected="false"
+					routerLink="/admincloselog"><br><a>
+						<img
+					src="../../assets/icons/document.png"
+					height="35"
+					width="35"
+					/>
+						<b> CLOSE LOG</b></a></a>
+	
+			</li>
+      <li>
+        
+        <!-- <div class="progressTotalsDiv"  > -->
+          <div class="contentMargin">
+            <h3 class="totaltasksTitle"  >Total Tasks</h3>
+            <label class="In-progressTasks"  *ngIf= "inprogressTasks">In-progress &nbsp;&nbsp;<span class="numbertotal">{{inprogressTasks.length}}</span></label><br>
+            <label class="completedTasks" *ngIf= "completedTasks">completed &nbsp;&nbsp;<span class="numbertotal">{{completedTasks.length}}</span></label>
+         </div>
+       <!-- </div> -->
+      </li>
+		</ul>
+
+    <div class="main">
+
         <div class="tab-content  ps-3 mt-5" id="myTabContent">
   
                 <div class = "contentForm" >
@@ -193,6 +204,7 @@
   
   
         </div>
+    </div>
   
 </div>
 <app-footer></app-footer>

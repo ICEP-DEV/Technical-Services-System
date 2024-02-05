@@ -59,7 +59,7 @@ import { CreateNewArtisanComponent } from './create-new-artisan/create-new-artis
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AdminnavComponent } from './adminnav/adminnav.component';
-
+import { MatTableExporterModule } from 'mat-table-exporter';
 
 
 
@@ -123,6 +123,7 @@ import { AdminnavComponent } from './adminnav/adminnav.component';
     HttpClientModule,
     FormsModule,
     Ng2SearchPipeModule,
+    MatTableExporterModule,
     
     
     // Ng2OrderModule,

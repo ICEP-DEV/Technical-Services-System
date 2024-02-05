@@ -6,6 +6,52 @@ body {
 }
 
 /* Start of  Everything on the side nav*/
+.nav-tabs  {
+  position: center;
+  width: 100px;
+  height: auto;
+  left: 2px;
+  float: left;
+  width: 100%;
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 25px;
+  letter-spacing: 0.035em;
+  width: 335px;
+  
+  left: -2px;
+  top: 110px;
+  
+  background: rgba(255, 255, 255, 0.8);
+ 
+  }
+  .nav-item{
+    padding: 8px 24px;
+    
+    transition: 0.4s;
+    font-family: 'georgia';
+    margin-bottom: 24px;
+    margin-left: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    background: white;
+    border-left: 8px solid rgb(14, 60, 90);
+  }
+  
+  .nav-item:hover {
+    
+    text-decoration: none;
+    padding: 8px 0;
+    
+   
+  }
+  
+  .nav-link.active {
+    border: none;
+  }
+
 .sideNav {
   float: left;
  
@@ -106,8 +152,17 @@ a:disabled, a[disabled] {
     margin-right: 0%;
   }
  
+  .main {
+    flex: 1;
+    height: calc(100vh - 70px);
+    width: 75%;
+    padding: 40px 30px 30px 30px;
+    padding-right: 25%;
+  }
+  .container2{
   
-  
+    flex:1;
+  }
   
   /*Navigation*/
 /*   

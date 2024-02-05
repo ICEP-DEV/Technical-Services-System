@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, ViewChild } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild , HostListener } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ApiserviceService } from '../apiservice.service';
 import { Route, Router } from '@angular/router';
@@ -35,6 +35,22 @@ export class AdminpageComponent implements OnInit {
   setPriority = {
     priority: ''
   }
+
+   //show side nav on large screens
+   isScreenSizeLargerThanThreshold = true;
+
+   @HostListener('window:resize', ['$event'])
+   onResize(event: Event) {
+     this.checkScreenSize();
+   }
+ 
+  
+ 
+   private checkScreenSize() {
+     // Set the threshold value based on your requirement
+     const threshold = 991; // Change this value as needed
+     this.isScreenSizeLargerThanThreshold = window.innerWidth > threshold;
+   }
 
   ngOnInit(): void{
     this.service.allRequests().subscribe((res)=>{
