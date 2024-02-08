@@ -1,5 +1,5 @@
 import { validateVerticalPosition } from '@angular/cdk/overlay';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ViewChild , HostListener } from '@angular/core';
 import { FormGroup, FormControl,FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiserviceService } from '../apiservice.service';
@@ -57,6 +57,21 @@ export class CreateNewArtisanComponent implements OnInit {
   formModal:any;
   btnClose:any;
 
+  //show side nav on large screens
+  isScreenSizeLargerThanThreshold = true;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.checkScreenSize();
+  }
+
+ 
+
+  private checkScreenSize() {
+    // Set the threshold value based on your requirement
+    const threshold = 991; // Change this value as needed
+    this.isScreenSizeLargerThanThreshold = window.innerWidth > threshold;
+  }
   ngOnInit(): void {
     // this.userForm = new FormGroup({
     //   id: new FormControl('',[Validators.required]),
@@ -77,8 +92,8 @@ export class CreateNewArtisanComponent implements OnInit {
     //form modal
     // this.btnClose.getElementById("close");
     this.apiservice.allDivisions().subscribe((respo)=>{
-      console.log(respo.results);
-      this.divisions=respo.results;
+      console.log(respo,"divisions");
+      this.divisions=respo;
  
      },(error: any)=>{
        console.log(error);
@@ -131,8 +146,9 @@ export class CreateNewArtisanComponent implements OnInit {
     } else {
       console.log('All values in tech_form are non-empty.');
       this.apiservice.createNewArtisan(this.tech_form).subscribe((res)=>{
-        console.log(res);
-        this.message=res;
+        console.log(res,"respond");
+        console.log("response");
+        this.message=res.message;
         this.boolmsg=true;
         this.successmsg=this.message;
         

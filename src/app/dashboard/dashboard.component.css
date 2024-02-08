@@ -15,7 +15,7 @@
 .nav-tabs  {
   position: center;
   width: 100px;
-  height: auto;
+  height: 80%;
   left: 2px;
   float: left;
   width: 100%;
@@ -25,7 +25,7 @@
   font-size: 22px;
   line-height: 25px;
   letter-spacing: 0.035em;
-  width: 335px;
+  width: 280px;
   
   left: -2px;
   top: 110px;
@@ -58,26 +58,7 @@
     border: none;
   }
   
-.sideNav {
-  float: left;
 
-  box-shadow: 5px 0 0px #969292;
-  /* width: 410px; */
-  height: 1200px;
-
-}
-
-.breadcrumbNav {
-
-  margin: 12.8% 10px;
-  padding: 20px 30px;
-}
-
-#breadcrumbpadding {
-
-  width: 120px;
-  padding: 6px 0;
-}
 
 a {
   padding-top: 20px;
@@ -95,21 +76,7 @@ a {
   align-content: center; */
 }
 
-.breadcrumbNav ul {
-  list-style: none;
-  flex-direction: column;
-  
-}
 
-.breadcrumb-item.active {
-  border-bottom: 3px solid #005596;
-  width: 115px;
-}
-
-#breadcrumb-item.active {
-  border-bottom: 3px solid #005596;
-  width: 115px;
-}
 .anchorBorder{
   margin:0 20%;
 }
@@ -205,9 +172,10 @@ a {
 .main {
   flex: 1;
   height: calc(100vh - 70px);
+ 
   width: 75%;
   padding: 40px 30px 30px 30px;
-  padding-right: 12%;
+  padding-right: 8%;
 }
 
 .white {
@@ -241,49 +209,7 @@ border-radius: 10px;
 box-shadow: 0 7px 25px 0 rgba(0, 0, 0, 0.8)
 }
 
-.navcontainer {
-  height: calc(100vh - 70px);
-  width: 250px;
-  position: relative;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  transition: all 0.5s ease-in-out;
-}
 
-.navcontainer::-webkit-scrollbar {
-  display: none;
-}
-
-.navclose {
-  width: 80px;
-}
-
-.nav-option {
-  width: 250px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  padding: 0 30px 0 20px;
-  gap: 20px;
-  transition: all 0.1s ease-in-out;
-}
-
-.nav-option:hover {
-  border-left: 5px solid #a2a2a2;
-  background-color: #dadada;
-  cursor: pointer;
-}
-
-.nav-img {
-  height: 30px;
-}
-
-.nav-upper-options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
 
 .option1 {
   border-left: 5px solid #010058af;

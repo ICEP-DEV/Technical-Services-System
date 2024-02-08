@@ -1,0 +1,175 @@
+<app-adminnav></app-adminnav>
+
+<div class="container2 d-flex justify-content-between ">
+    <ul class="nav nav-tabs flex-column justify-content-center" id="myTab" role="tablist" *ngIf="isScreenSizeLargerThanThreshold">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link colorAmber" data-bs-toggle="tab" type="text" role="tab" aria-selected="false"
+                routerLink="/dash2">
+                <br><a><img
+                    src="../../assets/icons/dashboard.png"
+                    height="35"
+                    width="35"
+                    /><b>DASHBOARD</b></a></a>
+
+        </li>
+        <li class="nav-item" role="presentation"   >
+            <a class="nav-link  colorRed" id="doing-tab"  type="text" role="tab" aria-controls="doing" aria-selected="true" 
+            routerLink="/adminpage"><br><a>
+                <img
+                src="../../assets/icons/logs.png"
+                height="35"
+                width="35"
+                /> <b> VIEW LOGS</b></a></a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link colorAmber" id="done-tab" data-bs-toggle="tab" type="text" role="tab" aria-selected="false"
+                routerLink="/adminprogress"><br><a>
+                    <img
+                src="../../assets/icons/processing-times.png"
+                height="35"
+                width="35"
+                />
+                    
+                    <b> VIEW PROGRESS</b></a></a>
+        </li>
+
+        
+
+        <li class="nav-item" role="presentation">
+            <a class="nav-link colorAmber" data-bs-toggle="tab" type="text" role="tab" aria-selected="false"
+                routerLink="/generatereport"><br><a>
+                    <img
+                src="../../assets/icons/reports.png"
+                height="35"
+                width="35"
+                />
+                    <b> REPORT</b></a></a>
+
+        </li>
+
+        <!-- <li class="nav-item" role="presentation">
+            <a class="nav-link colorAmber" data-bs-toggle="tab" type="text" role="tab" aria-selected="false"
+                routerLink="/technician-table"><br><a>
+                    <img
+                src="../../assets/icons/list.png"
+                height="35"
+                width="35"
+                />
+                    <b> TABLE</b></a></a>
+
+        </li> -->
+
+        <li class="nav-item" role="presentation">
+            <a class="nav-link " data-bs-toggle="tab" type="text" role="tab" aria-selected="false"
+                routerLink="/newArtisan">
+                <br><a><img
+                    src="../../assets/icons/add.png"
+                    height="35"
+                    width="35"
+                    /><b> CREATE ARTISAN</b></a></a>
+
+        </li>
+
+        <li class="nav-item" role="presentation">
+            <a class="nav-link colorAmber" data-bs-toggle="tab" type="text" role="tab" aria-selected="false"
+                routerLink="/admincloselog"><br><a>
+                    <img
+                src="../../assets/icons/document.png"
+                height="35"
+                width="35"
+                />
+                    <b> CLOSE LOG</b></a></a>
+
+        </li>
+
+    </ul>
+    <div class="main">
+        <div class="tab-content ps-5 " id="myTabContent">
+            <div class="tab-pane fade show active" id="doing" role="tabpanel" aria-labelledby="doing-tab">
+                <div class="content card ">
+                
+                    <h1 class="d-flex justify-content-center" style="background-color: rgb(182, 179, 179);">Technicians</h1>
+                    <!-- <table class="table">
+
+                        
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Surname</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Available</th>
+                            <th scope="col">Division_Name</th>
+                            <th scope="col">Campus</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let technician of technicians">
+                            <td>{{ technician.tech_id }}</td>
+                            <td>{{ technician.name }}</td>
+                            <td>{{ technician.surname }}</td>
+                            <td>{{ technician.phone }}</td>
+                            <td>{{ technician.email }}</td>  
+                            <td>{{ technician.availability }}</td>
+                            <td>{{ technician.division_name }}</td>
+                            <td>{{ technician.campus}}</td>
+                            <td class="status">{{data.status}}</td>
+
+                        
+                        
+                        </tr>
+                        </tbody>
+                    </table> -->
+                    <mat-paginator #paginator
+                    [pageSize]="10"
+                    [pageSizeOptions]="[2,5, 10, 25, 100]"
+                    >
+                    </mat-paginator>
+                    <table mat-table matSort matTableExporter [dataSource]="dataSource">
+                       
+                        <ng-container matColumnDef="tech_id">
+                            <th mat-header-cell *matHeaderCellDef> ID</th>
+                            <td mat-cell *matCellDef="let user"> {{user.tech_id}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef> NAME</th>
+                            <td mat-cell *matCellDef="let user"> {{user.name}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="surname">
+                            <th mat-header-cell *matHeaderCellDef> SURNAME</th>
+                            <td mat-cell *matCellDef="let user"> {{user.surname}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="phone">
+                            <th mat-header-cell *matHeaderCellDef> PHONE</th>
+                            <td mat-cell *matCellDef="let user"> {{user.phone}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="email">
+                            <th mat-header-cell *matHeaderCellDef> EMAIL</th>
+                            <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="availability">
+                            <th mat-header-cell *matHeaderCellDef> AVAILABILITY</th>
+                            <td mat-cell *matCellDef="let user"> {{user.availability}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="division_name">
+                            <th mat-header-cell *matHeaderCellDef> DIVISION NAME</th>
+                            <td mat-cell *matCellDef="let user"> {{user.division_name}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="campus">
+                            <th mat-header-cell *matHeaderCellDef> CAMPUS</th>
+                            <td mat-cell *matCellDef="let user"> {{user.campus}} </td>
+                          </ng-container>
+
+                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                      </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<app-footer></app-footer>

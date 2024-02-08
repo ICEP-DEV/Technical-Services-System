@@ -1,73 +1,88 @@
-<!-- <div class="container-fluid">
-    
-        <div class="log d-flex justify-content-end">
-            <nav class="header">
-                <div id="logoDiv">
-                    <a>
-                     
-                        <img class="logo" src="../../../assets/images/tut.png" alt="SMART FARM"
-                            style="float: left;height: 70px;width: 225px;" routerLink="read">
-                    </a>
-                </div>
-                <div id="menu-icon">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul>
-                    <li>
-        
-                        <a href="#" class="nav-link active" id="ModalExample" (click)="logout()"><button type="button"
-                            class="dropbtn">LOGOUT</button></a>
-                    </li>
-                </ul>
-        
-            </nav>
-        </div>
-</div>
-<body> -->
-<app-staff-navbar></app-staff-navbar>
-    <div class="container2 d-flex justify-content-between ">
-        <div class="sideNav">
-            <nav class="breadcrumbNav">
-                <ul>
-                    <li class = "breadcrumb-item active" id = "breadcrumbpadding">
-                       
-                            <a class="anchorBorder" id="hover" routerLink="/adminpage">
-                                <img
-                                    src="../../assets/icons/log.png"
-                                    height="35"
-                                    width="35"
-                                    /><br>VIEW LOGS
-                        </a>
-                    </li>
-                </ul>     
-                <ul>   
-                    <li class="breadcrumb-item active" id="breadcrumbpadding">
-                        <!-- <a class="" disabled> -->
-                            <a class="anchorBorder" id="hover" routerLink="/adminpage">
-                                <img
-                                    src="../../assets/icons/circle.png"
-                                    height="35"
-                                    width="35"
-                                    /><br>CLOSE LOGS
 
-                        </a>
-                    </li>
-                    
-                        
-                </ul>
-            </nav>
-        </div>
+<app-adminnav></app-adminnav>
+
+    <div class="container2 d-flex justify-content-between ">
+        <ul class="nav nav-tabs flex-column justify-content-center" id="myTab" role="tablist" *ngIf="isScreenSizeLargerThanThreshold">
+
+			<li class="nav-item" role="presentation"   >
+				<a class="nav-link  colorRed" id="doing-tab"  type="text" role="tab" aria-controls="doing" aria-selected="true" 
+				routerLink="/dash2"><br><a>
+					<img
+					src="../../assets/icons/dashboard.png"
+					height="35"
+					width="35"
+					/> <b> DASHBOARD</b></a></a>
+			</li>
+            <li class="nav-item" role="presentation"   >
+                <a class="nav-link  colorRed" id="doing-tab"  type="text" role="tab" aria-controls="doing" aria-selected="true" 
+                routerLink="/adminpage"><br><a>
+                    <img
+                    src="../../assets/icons/logs.png"
+                    height="35"
+                    width="35"
+                    /> <b> VIEW LOGS</b></a></a>
+            </li>
+			<li class="nav-item" role="presentation">
+				<a class="nav-link colorAmber" id="done-tab" data-bs-toggle="tab" type="text" role="tab" aria-selected="false"
+					routerLink="/adminprogress"><br><a>
+						<img
+					src="../../assets/icons/processing-times.png"
+					height="35"
+					width="35"
+					/>
+						
+						<b> VIEW PROGRESS</b></a></a>
+			</li>
+	
+			<!-- <li class="nav-item" role="presentation" id="doing-tab3">
+				<a class="nav-link colorAmber" id="progress-tab" data-bs-toggle="tab" data-bs-target="#progress" type="text"
+					role="tab" aria-controls="progress" aria-selected="false"><br><a><b>View LOGS</b></a></a>
+	
+			</li> -->
+	
+			<li class="nav-item" role="presentation">
+				<a class="nav-link colorAmber" data-bs-toggle="tab" type="text" role="tab" aria-selected="false"
+					routerLink="/generatereport"><br><a>
+						<img
+					src="../../assets/icons/reports.png"
+					height="35"
+					width="35"
+					/>
+					  <b> REPORT</b></a></a>
+	
+			</li>
+	
+			<li class="nav-item" role="presentation">
+				<a class="nav-link colorAmber" data-bs-toggle="tab" type="text" role="tab" aria-selected="false"
+					routerLink="/technician-table"><br><a>
+						<img
+					src="../../assets/icons/list.png"
+					height="35"
+					width="35"
+					/>
+						<b> TABLE</b></a></a>
+	
+			</li>
+	
+			<li class="nav-item" role="presentation">
+				<a class="nav-link colorAmber" data-bs-toggle="tab" type="text" role="tab" aria-selected="false"
+					routerLink="/newArtisan">
+					<br><a><img
+						src="../../assets/icons/add.png"
+						height="35"
+						width="35"
+						/><b> CREATE ARTISAN</b></a></a>
+	
+			</li>
+	
+			
+		</ul>
 
         <div class="tab-content ps-3 mt-5" id="myTabContent">
 
               
                 <div class = "contentForm" >
                    
-                    <div class="departmenCategoryText">
-                        <h2></h2>
-                        <h4></h4>
-                        <h5></h5>
-                    </div>
                     
                     <div class="content card mt-4 p-4">
 
@@ -99,11 +114,7 @@
         
                    
                 </div>
-         
-           
-           
-
-
+        
 
         </div>
 

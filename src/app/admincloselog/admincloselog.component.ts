@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject, ViewChild , HostListener  } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
 
 @Component({
@@ -21,6 +21,22 @@ export class AdmincloselogComponent {
     },(err)=>{
       console.log(err)
     })
+  }
+
+  //show side nav on large screens
+  isScreenSizeLargerThanThreshold = true;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.checkScreenSize();
+  }
+
+ 
+
+  private checkScreenSize() {
+    // Set the threshold value based on your requirement
+    const threshold = 991; // Change this value as needed
+    this.isScreenSizeLargerThanThreshold = window.innerWidth > threshold;
   }
 status:any
   log(jobCardId:Number, progress: string){

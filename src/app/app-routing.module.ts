@@ -31,7 +31,7 @@ import { HodcloselogsComponent } from './hodcloselogs/hodcloselogs.component';
 import { StaffsendrequestComponent } from './staffsendrequest/staffsendrequest.component';
 import { CreateNewArtisanComponent } from './create-new-artisan/create-new-artisan.component';
 // import { AdminnavComponent } from './adminnav/adminnav.component';
-
+import { TechncicanTableComponent } from './techncican-table/techncican-table.component';
 
 
 
@@ -64,7 +64,8 @@ const routes: Routes = [
   {path:'dash2', component:DashboardComponent},
   {path:'newArtisan', component:CreateNewArtisanComponent},
 
-  {path:'generatereport',component:ReportComponent}
+  {path:'generatereport',component:ReportComponent},
+  {path:'technician-table',component:TechncicanTableComponent}
 
 
   

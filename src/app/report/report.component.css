@@ -6,7 +6,7 @@
 .nav-tabs  {
   position: center;
   width: 100px;
-  height: auto;
+  height: 80%;
   left: 2px;
   float: left;
   width: 100%;
@@ -14,9 +14,9 @@
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
-  line-height: 25px;
+  line-height: 20px;
   letter-spacing: 0.035em;
-  width: 335px;
+  width: 280px;
   
   left: -2px;
   top: 110px;
@@ -61,7 +61,10 @@
     text-decoration: none;
   }
   
-
+  .container2{
+  
+    flex:1;
+  }
   
 a:disabled, a[disabled] {
     color: #005596;
@@ -77,6 +80,7 @@ a:disabled, a[disabled] {
   }
 
 .reqhead1{
+  margin-top: 5%;
   
     border: 2px solid rgb(255, 255, 255);
     background-color: #ECE7E7; 
@@ -215,6 +219,34 @@ input.form-control {
 
 #b12{
   float: right;
+}
+.container {
+  flex:1;
+  height: calc(100vh - 70px);
+}
+
+/* Add this CSS to your stylesheet */
+.responsive-table {
+  width: 70%; /* Set table width to 100% */
+  max-width: 70%; /* Ensure table doesn't exceed the screen width */
+  table-layout: fixed; /* Fix table layout to prevent content from stretching table */
+}
+
+.mat-header-row,
+.mat-row {
+  display: block; /* Convert table rows to block elements for responsive layout */
+  width: 100%; /* Set row width to 100% */
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+.mat-header-row th,
+.mat-row td {
+ 
+  float: left; /* Float columns left for horizontal layout */
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+  overflow: hidden; /* Hide overflow content */
+  text-overflow: ellipsis; /* Show ellipsis for overflow content */
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 

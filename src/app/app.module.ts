@@ -60,6 +60,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AdminnavComponent } from './adminnav/adminnav.component';
 import { MatTableExporterModule } from 'mat-table-exporter';
+import { TechncicanTableComponent } from './techncican-table/techncican-table.component';
 
 
 
@@ -104,7 +105,8 @@ import { MatTableExporterModule } from 'mat-table-exporter';
     StaffSidebarComponent,
     StaffNavbarComponent,
     CreateNewArtisanComponent,
-    AdminnavComponent
+    AdminnavComponent,
+    TechncicanTableComponent
   ],
   imports: [
     BrowserModule,

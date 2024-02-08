@@ -9,7 +9,7 @@
   .nav-tabs  {
     position: center;
     width: 100px;
-    height: auto;
+    height: 80%;
     left: 2px;
     float: left;
     width: 100%;
@@ -19,7 +19,7 @@
     font-size: 22px;
     line-height: 25px;
     letter-spacing: 0.035em;
-    width: 335px;
+    width: 280px;
     
     left: -2px;
     top: 110px;
@@ -140,6 +140,10 @@ a:disabled, a[disabled] {
     
     margin-top: 3.8%;
    
+  } */
+  /* .container2{
+  
+    flex:1;
   } */
   .main {
     flex: 1;

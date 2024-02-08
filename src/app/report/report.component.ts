@@ -38,6 +38,8 @@ export class ReportComponent implements OnInit{
   filterData($event : any){
     this.dataSource.filter = $event.target.value;
   }
+
+  
    //show side nav on large screens
    isScreenSizeLargerThanThreshold = true;
 
