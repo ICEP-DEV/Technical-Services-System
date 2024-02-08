@@ -188,6 +188,11 @@ export class ApiserviceService {
     return this._http.put(this.apiUrl + "/admin/log-close/" + id, data);
   }
 
+  closeLogs(id: Number): Observable<any> {
+    // Assuming you want to handle the response, use 'any' or replace it with a specific type.
+    return this._http.put<any>(`${this.apiUrl}/admin/log-close/${id}`, {});
+  }
+
 
   totalcomplete(): Observable<any> {
     return this._http.get(`${this.apiUrl + "/admin/viewTotalComplete"}`);

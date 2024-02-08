@@ -16,29 +16,43 @@ export class AdmincloselogComponent {
   ngOnInit():void{
     this.service.waitingToBeClose().subscribe((res)=>{
       this.tempdata = res
-      this.readData = this.tempdata.result
-      console.log(this.readData);
+      this.readData = this.tempdata
+      console.log("res of feedback",res);
     },(err)=>{
       console.log(err)
     })
   }
-
-  log(event:any,jobCardId:Number){
-    var data={
-      status:event.target.value,
-    }
+status:any
+  log(jobCardId:Number, progress: string){
     
-    console.log(jobCardId)
+      // this.status=event.target.value,
+      // closed_date:new Date()
+    
+    
+    console.log("job id",jobCardId)
+    console.log("progress",progress)
+    if(progress=="complete"){
+      
+    this.service.closeLogs(jobCardId).subscribe((response)=>{
+      this.set_object = response;
+     console.log("close log res",response);
+    //  if (this.set_object.success == true) {
+    //    this.set_object.status = "closed"
+    //    data.status= this.set_object;
+    //    window.location.reload();
+    //  }
+ })
+    }
 
-    this.service.closeLog(jobCardId,data).subscribe((response)=>{
-         this.set_object = response;
-        console.log(response);
-        if (this.set_object.success == true) {
-          this.set_object.status = "closed"
-          data.status= this.set_object;
-          window.location.reload();
-        }
-    })
+    // this.service.closeLog(jobCardId,data).subscribe((response)=>{
+    //      this.set_object = response;
+    //     console.log("close log re",response);
+    //     if (this.set_object.success == true) {
+    //       this.set_object.status = "closed"
+    //       data.status= this.set_object;
+    //       window.location.reload();
+    //     }
+    // })
        
 
   }
@@ -48,3 +62,4 @@ export class AdmincloselogComponent {
   }
 
 }
+

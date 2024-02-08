@@ -76,10 +76,10 @@
                             <tbody>
                               <tr *ngFor="let data of readData">
                                 <td>{{data.id}}</td>
-                                <td>{{data.description}}</td>
+                                <td>{{data.staff_name}}</td>
                                 <td>{{data.staff_feedback}}</td>
                                 <!-- <td class="status">{{data.status}}</td> -->
-                                <td><button type="button" class="logbtn " (click)="log($event,data.id)" >Log</button> </td>
+                                <td><button type="button" class="logbtn "id="data.id" (click)="log(data.id, data.progress)" >Log</button> </td>
                               </tr>
                             </tbody>
                           </table>
