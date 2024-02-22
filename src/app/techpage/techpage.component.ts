@@ -69,13 +69,13 @@ matchingData:any;
 getTasks(){
   console.log("tech_id",this.tech_id)
   this.service.TechdataArlet(Number(this.tech_id)).subscribe((respo: any) => {
-    console.log(respo)
+    console.log("arlet reposnse",respo)
 
   
     // Extract the array from the response object
     this.readDatas = respo.result;
     let test=respo.arlet;
-  //  console.log("arlet",test)
+    //  console.log("arlet",test)
     if(test===true){
       this.readDatas.forEach((data: any) => {
         // if (data.tech_id === this.tech_id) {
@@ -166,6 +166,7 @@ progressTask(event:any,jobCardId:Number){
       console.log(response);
       if (this.set_object.success == true) {
         localStorage.setItem('Progress', JSON.stringify(this.setProgress.progress));
+        console.log(" progress update")
       }
 })
   

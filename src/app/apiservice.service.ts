@@ -21,7 +21,10 @@ export class ApiserviceService {
 
  
  
-
+///get completed task arlet to staff
+CompletedTaskArlet(id : any) {
+  return this._http.get(this.apiUrl + "/technician/task/"+id);
+}
    //creating new artisan
   createNewArtisan(data: any):Observable<any>{
     return this._http.post(this.apiUrl + "/admin/addTechnician", data);

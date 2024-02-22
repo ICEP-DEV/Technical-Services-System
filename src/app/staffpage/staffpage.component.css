@@ -6,9 +6,10 @@ form{
 }
 
 .tab-content {
-  float: right;
+  /* float: right; */
   width: 80%;
-  margin-right: 0%;
+  margin-right: 5%;
+  margin-top: 2%;
 }
 .nav-tabs {
 background: rgba(155, 154, 154, 0.8);
@@ -96,15 +97,15 @@ input.form-control {
 .sideNav {
   float: left;
    
-  box-shadow: 5px 0 2px #969292;
-  width: 335px;
+  /* box-shadow: 5px 0 2px #969292; */
+  width: 250px;
   height: 1080px;
 
 
 }
 
 .breadcrumbNav {
-  margin: 12% 10px;
+  margin: 10% 5%;
   padding: 20px 30px;   
     
 }
