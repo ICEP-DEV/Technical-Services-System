@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
   span=false;
   private intervalId: any;
   showModal=false;
+  showModals=false;
 
   constructor(private service: ApiserviceService,public dialog: MatDialog) { 
    
@@ -60,15 +61,15 @@ export class DashboardComponent implements OnInit {
     this.formModal=new window.bootstrap.Modal(
       document.getElementById("adminPop")
      );
+     this.formModal=new window.bootstrap.Modal(
+      document.getElementById("techPop")
+     );
 
     this.service.allRequests().subscribe((res) => {
       console.log(res.result, "Active tasks/pending before setting priority");
       this.readData = res.result;
 
-      // setInterval(() => {
-      //   this.getMessage();
-       
-      // }, 5000); 
+      
       ///refresh page every 5 seconds to get data
       setInterval(() => {
         this.getMessage();
@@ -122,10 +123,30 @@ export class DashboardComponent implements OnInit {
     this.stopInterval()
   
   }
+  openTechModal(){
+    this.formModal.show();
+  }
+  closeTechModal(){
+    ///close modal
+    this.formModal.hide();
+    this.showModals=false;
+    this.messages='';
+    console.log("close modal")
+    // this.message='';
+    this.stopInterval()
+  
+  }
   message='';
   id=''
   category='';
   description=''
+  readDatas:any;
+  matchingData:any;
+  descriptions='';
+  categories='';
+  expected_date='';
+  priority='';
+  progress='';
   ///get requests api
   getMessage() {
     this.service.getRequest().subscribe(
@@ -148,6 +169,39 @@ export class DashboardComponent implements OnInit {
         console.error(error);
       }
     );
+    this.service.techArletAdmin().subscribe(respo=>{
+      console.log("arlet reposnse",respo)
+
+       // Extract the array from the response object
+    this.readDatas = respo.result;
+    let test=respo.arlet;
+    //  console.log("arlet",test)
+    if(test===true){
+      this.readDatas.forEach((data: any) => {
+        // if (data.tech_id === this.tech_id) {
+          // console.log("id true")
+          // Store the results for the matching id in a variable
+          this.matchingData = data;
+          // console.log("matching data",data)
+          
+            this.descriptions=data.description;
+            this.expected_date=data.expected_date;
+            this.priority=data.priority;
+            this.categories=data.category;
+            this.progress=data.progress;
+            if( this.progress==="complete"){
+                this.showModals=true;
+            this.openTechModal()
+            console.log("id match")
+            }else{
+              console.log("id not match")
+            }
+          
+        // }
+      })
+    }
+    
+    })
   }
    // Function to stop the interval
    stopInterval() {

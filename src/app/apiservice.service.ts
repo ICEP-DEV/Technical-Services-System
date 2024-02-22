@@ -18,8 +18,10 @@ export class ApiserviceService {
  // apiUrl = "http://192.168.27.20:3030"
   //get all data
   
-
- 
+///get completed task arlet to staff
+techArletAdmin(): Observable<any> {
+  return this._http.get(`${this.apiUrl + "/technician/task"}`);
+} 
  
 ///get completed task arlet to staff
 CompletedTaskArlet(id : any) {
